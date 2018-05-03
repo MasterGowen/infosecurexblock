@@ -19,7 +19,9 @@ function InfoSecureXBlock(runtime, element) {
     console.log(rect1HandlerUrl)
 
     class Start {
+
         constructor() {
+            var self = this;
             this.star = () => {
                 var rect1 = new Rect1();
                 var rect2 = new Rect2();
@@ -52,7 +54,7 @@ function InfoSecureXBlock(runtime, element) {
         // }
 
         connection(handler, labId) {
-            var self = this;
+
             function success(result) {
                 console.log("self:", self)
                 self.jsonObj = result;
