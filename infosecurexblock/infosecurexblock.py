@@ -14,12 +14,12 @@ from webob.response import Response
 
 import subprocess
 
-
 from .utils import (
     load_resource,
     render_template,
     load_resources,
 )
+
 
 class InfoSecureXBlock(XBlock):
     """
@@ -48,7 +48,7 @@ class InfoSecureXBlock(XBlock):
         when viewing courses.
         """
         context = {
-        "display_name": self.display_name,
+            "display_name": self.display_name,
         }
         fragment = Fragment()
         fragment.add_content(
