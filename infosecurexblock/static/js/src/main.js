@@ -1,3 +1,5 @@
+alert('ok')
+
 class Start {
         constructor() {
             this.star = () => {
