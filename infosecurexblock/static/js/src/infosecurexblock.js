@@ -4,9 +4,11 @@ function InfoSecureXBlock(runtime, element) {
 
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
 
-    function success_check(result){alert('success')}
+    function success_check(result) {
+        alert('success')
+    }
 
-     $(element).find('.Check').bind('click', function() {
+    $(element).find('.Check').bind('click', function () {
         $.ajax({
             type: "POST",
             url: rect1HandlerUrl,
@@ -28,17 +30,33 @@ function InfoSecureXBlock(runtime, element) {
             }
         }
 
-        connection(nameFetch) {
-            var fetchResult = fetch(nameFetch, {mode: 'cors', method: 'get', dataType: 'json'});
+        // connection(nameFetch) {
+        //     var fetchResult = fetch(nameFetch, {mode: 'cors', method: 'get', dataType: 'json'});
+        //
+        //     async function fetchAsync() {
+        //         var response = await fetchResult;
+        //         var data = await response.json();
+        //         return data;
+        //     }
+        //
+        //     fetchAsync().then(data => {
+        //         this.jsonObj = data;
+        //         if (this.jsonObj.Rect1) {
+        //             this.amount = Object.keys(this.jsonObj.Rect1).length;
+        //             //console.log(this.amount,this.jsonObj.Rect1);
+        //             this.addElementSVG(this.amount, this.jsonObj.Rect1);
+        //         }
+        //         if (this.jsonObj.Rect2) {
+        //             this.amount = Object.keys(this.jsonObj.Rect2).length;
+        //             this.addElement(this.amount, this.jsonObj.Rect2);
+        //         }
+        //     })
+        // }
 
-            async function fetchAsync() {
-                var response = await fetchResult;
-                var data = await response.json();
-                return data;
-            }
-
-            fetchAsync().then(data => {
-                this.jsonObj = data;
+        connection(handler) {
+            function success(result) {
+                console.log(result)
+                this.jsonObj = result;
                 if (this.jsonObj.Rect1) {
                     this.amount = Object.keys(this.jsonObj.Rect1).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
@@ -48,7 +66,17 @@ function InfoSecureXBlock(runtime, element) {
                     this.amount = Object.keys(this.jsonObj.Rect2).length;
                     this.addElement(this.amount, this.jsonObj.Rect2);
                 }
-            })
+            }
+            (function () {
+                $.ajax({
+                    type: "POST",
+                    url: handler,
+                    data: JSON.stringify({"ggg": "ggg"}),
+                    success: success
+                });
+
+            })()
+
         }
 
         /*     createTextNode(text,attributes){
@@ -209,6 +237,45 @@ function InfoSecureXBlock(runtime, element) {
         }
     }
 
+    class Rect2 extends Start {
+        constructor() {
+            super();
+            this.connection(rect1HandlerUrl);
+        }
+
+        createElementSimple(name, attributes) {
+            this.element = document.createElement(name);
+            if (name === 'button') {
+                this.element.innerHTML = "Отправить на проверку";
+            }
+
+            if (attributes) {
+                for (var k in attributes) {
+                    this.element.setAttribute([k], attributes[k]);
+                    this.element.onclick = this.on;
+                }
+                return this.element;
+            }
+        }
+
+        addElement(amount, jsonObj) {
+            for (amount in jsonObj) {
+                //console.log(jsonObj[amount].type);
+                this.appendNode(this.createElementSimple(jsonObj[amount].type, jsonObj[amount]));
+            }
+        }
+
+        appendNode(element) {
+            return document.getElementById('widget').appendChild(element);
+        }
+    }
+
+    class Rect3 extends Rect2 {
+        constructor() {
+            super();
+        }
+    }
+
 
 //автоматически вызываемая функция создаёт пространство
 //рабочей области + формирует создание области настроек
@@ -233,11 +300,11 @@ function InfoSecureXBlock(runtime, element) {
     //     });
     // });
 
-(function () {
-    /* Here's where you'd do things on page load. */
-    var test = new Start();
-    test.star();
-})();
+    (function () {
+        /* Here's where you'd do things on page load. */
+        var test = new Start();
+        test.star();
+    })();
 
 }
 
