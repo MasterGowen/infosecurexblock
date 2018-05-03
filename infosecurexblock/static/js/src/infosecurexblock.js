@@ -62,200 +62,226 @@ function InfoSecureXBlock(runtime, element) {
         //     })()
         //
         // }
-
-        /*     createTextNode(text,attributes){
-                this.element = document.createElementNS("http://www.w3.org/2000/svg",'text');
-                for(var k in attributes)
-                {
-                    this.element.setAttributeNS(null,[k],attributes[k]);
-                }
-                this.element.innerHTML = text;
-                return this.element
-            } */
-        eke() {
-            var answer = {};
-            return answer;
-        }
-
-        on() {
-            /* var x = document.createElementNS("http://www.w3.org/2000/svg","rect");
-            var y = document.querySelector('svg');
-            x.setAttribute('x',100);
-            x.setAttribute('y',100);
-            x.setAttribute('width',100);
-            x.setAttribute('height',100);
-            x.setAttribute('fill','black');
-            y.appendChild(x); */
+        on(){
             //console.log(this);
-            if ((this.id == "comp1") || (this.id == 'ip1')) {
+            var elem;
+            var answer = {};
+            function active(idNum) {
+                elem = document.getElementById(idNum)
+                elem.style.display = 'block';
+            }
+            function deactive(idNum){
+                elem = document.getElementById(idNum)
+                elem.style.display = 'none';
+            }
+            function getQuest(){
+                var fetchResult = fetch("http://localhost:5000/labs1/check/", {mode: 'cors',method: 'get',dataType: 'json'});
+                async function fetchAsync () {
+                    var response = await fetchResult;
+                    var data = await response.json();
+                    return data;
+                }
+                fetchAsync().then(data => {
+                    if(data.answer=='true'){
+                        alert('Правльно');
+                    }
+                    else{
+                        alert('Не правильно!');
+                    }
+                })
+            }
+            if(this.id=='task'){
+                active('taskId');
+                active('taskTextID');
+                document.getElementById('taskTextID').innerHTML ="hi";
+            }
+            if(this.id=='taskId'){
+                deactive('taskId');
+                deactive('taskTextID');
+            }
+            if(this.id == 'File1')
+            {
+                active('File1Id');
+                active('File1TextID');
+                active('File1TextID2');
+                document.getElementById("File1TextID").innerHTML= "Сообщение:406 9915660 05464616061 - 9915660";
+                document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
+            }
+            if(this.id != "File1")
+            {
+                deactive('File1Id');
+                deactive('File1TextID');
+                deactive('File1TextID2');
+        
+            }
+            if((this.id=="comp1")||(this.id=='ip1'))
+            {
                 document.getElementById('ip').value = '192.168.0.3';
                 //document.getElementById('comp1').fill = 'black';
+                active('File1Id');
+                active('File1TextID');
+                active('File1TextID2');
             }
-            if ((this.id == "comp2") || (this.id == 'ip2')) {
+            if((this.id=="comp2")||(this.id=='ip2'))
+            {
                 document.getElementById('ip').value = '192.168.0.4';
+                active('File1Id');
+                active('File1TextID');
+                active('File1TextID2');
             }
-            if ((this.id == "comp3") || (this.id == 'ip3')) {
+            if((this.id=="comp3")||(this.id=='ip3'))
+            {
                 document.getElementById('ip').value = '192.168.0.5';
+                active('File1Id');
+                active('File1TextID');
+                active('File1TextID2');
             }
-            if (this.id == 'task') {
-                document.getElementById('taskId').style.display = 'block';
-                document.getElementById('taskTextID').style.display = 'block';
-                document.getElementById('taskTextID').innerHTML = "";
-
-            }
-            if (this.id == 'taskId') {
-                document.getElementById('taskId').style.display = 'none';
-                document.getElementById('taskTextID').style.display = 'none';
-            }
-            if (this.id == 'File1') {
-                document.getElementById('File1Id').style.display = 'block';
-                document.getElementById('File1TextID').style.display = 'block';
-                document.getElementById("File1TextID").innerHTML = "Сообщение:406 9915660 05464616061 - 9915660";
-                document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10"
-            }
-            if (this.id == "File1Id") {
-                document.getElementById('File1Id').style.display = 'none';
-                document.getElementById('File1TextID').style.display = 'none';
-                document.getElementById("File1TextID2").style.display = "none";
-
-            }
-            if (this.id == 'checkid') {
-                function checkAnswer() {
+            if((this.id=='checkid')&&(document.getElementById(this.id).value!=undefined))
+            {
+                answer['ip'] = document.getElementById('ip').value;
+                answer['d'] = document.getElementById('d').value;
+                answer['N'] = document.getElementById('N').value;
+                answer['e'] = document.getElementById('e').value;
+                function checkAnswer(){
                     fetch("http://localhost:5000/labs1/check/", {
                         method: "POST",
                         headers: {
-                            'Content-Type': 'application/json'
+                        'Content-Type': 'application/json'
                         },
-
+                    
                         //make sure to serialize your JSON body
-                        body: JSON.stringify(
-                            {
-                                "ip": document.getElementById('ip').value,
-                                "d": document.getElementById('d').value,
-                                "N": document.getElementById('N').value,
-                                "e": document.getElementById('e').value
-                            })
+                        body: JSON.stringify(answer)
                     })
                 }
+                checkAnswer();
+                if(answer!={}){
+                    getQuest();
+                }
             }
-        }
-    }
+            else if(this.id=='checkid') {
+                console.log('Error:не все поля заполненны.')
+            }
+            console.log(answer); 
+        } 
+}
 
-
-    class Rect1 extends Start {
-        constructor() {
+    class Rect1 extends Start{
+        constructor(){
             super()
-            this.defaultSet = {
-                x: 0,
-                y: 0,
-                width: 850,
-                height: 850,
-                fill: '#f5f5f5',
-                class: 'rect1'
+            this.defaultSet ={
+                x:0,
+                y:0,
+                width:850,
+                height:850,
+                fill:'#f5f5f5',
+                class:'rect1'
             }
             //this.constract();
-            this.connection(rect1HandlerUrl, 1);
+            this.connection('http://localhost:5000/labs1/1');
+            //this.on =() => {
+                    //console.log(this);
+                /* if(this.jsonObj.Rect1=='task'){
+                    this.active('taskId');
+                    this.active('taskTextID');
+                    document.getElementById('taskTextID').innerHTML ="hi";
+                    console.log(this);
+                }
+                if(this.id=='taskId'){
+                    this.deactive('taskId');
+                    this.deactive('taskTextID');
+                } */
+            //}  
         }
-
-        constract(name) {
-            return this.createElementSVG(name, this.defaultSet);
+        constract(name){
+            return this.createElementSVG(name,this.defaultSet);
         }
-
-        /* on(){
-            var x = document.getElementById('12');
-            x.addEventListener(onclick,function(){
-                return console.log(this);
-            })
-        } */
-        createElementSVG(name, attributes) {
+        createElementSVG(name, attributes){
             this.NS = "http://www.w3.org/2000/svg";
             this.NS1 = "http://www.w3.org/1999/xlink";
             this.element = document.createElementNS(this.NS, name);
-            if (name == "svg") {
+            if(name=="svg")
+            {
                 document.getElementById("widget").appendChild(this.element);
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
-            if (attributes) {
-                for (var k in attributes) {
-                    if ((name == "text") && (attributes[k] == "ip1")) {
+            if (attributes){
+                for (var k in attributes){
+                    if((name=="text")&&(attributes[k]=="ip1")){
                         this.element.innerHTML = '192.168.0.3'
                     }
-                    if ((name == "text") && (attributes[k] == "ip2")) {
+                    if((name=="text")&&(attributes[k]=="ip2")){
                         this.element.innerHTML = '192.168.0.4'
                     }
-                    if ((name == "text") && (attributes[k] == "ip3")) {
+                    if((name=="text")&&(attributes[k]=="ip3")){
                         this.element.innerHTML = '192.168.0.5'
                     }
-                    if (attributes[k] == "image") {
-                        this.element.setAttributeNS(this.NS1, 'href', attributes[k]);
+                    if(attributes[k]=="image"){
+                        this.element.setAttributeNS(this.NS1,'href',attributes[k]);
                         this.element.onclick = this.on;
                     }
-                    else if (attributes[k] != "image") {
-                        this.element.setAttributeNS(null, [k], attributes[k]);
+                    else if (attributes[k]!="image"){
+                        this.element.setAttributeNS(null,[k],attributes[k]);
                         this.element.onclick = this.on;
                     }
                 }
-                return this.element;
+            return this.element;
             }
         }
-
-        appendNodeSVG(element) {
+        appendNodeSVG(element){
             //var test =  document.querySelector('g');
-            // var test1= document.createElement('g');
-            // test.setAttribute("class","test1");
+        // var test1= document.createElement('g');
+        // test.setAttribute("class","test1");
             var svg = document.querySelector('svg');
             //svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
-            /*         if(this.element.classList=="rect1"){
-                        document.querySelector('svg').appendChild(element);
-                    } */
+    /*         if(this.element.classList=="rect1"){
+                document.querySelector('svg').appendChild(element);
+            } */
             //test.appendChild(test1);
             return svg.appendChild(element);
         }
-
-        addElementSVG(amount, jsonObj) {
+        addElementSVG(amount,jsonObj){
             // console.log(amount,jsonObj);
-            for (amount in jsonObj) {
-                //console.log(jsonObj[amount].type,jsonObj[amount]);
-                this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type, jsonObj[amount]));
-            }
+            for(amount in jsonObj)
+                {
+                    //console.log(jsonObj[amount].type,jsonObj[amount]);
+                    this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type,jsonObj[amount]));
+                }
         }
-    }
+    } 
 
-    class Rect2 extends Start {
-        constructor() {
+    class Rect2 extends Start{
+        constructor(){
             super();
-            this.connection(rect1HandlerUrl, 1);
+            this.connection('http://localhost:5000/labs1/2');
         }
-
-        createElementSimple(name, attributes) {
+        createElementSimple(name,attributes){
             this.element = document.createElement(name);
-            if (name === 'button') {
-                this.element.innerHTML = "Отправить на проверку";
-            }
-
-            if (attributes) {
-                for (var k in attributes) {
-                    this.element.setAttribute([k], attributes[k]);
+            if(name==='button')
+                {
+                    this.element.innerHTML = "Отправить на проверку";
+                }
+            
+            if (attributes){
+                for (var k in attributes){
+                    this.element.setAttribute([k],attributes[k]);
                     this.element.onclick = this.on;
                 }
-                return this.element;
+            return this.element;
             }
         }
-
-        addElement(amount, jsonObj) {
-            for (amount in jsonObj) {
-                //console.log(jsonObj[amount].type);
-                this.appendNode(this.createElementSimple(jsonObj[amount].type, jsonObj[amount]));
-            }
+        addElement(amount,jsonObj){
+            for(amount in jsonObj)
+                {
+                    //console.log(jsonObj[amount].type);
+                    this.appendNode(this.createElementSimple(jsonObj[amount].type,jsonObj[amount]));
+                }
         }
-
-        appendNode(element) {
+        appendNode(element){
             return document.getElementById('widget').appendChild(element);
         }
     }
-
-    class Rect3 extends Rect2 {
-        constructor() {
+    class Rect3 extends Rect2{
+        constructor(){
             super();
         }
     }
