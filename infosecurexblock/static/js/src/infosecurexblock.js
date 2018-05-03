@@ -21,7 +21,6 @@ function InfoSecureXBlock(runtime, element) {
     class Start {
 
         constructor() {
-            var self = this;
             this.star = () => {
                 var rect1 = new Rect1();
                 var rect2 = new Rect2();
@@ -52,6 +51,7 @@ function InfoSecureXBlock(runtime, element) {
         //         }
         //     })
         // }
+        var self = this;
 
         connection(handler, labId) {
 
