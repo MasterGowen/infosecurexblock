@@ -13,55 +13,55 @@ function InfoSecureXBlock(runtime, element) {
             }
         }
 
-        // connection(nameFetch) {
-        //     var fetchResult = fetch(nameFetch, {mode: 'cors', method: 'get', dataType: 'json'});
-        //
-        //     async function fetchAsync() {
-        //         var response = await fetchResult;
-        //         var data = await response.json();
-        //         return data;
-        //     }
-        //
-        //     fetchAsync().then(data => {
-        //         this.jsonObj = data;
-        //         if (this.jsonObj.Rect1) {
-        //             this.amount = Object.keys(this.jsonObj.Rect1).length;
-        //             //console.log(this.amount,this.jsonObj.Rect1);
-        //             this.addElementSVG(this.amount, this.jsonObj.Rect1);
-        //         }
-        //         if (this.jsonObj.Rect2) {
-        //             this.amount = Object.keys(this.jsonObj.Rect2).length;
-        //             this.addElement(this.amount, this.jsonObj.Rect2);
-        //         }
-        //     })
-        // }
+        connection(nameFetch, labId) {
+            var fetchResult = fetch(nameFetch + "?lab_id=" + labId, {mode: 'cors', method: 'get', dataType: 'json'});
 
-        connection(handler, labId) {
-            var self = this;
-            function success(handler) {
-                console.log("self:", self)
-                self.jsonObj = result;
-                if (self.jsonObj.Rect1) {
-                    self.amount = Object.keys(self.jsonObj.Rect1).length;
-                    //console.log(this.amount,this.jsonObj.Rect1);
-                    self.addElementSVG(self.amount, self.jsonObj.Rect1);
-                }
-                if (self.jsonObj.Rect2) {
-                    self.amount = Object.keys(self.jsonObj.Rect2).length;
-                    self.addElement(self.amount, self.jsonObj.Rect2);
-                }
+            async function fetchAsync() {
+                var response = await fetchResult;
+                var data = await response.json();
+                return data;
             }
-            (function () {
-                $.ajax({
-                    type: "POST",
-                    url: handler,
-                    data: {"lab_id": labId},
-                    success: success
-                });
 
-            })()
-
+            fetchAsync().then(data => {
+                this.jsonObj = data;
+                if (this.jsonObj.Rect1) {
+                    this.amount = Object.keys(this.jsonObj.Rect1).length;
+                    //console.log(this.amount,this.jsonObj.Rect1);
+                    this.addElementSVG(this.amount, this.jsonObj.Rect1);
+                }
+                if (this.jsonObj.Rect2) {
+                    this.amount = Object.keys(this.jsonObj.Rect2).length;
+                    this.addElement(this.amount, this.jsonObj.Rect2);
+                }
+            })
         }
+
+        // connection(handler, labId) {
+        //     var self = this;
+        //     function success(handler) {
+        //         console.log("self:", self)
+        //         self.jsonObj = result;
+        //         if (self.jsonObj.Rect1) {
+        //             self.amount = Object.keys(self.jsonObj.Rect1).length;
+        //             //console.log(this.amount,this.jsonObj.Rect1);
+        //             self.addElementSVG(self.amount, self.jsonObj.Rect1);
+        //         }
+        //         if (self.jsonObj.Rect2) {
+        //             self.amount = Object.keys(self.jsonObj.Rect2).length;
+        //             self.addElement(self.amount, self.jsonObj.Rect2);
+        //         }
+        //     }
+        //     (function () {
+        //         $.ajax({
+        //             type: "POST",
+        //             url: handler,
+        //             data: {"lab_id": labId},
+        //             success: success
+        //         });
+        //
+        //     })()
+        //
+        // }
 
         /*     createTextNode(text,attributes){
                 this.element = document.createElementNS("http://www.w3.org/2000/svg",'text');

@@ -69,9 +69,9 @@ class InfoSecureXBlock(XBlock):
     # than one handler, or you may not need any handlers at all.
     @XBlock.handler
     def rect1(self, data, suffix=''):
-        # dir = os.path.dirname(os.path.realpath(__file__))
-        # file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.params["lab_id"])))).read()
-        return Response(body=json.dumps(data), charset='UTF-8',
+        dir = os.path.dirname(os.path.realpath(__file__))
+        file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.GET["lab_id"])))).read()
+        return Response(body=file, charset='UTF-8',
                         content_type='text/plain')
 
 
