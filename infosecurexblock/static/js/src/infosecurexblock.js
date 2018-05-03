@@ -53,7 +53,7 @@ function InfoSecureXBlock(runtime, element) {
         //     })
         // }
 
-        connection(handler) {
+        connection(handler, labId) {
             function success(result) {
                 console.log(result)
                 this.jsonObj = result;
@@ -71,7 +71,7 @@ function InfoSecureXBlock(runtime, element) {
                 $.ajax({
                     type: "POST",
                     url: handler,
-                    data: JSON.stringify({"ggg": "ggg"}),
+                    data: JSON.stringify({"lab_id": labId}),
                     success: success
                 });
 
@@ -170,7 +170,7 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             //this.constract();
-            this.connection(rect1HandlerUrl);
+            this.connection(rect1HandlerUrl, 1);
         }
 
         constract(name) {
@@ -240,7 +240,7 @@ function InfoSecureXBlock(runtime, element) {
     class Rect2 extends Start {
         constructor() {
             super();
-            this.connection(rect1HandlerUrl);
+            this.connection(rect1HandlerUrl, 1);
         }
 
         createElementSimple(name, attributes) {

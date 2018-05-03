@@ -68,22 +68,23 @@ class InfoSecureXBlock(XBlock):
     # than one handler, or you may not need any handlers at all.
     @XBlock.json_handler
     def rect1(self, data, suffix=''):
-        return {"count": "Я ответ"}
+        return open('rect{0}.json'.format(data["lab_id"]), encoding='utf-8').read()
 
-    # TO-DO: change this to create the scenarios you'd like to see in the
-    # workbench while developing your XBlock.
-    @staticmethod
-    def workbench_scenarios():
-        """A canned scenario for display in the workbench."""
-        return [
-            ("InfoSecureXBlock",
-             """<infosecurexblock/>
-             """),
-            ("Multiple InfoSecureXBlock",
-             """<vertical_demo>
-                <infosecurexblock/>
-                <infosecurexblock/>
-                <infosecurexblock/>
-                </vertical_demo>
-             """),
-        ]
+
+# TO-DO: change this to create the scenarios you'd like to see in the
+# workbench while developing your XBlock.
+@staticmethod
+def workbench_scenarios():
+    """A canned scenario for display in the workbench."""
+    return [
+        ("InfoSecureXBlock",
+         """<infosecurexblock/>
+         """),
+        ("Multiple InfoSecureXBlock",
+         """<vertical_demo>
+            <infosecurexblock/>
+            <infosecurexblock/>
+            <infosecurexblock/>
+            </vertical_demo>
+         """),
+    ]
