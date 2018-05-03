@@ -16,7 +16,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         connection(nameFetch) {
-            var fetchResult = fetch(nameFetch, {mode: 'cors', method: 'post', dataType: 'json'});
+            var fetchResult = fetch(nameFetch, {mode: 'cors', method: 'get', dataType: 'json'});
 
             async function fetchAsync() {
                 var response = await fetchResult;
