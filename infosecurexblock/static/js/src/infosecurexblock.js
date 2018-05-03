@@ -71,7 +71,7 @@ function InfoSecureXBlock(runtime, element) {
                 $.ajax({
                     type: "POST",
                     url: handler,
-                    data: JSON.stringify({"lab_id": labId}),
+                    data: {"lab_id": labId},
                     success: success
                 });
 
