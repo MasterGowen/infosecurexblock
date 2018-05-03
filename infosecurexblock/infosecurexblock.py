@@ -69,7 +69,7 @@ class InfoSecureXBlock(XBlock):
     @XBlock.handler
     def rect1(self, data, suffix=''):
         body = json.dumps(json.load(open('rect{0}.json'.format(data["lab_id"]))))
-        return Response(body=body, charset='UTF-8',
+        return Response(body=json.dumps({"1": 2}), charset='UTF-8',
                         content_type='text/plain')
 
 
