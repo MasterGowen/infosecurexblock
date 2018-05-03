@@ -72,7 +72,7 @@ class InfoSecureXBlock(XBlock):
         import os
         dir = os.path.dirname(os.path.realpath(__file__))
         # body = json.dumps({"cwd": dir})
-        file = open(os.path.join(dir, ('/static/js/src/rect{0}.json'.format(lab_id)))).read()
+        file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(lab_id)))).read()
         body = json.loads(file)
         body = json.dumps(body)
 
