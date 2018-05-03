@@ -1,7 +1,5 @@
 /* Javascript for InfoSecureXBlock. */
 function InfoSecureXBlock(runtime, element) {
-    alert('ok')
-
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
 
     function success_check(result) {

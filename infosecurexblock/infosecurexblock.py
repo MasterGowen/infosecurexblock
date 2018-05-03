@@ -68,7 +68,6 @@ class InfoSecureXBlock(XBlock):
     # than one handler, or you may not need any handlers at all.
     @XBlock.handler
     def rect1(self, data, suffix=''):
-        data = json.loads(data)
         return open('rect{0}.json'.format(data["lab_id"])).read()
 
 
