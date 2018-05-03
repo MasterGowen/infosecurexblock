@@ -72,8 +72,9 @@ class InfoSecureXBlock(XBlock):
         file = open('rect{0}.json'.format(lab_id)
                     )
         body = json.load(file)
+        body = json.dumps(body)
 
-        return Response(body=json.dumps(body), charset='UTF-8',
+        return Response(body=body, charset='UTF-8',
                         content_type='text/plain')
 
 
