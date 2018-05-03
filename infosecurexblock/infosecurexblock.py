@@ -66,8 +66,8 @@ class InfoSecureXBlock(XBlock):
 
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
-    # @XBlock.json_handler
-    def rect1(self, suffix=''):
+    @XBlock.json_handler
+    def rect1(self, data, suffix=''):
         return {"count": "Я ответ"}
 
     # TO-DO: change this to create the scenarios you'd like to see in the

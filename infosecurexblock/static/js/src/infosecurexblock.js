@@ -3,6 +3,19 @@ function InfoSecureXBlock(runtime, element) {
     alert('ok')
 
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
+
+    function success_check(result){alert('success')}
+
+     $(element).find('.Check').bind('click', function() {
+        $.ajax({
+            type: "POST",
+            url: rect1HandlerUrl,
+            data: {},
+            success: success_check
+        });
+
+    });
+
     console.log(rect1HandlerUrl)
 
     class Start {
