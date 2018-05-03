@@ -117,8 +117,7 @@ function InfoSecureXBlock(runtime, element) {
     }
 
 
-
-class Rect1 extends Start {
+    class Rect1 extends Start {
         constructor() {
             super()
             this.defaultSet = {
@@ -212,7 +211,6 @@ class Rect1 extends Start {
      }*/
 
 
-
     // $('p', element).click(function (eventObject) {
     //     $.ajax({
     //         type: "POST",
@@ -222,5 +220,11 @@ class Rect1 extends Start {
     //     });
     // });
 
+(function () {
+    /* Here's where you'd do things on page load. */
+    var test = new Start();
+    test.star();
+})();
 
 }
+
