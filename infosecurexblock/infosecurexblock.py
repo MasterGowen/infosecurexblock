@@ -4,8 +4,6 @@ import pkg_resources
 import datetime
 import json
 
-import django.utils.translation
-
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String
 from xblock.fragment import Fragment
