@@ -3,6 +3,7 @@
 import pkg_resources
 import datetime
 import json
+import os
 
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String
@@ -69,14 +70,13 @@ class InfoSecureXBlock(XBlock):
     @XBlock.handler
     def rect1(self, data, suffix=''):
         lab_id = data.params["lab_id"]
-        import os
+
         dir = os.path.dirname(os.path.realpath(__file__))
-        # body = json.dumps({"cwd": dir})
         file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(lab_id)))).read()
         body = json.loads(file)
         body = json.dumps(body)
 
-        return Response(body=body, charset='UTF-8',
+        return Response(body=file, charset='UTF-8',
                         content_type='text/plain')
 
 
