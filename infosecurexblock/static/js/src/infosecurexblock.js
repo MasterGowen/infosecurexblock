@@ -10,7 +10,7 @@ function InfoSecureXBlock(runtime, element) {
         $.ajax({
             type: "POST",
             url: rect1HandlerUrl,
-            data: "ggg",
+            data: JSON.stringify({"ggg": "ggg"}),
             success: success_check
         });
 
