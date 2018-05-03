@@ -57,7 +57,7 @@ class InfoSecureXBlock(XBlock):
         )
         js_urls = (
             "static/js/src/infosecurexblock.js",
-            "static/js/src/main.js",
+            # "static/js/src/main.js",
         )
         css_urls = ("static/css/infosecurexblock.css",)
         load_resources(js_urls, css_urls, fragment)
