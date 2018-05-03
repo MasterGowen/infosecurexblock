@@ -70,8 +70,9 @@ class InfoSecureXBlock(XBlock):
     def rect1(self, data, suffix=''):
         lab_id = data.params["lab_id"]
         import os
-        body = json.dumps({"cwd": os.getcwd()})
-        # file = open('rect{0}.json'.format(lab_id)).read()
+        dir = os.path.dirname(os.path.realpath(__file__))
+        body = json.dumps({"cwd": dir})
+        # file = open('../edxwork/infosecurexblock/infosecurexblock/rect{0}.json'.format(lab_id)).read()
         # body = json.loads(file)
         # body = json.dumps(body)
 
