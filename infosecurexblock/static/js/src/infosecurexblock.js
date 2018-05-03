@@ -1,25 +1,9 @@
 /* Javascript for InfoSecureXBlock. */
 function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
-
-    function success_check(result) {
-        alert('success')
-    }
-
-    $(element).find('.Check').bind('click', function () {
-        $.ajax({
-            type: "POST",
-            url: rect1HandlerUrl,
-            data: JSON.stringify({"ggg": "ggg"}),
-            success: success_check
-        });
-
-    });
-
     console.log(rect1HandlerUrl)
 
     class Start {
-
         constructor() {
             this.star = () => {
                 var rect1 = new Rect1();
@@ -51,11 +35,10 @@ function InfoSecureXBlock(runtime, element) {
         //         }
         //     })
         // }
-        var self = this;
 
         connection(handler, labId) {
-
-            function success(result) {
+            var self = this;
+            function success(handler) {
                 console.log("self:", self)
                 self.jsonObj = result;
                 if (self.jsonObj.Rect1) {
