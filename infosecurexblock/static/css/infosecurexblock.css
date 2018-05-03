@@ -1,0 +1,9 @@
+/* CSS for InfoSecureXBlock */
+
+.infosecurexblock_block .count {
+    font-weight: bold;
+}
+
+.infosecurexblock_block p {
+    cursor: pointer;
+}
