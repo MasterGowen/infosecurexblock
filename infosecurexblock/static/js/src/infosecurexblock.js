@@ -40,15 +40,14 @@ function InfoSecureXBlock(runtime, element) {
              var self = this;
              function success(handler) {
                  console.log("self:", self)
-                 self.jsonObj = result;
-                 if (self.jsonObj.Rect1) {
-                     self.amount = Object.keys(self.jsonObj.Rect1).length;
+                 if (self.Rect1) {
+                     self.amount = Object.keys(self.Rect1).length;
                      //console.log(this.amount,this.jsonObj.Rect1);
-                     self.addElementSVG(self.amount, self.jsonObj.Rect1);
+                     self.addElementSVG(self.amount, self.Rect1);
                  }
-                 if (self.jsonObj.Rect2) {
-                     self.amount = Object.keys(self.jsonObj.Rect2).length;
-                     self.addElement(self.amount, self.jsonObj.Rect2);
+                 if (self.Rect2) {
+                     self.amount = Object.keys(self.Rect2).length;
+                     self.addElement(self.amount, self.Rect2);
                  }
              }
              (function () {
