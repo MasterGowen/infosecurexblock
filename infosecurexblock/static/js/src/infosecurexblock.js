@@ -13,7 +13,7 @@ function InfoSecureXBlock(runtime, element) {
             }
         }
 
-        connection(nameFetch, labId) {
+/*         connection(nameFetch, labId) {
             var fetchResult = fetch(nameFetch + "?lab_id=" + labId, {mode: 'cors', method: 'get', dataType: 'json'});
 
             async function fetchAsync() {
@@ -34,34 +34,34 @@ function InfoSecureXBlock(runtime, element) {
                     this.addElement(this.amount, this.jsonObj.Rect2);
                 }
             })
-        }
+        } */
 
-        // connection(handler, labId) {
-        //     var self = this;
-        //     function success(handler) {
-        //         console.log("self:", self)
-        //         self.jsonObj = result;
-        //         if (self.jsonObj.Rect1) {
-        //             self.amount = Object.keys(self.jsonObj.Rect1).length;
-        //             //console.log(this.amount,this.jsonObj.Rect1);
-        //             self.addElementSVG(self.amount, self.jsonObj.Rect1);
-        //         }
-        //         if (self.jsonObj.Rect2) {
-        //             self.amount = Object.keys(self.jsonObj.Rect2).length;
-        //             self.addElement(self.amount, self.jsonObj.Rect2);
-        //         }
-        //     }
-        //     (function () {
-        //         $.ajax({
-        //             type: "POST",
-        //             url: handler,
-        //             data: {"lab_id": labId},
-        //             success: success
-        //         });
-        //
-        //     })()
-        //
-        // }
+         connection(handler, labId) {
+             var self = this;
+             function success(handler) {
+                 console.log("self:", self)
+                 self.jsonObj = result;
+                 if (self.jsonObj.Rect1) {
+                     self.amount = Object.keys(self.jsonObj.Rect1).length;
+                     //console.log(this.amount,this.jsonObj.Rect1);
+                     self.addElementSVG(self.amount, self.jsonObj.Rect1);
+                 }
+                 if (self.jsonObj.Rect2) {
+                     self.amount = Object.keys(self.jsonObj.Rect2).length;
+                     self.addElement(self.amount, self.jsonObj.Rect2);
+                 }
+             }
+             (function () {
+                 $.ajax({
+                     type: "POST",
+                     url: handler,
+                     data: {"lab_id": labId},
+                     success: success
+                 });
+        
+             })()
+        
+         }
         on(){
             //console.log(this);
             var elem;
