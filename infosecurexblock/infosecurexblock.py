@@ -60,21 +60,14 @@ class InfoSecureXBlock(XBlock):
             "static/js/src/infosecurexblock.js",
             # "static/js/src/main.js",
         )
-        img_urls = (
-            "static/images/comp.svg",
-            "static/images/transfer.svg",
-            "static/images/monitor.svg",
-            "static/images/server-3.svg",
-            "static/images/file.svg",
             # comp_icon=self.runtime.local_resource_url(self, 'static/images/comp.svg'),
             # transfer_icon=self.runtime.local_resource_url(self, 'static/images/transfer.svg'),
             # monitor_icon=self.runtime.local_resource_url(self, 'static/images/monitor.svg'),
             # server_3_icon=self.runtime.local_resource_url(self, 'static/images/server-3.svg'),
             # file_icon=self.runtime.local_resource_url(self, 'static/images/file.svg'),
             # wifi_icon=self.runtime.local_resource_url(self, 'static/images/wifi.svg'),
-        )
         css_urls = ("static/css/infosecurexblock.css",)
-        load_resources(js_urls, css_urls, img_urls, fragment)
+        load_resources(js_urls, css_urls, fragment)
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 

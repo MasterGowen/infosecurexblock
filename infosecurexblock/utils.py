@@ -17,7 +17,7 @@ def load_resource(resource_path):
             pass
 
 
-def load_resources(js_urls, css_urls, img_urls, fragment):
+def load_resources(js_urls, css_urls, fragment):
     """
     Загрузка локальных статических ресурсов.
     """
@@ -36,15 +36,6 @@ def load_resources(js_urls, css_urls, img_urls, fragment):
             fragment.add_css_url(self.runtime.local_resource_url(self, css_url))
         elif css_url.startswith('static/'):
             fragment.add_css(load_resource(css_url))
-        else:
-            pass
-
-    for img_url in img_urls:
-
-        if img_url.startswith('public/'):
-            fragment.add_img_url(self.runtime.local_resource_url(self, img_url))
-        elif img_url.startswith('static/'):
-            fragment.add_img(load_resource(img_url))
         else:
             pass
 def render_template(template_path, context=None):

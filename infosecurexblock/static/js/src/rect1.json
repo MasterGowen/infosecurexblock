@@ -79,7 +79,7 @@
             "height": "100",
             "color": "#11111",
             "id": "6",
-            "href": "images/monitor.svg"
+            "background-image": "url('images/monitor.svg')"
         },
         "LineComDB":
         {
