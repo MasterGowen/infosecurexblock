@@ -9,10 +9,10 @@
 }
 
 #widget {
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
     height: 1050px;
     width: 850px;
-    display: bloc;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     font-family: "Segoe UI";
