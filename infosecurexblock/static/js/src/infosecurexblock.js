@@ -39,7 +39,7 @@ function InfoSecureXBlock(runtime, element) {
          connection(handler, labId) {
              var self = this;
              function success(handler) {
-                 console.log("self:", self.Rect1)
+                 console.log("self:", self.Rect1);
                  if (self.Rect1) {
                      self.amount = Object.keys(self.Rect1).length;
                      //console.log(this.amount,this.jsonObj.Rect1);
