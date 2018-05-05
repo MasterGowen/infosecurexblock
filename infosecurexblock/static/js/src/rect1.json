@@ -38,7 +38,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "1",
-                "href": "/images/monitor.svg"
+                "href": "images/monitor.svg"
             },
             "transfer":{
                 "type": "image",
@@ -48,7 +48,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "2",
-                "href": "/images/transfer.svg"
+                "href": "images/transfer.svg"
             },
             "db":{
                 "type": "image",
@@ -69,7 +69,7 @@
             "height": "100",
             "color": "#11111",
             "id": "4",
-            "href": "/images/monitor.svg"
+            "href": "images/monitor.svg"
         },
         "comp3":{
             "type": "image",
@@ -79,7 +79,7 @@
             "height": "100",
             "color": "#11111",
             "id": "6",
-            "href": "/images/monitor.svg"
+            "href": "images/monitor.svg"
         },
         "LineComDB":
         {
