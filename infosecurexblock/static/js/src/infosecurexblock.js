@@ -177,7 +177,7 @@ function InfoSecureXBlock(runtime, element) {
                 class:'rect1'
             }
             //this.constract();
-            this.connection('http://localhost:5000/labs1/1');
+            this.connection(rect1HandlerUrl,1);
             //this.on =() => {
                     //console.log(this);
                 /* if(this.jsonObj.Rect1=='task'){
@@ -252,7 +252,7 @@ function InfoSecureXBlock(runtime, element) {
     class Rect2 extends Start{
         constructor(){
             super();
-            this.connection('http://localhost:5000/labs1/2');
+            this.connection(rect1HandlerUrl,2);
         }
         createElementSimple(name,attributes){
             this.element = document.createElement(name);
