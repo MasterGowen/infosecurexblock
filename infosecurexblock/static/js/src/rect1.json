@@ -34,10 +34,10 @@
     "comp2":
         {
         "type": "image",
-        "x": "370",
-        "y": "500",
-        "width": "100",
-        "height": "100",
+        "x": 370,
+        "y": 500,
+        "width": 100,
+        "height": 100,
         "color": "#11111",
         "id": "comp2",
         "href": "images/monitor.svg"
@@ -50,7 +50,7 @@
         "height": "100",
         "color": "#11111",
         "id": "comp3",
-        "href": "images/monitor.svg"
+        "xlink:href": "images/monitor.svg"
     },
     "ip1":{
         "type":"text",
