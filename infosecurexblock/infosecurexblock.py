@@ -51,16 +51,13 @@ class InfoSecureXBlock(XBlock):
         """
         context = {
             "display_name": self.display_name,
-        }
-        href_context = {
             "href": self.href,
         }
         fragment = Fragment()
         fragment.add_content(
             render_template(
                 "static/html/infosecurexblock.html",
-                context,
-                href_context
+                context
             )
         )
         js_urls = (
