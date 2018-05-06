@@ -69,7 +69,7 @@
             "height": "100",
             "color": "#11111",
             "id": "4",
-            "background-image": "url('{{monitor_icon}}')"
+            "href": "{{href}}"
         },
         "comp3":{
             "type": "image",

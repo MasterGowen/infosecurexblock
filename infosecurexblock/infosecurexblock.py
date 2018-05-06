@@ -8,7 +8,6 @@ import os
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String
 from xblock.fragment import Fragment
-from xblockutils.resources import ResourceLoader
 
 from webob.response import Response
 
@@ -20,7 +19,6 @@ from .utils import (
     load_resources,
 )
 
-loader = ResourceLoader(__name__)
 
 class InfoSecureXBlock(XBlock):
     """
@@ -29,6 +27,9 @@ class InfoSecureXBlock(XBlock):
 
     # Fields are defined on the class.  You can access them in your code as
     # self.<fieldname>.
+    href = String(
+        scope=Scope.String
+    )
 
     # TO-DO: delete count, and define your own fields.
     count = Integer(
@@ -51,29 +52,31 @@ class InfoSecureXBlock(XBlock):
         context = {
             "display_name": self.display_name,
         }
+        href_context = {
+            "href": self.href,
+        }
         fragment = Fragment()
         fragment.add_content(
             render_template(
                 "static/html/infosecurexblock.html",
-                context
+                context,
+                href_context
             )
         )
         js_urls = (
             "static/js/src/infosecurexblock.js",
             # "static/js/src/main.js",
         )
-        css_context = dict(
-             comp_icon=self.runtime.local_resource_url(self, 'static/images/comp.svg'),
-             transfer_icon=self.runtime.local_resource_url(self, 'static/images/transfer.svg'),
-             monitor_icon=self.runtime.local_resource_url(self, 'static/images/monitor.svg'),
-             server_3_icon=self.runtime.local_resource_url(self, 'static/images/server-3.svg'),
-             file_icon=self.runtime.local_resource_url(self, 'static/images/file.svg'),
-             wifi_icon=self.runtime.local_resource_url(self, 'static/images/wifi.svg'),
-        )
-        css = loader.render_template(css_context)
-        css_urls = ("static/css/infosecurexblock.css",)
+        # css_context = dict(
+        #      comp_icon=self.runtime.local_resource_url(self, "static/images/comp.svg"),
+        #      transfer_icon=self.runtime.local_resource_url(self, "static/images/transfer.svg"),
+        #      monitor_icon=self.runtime.local_resource_url(self, "static/images/monitor.svg"),
+        #      server_3_icon=self.runtime.local_resource_url(self, "static/images/server-3.svg"),
+        #      file_icon=self.runtime.local_resource_url(self, "static/images/file.svg"),
+        #      wifi_icon=self.runtime.local_resource_url(self, "static/images/wifi.svg"),
+        # )
+        css_urls = ("static/css/infosecurexblock.css",#css_context)
         load_resources(js_urls, css_urls, fragment)
-        fragment.add_css(css)
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 
