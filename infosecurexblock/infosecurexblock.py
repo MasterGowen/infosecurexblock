@@ -8,6 +8,7 @@ import os
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String
 from xblock.fragment import Fragment
+from xblockutils.resources import ResourceLoader
 
 from webob.response import Response
 
@@ -19,6 +20,7 @@ from .utils import (
     load_resources,
 )
 
+loader = ResourceLoader(__name__)
 
 class InfoSecureXBlock(XBlock):
     """
