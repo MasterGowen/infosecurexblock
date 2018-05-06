@@ -38,6 +38,7 @@ def load_resources(js_urls, css_urls, fragment):
             fragment.add_css(load_resource(css_url))
         else:
             pass
+
 def render_template(template_path, context=None):
     """
     Evaluate a template by resource path, applying the provided context.
