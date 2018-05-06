@@ -29,7 +29,8 @@ class InfoSecureXBlock(XBlock):
     # self.<fieldname>.
     href = String(
         scope=Scope.settings,
-        help = "URL for MP3 file to play"
+        help = "URL for MP3 file to play",
+        default="/images/server-3.svg"
     )
 
     # TO-DO: delete count, and define your own fields.
@@ -59,7 +60,7 @@ class InfoSecureXBlock(XBlock):
             render_template(
                 "static/html/infosecurexblock.html",
                 context
-            )
+            ).format(href = self.href)
         )
         js_urls = (
             "static/js/src/infosecurexblock.js",
