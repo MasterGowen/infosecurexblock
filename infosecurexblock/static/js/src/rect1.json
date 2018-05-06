@@ -33,12 +33,14 @@
         },
     "comp2":
         {
+        "type": "image",
         "x": "370",
         "y": "500",
         "width": "100",
         "height": "100",
         "color": "#11111",
-        "id": "comp2"
+        "id": "comp2",
+        "href": "images/monitor.svg"
     },
     "comp3":{
         "type": "image",

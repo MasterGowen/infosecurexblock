@@ -215,7 +215,7 @@ function InfoSecureXBlock(runtime, element) {
                         this.element.innerHTML = '192.168.0.5'
                     }
                     if(attributes[k]=="image"){
-                        this.element.setAttributeNS(this.NS1,'href',attributes[k]);
+                        this.element.setAttributeNS(this.NS1,'xlink:href',attributes[k]);
                         this.element.onclick = this.on;
                     }
                     else if (attributes[k]!="image"){
