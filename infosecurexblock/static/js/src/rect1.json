@@ -44,10 +44,10 @@
     },
     "comp3":{
         "type": "image",
-        "x": "580",
-        "y": "500",
-        "width": "100",
-        "height": "100",
+        "x": 580,
+        "y": 500,
+        "width": 100,
+        "height": 100,
         "color": "#11111",
         "id": "comp3",
         "xlink:href": "images/monitor.svg"
