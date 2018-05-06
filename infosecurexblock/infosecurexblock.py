@@ -28,7 +28,8 @@ class InfoSecureXBlock(XBlock):
     # Fields are defined on the class.  You can access them in your code as
     # self.<fieldname>.
     href = String(
-        scope=Scope.String
+        scope=Scope.settings,
+        help = "URL for MP3 file to play"
     )
 
     # TO-DO: delete count, and define your own fields.
