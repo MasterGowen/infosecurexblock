@@ -27,11 +27,6 @@ class InfoSecureXBlock(XBlock):
 
     # Fields are defined on the class.  You can access them in your code as
     # self.<fieldname>.
-    href = String(
-        scope=Scope.settings,
-        help = "URL for MP3 file to play",
-        default="/images/server-3.svg"
-    )
 
     # TO-DO: delete count, and define your own fields.
     count = Integer(
@@ -53,14 +48,13 @@ class InfoSecureXBlock(XBlock):
         """
         context = {
             "display_name": self.display_name,
-            "href": self.href,
         }
         fragment = Fragment()
         fragment.add_content(
             render_template(
                 "static/html/infosecurexblock.html",
                 context
-            ).format(href = self.href)
+            )
         )
         js_urls = (
             "static/js/src/infosecurexblock.js",

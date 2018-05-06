@@ -38,7 +38,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "1",
-                "href": "images/monitor.svg"
+                "href": "https://imgur.com/a/zkrqot9"
             },
             "transfer":{
                 "type": "image",
@@ -48,7 +48,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "2",
-                "href": "images/transfer.svg"
+                "src": "images/transfer.svg"
             },
             "db":{
                 "type": "image",
@@ -78,7 +78,7 @@
             "width": "100",
             "height": "100",
             "color": "#11111",
-            "id": "6",
+            "id": "comp3",
             "background-image": "url('images/monitor.svg')"
         },
         "LineComDB":
