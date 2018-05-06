@@ -94,3 +94,6 @@ button.Check {
   
 #File1Id{
     display: none;}
+#comp2{
+    background: url('../images/monitor.svg');
+}
