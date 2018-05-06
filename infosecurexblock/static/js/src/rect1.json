@@ -69,7 +69,7 @@
             "height": "100",
             "color": "#11111",
             "id": "4",
-            "href": "{{href}}"
+            "href": "{href}"
         },
         "comp3":{
             "type": "image",
@@ -156,7 +156,7 @@
             "height": "100",
             "color": "#11111",
             "id": "5",
-            "href": "/images/wifi.svg"
+            "href": "../images/wifi.svg"
         }
     }
 }
