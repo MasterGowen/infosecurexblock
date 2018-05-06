@@ -40,7 +40,6 @@
         "height": "100",
         "color": "#11111",
         "id": "comp2",
-        "href": "images/monitor.svg"
     },
     "comp3":{
         "type": "image",
