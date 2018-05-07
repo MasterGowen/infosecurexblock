@@ -60,15 +60,17 @@ class InfoSecureXBlock(XBlock):
             "static/js/src/infosecurexblock.js",
             # "static/js/src/main.js",
         )
-        # css_context = dict(
-        #      comp_icon=self.runtime.local_resource_url(self, "static/images/comp.svg"),
-        #      transfer_icon=self.runtime.local_resource_url(self, "static/images/transfer.svg"),
-        #      monitor_icon=self.runtime.local_resource_url(self, "static/images/monitor.svg"),
-        #      server_3_icon=self.runtime.local_resource_url(self, "static/images/server-3.svg"),
-        #      file_icon=self.runtime.local_resource_url(self, "static/images/file.svg"),
-        #      wifi_icon=self.runtime.local_resource_url(self, "static/images/wifi.svg"),
-        # )
-        css_urls = ("static/css/infosecurexblock.css",)#css_context
+        css_context = dict(
+            comp_icon=self.runtime.local_resource_url(self, "public/images/comp.svg"),
+            transfer_icon=self.runtime.local_resource_url(self, "public/images/transfer.svg"),
+            monitor_icon=self.runtime.local_resource_url(self, "public/images/monitor.svg"),
+            server_3_icon=self.runtime.local_resource_url(self, "public/images/server-3.svg"),
+            file_icon=self.runtime.local_resource_url(self, "public/images/file.svg"),
+            wifi_icon=self.runtime.local_resource_url(self, "public/images/wifi.svg"),
+        )
+        css_urls = (
+            ("static/css/infosecurexblock.css", css_context),
+        )  # css_context
         load_resources(js_urls, css_urls, fragment)
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
@@ -78,7 +80,7 @@ class InfoSecureXBlock(XBlock):
     @XBlock.handler
     def rect1(self, data, suffix=''):
         dir = os.path.dirname(os.path.realpath(__file__))
-        #file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.GET["lab_id"])))).read()
+        # file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.GET["lab_id"])))).read()
         file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.params["lab_id"])))).read()
         return Response(body=file, charset='UTF-8',
                         content_type='text/plain')

@@ -4,8 +4,9 @@ import pkg_resources
 
 from django.template import Context, Template
 from django.utils.encoding import smart_text
+from xblockutils.resources import ResourceLoader
 
-
+loader = ResourceLoader(__name__)
 def load_resource(resource_path):
         """
         Gets the content of a resource
@@ -31,13 +32,23 @@ def load_resources(js_urls, css_urls, fragment):
             pass
 
     for css_url in css_urls:
+        if isinstance(css_url, str):
+            if css_url.startswith('public/'):
+                fragment.add_css_url(self.runtime.local_resource_url(self, css_url))
+            elif css_url.startswith('static/'):
+                fragment.add_css(load_resource(css_url))
+            else:
+                pass
+        elif isinstance(css_url, tuple):
+            if css_url[0].startswith('public/'):
+                css = loader.render_template(css_url[0], css_url[1])
+                fragment.add_css(css)
+            elif css_url[0].startswith('static/'):
+                fragment.add_css(load_resource(css_url[0]))
+            else:
+                pass
 
-        if css_url.startswith('public/'):
-            fragment.add_css_url(self.runtime.local_resource_url(self, css_url))
-        elif css_url.startswith('static/'):
-            fragment.add_css(load_resource(css_url))
-        else:
-            pass
+
 
 def render_template(template_path, context=None):
     """
