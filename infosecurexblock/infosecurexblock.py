@@ -34,6 +34,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         default=1
     )
 
+    editable_fields = ('display_name', 'task_text', "lab_id")
+
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
         data = pkg_resources.resource_string(__name__, path)
