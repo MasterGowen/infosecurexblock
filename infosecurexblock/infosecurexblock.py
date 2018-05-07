@@ -33,7 +33,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         display_name='Lab ID',
         default=1
     )
-
+    #pipipi
     editable_fields = ('display_name', 'task_text', "lab_id")
 
     def resource_string(self, path):
