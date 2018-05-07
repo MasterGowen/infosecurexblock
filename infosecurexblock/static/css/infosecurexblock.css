@@ -1,10 +1,5 @@
-/* CSS for InfoSecureXBlock */
+/* CSS for InfoSecureXBlock  {{ monitor_icon }}*/
 
-.ppp {
-    height: 50px;
-    width: 50px;
-    background: url("{{ monitor_icon }}") center no-repeat;
-}
 
 .infosecurexblock_block .count {
     font-weight: bold;
