@@ -85,6 +85,67 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         return Response(body=file, charset='UTF-8',
                         content_type='text/plain')
 
+    @XBlock.json_handler
+    def check(self, data, *args):
+        student_json = json.loads(data)
+        student_answer = student_json["answer"]
+        self.answer = data
+
+        def multicheck(student_answer):
+
+            ip = student_answer["ip"]
+            d2 = student_answer["d"]
+            N2 = student_answer["N"]
+            answer0 = student_answer["e"]
+            if ((ip == '') or (d2 == '') or (N2 == '') or (answer0 == '')):
+                jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+
+            else:
+                d2 = int(d2)
+                N2 = int(N2)
+                answer0 = int(answer0)
+                ip2 = ip
+                answer2 = [int(r) for r in list(str(answer0))]
+                dd = IsTheNumberSimple(d2)
+                right = [14, 10, 18, 16, 14]
+                p = 0
+                j = 0
+                k = len(str(answer0))
+                if dd is True:
+                    # if N2 == 10:
+                    while j < k:
+                        right[j] = right[j] ** d2 % N2
+                        j += 1
+                if str(right) == str(answer2):
+                    if ip2 == "192.168.0.4":
+                        jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
+
+                    else:
+                        print('kek')
+                else:
+                    jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+
+
+        def IsTheNumberSimple(n):
+            if n < 2:
+                return False
+            if n == 2:
+                return True
+            l = 2
+            for l in range(n):
+                if n % 2 == 0:
+                    return False
+                else:
+                    return True
+
+        #https://github.com/MasterGowen/MultiEngineXBlock/blob/master/multiengine/multiengine.py
+        #answer_opportunity
+        #self.runtime.publish(self, 'grade', {
+#                 'value': 0 -- 1,
+#                 'max_value': 1,
+# })
+
+
 
 # TO-DO: change this to create the scenarios you'd like to see in the
 # workbench while developing your XBlock.
