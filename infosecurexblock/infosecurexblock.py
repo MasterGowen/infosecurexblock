@@ -17,7 +17,6 @@ from .utils import (
     load_resource,
     render_template,
     load_resources,
-    loader
 )
 
 
@@ -50,38 +49,28 @@ class InfoSecureXBlock(XBlock):
         context = {
             "display_name": self.display_name,
         }
-        # fragment = Fragment()
-        # fragment.add_content(
-        #     render_template(
-        #         "static/html/infosecurexblock.html",
-        #         context
-        #     )
-        # )
-        # js_urls = (
-        #     "static/js/src/infosecurexblock.js",
-        #     # "static/js/src/main.js",
-        # )
-
-        html = loader.render_template('static/html/infosecurexblock.html', context)
-        css_context = dict(
-            comp_icon=self.runtime.local_resource_url(self, "public/images/comp.svg"),
-            transfer_icon=self.runtime.local_resource_url(self, "public/images/transfer.svg"),
-            monitor_icon=self.runtime.local_resource_url(self, "public/images/monitor.svg"),
-            server_3_icon=self.runtime.local_resource_url(self, "public/images/server-3.svg"),
-            file_icon=self.runtime.local_resource_url(self, "public/images/file.svg"),
-            wifi_icon=self.runtime.local_resource_url(self, "public/images/wifi.svg"),
+        fragment = Fragment()
+        fragment.add_content(
+            render_template(
+                "static/html/infosecurexblock.html",
+                context
+            )
         )
-        # css_urls = (
-        #     ("static/css/infosecurexblock.css", css_context),
-        # )  # css_context
-
-        css = loader.render_template('static/css/infosecurexblock.css', css_context)
-
-        fragment = Fragment(html)
-
-        fragment.add_css(css)
-        fragment.add_javascript(loader.load_unicode('static/js/src/infosecurexblock.js'))
-        # load_resources(js_urls, css_urls, fragment)
+        js_urls = (
+            "static/js/src/infosecurexblock.js",
+            # "static/js/src/main.js",
+        )
+        css_context = dict(
+             comp_icon=self.runtime.local_resource_url(self, "public/images/comp.svg"),
+             transfer_icon=self.runtime.local_resource_url(self, "public/images/transfer.svg"),
+             monitor_icon=self.runtime.local_resource_url(self, "public/images/monitor.svg"),
+             server_3_icon=self.runtime.local_resource_url(self, "public/images/server-3.svg"),
+             file_icon=self.runtime.local_resource_url(self, "public/images/file.svg"),
+             wifi_icon=self.runtime.local_resource_url(self, "public/images/wifi.svg"),
+        )
+        css_urls = (("static/css/infosecurexblock.css", css_context),
+                    )#css_context
+        load_resources(js_urls, css_urls, fragment)
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 
@@ -90,7 +79,7 @@ class InfoSecureXBlock(XBlock):
     @XBlock.handler
     def rect1(self, data, suffix=''):
         dir = os.path.dirname(os.path.realpath(__file__))
-        # file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.GET["lab_id"])))).read()
+        #file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.GET["lab_id"])))).read()
         file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.params["lab_id"])))).read()
         return Response(body=file, charset='UTF-8',
                         content_type='text/plain')
