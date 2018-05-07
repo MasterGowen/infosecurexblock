@@ -80,7 +80,7 @@ class InfoSecureXBlock(XBlock):
         fragment = Fragment(html)
 
         fragment.add_css(css)
-        fragment.add_javascript(loader.load_unicode('"static/js/src/infosecurexblock.js'))
+        fragment.add_javascript(loader.load_unicode('static/js/src/infosecurexblock.js'))
         # load_resources(js_urls, css_urls, fragment)
         fragment.initialize_js('InfoSecureXBlock', self.get_status())
         return fragment
