@@ -92,7 +92,7 @@ function InfoSecureXBlock(runtime, element) {
             if(this.id=='task'){
                 active('taskId');
                 active('taskTextID');
-                document.getElementById('taskTextID').innerHTML ="hi";
+                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
             }
             if(this.id=='taskId'){
                 deactive('taskId');
