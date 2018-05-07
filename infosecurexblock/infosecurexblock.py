@@ -25,12 +25,12 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
     display_name = String(display_name='Display Name', default="infosecurexblock", scope=Scope.settings)
     task_text = String(
-        display_name='Текст задания',
-        default="Задание",
+        display_name='Task text',
+        default="Task",
         scope=Scope.settings
     )
     lab_id = Integer(
-        display_name='ИД лабораторной',
+        display_name='Lab ID',
         default=1
     )
 
