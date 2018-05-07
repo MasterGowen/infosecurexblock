@@ -1,5 +1,8 @@
 /* CSS for InfoSecureXBlock  {{ monitor_icon }}*/
 
+button.submit {
+    margin-top: 4em;
+}
 
 .infosecurexblock_block .count {
     font-weight: bold;
@@ -34,46 +37,31 @@ object {
     width: 100px;
     height: 100px; }
   
-.one {
-    width: 200px;
-    margin-left: 20px;
-    margin-top: 50px;
-    border-radius: 10px;
-    height: 30px;
-    text-align: center; }
-  
-.two {
-    width: 100px;
-    height: 30px;
-    margin-left: 20px;
-    margin-top: 50px;
-    text-align: center;
-    border-radius: 10px; }
-  
-.three {
-    width: 200px;
-    margin-left: 20px;
-    margin-top: 50px;
-    height: 30px;
-    text-align: center;
-    border-radius: 10px; }
-  
-button.Check {
-    padding: 0;
-    display: block;
-    width: 200px;
-    height: 30px;
-    background: #ffffff;
-    color: black;
-    font-family: "Segoe UI";
-    font-size: 15px;
-    border: none;
-    border-radius: 4px;
-    border-color: #ffffff;
-    box-shadow: 0 0 10px #313131;
-    margin-top: 50px;
-    margin-left: 75%; }
-  
+/*.one {*/
+    /*width: 200px;*/
+    /*margin-left: 20px;*/
+    /*margin-top: 50px;*/
+    /*border-radius: 10px;*/
+    /*height: 30px;*/
+    /*text-align: center; }*/
+  /**/
+/*.two {*/
+    /*width: 100px;*/
+    /*height: 30px;*/
+    /*margin-left: 20px;*/
+    /*margin-top: 50px;*/
+    /*text-align: center;*/
+    /*border-radius: 10px; }*/
+  /**/
+/*.three {*/
+    /*width: 200px;*/
+    /*margin-left: 20px;*/
+    /*margin-top: 50px;*/
+    /*height: 30px;*/
+    /*text-align: center;*/
+    /*border-radius: 10px; }*/
+  /**/
+
 #dl {
     padding-right: 500px; }
   
