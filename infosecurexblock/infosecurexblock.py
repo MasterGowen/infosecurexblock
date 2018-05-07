@@ -8,6 +8,7 @@ import os
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String
 from xblock.fragment import Fragment
+from xblockutils.studio_editable import StudioEditableXBlockMixin
 
 from webob.response import Response
 
@@ -20,20 +21,18 @@ from .utils import (
 )
 
 
-class InfoSecureXBlock(XBlock):
-    """
-    TO-DO: document what your XBlock does.
-    """
+class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
-    # Fields are defined on the class.  You can access them in your code as
-    # self.<fieldname>.
-
-    # TO-DO: delete count, and define your own fields.
-    count = Integer(
-        default=0, scope=Scope.user_state,
-        help="A simple counter, to show something happening",
+    display_name = String(display_name='Display Name', default="infosecurexblock", scope=Scope.settings)
+    task_text = String(
+        display_name='Текст задания',
+        default="Задание",
+        scope=Scope.settings
     )
-    display_name = String(default="infosecurexblock", scope=Scope.settings)
+    lab_id = Integer(
+        display_name='ИД лабораторной',
+        default=1
+    )
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
