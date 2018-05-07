@@ -35,7 +35,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
             })
         } */
-
+href
          connection(handler, labId) {
              var self = this;
              function success(handler) {
@@ -116,7 +116,7 @@ function InfoSecureXBlock(runtime, element) {
             if((this.id=="comp1")||(this.id=='ip1'))
             {
                 document.getElementById('ip').value = '192.168.0.3';
-                //document.getElementById('comp1').fill = 'black';
+                //document.getElementById('class').fill = 'black';
                 active('File1Id');
                 active('File1TextID');
                 active('File1TextID2');
