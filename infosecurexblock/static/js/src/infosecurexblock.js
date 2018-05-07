@@ -88,7 +88,7 @@ function InfoSecureXBlock(runtime, element) {
                         alert('Не правильно!');
                     }
                 })
-            }o
+            }
             if(this.id=='task'){
                 active('taskId');
                 active('taskTextID');
