@@ -68,8 +68,7 @@ class InfoSecureXBlock(XBlock):
              file_icon=self.runtime.local_resource_url(self, "public/images/file.svg"),
              wifi_icon=self.runtime.local_resource_url(self, "public/images/wifi.svg"),
         )
-        css_urls = (("static/css/infosecurexblock.css", css_context),
-                    )#css_context
+        css_urls = ("static/css/infosecurexblock.css", )#css_context
         load_resources(js_urls, css_urls, fragment)
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
