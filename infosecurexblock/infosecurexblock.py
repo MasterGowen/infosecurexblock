@@ -49,6 +49,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         """
         context = {
             "display_name": self.display_name,
+            "task_text": self.task_text,
         }
         fragment = Fragment()
         fragment.add_content(
