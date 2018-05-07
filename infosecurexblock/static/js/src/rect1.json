@@ -9,7 +9,7 @@
                 "color": "#11111",
                 "id": "comp1",
                 "class": "comp1",
-                "href": "images/monitor.svg"
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
             },
             "transfer":{
                 "type": "image",
@@ -19,7 +19,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "2",
-                "href": "images/transfer.svg"
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/transfer.svg"
             },
             "db":{
                 "type": "image",
@@ -29,7 +29,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "3",
-                "href": "images/server-3.svg"
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/server-3.svg"
             },
         "comp2":
             {
@@ -40,7 +40,7 @@
             "height": "100",
             "color": "#11111",
             "id": "comp2",
-            "href": "images/monitor.svg"
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
         },
         "comp3":{
             "type": "image",
@@ -50,7 +50,7 @@
             "height": "100",
             "color": "#11111",
             "id": "comp3",
-            "href": "images/monitor.svg"
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
         },
         "ip1":{
             "type":"text",
@@ -142,7 +142,7 @@
             "height": "100",
             "color": "#11111",
             "id": "5",
-            "href": "images/wifi.svg"
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/wifi.svg"
         },
         "Circle1":
             {
@@ -181,7 +181,7 @@
             "width": "40",
             "height": "40",
             "color": "#11111",
-            "href": "images/question.svg",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
             "id": "task"
             },
             
@@ -192,7 +192,7 @@
                 "width": "20",
                 "height": "20",
                 "color": "#11111",
-                "href": "images/file.svg",
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/file.svg",
                 "id": "File1"
                 },
             "taskDiv":{
