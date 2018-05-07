@@ -35,7 +35,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
             })
         } */
-href
+
          connection(handler, labId) {
              var self = this;
              function success(handler) {
