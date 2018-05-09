@@ -60,6 +60,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             "task_text": self.task_text,
             "correct_answer": self.correct_answer
         }
+
+        if answer_opportunity(self):
+            context["answer_opportunity"] = True
+
         fragment = Fragment()
         fragment.add_content(
             render_template(
@@ -108,7 +112,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             answer0 = student_answer["e"]
             if ((ip == '') or (d2 == '') or (N2 == '') or (answer0 == '')):
                 jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
-
             else:
                 d2 = int(d2)
                 N2 = int(N2)
@@ -133,7 +136,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                         print('kek')
                 else:
                     jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
-
+                 
         def IsTheNumberSimple(n):
             if n < 2:
                 return False
@@ -146,20 +149,19 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 else:
                     return True
 
-    if answer_opportunity(self):
-        checks = multicheck(student_answer)
-        correct = checks[1]
+        if answer_opportunity(self):
+            checks = checkRSA(student_answer)
+            correct = checks[1]
 
-        self.runtime.publish(self, 'grade', {
-            'value': correct,
-            'max_value': self.weight,
-        })
-
-        return {'result': 'success',
-                'correct': correct,
-                'weight': self.weight,
-                #"wrong_answers": wrong_answers,
-                }
+            self.runtime.publish(self, 'grade', {
+                'value': correct,
+                'max_value': self.weight,
+            })
+            return {'result': 'success',
+                    'correct': correct,
+                    'weight': self.weight,
+                    #"wrong_answers": wrong_answers,
+                    }
         #https://github.com/MasterGowen/MultiEngineXBlock/blob/master/multiengine/multiengine.py
         #answer_opportunity
         #self.runtime.publish(self, 'grade', {
