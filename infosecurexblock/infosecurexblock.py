@@ -31,6 +31,12 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         resettable_editor=False,
         scope=Scope.settings
     )
+    correct_answer = JSONField(
+        display_name=u"Правильный ответ",
+        help=u"Скрытое поле для правильного ответа в формате json.",
+        default={},
+        scope=Scope.settings
+    )
     lab_id = Integer(
         display_name='Lab ID',
         default=1
@@ -52,6 +58,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         context = {
             "display_name": self.display_name,
             "task_text": self.task_text,
+            "correct_answer": self.correct_answer
         }
         fragment = Fragment()
         fragment.add_content(
@@ -93,14 +100,14 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         student_answer = student_json["answer"]
         self.answer = data
 
-        def multicheck(student_answer):
+        def checkRSA(student_answer):
 
             ip = student_answer["ip"]
             d2 = student_answer["d"]
             N2 = student_answer["N"]
             answer0 = student_answer["e"]
             if ((ip == '') or (d2 == '') or (N2 == '') or (answer0 == '')):
-                jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+                return jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
 
             else:
                 d2 = int(d2)
@@ -120,13 +127,12 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                         j += 1
                 if str(right) == str(answer2):
                     if ip2 == "192.168.0.4":
-                        jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
+                        return jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
 
                     else:
                         print('kek')
                 else:
-                    jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
-
+                    return jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
 
         def IsTheNumberSimple(n):
             if n < 2:
@@ -140,6 +146,20 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 else:
                     return True
 
+    if answer_opportunity(self):
+        checks = multicheck(student_answer)
+        correct = checks[1]
+
+        self.runtime.publish(self, 'grade', {
+            'value': correct,
+            'max_value': self.weight,
+        })
+
+        return {'result': 'success',
+                'correct': correct,
+                'weight': self.weight,
+                #"wrong_answers": wrong_answers,
+                }
         #https://github.com/MasterGowen/MultiEngineXBlock/blob/master/multiengine/multiengine.py
         #answer_opportunity
         #self.runtime.publish(self, 'grade', {
