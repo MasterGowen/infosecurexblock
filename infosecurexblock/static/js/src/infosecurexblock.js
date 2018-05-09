@@ -92,7 +92,7 @@ function InfoSecureXBlock(runtime, element) {
              var remember = "";
             if(this.id=='comp1'){
                 document.getElementById("comp1").style.opacity = "0.5";
-                if (!remember.empty){
+                if (remember!= null){
                     alert(remember);
                     document.getElementById(remember).style.opacity = "1";
                 }
@@ -101,7 +101,7 @@ function InfoSecureXBlock(runtime, element) {
             if(this.id=='comp2'){
                 document.getElementById("comp2").style.opacity = "0.5";
                 
-                if (!remember.empty){
+                if (remember!= null){
                     alert(remember);
                     document.getElementById(remember).style.opacity = "1";
                 }
@@ -110,7 +110,7 @@ function InfoSecureXBlock(runtime, element) {
             if(this.id=='comp3'){
                 document.getElementById("comp3").style.opacity = "0.5";
                
-                if (!remember.empty){
+                if (remember!=null){
                     document.getElementById(remember).style.opacity = "1";
                 }
                 remember = this.id;
