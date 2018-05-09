@@ -91,12 +91,14 @@ function InfoSecureXBlock(runtime, element) {
             }
              var remember = "";
             if(this.id=='comp1'){
-                document.getElementById("comp1").style.opacity = "0.5";
-                if (remember!= null){
-                    alert(remember);
-                    document.getElementById(remember).style.opacity = "1";
-                }
-                remember = this.id;
+            
+                document.getElementById("comp1").onmouseover = "MakeTransparent(evt)";
+                document.getElementById("comp1").onmouseout="MakeOpaque(evt)";
+               // if (remember!= null){
+                 //   alert(remember);
+                   // document.getElementById(remember).style.opacity = "1";
+                //}
+                //remember = this.id;
             }
             if(this.id=='comp2'){
                 document.getElementById("comp2").style.opacity = "0.5";
@@ -224,7 +226,13 @@ function InfoSecureXBlock(runtime, element) {
             console.log(answer); 
         } 
 }
-
+function MakeTransparent(evt) {
+     evt.target.setAttributeNS(null,"opacity","0.5");
+    }
+    function MakeOpaque(evt) {
+     evt.target.setAttributeNS(null,"opacity","1");
+        }
+    
 function checkIsIPV4(entry) {
     var blocks = entry.split(".");
     if(blocks.length === 4) {
