@@ -91,14 +91,14 @@ function InfoSecureXBlock(runtime, element) {
             }
             var op = 0;
             if(this.id=='comp1'){
-                docum.getElementById("comp1").style.opacity = "0.5";
+                document.getElementById("comp1").style.opacity = "0.5";
                 
             }
             if(this.id=='comp2'){
-                docum.getElementById("comp2").style.opacity = "0.5";
+                document.getElementById("comp2").style.opacity = "0.5";
             }
             if(this.id=='comp3'){
-                docum.getElementById("comp3").style.opacity = "0.5";
+                document.getElementById("comp3").style.opacity = "0.5";
             }
             if(this.id=='task'){
                 active('taskId');
