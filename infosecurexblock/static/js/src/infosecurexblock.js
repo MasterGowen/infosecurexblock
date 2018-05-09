@@ -136,11 +136,46 @@ function InfoSecureXBlock(runtime, element) {
                 active('File1TextID2');
             }
             if((this.id=='checkid')&&(document.getElementById(this.id).value!=undefined))
-            {
+            { var count=0;
+                var l=0; var count_num = 0;
+                var k = document.getElementById('ip').value;
+                var d = document.getElementById('d').value;
+                var N = document.getElementById('N').value;
+                var e = document.getElementById('e').value;
+                var k2 = k.length;
+                var empty = false;
+                  var k4 = "";
+                  var che = 0;
+                  var b = checkIsIPV4(k); 
+                  if (k2 == 0 || d.length == 0 || N.length == 0 || e.length == 0){
+                      alert("Пустые поля ввода."); 
+                      che++;  empty = true;
+                     }
+                 if (b == false && empty!=true)
+                 {
+                     alert("Некорректный IP адрес.");
+                 }
+                if(isNumeric(d) == false && empty!=true){
+                    alert('Некорректный закрытый ключ (d).');
+                    che++;
+                  }
+                if(isNumeric(N)==false && empty!=true){
+                    alert('Некорректный закрытый ключ (N).');
+                    che++;
+                  }
+                if(isNumeric(e)==false && empty!=true){
+                    alert('Некорректное сообщение! Введите сообещние в численном виде.');
+                    che++;
+                  }
+               
+                if(che == 0 && b == true && empty!=true){
+                
+
                 answer['ip'] = document.getElementById('ip').value;
                 answer['d'] = document.getElementById('d').value;
                 answer['N'] = document.getElementById('N').value;
                 answer['e'] = document.getElementById('e').value;
+
                 function checkAnswer(){
                     fetch("http://localhost:5000/labs1/check/", {
                         method: "POST",
@@ -151,7 +186,7 @@ function InfoSecureXBlock(runtime, element) {
                         //make sure to serialize your JSON body
                         body: JSON.stringify(answer)
                     })
-                }
+                }}
                 checkAnswer();
                 if(answer!={}){
                     getQuest();
