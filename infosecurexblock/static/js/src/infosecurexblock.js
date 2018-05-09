@@ -64,7 +64,7 @@ function InfoSecureXBlock(runtime, element) {
         on(){
             //console.log(this);
             var elem;
-            var answer = {};
+            var student_answer = {};
             function active(idNum) {
                 elem = document.getElementById(idNum)
                 elem.style.display = 'block';
@@ -81,7 +81,7 @@ function InfoSecureXBlock(runtime, element) {
                     return data;
                 }
                 fetchAsync().then(data => {
-                    if(data.answer=='true'){
+                    if(data.student_answer=='true'){
                         alert('Правльно');
                     }
                     else{
@@ -202,32 +202,31 @@ function InfoSecureXBlock(runtime, element) {
                
                 if(che == 0 && b == true && empty!=true){
                 
-
-                answer['ip'] = document.getElementById('ip').value;
-                answer['d'] = document.getElementById('d').value;
-                answer['N'] = document.getElementById('N').value;
-                answer['e'] = document.getElementById('e').value;
+                student_answer['ip'] = document.getElementById('ip').value;
+                student_answer['d'] = document.getElementById('d').value;
+                student_answer['N'] = document.getElementById('N').value;
+                student_answer['e'] = document.getElementById('e').value;
 
                 function checkAnswer(){
-                    fetch("http://localhost:5000/labs1/check/", {
-                        method: "POST",
-                        headers: {
-                        'Content-Type': 'application/json'
-                        },
-                    
-                        //make sure to serialize your JSON body
-                        body: JSON.stringify(answer)
-                    })
+                    (function () {
+                        $.ajax({
+                            type: "POST",
+                            url: handler,
+                            data: {"student_answer": student_answer},
+                            success: success
+                        });
+               
+                    })()
                 }}
                 checkAnswer();
-                if(answer!={}){
+                if(student_answer!={}){
                     getQuest();
                 }
             }
             else if(this.id=='checkid') {
                 console.log('Error:не все поля заполненны.')
             }
-            console.log(answer); 
+            console.log(student_answer); 
         } 
 }
 function MakeTransparent(evt) {
