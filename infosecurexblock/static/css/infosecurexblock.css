@@ -37,22 +37,21 @@ object {
     width: 100px;
     height: 100px; }
   
-/*.one {*/
-    /*width: 200px;*/
-    /*margin-left: 20px;*/
-    /*margin-top: 50px;*/
-    /*border-radius: 10px;*/
-    /*height: 30px;*/
-    /*text-align: center; }*/
+.one {
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    height: 30px;
+    text-align: center; }
   /**/
-/*.two {*/
-    /*width: 100px;*/
-    /*height: 30px;*/
-    /*margin-left: 20px;*/
-    /*margin-top: 50px;*/
-    /*text-align: center;*/
-    /*border-radius: 10px; }*/
-  /**/
+.two {
+    width: 100px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 10px; }
 .three {
     width: 200px;
     margin-left: 20px;
