@@ -165,8 +165,7 @@ function InfoSecureXBlock(runtime, element) {
                 active('File1TextID2');
             }
             if((this.id=='checkid')&&(document.getElementById(this.id).value!=undefined))
-            { this.NS1 = "http://www.w3.org/1999/xlink";
-            this.element = document.createElementNS(this.NS, name);
+            { 
              var count=0;
                 var l=0; var count_num = 0;
                 var k = document.getElementById('ip').value;
@@ -179,13 +178,13 @@ function InfoSecureXBlock(runtime, element) {
                   var che = 0;
                   var b = checkIsIPV4(k); 
                   if (k2 == 0 || d.length == 0 || N.length == 0 || e.length == 0){
-                    this.element.innerHTML = "Пустые поля ввода";  
+                       
                     alert("Пустые поля ввода."); 
                       che++;  empty = true;
                      }
                  if (b == false && empty!=true)
                  {
-                    this.element.innerHTML = "Некорректный IP адрес."; 
+                    document.getElementById("ip").placeholder = "Некорректный IP адрес."; 
                      alert("Некорректный IP адрес.");
                  }
                 if(isNumeric(d) == false && empty!=true){
