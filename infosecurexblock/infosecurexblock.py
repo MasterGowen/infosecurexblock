@@ -107,7 +107,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             N2 = student_answer["N"]
             answer0 = student_answer["e"]
             if ((ip == '') or (d2 == '') or (N2 == '') or (answer0 == '')):
-                return jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+                jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
 
             else:
                 d2 = int(d2)
@@ -127,12 +127,12 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                         j += 1
                 if str(right) == str(answer2):
                     if ip2 == "192.168.0.4":
-                        return jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
+                        jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
 
                     else:
                         print('kek')
                 else:
-                    return jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+                    jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
 
         def IsTheNumberSimple(n):
             if n < 2:
