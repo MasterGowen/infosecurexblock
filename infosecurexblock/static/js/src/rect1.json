@@ -212,13 +212,12 @@
                 "fontFamily":"SegoeUI",
                 "fill": "black",
                 "id":"taskTextID"
-            },
-                "FileDiv":{
-                    "type": "rect",
-                    "x": "200", 
-                    "y": "90", 
-                    "width": "130", 
-                    "height": "50", 
+            },"FileDiv":{
+                    "type": "ellipse",
+                    "cx": "260", 
+                    "cy": "115", 
+                    "rx": "60", 
+                    "ry": "30",
                     "fill":"white",
                     "id": "File1Id"
                 },
