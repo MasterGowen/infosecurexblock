@@ -165,7 +165,9 @@ function InfoSecureXBlock(runtime, element) {
                 active('File1TextID2');
             }
             if((this.id=='checkid')&&(document.getElementById(this.id).value!=undefined))
-            { var count=0;
+            { this.NS1 = "http://www.w3.org/1999/xlink";
+            this.element = document.createElementNS(this.NS, name);
+             var count=0;
                 var l=0; var count_num = 0;
                 var k = document.getElementById('ip').value;
                 var d = document.getElementById('d').value;
