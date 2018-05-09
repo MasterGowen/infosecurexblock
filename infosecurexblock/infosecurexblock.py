@@ -148,7 +148,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 # })
 
 
-
 # TO-DO: change this to create the scenarios you'd like to see in the
 # workbench while developing your XBlock.
 @staticmethod
