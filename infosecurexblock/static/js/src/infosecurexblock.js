@@ -89,16 +89,27 @@ function InfoSecureXBlock(runtime, element) {
                     }
                 })
             }
-            var op = 0;
+            var op = 0; var remember = "";
             if(this.id=='comp1'){
                 document.getElementById("comp1").style.opacity = "0.5";
-                
+                remember = "comp1";
+                if (remember != ""){
+                    document.getElementById(remember).style.opacity = "1";
+                }
             }
             if(this.id=='comp2'){
                 document.getElementById("comp2").style.opacity = "0.5";
+                remember = "comp2";
+                if (remember != ""){
+                    document.getElementById(remember).style.opacity = "1";
+                }
             }
             if(this.id=='comp3'){
                 document.getElementById("comp3").style.opacity = "0.5";
+                remember = "comp3";
+                if (remember != ""){
+                    document.getElementById(remember).style.opacity = "1";
+                }
             }
             if(this.id=='task'){
                 active('taskId');
