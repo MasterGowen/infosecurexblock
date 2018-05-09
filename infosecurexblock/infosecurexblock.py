@@ -27,7 +27,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     task_text = String(
         display_name='Task text',
         default="Task",
-        multiline_editor='html', 
+        multiline_editor=True, 
         resettable_editor=False,
         scope=Scope.settings
     )
