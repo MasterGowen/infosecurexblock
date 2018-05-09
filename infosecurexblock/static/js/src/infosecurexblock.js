@@ -177,11 +177,13 @@ function InfoSecureXBlock(runtime, element) {
                   var che = 0;
                   var b = checkIsIPV4(k); 
                   if (k2 == 0 || d.length == 0 || N.length == 0 || e.length == 0){
-                      alert("Пустые поля ввода."); 
+                    this.element.innerHTML = "Пустые поля ввода";  
+                    alert("Пустые поля ввода."); 
                       che++;  empty = true;
                      }
                  if (b == false && empty!=true)
                  {
+                    this.element.innerHTML = "Некорректный IP адрес."; 
                      alert("Некорректный IP адрес.");
                  }
                 if(isNumeric(d) == false && empty!=true){
