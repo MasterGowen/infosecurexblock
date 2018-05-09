@@ -93,18 +93,19 @@ function InfoSecureXBlock(runtime, element) {
             if(this.id=='comp1'){
                 document.getElementById("comp1").style.opacity ="0.5";
              if (remember!=""){
-                 //  alert(remember);
 
-                 document.getElementById(remember).style.opacity = "1";
+                 document.getElementById("comp2").style.opacity = "1";
+                 document.getElementById("comp3").style.opacity = "1";
                 }
                 remember = this.id;
             }
             if(this.id=='comp2'){
                 document.getElementById("comp2").style.opacity = "0.5";
                 
-                if (remember!= null){
+                if (remember!= ""){
                 //    alert(remember);
-                    document.getElementById(remember).style.opacity = "1";
+                document.getElementById("comp1").style.opacity = "1";
+                document.getElementById("comp3").style.opacity = "1";
                 }
                 remember = this.id;
             }
@@ -112,7 +113,8 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById("comp3").style.opacity = "0.5";
                
                 if (remember!=null){
-                    document.getElementById(remember).style.opacity = "1";
+                    document.getElementById("comp2").style.opacity = "1";
+                 document.getElementById("comp1").style.opacity = "1";
                 }
                 remember = this.id;
             }
