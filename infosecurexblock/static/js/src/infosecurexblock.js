@@ -184,7 +184,7 @@ function InfoSecureXBlock(runtime, element) {
                      }
                  if (b == false && empty!=true)
                  {
-                    document.getElementById("ip").placeholder = "Некорректный IP адрес."; 
+                    document.getElementById("ip").innerHTML = "Некорректный IP адрес."; 
                      alert("Некорректный IP адрес.");
                  }
                 if(isNumeric(d) == false && empty!=true){
