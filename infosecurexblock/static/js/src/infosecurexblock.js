@@ -199,6 +199,21 @@ function InfoSecureXBlock(runtime, element) {
         } 
 }
 
+function checkIsIPV4(entry) {
+    var blocks = entry.split(".");
+    if(blocks.length === 4) {
+      return blocks.every(function(block) {
+        return parseInt(block,10) >=0 && parseInt(block,10) <= 255;
+      });
+    }
+    return false;
+  }
+function isNumeric(n) {
+    
+    return !isNaN(parseFloat(n)) && isFinite(n);
+    
+ }
+
     class Rect1 extends Start{
         constructor(){
             super()
