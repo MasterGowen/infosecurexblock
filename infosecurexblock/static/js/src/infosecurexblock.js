@@ -89,19 +89,20 @@ function InfoSecureXBlock(runtime, element) {
                     }
                 })
             }
-            var op = 0; var remember = "";
+             var remember = "";
             if(this.id=='comp1'){
                 document.getElementById("comp1").style.opacity = "0.5";
-                
-                if (remember != ""){
+                if (!remember.empty){
                     alert(remember);
                     document.getElementById(remember).style.opacity = "1";
-                }remember = this.id;
+                }
+                remember = this.id;
             }
             if(this.id=='comp2'){
                 document.getElementById("comp2").style.opacity = "0.5";
                 
-                if (remember != ""){
+                if (!remember.empty){
+                    alert(remember);
                     document.getElementById(remember).style.opacity = "1";
                 }
                 remember = this.id;
@@ -109,7 +110,7 @@ function InfoSecureXBlock(runtime, element) {
             if(this.id=='comp3'){
                 document.getElementById("comp3").style.opacity = "0.5";
                
-                if (remember != ""){
+                if (!remember.empty){
                     document.getElementById(remember).style.opacity = "1";
                 }
                 remember = this.id;
