@@ -89,7 +89,7 @@ function InfoSecureXBlock(runtime, element) {
                     }
                 })
             }
-             var remember = "";
+            var remember = "";
             if(this.id=='comp1'){
                 document.getElementById("comp1").style.opacity ="0.5";
              if (remember!=null){
@@ -166,7 +166,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             if((this.id=='checkid')&&(document.getElementById(this.id).value!=undefined))
             { 
-             var count=0;
+                var count=0;
                 var l=0; var count_num = 0;
                 var k = document.getElementById('ip').value;
                 var d = document.getElementById('d').value;
@@ -199,25 +199,32 @@ function InfoSecureXBlock(runtime, element) {
                     che++;
                   }
                
-                if(che == 0 && b == true && empty!=true){
+            if(che == 0 && b == true && empty!=true){
                 
                 student_answer['ip'] = document.getElementById('ip').value;
                 student_answer['d'] = document.getElementById('d').value;
                 student_answer['N'] = document.getElementById('N').value;
                 student_answer['e'] = document.getElementById('e').value;
 
-                function checkAnswer(){
+                function checkAnswer(json_handler,student_answer){
+                    console.log("student_answer :",student_answer);
+                    console.log("json_handler :",json_handler);
+                    (function () {
                         $.ajax({
                             type: "POST",
-                            url: handler,
+                            url: json_handler,
                             data: {"student_answer": student_answer},
                             success: success
                         });
-                }}
-                checkAnswer();
-                if(student_answer!={}){
-                    getQuest();
+               
+                    })()
                 }
+                checkAnswer();
+            }
+                
+/*                 if(student_answer!={}){
+                    getQuest();
+                } */
             }
             else if(this.id=='checkid') {
                 console.log('Error:не все поля заполненны.')
