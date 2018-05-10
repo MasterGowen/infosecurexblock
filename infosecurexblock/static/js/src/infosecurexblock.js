@@ -199,7 +199,7 @@ function InfoSecureXBlock(runtime, element) {
                     che++;
                   }
                
-                if(che == 0 && b == true && empty!=true){
+            if(che == 0 && b == true && empty!=true){
                 
                 student_answer['ip'] = document.getElementById('ip').value;
                 student_answer['d'] = document.getElementById('d').value;
@@ -218,8 +218,10 @@ function InfoSecureXBlock(runtime, element) {
                         });
                
                     })()
-                }}
+                }
                 checkAnswer();
+            }
+                
 /*                 if(student_answer!={}){
                     getQuest();
                 } */
