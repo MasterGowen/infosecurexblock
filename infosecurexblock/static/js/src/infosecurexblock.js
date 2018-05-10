@@ -342,7 +342,6 @@ function isNumeric(n) {
                 {
                     this.element.innerHTML = "Отправить на проверку";
                 }
-            
             if (attributes){
                 for (var k in attributes){
                     this.element.setAttribute([k],attributes[k]);
