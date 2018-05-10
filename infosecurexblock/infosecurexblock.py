@@ -61,9 +61,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             "correct_answer": self.correct_answer
         }
 
-        if answer_opportunity(self):
-            context["answer_opportunity"] = True
-
         fragment = Fragment()
         fragment.add_content(
             render_template(
@@ -150,8 +147,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     return True
 
         if answer_opportunity(self):
-            checks = checkRSA(student_answer)
-            correct = checks[1]
+            correct = checkRSA(student_answer)
 
             self.runtime.publish(self, 'grade', {
                 'value': correct,
@@ -163,8 +159,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     #"wrong_answers": wrong_answers,
                     }
 
-    def answer_opportunity(self):
-        return True
+        def answer_opportunity(self):
+            return True
         #https://github.com/MasterGowen/MultiEngineXBlock/blob/master/multiengine/multiengine.py
         #answer_opportunity
         #self.runtime.publish(self, 'grade', {
