@@ -208,15 +208,12 @@ function InfoSecureXBlock(runtime, element) {
                 student_answer['e'] = document.getElementById('e').value;
 
                 function checkAnswer(){
-                    (function () {
                         $.ajax({
                             type: "POST",
                             url: handler,
                             data: {"student_answer": student_answer},
                             success: success
                         });
-               
-                    })()
                 }}
                 checkAnswer();
                 if(student_answer!={}){
