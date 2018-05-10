@@ -178,7 +178,6 @@ function InfoSecureXBlock(runtime, element) {
                   var che = 0;
                   var b = checkIsIPV4(k); 
                   if (k2 == 0 || d.length == 0 || N.length == 0 || e.length == 0){
-                       
                     alert("Пустые поля ввода."); 
                       che++;  empty = true;
                      }
