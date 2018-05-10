@@ -6,7 +6,7 @@ import json
 import os
 
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer, String
+from xblock.fields import Scope, Integer, String ,JSONField
 from xblock.fragment import Fragment
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 
@@ -111,7 +111,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             N2 = student_answer["N"]
             answer0 = student_answer["e"]
             if ((ip == '') or (d2 == '') or (N2 == '') or (answer0 == '')):
-                jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+                return False #jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
             else:
                 d2 = int(d2)
                 N2 = int(N2)
@@ -130,12 +130,12 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                         j += 1
                 if str(right) == str(answer2):
                     if ip2 == "192.168.0.4":
-                        jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
+                        return True #jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
 
                     else:
                         print('kek')
                 else:
-                    jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+                    return False # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
                  
         def IsTheNumberSimple(n):
             if n < 2:
@@ -162,6 +162,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     'weight': self.weight,
                     #"wrong_answers": wrong_answers,
                     }
+
+    def answer_opportunity(self):
+        return True
         #https://github.com/MasterGowen/MultiEngineXBlock/blob/master/multiengine/multiengine.py
         #answer_opportunity
         #self.runtime.publish(self, 'grade', {
