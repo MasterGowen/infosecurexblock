@@ -89,7 +89,7 @@ function InfoSecureXBlock(runtime, element) {
                     }
                 })
             }
-             var remember = "";
+            var remember = "";
             if(this.id=='comp1'){
                 document.getElementById("comp1").style.opacity ="0.5";
              if (remember!=null){
@@ -166,7 +166,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             if((this.id=='checkid')&&(document.getElementById(this.id).value!=undefined))
             { 
-             var count=0;
+                var count=0;
                 var l=0; var count_num = 0;
                 var k = document.getElementById('ip').value;
                 var d = document.getElementById('d').value;
@@ -212,7 +212,7 @@ function InfoSecureXBlock(runtime, element) {
                     (function () {
                         $.ajax({
                             type: "POST",
-                            url: handler,
+                            url: json_handler,
                             data: {"student_answer": student_answer},
                             success: success
                         });
