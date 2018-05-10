@@ -207,18 +207,23 @@ function InfoSecureXBlock(runtime, element) {
                 student_answer['N'] = document.getElementById('N').value;
                 student_answer['e'] = document.getElementById('e').value;
 
-                function checkAnswer(){
+                function checkAnswer(json_handler,student_answer){
+                    console.log("student_answer :",student_answer);
+                    console.log("json_handler :",json_handler);
+                    (function () {
                         $.ajax({
                             type: "POST",
                             url: handler,
                             data: {"student_answer": student_answer},
                             success: success
                         });
+               
+                    })()
                 }}
                 checkAnswer();
-                if(student_answer!={}){
+/*                 if(student_answer!={}){
                     getQuest();
-                }
+                } */
             }
             else if(this.id=='checkid') {
                 console.log('Error:не все поля заполненны.')
