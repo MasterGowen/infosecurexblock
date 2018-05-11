@@ -39,7 +39,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     )
     lab_id = Integer(
         display_name='Lab ID',
-        default=1
+        default=1,
+        scope=Scope.settings
     )
 
     editable_fields = ('display_name', 'task_text', "lab_id")
@@ -89,11 +90,15 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     # than one handler, or you may not need any handlers at all.
     @XBlock.handler
     def rect1(self, data, suffix=''):
-        dir = os.path.dirname(os.path.realpath(__file__))
-        #file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.GET["lab_id"])))).read()
-        file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.params["lab_id"])))).read()
-        return Response(body=file, charset='UTF-8',
-                        content_type='text/plain')
+        #if(lab_id==1):
+            dir = os.path.dirname(os.path.realpath(__file__))
+            #file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.GET["lab_id"])))).read()
+            file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.params["lab_id"])))).read()
+            return Response(body=file, charset='UTF-8',
+                            content_type='text/plain')
+        #elif(lab_id==2):
+            #print('test')
+
 
     @XBlock.json_handler
     def check(self, data, *args):
