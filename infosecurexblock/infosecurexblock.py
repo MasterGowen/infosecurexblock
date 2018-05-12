@@ -190,7 +190,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         if answer_opportunity(self):
             grade = checkRSA(data)
             self.grade = grade
-            self.points = grade * self.weigth
+            self.points = grade * self.weight
 
             self.runtime.publish(self, 'grade', {
                 'value': grade,
