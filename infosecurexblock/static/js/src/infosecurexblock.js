@@ -3,8 +3,9 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
 
-    function checkSuccess(handler) {
+    function successCheck(response) {
         alert("checkSuccess");
+        console.log(response)
     }
 
     class Start {
