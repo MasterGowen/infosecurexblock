@@ -8,8 +8,7 @@ function InfoSecureXBlock(runtime, element) {
         $('.attempts', element).text(result.attempts);
         if (result.max_attempts && result.max_attempts <= result.attempts) {
             $('#checkid', element).remove();
-        }
-        ;
+        };
     }
 
     class Start {

@@ -110,7 +110,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 
-
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
     @XBlock.handler
@@ -187,7 +186,14 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                         "max_attempts": self.max_attempts,
                         "attempts": self.attempts
                         }
-            return response
+
+        else:
+            response = {'result': 'fail',
+                        "max_attempts": self.max_attempts,
+                        "attempts": self.attempts
+                        }
+        return response
+
 
 @staticmethod
 def workbench_scenarios():
