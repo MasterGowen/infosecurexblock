@@ -112,11 +112,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
         def checkRSA(data):
 
-            # ip = data["ip"]
-            # d = data["d"]
-            # N = data["N"]
-            # answer0 = data["e"]
-            return 1
+            ip = data["ip"]
+            d = data["d"]
+            N = data["N"]
+            answer0 = data["e"]
+
 
 
             d = int(d)
