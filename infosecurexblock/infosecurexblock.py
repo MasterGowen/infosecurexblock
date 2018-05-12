@@ -105,7 +105,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     # elif(lab_id==2):
     # print('test')
 
-    @XBlock.json_handler
+    @XBlock.handler
     def check(self, data, unused_suffix=''):
         # student_answer = data
         #self.answer = student_answer
