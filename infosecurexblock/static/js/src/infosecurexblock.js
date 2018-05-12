@@ -3,6 +3,10 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
 
+    function checkSuccess(handler) {
+        alert("checkSuccess");
+    }
+
     class Start {
         constructor() {
             this.star = () => {
@@ -219,7 +223,7 @@ function InfoSecureXBlock(runtime, element) {
                
                     })()
                 }
-                checkAnswer();
+                checkAnswer(checkHandler,student_answer);
             }
                 
 /*                 if(student_answer!={}){
