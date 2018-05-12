@@ -166,7 +166,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
         if answer_opportunity(self):
             print("checking student answer")
-            grade = checkRSA(student_answer)
+            grade = checkRSA(data)
 
             self.runtime.publish(self, 'grade', {
                 'value': grade,
