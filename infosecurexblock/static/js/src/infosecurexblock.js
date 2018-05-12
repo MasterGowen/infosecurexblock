@@ -1,7 +1,7 @@
 /* Javascript for InfoSecureXBlock. */
 function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
-    console.log(rect1HandlerUrl)
+    var checkHandler = runtime.handlerUrl(element, 'check');
 
     class Start {
         constructor() {
@@ -206,13 +206,13 @@ function InfoSecureXBlock(runtime, element) {
                 student_answer['N'] = document.getElementById('N').value;
                 student_answer['e'] = document.getElementById('e').value;
 
-                function checkAnswer(json_handler,student_answer){
+                function checkAnswer(checkHandler,student_answer){
                     console.log("student_answer :",student_answer);
-                    console.log("json_handler :",json_handler);
+                    console.log("checkHandler :",checkHandler);
                     (function () {
                         $.ajax({
                             type: "POST",
-                            url: json_handler,
+                            url: checkHandler,
                             data: {"student_answer": student_answer},
                             success: success
                         });
