@@ -61,7 +61,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.user_state
     )
 
-    editable_fields = ('display_name', 'task_text', "lab_id", "weight", "max_attempts")
+    editable_fields = ('display_name', 'task_text', "lab_id")
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -172,7 +172,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     return True
 
         if answer_opportunity(self):
-            print("checking student answer")
             grade = checkRSA(data)
 
             self.runtime.publish(self, 'grade', {
