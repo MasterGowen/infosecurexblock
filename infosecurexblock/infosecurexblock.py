@@ -32,10 +32,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         resettable_editor=False,
         scope=Scope.settings
     )
-    correct_answer = JSONField(
-        display_name=u"Правильный ответ",
-        help=u"Скрытое поле для правильного ответа в формате json.",
-        default={},
+    weight = Integer(
+        display_name=u"Максимальное количество баллов",
+        help=(u"Максимальное количество баллов",
+              u"которое может получить студент."),
+        default=100,
         scope=Scope.settings
     )
     lab_id = Integer(
@@ -66,7 +67,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         context = {
             "display_name": self.display_name,
             "task_text": self.task_text,
-            "correct_answer": self.correct_answer
+            "weight": self.weight,
         }
 
         fragment = Fragment()
@@ -138,16 +139,17 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             if str(right) == str(answer2):
                 if ip2 == "192.168.0.4":
                     grade = 1
-                    return Response(body=True, charset='UTF-8',
-                                    content_type='text/plain')  # jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
+                    return grade #Response(body=True, charset='UTF-8',
+                                    #content_type='text/plain')  # jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
 
                 else:
                     grade = 0
                     print('kek')
+                    return grade
             else:
                 grade = 0
-                return Response(body=False, charset='UTF-8',
-                                content_type='text/plain')  # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+                return grade #Response(body=False, charset='UTF-8',
+                                #content_type='text/plain')  # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
 
         def IsTheNumberSimple(n):
             if n < 2:
