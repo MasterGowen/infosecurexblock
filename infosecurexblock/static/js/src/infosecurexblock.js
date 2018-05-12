@@ -221,7 +221,7 @@ function InfoSecureXBlock(runtime, element) {
                         $.ajax({
                             type: "POST",
                             url: checkHandler,
-                            data: student_answer,
+                            data: JSON.stringify(student_answer),
                             success: successCheck
                         });
                
