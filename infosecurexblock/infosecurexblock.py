@@ -12,7 +12,6 @@ from xblockutils.studio_editable import StudioEditableXBlockMixin
 from webob.response import Response
 
 import copy
-import logging
 
 from .utils import (
     load_resource,
@@ -20,7 +19,6 @@ from .utils import (
     load_resources,
 )
 
-log = logging.getLogger(__name__)
 
 class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     display_name = String(display_name='Display Name', default="infosecurexblock", scope=Scope.settings)
@@ -109,7 +107,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
     @XBlock.json_handler
     def check(self, data, *args):
-        log.info(data)
+        print(data)
         student_answer = json.loads(data)
         #self.answer = student_answer
 
@@ -167,7 +165,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             return True
 
         if answer_opportunity(self):
-            log.info("checking student answer")
+            print("checking student answer")
             grade = checkRSA(student_answer)
 
             self.runtime.publish(self, 'grade', {
