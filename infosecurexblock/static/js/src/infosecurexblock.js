@@ -206,10 +206,13 @@ function InfoSecureXBlock(runtime, element) {
                
             if(che == 0 && b == true && empty!=true){
                 
-                student_answer['ip'] = document.getElementById('ip').value;
-                student_answer['d'] = document.getElementById('d').value;
-                student_answer['N'] = document.getElementById('N').value;
-                student_answer['e'] = document.getElementById('e').value;
+                var student_answer =
+                    {
+                        'ip': document.getElementById('ip').value,
+                        'd': document.getElementById('d').value,
+                        'N': document.getElementById('N').value,
+                        'e': document.getElementById('e').value
+                    }
 
                 function checkAnswer(checkHandler,student_answer){
                     console.log("student_answer :",student_answer);
@@ -218,7 +221,7 @@ function InfoSecureXBlock(runtime, element) {
                         $.ajax({
                             type: "POST",
                             url: checkHandler,
-                            data: {"student_answer": student_answer},
+                            data: student_answer,
                             success: successCheck
                         });
                
