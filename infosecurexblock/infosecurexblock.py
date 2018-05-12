@@ -61,6 +61,18 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.user_state
     )
 
+    points = Integer(
+        display_name=u"Количество баллов студента",
+        default=0,
+        scope=Scope.user_state
+    )
+
+    grade = Integer(
+        display_name=u"Количество баллов студента",
+        default=0,
+        scope=Scope.user_state
+    )
+
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts")
 
     def resource_string(self, path):
@@ -79,7 +91,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             "task_text": self.task_text,
             "weight": self.weight,
             "max_attempts": self.max_attempts,
-            "attempts": self.attempts
+            "attempts": self.attempts,
+            "points": self.points,
+
 
         }
 
@@ -175,6 +189,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
         if answer_opportunity(self):
             grade = checkRSA(data)
+            self.grade = grade
+            self.points = grade * self.weigth
 
             self.runtime.publish(self, 'grade', {
                 'value': grade,
@@ -184,7 +200,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                         'correct': grade,
                         'weight': self.weight,
                         "max_attempts": self.max_attempts,
-                        "attempts": self.attempts
+                        "attempts": self.attempts,
+                        "points": self.points,
                         }
 
         else:
