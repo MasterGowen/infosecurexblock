@@ -12,6 +12,8 @@ from xblockutils.studio_editable import StudioEditableXBlockMixin
 
 from webob.response import Response
 
+import copy
+
 import subprocess
 
 from .utils import (
@@ -40,6 +42,12 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         display_name='Lab ID',
         default=1,
         scope=Scope.settings
+    )
+
+    answer = JSONField(
+        display_name=u"Ответ студенкт",
+        default={},
+        scope=Scope.user_state
     )
 
     editable_fields = ('display_name', 'task_text', "lab_id")
@@ -101,45 +109,45 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
     @XBlock.json_handler
     def check(self, data, *args):
-        student_json = json.loads(data)
-        student_answer = student_json["answer"]
-        self.answer = data
+        student_answer = json.loads(data)
+        self.answer = student_answer
 
         def checkRSA(student_answer):
 
             ip = student_answer["ip"]
-            d2 = student_answer["d"]
-            N2 = student_answer["N"]
+            d = student_answer["d"]
+            N = student_answer["N"]
             answer0 = student_answer["e"]
-            if ((ip == '') or (d2 == '') or (N2 == '') or (answer0 == '')):
-                return Response(body=True, charset='UTF-8',
-                                content_type='text/plain')  # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
-            else:
-                d2 = int(d2)
-                N2 = int(N2)
-                answer0 = int(answer0)
-                ip2 = ip
-                answer2 = [int(r) for r in list(str(answer0))]
-                dd = IsTheNumberSimple(d2)
-                right = [14, 10, 18, 16, 14]
-                p = 0
-                j = 0
-                k = len(str(answer0))
-                if dd is True:
-                    # if N2 == 10:
-                    while j < k:
-                        right[j] = right[j] ** d2 % N2
-                        j += 1
-                if str(right) == str(answer2):
-                    if ip2 == "192.168.0.4":
-                        return Response(body=True, charset='UTF-8',
-                                        content_type='text/plain')  # jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
 
-                    else:
-                        print('kek')
+
+            d = int(d)
+            N = int(N)
+            answer0 = int(answer0)
+            ip2 = ip
+            answer2 = [int(r) for r in list(str(answer0))]
+            right = [14, 10, 18, 16, 14]
+            p = 0
+            j = 0
+            k = len(str(answer0))
+            if IsTheNumberSimple(d):
+                # if N2 == 10:
+
+                for j, k in enumerate(copy.deepcopy(right)):
+                    right[j] = right[j] ** d % N
+
+            if str(right) == str(answer2):
+                if ip2 == "192.168.0.4":
+                    grade = 1
+                    return Response(body=True, charset='UTF-8',
+                                    content_type='text/plain')  # jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
+
                 else:
-                    return Response(body=False, charset='UTF-8',
-                                    content_type='text/plain')  # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+                    grade = 0
+                    print('kek')
+            else:
+                grade = 0
+                return Response(body=False, charset='UTF-8',
+                                content_type='text/plain')  # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
 
         def IsTheNumberSimple(n):
             if n < 2:
