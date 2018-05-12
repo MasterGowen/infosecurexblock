@@ -111,7 +111,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     @XBlock.json_handler
     def check(self, data, *args):
         student_answer = json.loads(data)
-        self.answer = student_answer
+        #self.answer = student_answer
 
         def checkRSA(student_answer):
 
