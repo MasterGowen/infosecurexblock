@@ -5,7 +5,7 @@ import json
 import os
 
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer, String, JSONField, BooleanField
+from xblock.fields import Scope, Integer, String, JSONField
 from xblock.fragment import Fragment
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 
