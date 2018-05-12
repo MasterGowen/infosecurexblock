@@ -105,17 +105,17 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     # elif(lab_id==2):
     # print('test')
 
-    @XBlock.handler
+    @XBlock.json_handler
     def check(self, data, unused_suffix=''):
-        data = json.loads(data)
+        # data = json.loads(data)
         #self.answer = student_answer
 
         def checkRSA(data):
 
-            ip = data["ip"]
-            d = data["d"]
-            N = data["N"]
-            answer0 = data["e"]
+            # ip = data["ip"]
+            # d = data["d"]
+            # N = data["N"]
+            # answer0 = data["e"]
             return 1
 
 
