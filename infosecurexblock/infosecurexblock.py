@@ -5,7 +5,7 @@ import json
 import os
 
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer, String, JSONField
+from xblock.fields import Scope, Integer, String, JSONField, BooleanField
 from xblock.fragment import Fragment
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 
@@ -43,12 +43,25 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     )
 
     answer = JSONField(
-        display_name=u"Ответ студенкт",
+        display_name=u"Ответ студента",
         default={},
         scope=Scope.user_state
     )
 
-    editable_fields = ('display_name', 'task_text', "lab_id")
+    max_attempts = Integer(
+        display_name=u"Максимальное количество попыток",
+        help=u"",
+        default=1,
+        scope=Scope.settings
+    )
+
+    attempts = Integer(
+        display_name=u"Количество сделанных попыток",
+        default=0,
+        scope=Scope.user_state
+    )
+
+    editable_fields = ('display_name', 'task_text', "lab_id", "weight", "max_attempts")
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -66,6 +79,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             "task_text": self.task_text,
             "weight": self.weight,
         }
+
+        if answer_opportunity(self):
+            context["answer_opportunity"] = True
 
         fragment = Fragment()
         fragment.add_content(
@@ -91,6 +107,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 
+
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
     @XBlock.handler
@@ -108,45 +125,39 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
     @XBlock.json_handler
     def check(self, data, unused_suffix=''):
-        # data = json.loads(data)
-        # self.answer = student_answer
+        self.answer = data
+        self.attempts += 1
 
         def checkRSA(data):
+            if self.lab_id == 1:
 
-            ip = data["ip"]
-            d = data["d"]
-            N = data["N"]
-            answer0 = data["e"]
+                ip = data["ip"]
+                d = int(data["d"])
+                N = int(data["N"])
+                answer0 = int(data["e"])
 
-            d = int(d)
-            N = int(N)
-            answer0 = int(answer0)
-            ip2 = ip
-            answer2 = [int(r) for r in list(str(answer0))]
-            right = [14, 10, 18, 16, 14]
-            p = 0
-            j = 0
-            k = len(str(answer0))
-            if IsTheNumberSimple(d):
-                # if N2 == 10:
+                answer2 = [int(r) for r in list(str(answer0))]
+                right = [14, 10, 18, 16, 14]
+                p = 0
+                j = 0
+                k = len(str(answer0))
+                if IsTheNumberSimple(d):
+                    for j, k in enumerate(copy.deepcopy(right)):
+                        right[j] = right[j] ** d % N
 
-                for j, k in enumerate(copy.deepcopy(right)):
-                    right[j] = right[j] ** d % N
-
-            if str(right) == str(answer2):
-                if ip2 == "192.168.0.4":
-                    grade = 1
-                    return grade  # Response(body=True, charset='UTF-8',
-                    # content_type='text/plain')  # jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
-
+                if str(right) == str(answer2):
+                    if ip == "192.168.0.4":
+                        grade = 1
+                        return grade
+                    else:
+                        grade = 0
+                        print('kek')
+                        return grade
                 else:
                     grade = 0
-                    print('kek')
                     return grade
-            else:
-                grade = 0
-                return grade  # Response(body=False, charset='UTF-8',
-                # content_type='text/plain')  # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+            elif self.lab_id == 2:
+                pass
 
         def IsTheNumberSimple(n):
             if n < 2:
@@ -160,9 +171,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 else:
                     return True
 
-        def answer_opportunity(self):
-            return True
-
         if answer_opportunity(self):
             print("checking student answer")
             grade = checkRSA(data)
@@ -174,22 +182,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             response = {'result': 'success',
                         'correct': grade,
                         'weight': self.weight,
-                        # "wrong_answers": wrong_answers,
+                        "max_attempts": self.max_attempts,
+                        "attempts": self.attempts
                         }
-            return response  # Response(body=response, charset='UTF-8', content_type='application/json')
+            return response
 
-        # https://github.com/MasterGowen/MultiEngineXBlock/blob/master/multiengine/multiengine.py
-        # answer_opportunity
-        # self.runtime.publish(self, 'grade', {
-
-
-#                 'value': 0 -- 1,
-#                 'max_value': 1,
-# })
-
-
-# TO-DO: change this to create the scenarios you'd like to see in the
-# workbench while developing your XBlock.
 @staticmethod
 def workbench_scenarios():
     """A canned scenario for display in the workbench."""
@@ -205,3 +202,13 @@ def workbench_scenarios():
             </vertical_demo>
          """),
     ]
+
+
+def answer_opportunity(self):
+    """
+    Возможность ответа (если количество сделанное попыток меньше заданного).
+    """
+    if self.max_attempts <= self.attempts and self.max_attempts != 0:
+        return False
+    else:
+        return True
