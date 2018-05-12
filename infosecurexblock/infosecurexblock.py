@@ -1,7 +1,6 @@
 """TO-DO: Write a description of what this XBlock is."""
 
 import pkg_resources
-import datetime
 import json
 import os
 
@@ -13,8 +12,7 @@ from xblockutils.studio_editable import StudioEditableXBlockMixin
 from webob.response import Response
 
 import copy
-
-import subprocess
+import logging
 
 from .utils import (
     load_resource,
@@ -22,6 +20,7 @@ from .utils import (
     load_resources,
 )
 
+log = logging.getLogger(__name__)
 
 class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     display_name = String(display_name='Display Name', default="infosecurexblock", scope=Scope.settings)
@@ -110,6 +109,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
     @XBlock.json_handler
     def check(self, data, *args):
+        log.info(data)
         student_answer = json.loads(data)
         #self.answer = student_answer
 
@@ -167,14 +167,15 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             return True
 
         if answer_opportunity(self):
-            correct = checkRSA(student_answer)
+            log.info("checking student answer")
+            grade = checkRSA(student_answer)
 
             self.runtime.publish(self, 'grade', {
-                'value': correct,
+                'value': grade,
                 'max_value': self.weight,
             })
             response = {'result': 'success',
-                    'correct': correct,
+                    'correct': grade,
                     'weight': self.weight,
                     # "wrong_answers": wrong_answers,
                     }
