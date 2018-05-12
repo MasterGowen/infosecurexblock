@@ -3,8 +3,8 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
 
-    function successCheck(response) {
-        console.log(response);
+    function successCheck(result) {
+        console.log(result);
         $('.attempts', element).text(result.attempts);
         if (result.max_attempts && result.max_attempts <= result.attempts) {
             $('#checkid', element).remove();
