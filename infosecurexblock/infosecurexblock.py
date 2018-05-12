@@ -177,7 +177,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     'weight': self.weight,
                     # "wrong_answers": wrong_answers,
                     }
-            return Response(body=response, charset='UTF-8', content_type='application/json')
+            return response  # Response(body=response, charset='UTF-8', content_type='application/json')
 
         # https://github.com/MasterGowen/MultiEngineXBlock/blob/master/multiengine/multiengine.py
         # answer_opportunity
