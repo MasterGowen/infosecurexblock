@@ -78,6 +78,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             "display_name": self.display_name,
             "task_text": self.task_text,
             "weight": self.weight,
+            "max_attempts": self.max_attempts,
+            "attempts": self.attempts
+
         }
 
         if answer_opportunity(self):
