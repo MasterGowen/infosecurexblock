@@ -95,10 +95,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     # than one handler, or you may not need any handlers at all.
     @XBlock.handler
     def rect1(self, data, suffix=''):
-        # if(lab_id==1):
         dir = os.path.dirname(os.path.realpath(__file__))
-        # file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.GET["lab_id"])))).read()
-        file = open(os.path.join(dir, ('static/js/src/rect{0}.json'.format(data.params["lab_id"])))).read()
+        file = open(os.path.join(dir, ('static/js/src/lab_{0}_rect{1}.json'.format(
+            self.lab_id,
+            data.params["lab_id"]
+        )))).read()
         return Response(body=file, charset='UTF-8',
                         content_type='text/plain')
 
@@ -108,7 +109,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     @XBlock.json_handler
     def check(self, data, unused_suffix=''):
         # data = json.loads(data)
-        #self.answer = student_answer
+        # self.answer = student_answer
 
         def checkRSA(data):
 
@@ -116,8 +117,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             d = data["d"]
             N = data["N"]
             answer0 = data["e"]
-
-
 
             d = int(d)
             N = int(N)
@@ -137,8 +136,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             if str(right) == str(answer2):
                 if ip2 == "192.168.0.4":
                     grade = 1
-                    return grade #Response(body=True, charset='UTF-8',
-                                    #content_type='text/plain')  # jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
+                    return grade  # Response(body=True, charset='UTF-8',
+                    # content_type='text/plain')  # jsonData = json.dumps({"answer": "true"})  # ответ клиенту правльный ответ или нет
 
                 else:
                     grade = 0
@@ -146,8 +145,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     return grade
             else:
                 grade = 0
-                return grade #Response(body=False, charset='UTF-8',
-                                #content_type='text/plain')  # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
+                return grade  # Response(body=False, charset='UTF-8',
+                # content_type='text/plain')  # jsonData = json.dumps({"answer": "false"})  # ответ клиенту правльный ответ или нет
 
         def IsTheNumberSimple(n):
             if n < 2:
@@ -173,10 +172,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 'max_value': self.weight,
             })
             response = {'result': 'success',
-                    'correct': grade,
-                    'weight': self.weight,
-                    # "wrong_answers": wrong_answers,
-                    }
+                        'correct': grade,
+                        'weight': self.weight,
+                        # "wrong_answers": wrong_answers,
+                        }
             return response  # Response(body=response, charset='UTF-8', content_type='application/json')
 
         # https://github.com/MasterGowen/MultiEngineXBlock/blob/master/multiengine/multiengine.py
