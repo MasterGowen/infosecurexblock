@@ -218,7 +218,7 @@ function InfoSecureXBlock(runtime, element) {
                             type: "POST",
                             url: checkHandler,
                             data: {"student_answer": student_answer},
-                            success: success
+                            success: successCheck
                         });
                
                     })()
