@@ -61,7 +61,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.user_state
     )
 
-    editable_fields = ('display_name', 'task_text', "lab_id")
+    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts")
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
