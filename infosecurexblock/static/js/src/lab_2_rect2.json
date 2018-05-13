@@ -28,12 +28,6 @@
             "fontFamily":"Roboto",
             "fill": "black" 
         },
-        "button":{
-            "type": "button",
-            "class": "submit btn-brand",
-            "color":"#000",
-            "id":"checkid"
-        },
         "read":{
             "type": "div",
             "x": "100",
@@ -51,6 +45,12 @@
             "x": "300",
             "y": "900",
             "id": "execid"
+        },
+        "button":{
+            "type": "button",
+            "class": "submit btn-brand",
+            "color":"#000",
+            "id":"checkid"
         }
     }
 }
