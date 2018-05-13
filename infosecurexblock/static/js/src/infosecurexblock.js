@@ -8,13 +8,15 @@ function InfoSecureXBlock(runtime, element) {
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
-                $('.submit', element).remove();
+                document.getElementsByClassName('.submit').style.opacity="0.65"; 
+                document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
             }
             $(".success", element).text(result.points);
         }
         else { 
             $('.attempts', element).text(result.attempts);
-            $('.submit', element).remove(); 
+            document.getElementsByClassName('.submit').style.opacity="0.65"; 
+            document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
              }
     }
 
