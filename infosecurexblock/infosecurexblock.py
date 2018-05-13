@@ -156,7 +156,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 if IsTheNumberSimple(d):
                     for j, len(str(answer0)) in enumerate(copy.deepcopy(right)):
                         right[j] = right[j] ** d % N
-                if str(right) == str(answer2) && ip == "192.168.0.4":
+                if str(right) == str(answer2) & ip == "192.168.0.4":
                         grade = 1
                         return grade
                 else:
