@@ -25,29 +25,6 @@ function InfoSecureXBlock(runtime, element) {
             }
         }
 
-        /*         connection(nameFetch, labId) {
-                    var fetchResult = fetch(nameFetch + "?lab_id=" + labId, {mode: 'cors', method: 'get', dataType: 'json'});
-
-                    async function fetchAsync() {
-                        var response = await fetchResult;
-                        var data = await response.json();
-                        return data;
-                    }
-
-                    fetchAsync().then(data => {
-                        this.jsonObj = data;
-                        if (this.jsonObj.Rect1) {
-                            this.amount = Object.keys(this.jsonObj.Rect1).length;
-                            //console.log(this.amount,this.jsonObj.Rect1);
-                            this.addElementSVG(this.amount, this.jsonObj.Rect1);
-                        }
-                        if (this.jsonObj.Rect2) {
-                            this.amount = Object.keys(this.jsonObj.Rect2).length;
-                            this.addElement(this.amount, this.jsonObj.Rect2);
-                        }
-                    })
-                } */
-
         connection(handler, labId) {
             var self = this;
 
