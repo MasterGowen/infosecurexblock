@@ -69,7 +69,11 @@ object {
     padding-left: 50px; }
   
 #taskId {
-    display: none; }
+    display: none;
+    display: none;
+    fill: #f3faffef;
+    stroke: #0075b4;
+}
   
 #taskTextID {
     display: none; }
