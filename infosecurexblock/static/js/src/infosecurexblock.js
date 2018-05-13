@@ -70,59 +70,34 @@ function InfoSecureXBlock(runtime, element) {
                 elem = document.getElementById(idNum)
                 elem.style.display = 'none';
             }
+            var remember = "";
+            if (this.id == 'comp1') {
+                document.getElementById("comp1").style.opacity = "0.5";
+                if (remember != null) {
 
-            function getQuest() {
-                var fetchResult = fetch("http://localhost:5000/labs1/check/", {
-                    mode: 'cors',
-                    method: 'get',
-                    dataType: 'json'
-                });
-
-                async function fetchAsync() {
-                    var response = await fetchResult;
-                    var data = await response.json();
-                    return data;
+                    document.getElementById("comp2").style.opacity = "1";
+                    document.getElementById("comp3").style.opacity = "1";
                 }
-
-                fetchAsync().then(data => {
-                    if (data.student_answer == 'true') {
-                        alert('Правльно');
-                    }
-                    else {
-                        alert('Не правильно!');
-                    }
-                })
+                remember = this.id;
             }
-            if (lab_id == "1"){
-                var remember = "";
-                if (this.id == 'comp1') {
-                    document.getElementById("comp1").style.opacity = "0.5";
-                    if (remember != null) {
+            if (this.id == 'comp2') {
+                document.getElementById("comp2").style.opacity = "0.5";
 
-                        document.getElementById("comp2").style.opacity = "1";
-                        document.getElementById("comp3").style.opacity = "1";
-                    }
-                    remember = this.id;
+                if (remember != null) {
+                    //    alert(remember);
+                    document.getElementById("comp1").style.opacity = "1";
+                    document.getElementById("comp3").style.opacity = "1";
                 }
-                if (this.id == 'comp2') {
-                    document.getElementById("comp2").style.opacity = "0.5";
+                remember = this.id;
+            }
+            if (this.id == 'comp3') {
+                document.getElementById("comp3").style.opacity = "0.5";
 
-                    if (remember != null) {
-                        //    alert(remember);
-                        document.getElementById("comp1").style.opacity = "1";
-                        document.getElementById("comp3").style.opacity = "1";
-                    }
-                    remember = this.id;
+                if (remember != null) {
+                    document.getElementById("comp2").style.opacity = "1";
+                    document.getElementById("comp1").style.opacity = "1";
                 }
-                if (this.id == 'comp3') {
-                    document.getElementById("comp3").style.opacity = "0.5";
-
-                    if (remember != null) {
-                        document.getElementById("comp2").style.opacity = "1";
-                        document.getElementById("comp1").style.opacity = "1";
-                    }
-                    remember = this.id;
-                }
+                remember = this.id;
             }
             if (this.id == 'task') {
                 active('taskId');
@@ -166,19 +141,14 @@ function InfoSecureXBlock(runtime, element) {
                 active('File1TextID2');
             }
             if ((this.id == 'checkid') && (document.getElementById(this.id).value != undefined)) {
-                var count = 0;
-                var l = 0;
-                var count_num = 0;
                 var k = document.getElementById('ip').value;
                 var d = document.getElementById('d').value;
                 var N = document.getElementById('N').value;
                 var e = document.getElementById('e').value;
-                var k2 = k.length;
                 var empty = false;
-                var k4 = "";
                 var che = 0;
                 var b = checkIsIPV4(k);
-                if (k2 == 0 || d.length == 0 || N.length == 0 || e.length == 0) {
+                if (k.length == 0 || d.length == 0 || N.length == 0 || e.length == 0) {
                     alert("Пустые поля ввода.");
                     che++;
                     empty = true;
@@ -322,6 +292,7 @@ function InfoSecureXBlock(runtime, element) {
                     }
                     if (attributes[k] == "image") {
                         this.element.setAttributeNS(this.NS1, [k], attributes[k]);
+                        console.log(labId);
                         this.element.onclick = this.on;
                     }
                     else if (attributes[k] != "image") {

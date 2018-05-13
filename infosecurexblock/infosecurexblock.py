@@ -163,6 +163,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 else:
                     grade = 0
                     return grade
+                    
             elif self.lab_id == 2:
                 num = data["num"]
                 if num == 760:
