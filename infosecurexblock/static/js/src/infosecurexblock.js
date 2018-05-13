@@ -12,9 +12,10 @@ function InfoSecureXBlock(runtime, element) {
             }
             $(".success", element).text(result.points);
         }
-        else {
+        else { 
+            result.attempts+=1;
             $('.submit', element).remove(); 
-           // $(".success", element).text(result.points);
+            $(".success", element).text(result.points);
              }
     }
 
