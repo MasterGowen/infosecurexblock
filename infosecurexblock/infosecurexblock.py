@@ -146,27 +146,18 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
         def checkRSA(data):
             if self.lab_id == 1:
-
                 ip = data["ip"]
                 d = int(data["d"])
                 N = int(data["N"])
                 answer0 = int(data["e"])
-
                 answer2 = [int(r) for r in list(str(answer0))]
                 right = [14, 10, 18, 16, 14]
                 j = 0
-                k = len(str(answer0))
                 if IsTheNumberSimple(d):
-                    for j, k in enumerate(copy.deepcopy(right)):
+                    for j, len(str(answer0)) in enumerate(copy.deepcopy(right)):
                         right[j] = right[j] ** d % N
-
-                if str(right) == str(answer2):
-                    if ip == "192.168.0.4":
+                if str(right) == str(answer2) && ip == "192.168.0.4":
                         grade = 1
-                        return grade
-                    else:
-                        grade = 0
-                        print('kek')
                         return grade
                 else:
                     grade = 0
