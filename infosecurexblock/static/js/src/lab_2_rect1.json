@@ -179,7 +179,7 @@
             "cy": "538",
             "r": "2",
             "stroke-width": "4",
-            "stroke": "blue",
+            "stroke": "#0075b4",
             "id": "13"
             },
             "Circle2":
@@ -189,7 +189,7 @@
             "cy": "538",
             "r": "2",
             "stroke-width": "4",
-            "stroke": "blue",
+            "stroke": "#0075b4",
             "id": "14"
             },
             "but":{
@@ -202,25 +202,6 @@
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
             "id": "task"
             },
-            "taskDiv":{
-                "type": "rect",
-                "x": "150", 
-                "y": "30", 
-                "width": "750", 
-                "height": "750", 
-                "fill":"white",
-                "id": "taskId"
-            },
-            "taskText":{
-                "type":"text",
-                "x": "170",
-                "y": "50",
-                "fontSize":"20",
-                "fontFamily":"SegoeUI",
-                "fill": "black",
-                "id":"taskTextID"
-            },
-            
             "butFile":{
                 "type": "image",
                 "x": "400",
@@ -248,6 +229,24 @@
                     "fontFamily":"SegoeUI",
                     "fill": "black",
                     "id":"File1TextID2"
+                },
+                "taskDiv":{
+                    "type": "rect",
+                    "x": "150", 
+                    "y": "30", 
+                    "width": "750", 
+                    "height": "750", 
+                    "fill":"white",
+                    "id": "taskId"
+                },
+                "taskText":{
+                    "type":"text",
+                    "x": "170",
+                    "y": "50",
+                    "fontSize":"20",
+                    "fontFamily":"SegoeUI",
+                    "fill": "black",
+                    "id":"taskTextID"
                 }
     }
 }
