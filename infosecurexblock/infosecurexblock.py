@@ -33,7 +33,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         display_name=u"Максимальное количество баллов",
         help=(u"Максимальное количество баллов",
               u"которое может получить студент."),
-        default=100,
+        default=60,
         scope=Scope.settings
     )
     lab_id = Integer(
