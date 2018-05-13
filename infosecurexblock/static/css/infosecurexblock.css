@@ -87,4 +87,8 @@ object {
 }
 #checkid{
     margin-left: 250px;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
 }
