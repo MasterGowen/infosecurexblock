@@ -39,24 +39,18 @@
             "x": "100",
             "y": "900",
             "id": "readid",
-            "width": "150", 
-            "height": "50" 
         },
         "write":{
             "type": "div",
             "x": "200",
             "y": "900",
             "id": "writeid",
-            "width": "150", 
-            "height": "50" 
         },
         "execute":{
             "type": "div",
             "x": "300",
             "y": "900",
             "id": "execid",
-            "width": "150", 
-            "height": "50" 
         }
     }
 }
