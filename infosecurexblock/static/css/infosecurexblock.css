@@ -94,4 +94,7 @@ object {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 150px;
     height: 30px;
+    margin-left: 60px;
+    text-align: center;
+    float: left;
 }
