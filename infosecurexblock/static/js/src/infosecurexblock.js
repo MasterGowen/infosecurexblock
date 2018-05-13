@@ -33,6 +33,7 @@ function InfoSecureXBlock(runtime, element) {
 
             function success(handler) {
                 console.log(handler);
+                console.log(labId);
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
@@ -292,7 +293,6 @@ function InfoSecureXBlock(runtime, element) {
                     }
                     if (attributes[k] == "image") {
                         this.element.setAttributeNS(this.NS1, [k], attributes[k]);
-                        console.log(labId);
                         this.element.onclick = this.on;
                     }
                     else if (attributes[k] != "image") {
