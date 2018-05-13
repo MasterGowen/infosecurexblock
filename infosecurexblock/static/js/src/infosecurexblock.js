@@ -7,7 +7,7 @@ function InfoSecureXBlock(runtime, element) {
         console.log(result);
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
-            if (result.max_attempts && result.max_attempts <= result.attempts) {
+            if (result.max_attempts && result.max_attempts == result.attempts) {
                 $('.submit', element).remove();
             }
             $(".success", element).text(result.points);
