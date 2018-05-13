@@ -93,35 +93,36 @@ function InfoSecureXBlock(runtime, element) {
                     }
                 })
             }
+            if (lab_id == "1"){
+                var remember = "";
+                if (this.id == 'comp1') {
+                    document.getElementById("comp1").style.opacity = "0.5";
+                    if (remember != null) {
 
-            var remember = "";
-            if (this.id == 'comp1') {
-                document.getElementById("comp1").style.opacity = "0.5";
-                if (remember != null) {
-
-                    document.getElementById("comp2").style.opacity = "1";
-                    document.getElementById("comp3").style.opacity = "1";
+                        document.getElementById("comp2").style.opacity = "1";
+                        document.getElementById("comp3").style.opacity = "1";
+                    }
+                    remember = this.id;
                 }
-                remember = this.id;
-            }
-            if (this.id == 'comp2') {
-                document.getElementById("comp2").style.opacity = "0.5";
+                if (this.id == 'comp2') {
+                    document.getElementById("comp2").style.opacity = "0.5";
 
-                if (remember != null) {
-                    //    alert(remember);
-                    document.getElementById("comp1").style.opacity = "1";
-                    document.getElementById("comp3").style.opacity = "1";
+                    if (remember != null) {
+                        //    alert(remember);
+                        document.getElementById("comp1").style.opacity = "1";
+                        document.getElementById("comp3").style.opacity = "1";
+                    }
+                    remember = this.id;
                 }
-                remember = this.id;
-            }
-            if (this.id == 'comp3') {
-                document.getElementById("comp3").style.opacity = "0.5";
+                if (this.id == 'comp3') {
+                    document.getElementById("comp3").style.opacity = "0.5";
 
-                if (remember != null) {
-                    document.getElementById("comp2").style.opacity = "1";
-                    document.getElementById("comp1").style.opacity = "1";
+                    if (remember != null) {
+                        document.getElementById("comp2").style.opacity = "1";
+                        document.getElementById("comp1").style.opacity = "1";
+                    }
+                    remember = this.id;
                 }
-                remember = this.id;
             }
             if (this.id == 'task') {
                 active('taskId');
@@ -235,14 +236,6 @@ function InfoSecureXBlock(runtime, element) {
             }
             console.log(student_answer);
         }
-    }
-
-    function MakeTransparent(evt) {
-        evt.target.setAttributeNS(null, "opacity", "0.5");
-    }
-
-    function MakeOpaque(evt) {
-        evt.target.setAttributeNS(null, "opacity", "1");
     }
 
     function checkIsIPV4(entry) {
