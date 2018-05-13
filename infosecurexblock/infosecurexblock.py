@@ -154,7 +154,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
                 answer2 = [int(r) for r in list(str(answer0))]
                 right = [14, 10, 18, 16, 14]
-                p = 0
                 j = 0
                 k = len(str(answer0))
                 if IsTheNumberSimple(d):
