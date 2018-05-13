@@ -39,7 +39,7 @@
         },
         "button":{
             "type": "button",
-            "class": "Check",
+            "class": "submit btn-brand",
             "color":"#000",
             "id":"checkid"
         }
