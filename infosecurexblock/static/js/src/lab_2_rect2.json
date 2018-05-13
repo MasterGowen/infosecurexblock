@@ -1,0 +1,49 @@
+{"Rect2":
+    { 
+        "divAction": {
+        "type": "div",
+        "x": "0", 
+        "y": "850", 
+        "width": "850", 
+        "height": "250", 
+        "background-color":"white",
+        "id": "action"
+        },
+        "check1":{
+            "type": "checkbox",
+            "width": "200",
+            "height": "200",
+            "color":"#000",
+            "id":"check1"
+        },
+        "labelu":{
+            "type": "form",
+            "margin-left":"100"
+        },
+        "label2":{
+            "type":"text",
+            "x": "360",
+            "y": "850",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black" 
+        },
+        "Rights":{
+            "type": "input",
+            "x": "100",
+            "y": "900",
+            "id": "rights",
+            "border-radius": "10",
+            "placeholder": "Числа без пробелов",
+            "class": "rights"
+        },
+        "button":{
+            "type": "button",
+            "class": "Check",
+            "color":"#000",
+            "id":"checkid"
+        }
+        
+
+    }
+}
