@@ -38,19 +38,19 @@
             "type": "div",
             "x": "100",
             "y": "900",
-            "id": "readid",
+            "id": "readid"
         },
         "write":{
             "type": "div",
             "x": "200",
             "y": "900",
-            "id": "writeid",
+            "id": "writeid"
         },
         "execute":{
             "type": "div",
             "x": "300",
             "y": "900",
-            "id": "execid",
+            "id": "execid"
         }
     }
 }
