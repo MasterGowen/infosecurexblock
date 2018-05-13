@@ -312,6 +312,15 @@ function InfoSecureXBlock(runtime, element) {
                     if ((name == "text") && (attributes[k] == "ip3")) {
                         this.element.innerHTML = '192.168.0.5'
                     }
+                    if((name=="text")&&(attributes[k]=="ip4")){
+                        this.element.innerHTML = '192.168.0.2'
+                    }
+                    if((name=="text")&&(attributes[k]=="redact")){
+                        this.element.innerHTML = 'Редакторы'
+                    }
+                    if((name=="text")&&(attributes[k]=="users")){
+                        this.element.innerHTML = 'Пользователи'
+                    }
                     if (attributes[k] == "image") {
                         this.element.setAttributeNS(this.NS1, [k], attributes[k]);
                         this.element.onclick = this.on;
