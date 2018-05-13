@@ -367,6 +367,15 @@ function InfoSecureXBlock(runtime, element) {
             if (name === 'button') {
                 this.element.innerHTML = "Отправить на проверку";
             }
+            if ((name == "div") && (attributes[k] == "readid")) {
+                this.element.innerHTML = 'Чтение'
+            }
+            if ((name == "div") && (attributes[k] == "writeid")) {
+                this.element.innerHTML = 'Запись'
+            }
+            if ((name == "div") && (attributes[k] == "execid")) {
+                this.element.innerHTML = 'Выполнение'
+            }
             if (attributes) {
                 for (var k in attributes) {
                     this.element.setAttribute([k], attributes[k]);
