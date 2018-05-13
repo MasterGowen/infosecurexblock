@@ -28,15 +28,6 @@
             "fontFamily":"Roboto",
             "fill": "black" 
         },
-        "Rights":{
-            "type": "input",
-            "x": "100",
-            "y": "900",
-            "id": "rights",
-            "border-radius": "10",
-            "placeholder": "Числа без пробелов",
-            "class": "rights"
-        },
         "button":{
             "type": "button",
             "class": "submit btn-brand",
