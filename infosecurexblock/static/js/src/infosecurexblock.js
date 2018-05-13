@@ -14,7 +14,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         else {
             $('.submit', element).remove(); 
-             $(".success", element).text(result.points);
+          //   $(".success", element).text(result.points);
              }
     }
 
