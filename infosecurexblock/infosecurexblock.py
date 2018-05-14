@@ -80,7 +80,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         data = pkg_resources.resource_string(__name__, path)
         return data.decode("utf8")
 
-    # TO-DO: change this view to display your data your own way.
+    
     def student_view(self, context=None):
         """
         The primary view of the InfoSecureXBlock, shown to students
