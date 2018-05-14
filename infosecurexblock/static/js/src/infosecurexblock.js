@@ -8,13 +8,15 @@ function InfoSecureXBlock(runtime, element) {
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
-                $('.submit', element).remove();
+                document.getElementsByClassName('.submit').style.opacity="0.65"; 
+                document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
             }
             $(".success", element).text(result.points);
         }
         else { 
             $('.attempts', element).text(result.attempts);
-            $('.submit', element).remove(); 
+            document.getElementsByClassName('.submit').style.opacity="0.65"; 
+            document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
              }
     }
 
@@ -33,6 +35,7 @@ function InfoSecureXBlock(runtime, element) {
 
             function success(handler) {
                 console.log(handler);
+                console.log(labId);
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
@@ -70,30 +73,6 @@ function InfoSecureXBlock(runtime, element) {
                 elem = document.getElementById(idNum)
                 elem.style.display = 'none';
             }
-
-            function getQuest() {
-                var fetchResult = fetch("http://localhost:5000/labs1/check/", {
-                    mode: 'cors',
-                    method: 'get',
-                    dataType: 'json'
-                });
-
-                async function fetchAsync() {
-                    var response = await fetchResult;
-                    var data = await response.json();
-                    return data;
-                }
-
-                fetchAsync().then(data => {
-                    if (data.student_answer == 'true') {
-                        alert('Правльно');
-                    }
-                    else {
-                        alert('Не правильно!');
-                    }
-                })
-            }
-
             var remember = "";
             if (this.id == 'comp1') {
                 document.getElementById("comp1").style.opacity = "0.5";
@@ -165,19 +144,14 @@ function InfoSecureXBlock(runtime, element) {
                 active('File1TextID2');
             }
             if ((this.id == 'checkid') && (document.getElementById(this.id).value != undefined)) {
-                var count = 0;
-                var l = 0;
-                var count_num = 0;
                 var k = document.getElementById('ip').value;
                 var d = document.getElementById('d').value;
                 var N = document.getElementById('N').value;
                 var e = document.getElementById('e').value;
-                var k2 = k.length;
                 var empty = false;
-                var k4 = "";
                 var che = 0;
                 var b = checkIsIPV4(k);
-                if (k2 == 0 || d.length == 0 || N.length == 0 || e.length == 0) {
+                if (k.length == 0 || d.length == 0 || N.length == 0 || e.length == 0) {
                     alert("Пустые поля ввода.");
                     che++;
                     empty = true;
@@ -235,14 +209,6 @@ function InfoSecureXBlock(runtime, element) {
             }
             console.log(student_answer);
         }
-    }
-
-    function MakeTransparent(evt) {
-        evt.target.setAttributeNS(null, "opacity", "0.5");
-    }
-
-    function MakeOpaque(evt) {
-        evt.target.setAttributeNS(null, "opacity", "1");
     }
 
     function checkIsIPV4(entry) {
@@ -312,6 +278,21 @@ function InfoSecureXBlock(runtime, element) {
                     if ((name == "text") && (attributes[k] == "ip3")) {
                         this.element.innerHTML = '192.168.0.5'
                     }
+                    if((name=="text")&&(attributes[k]=="ip4")){
+                        this.element.innerHTML = '192.168.0.2'
+                    }
+                    if((name=="text")&&(attributes[k]=="ip5")){
+                        this.element.innerHTML = '192.168.0.6'
+                    }
+                    if((name=="text")&&(attributes[k]=="redact")){
+                        this.element.innerHTML = 'Редакторы'
+                    }
+                    if((name=="text")&&(attributes[k]=="users")){
+                        this.element.innerHTML = 'Пользователи'
+                    }
+                    if((name=="text")&&(attributes[k]=="admin")){
+                        this.element.innerHTML = 'Администратор'
+                    }
                     if (attributes[k] == "image") {
                         this.element.setAttributeNS(this.NS1, [k], attributes[k]);
                         this.element.onclick = this.on;
@@ -360,6 +341,15 @@ function InfoSecureXBlock(runtime, element) {
             }
             if (attributes) {
                 for (var k in attributes) {
+                    if ((name == "div") && (attributes[k] == "readid")) {
+                        this.element.innerHTML = 'Чтение'
+                    }
+                    if ((name == "div") && (attributes[k] == "writeid")) {
+                        this.element.innerHTML = 'Запись'
+                    }
+                    if ((name == "div") && (attributes[k] == "execid")) {
+                        this.element.innerHTML = 'Выполнение'
+                    }
                     this.element.setAttribute([k], attributes[k]);
                     this.element.onclick = this.on;
                 }
@@ -408,6 +398,7 @@ function InfoSecureXBlock(runtime, element) {
     //         success: updateCount
     //     });
     // });
+    
 
     (function () {
         /* Here's where you'd do things on page load. */

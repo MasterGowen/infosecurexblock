@@ -1,8 +1,28 @@
 {
         "Rect1":{
+            "redacRect":{
+                "type": "rect",
+                "x": "600", 
+                "y": "250", 
+                "width": "200", 
+                "height": "400", 
+                "fill":"#f5f5f5",
+                "stroke":"#0075b4",
+                "id": "redacRect"
+            },
+            "userRect":{
+                "type": "rect",
+                "x": "50", 
+                "y": "250", 
+                "width": "200", 
+                "height": "400", 
+                "fill":"#f5f5f5",
+                "stroke":"#0075b4",
+                "id": "userRect"
+            },
             "comp1":{
                 "type": "image",
-                "x": "160",
+                "x": "100",
                 "y": "500",
                 "width": "100",
                 "height": "100",
@@ -13,7 +33,7 @@
             },
             "transfer":{
                 "type": "image",
-                "x": "350",
+                "x": "360",
                 "y": "60",
                 "width": "100",
                 "height": "100",
@@ -21,21 +41,21 @@
                 "id": "2",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/transfer.svg"
             },
-            "db":{
+            "Comp4":{
                 "type": "image",
                 "x": "100",
                 "y": "300",
                 "width": "100",
                 "height": "100",
                 "color": "#11111",
-                "id": "3",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/server-3.svg"
+                "id": "comp4",
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
             },
         "comp2":
             {
             "type": "image",
-            "x": "370",
-            "y": "500",
+            "x": "650",
+            "y": "300",
             "width": "100",
             "height": "100",
             "color": "#11111",
@@ -44,7 +64,7 @@
         },
         "comp3":{
             "type": "image",
-            "x": "580",
+            "x": "650",
             "y": "500",
             "width": "100",
             "height": "100",
@@ -52,9 +72,19 @@
             "id": "comp3",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
         },
+        "compadm":{
+            "type": "image",
+            "x": "365",
+            "y": "600",
+            "width": "100",
+            "height": "100",
+            "color": "#11111",
+            "id": "compadm",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
+        },
         "ip1":{
             "type":"text",
-            "x": "160",
+            "x": "100",
             "y": "620",
             "fontSize":"20",
             "fontFamily":"Roboto",
@@ -63,8 +93,8 @@
         },
         "ip2":{
             "type":"text",
-            "x": "370",
-            "y": "620",
+            "x": "650",
+            "y": "420",
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
@@ -72,107 +102,153 @@
         },
         "ip3":{
             "type":"text",
-            "x": "580",
+            "x": "650",
             "y": "620",
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
             "id":"ip3"
         },
-        "LineComDB":
+        "ip4":{
+            "type":"text",
+            "x": "100",
+            "y": "420",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip4"
+        },
+        "ip5":{
+            "type":"text",
+            "x": "365",
+            "y": "720",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip5"
+        },
+        "redact":{
+            "type":"text",
+            "x": "640",
+            "y": "200",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"redact"
+        },
+        "users":{
+            "type":"text",
+            "x": "100",
+            "y": "200",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"users"
+        },
+        "admin":{
+            "type":"text",
+            "x": "340",
+            "y": "750",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"admin"
+        },
+        
+        "article":{
+            "type":"text",
+            "x": "370",
+            "y": "50",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"article"
+        },
+
+        "LineCom13":
         {
         "type": "line",
-        "x1": "190",
-        "y1": "380",
-        "x2": "445",
-        "y2": "385",
+        "x1": "210",
+        "y1": "536",
+        "x2": "640",
+        "y2": "536",
         "stroke-width": "3",
         "stroke": "lightgrey",
         "id": "7"
         },
-        "LineComClo":
+        "LineCom4":
         {
         "type": "line",
-        "x1": "400",
-        "y1": "150",
-        "x2": "400",
-        "y2": "330",
+        "x1": "210",
+        "y1": "356",
+        "x2": "365",
+        "y2": "538",
         "stroke-width": "3",
         "stroke": "lightgrey",
         "id": "8"
         },
-        "LineCom1Com":
+        "LineCom3":
         {
         "type": "line",
-        "x1": "355",
-        "y1": "384",
-        "x2": "220",
-        "y2": "503",
+        "x1": "465",
+        "y1": "538",
+        "x2": "640",
+        "y2": "350",
         "stroke-width": "3",
         "stroke": "lightgrey",
         "id": "9"
         },
-        "LineCom2Com":
+        "LineCloud":
         {
         "type": "line",
-        "x1": "400",
-        "y1": "370",
-        "x2": "400",
-        "y2": "503",
+        "x1": "413",
+        "y1": "150",
+        "x2": "413",
+        "y2": "450",
         "stroke-width": "3",
         "stroke": "lightgrey",
         "id": "10"
         },
-        "LineCom3Com":
-        {
-        "type": "line",
-        "x1": "445",
-        "y1": "384",
-        "x2": "600",
-        "y2": "503",
-        "stroke-width": "3",
-        "stroke": "lightgrey",
-        "id": "11"
-        },
         "wifi":{
             "type": "image",
-            "x": "350",
-            "y": "300",
+            "x": "365",
+            "y": "450",
             "width": "100",
             "height": "100",
             "color": "#11111",
             "id": "5",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/wifi.svg"
         },
+        "LineAdmin":
+        {
+        "type": "line",
+        "x1": "415",
+        "y1": "540",
+        "x2": "415",
+        "y2": "600",
+        "stroke-width": "3",
+        "stroke": "lightgrey",
+        "id": "10"
+        },
         "Circle1":
             {
             "type": "circle",
-            "cx": "445",
-            "cy": "384",
+            "cx": "465",
+            "cy": "538",
             "r": "2",
             "stroke-width": "4",
-            "stroke": "blue",
+            "stroke": "#0075b4",
             "id": "13"
             },
             "Circle2":
             {
             "type": "circle",
-            "cx": "400",
-            "cy": "385",
+            "cx": "363",
+            "cy": "538",
             "r": "2",
             "stroke-width": "4",
-            "stroke": "blue",
+            "stroke": "#0075b4",
             "id": "14"
-            },
-            "Circle3":
-            {
-            "type": "circle",
-            "cx": "355",
-            "cy": "384",
-            "r": "2",
-            "stroke-width": "4",
-            "stroke": "blue",
-            "id": "15"
             },
             "but":{
             "type": "image",
@@ -184,43 +260,15 @@
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
             "id": "task"
             },
-            
             "butFile":{
                 "type": "image",
-                "x": "390",
+                "x": "400",
                 "y": "83",
                 "width": "20",
                 "height": "20",
                 "color": "#11111",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/file.svg",
                 "id": "File1"
-                },
-                "taskDiv":{
-                    "type": "rect",
-                    "x": "150", 
-                    "y": "30", 
-                    "width": "750", 
-                    "height": "750", 
-                    "fill":"white",
-                    "id": "taskId"
-                },
-                "taskText":{
-                    "type":"text",
-                    "x": "170",
-                    "y": "50",
-                    "fontSize":"20",
-                    "fontFamily":"SegoeUI",
-                    "fill": "black",
-                    "id":"taskTextID"
-                },
-                "FileDiv":{
-                    "type": "ellipse",
-                    "cx": "260", 
-                    "cy": "115", 
-                    "rx": "60", 
-                    "ry": "30",
-                    "fill":"white",
-                    "id": "File1Id"
                 },
                 "FileText":{
                     "type":"text",
@@ -239,6 +287,24 @@
                     "fontFamily":"SegoeUI",
                     "fill": "black",
                     "id":"File1TextID2"
+                },
+                "taskDiv":{
+                    "type": "rect",
+                    "x": "150", 
+                    "y": "30", 
+                    "width": "750", 
+                    "height": "750", 
+                    "fill":"white",
+                    "id": "taskId"
+                },
+                "taskText":{
+                    "type":"text",
+                    "x": "170",
+                    "y": "50",
+                    "fontSize":"20",
+                    "fontFamily":"SegoeUI",
+                    "fill": "black",
+                    "id":"taskTextID"
                 }
     }
 }

@@ -163,8 +163,15 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 else:
                     grade = 0
                     return grade
+                    
             elif self.lab_id == 2:
-                pass
+                num = data["num"]
+                if num == 760:
+                    grade = 1
+                    return grade
+                else:
+                    grade = 0
+                    return grade
 
         def IsTheNumberSimple(n):
             if n < 2:
