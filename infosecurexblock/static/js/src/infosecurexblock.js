@@ -45,6 +45,15 @@ function InfoSecureXBlock(runtime, element) {
                     handler.amount = Object.keys(handler.Rect2).length;
                     self.addElement(handler.amount, handler.Rect2);
                 }
+                if (handler.Rect3) {
+                    handler.amount = Object.keys(handler.Rect3).length;
+                    //console.log(this.amount,this.jsonObj.Rect1);
+                    self.addElementSVG(handler.amount, handler.Rect3);
+                }
+                if (handler.Rect4) {
+                    handler.amount = Object.keys(handler.Rect4).length;
+                    self.addElement(handler.amount, handler.Rect4);
+                }
             }
 
             (function () {
@@ -209,6 +218,98 @@ function InfoSecureXBlock(runtime, element) {
             }
             console.log(student_answer);
         }
+        static dragMouseDown(e) {
+
+            var dragObject;
+	        var mouseOffset;
+            e = fixEvent(e)
+            if (e.which!=1) return
+            dragObject  = this;
+            //console.log(dragObject);
+            // получить сдвиг элемента относительно курсора мыши
+            mouseOffset = getMouseOffset(this, e)
+            dragObject.downX = e.pageX;
+            dragObject.downY = e.pageY;
+    
+            // эти обработчики отслеживают процесс и окончание переноса
+            document.onmousemove = mouseMove;
+            document.onmouseup = mouseUp;
+            document.onmouseout = mouseOut;
+    
+            // отменить перенос и выделение текста при клике на тексте
+            document.ondragstart = function() { return false }
+            document.body.onselectstart = function() { return false }
+    
+            return false
+        function fixEvent(e) {
+            // получить объект событие для IE
+            e = e || window.event
+        
+            // добавить pageX/pageY для IE
+            if ( e.pageX == null && e.clientX != null ) {
+                var html = document.documentElement
+                var body = document.body
+                e.pageX = e.clientX + (html && html.scrollLeft || body && body.scrollLeft || 0) - (html.clientLeft || 0)
+                e.pageY = e.clientY + (html && html.scrollTop || body && body.scrollTop || 0) - (html.clientTop || 0)
+            }
+        
+            // добавить which для IE
+            if (!e.which && e.button) {
+                e.which = e.button & 1 ? 1 : ( e.button & 2 ? 3 : ( e.button & 4 ? 2 : 0 ) )
+            }
+        
+            return e
+        }
+        function getMouseOffset(target, e) {
+            var docPos	= Start.getPosition(target)
+            return {x:e.pageX - docPos.x, y:e.pageY - docPos.y}
+        }
+        function mouseUp(){
+            dragObject = null
+
+            // очистить обработчики, т.к перенос закончен
+            document.onmousemove = null
+            document.onmouseup = null
+            document.onmouseout = null
+            document.ondragstart = null
+            document.body.onselectstart = null
+        }
+        function mouseOut(){
+            dragObject = null
+
+            // очистить обработчики, т.к перенос закончен
+            document.onmousemove = null
+            document.onmouseup = null
+            document.onmouseout = null
+            document.ondragstart = null
+            document.body.onselectstart = null
+        }
+        function mouseMove(event){
+            
+            event = fixEvent(event);
+            if(event.target.id!="widget"&& event.target.id!="checkid"){
+                event.target.style.position = 'absolute';
+                event.target.style.top = event.pageY - mouseOffset.y + 'px';
+                event.target.style.left = event.pageX - mouseOffset.x + 'px';
+            }
+        }
+         
+    }   
+        static getPosition(e){
+            var left = 0
+            var top  = 0
+        
+            while (e.offsetParent){
+                left += e.offsetLeft
+                top  += e.offsetTop
+                e	 = e.offsetParent
+            }
+        
+            left += e.offsetLeft
+            top  += e.offsetTop
+        
+            return {x:left, y:top}
+        }
     }
 
     function checkIsIPV4(entry) {
@@ -240,19 +341,6 @@ function InfoSecureXBlock(runtime, element) {
             }
             //this.constract();
             this.connection(rect1HandlerUrl, 1);
-            //this.on =() => {
-            //console.log(this);
-            /* if(this.jsonObj.Rect1=='task'){
-                this.active('taskId');
-                this.active('taskTextID');
-                document.getElementById('taskTextID').innerHTML ="hi";
-                console.log(this);
-            }
-            if(this.id=='taskId'){
-                this.deactive('taskId');
-                this.deactive('taskTextID');
-            } */
-            //}  
         }
 
         constract(name) {
