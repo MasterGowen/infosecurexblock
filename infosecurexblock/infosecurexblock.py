@@ -49,7 +49,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     )
 
     max_attempts = Integer(
-        display_name=u"Максимальное количество попыток",
+        display_name=u"Maximum number of attempts",
         help=u"",
         default=1,
         scope=Scope.settings
