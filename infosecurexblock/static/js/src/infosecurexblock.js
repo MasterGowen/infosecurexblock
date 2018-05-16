@@ -40,10 +40,12 @@ function InfoSecureXBlock(runtime, element) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
                     self.addElementSVG(handler.amount, handler.Rect1);
+                    self.element.onclick = self.on;
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
                     self.addElement(handler.amount, handler.Rect2);
+                    self.element.onclick = self.on;
                 }
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
@@ -381,26 +383,11 @@ function InfoSecureXBlock(runtime, element) {
                     if((name=="text")&&(attributes[k]=="admin")){
                         this.element.innerHTML = 'Администратор'
                     }
-                    if(attributes[k]=="image"){
-                        this.element.setAttributeNS(this.NS1,'href',attributes[k]);
-                        var test=Object.keys(handler);
-                        console.log("test ",test);
-                        console.log("handler ",handler);
-                        if(test == "Rect1"){
-                            this.element.onclick = this.on;
-                        }
-                        else if(test == "Rect3"){
-                            this.element.onclick = null;
-                        }
+                    if (attributes[k] == "image") {
+                        this.element.setAttributeNS(this.NS1, [k], attributes[k]);
                     }
-                    else if (attributes[k]!="image"){
-                        this.element.setAttributeNS(null,[k],attributes[k]);
-                        if(test == "Rect2"){
-                            this.element.onclick = this.on;
-                        }
-                        else if(test == "Rect4"){
-                            
-                        }
+                    else if (attributes[k] != "image") {
+                        this.element.setAttributeNS(null, [k], attributes[k]);
                     }
                 }
                 return this.element;
@@ -451,14 +438,7 @@ function InfoSecureXBlock(runtime, element) {
                     if ((name == "div") && (attributes[k] == "execid")) {
                         this.element.innerHTML = 'Выполнение'
                     }
-                    this.element.setAttribute([k],attributes[k]);
-                    var test = Object.keys(handler);
-                    if(test == "Rect2"){
-                        this.element.onclick = this.on;
-                    }
-                    else if(test == "Rect4"){
-                        this.element.addEventListener('mousedown',Start.dragMouseDown);
-                    }
+                    this.element.setAttribute([k], attributes[k]);
                 }
                 return this.element;
             }
@@ -486,25 +466,6 @@ function InfoSecureXBlock(runtime, element) {
 //автоматически вызываемая функция создаёт пространство
 //рабочей области + формирует создание области настроек
 //и кнопки отправки на проверку.
-
-    /* function File12(){
-        alert('Посмотреть сообщение');
-        var message = document.createAttribute('div');
-        message
-       // this.element.width= 60;
-        // var img1 = document.getElementById("12");
-        // this.element.height = 60;
-     }*/
-
-
-    // $('p', element).click(function (eventObject) {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: handlerUrl,
-    //         data: JSON.stringify({"hello": "world"}),
-    //         success: updateCount
-    //     });
-    // });
     
 
     (function () {
