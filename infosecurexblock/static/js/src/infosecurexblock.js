@@ -384,6 +384,8 @@ function InfoSecureXBlock(runtime, element) {
                     if(attributes[k]=="image"){
                         this.element.setAttributeNS(this.NS1,'href',attributes[k]);
                         var test=Object.keys(handler);
+                        console.log("test ",test);
+                        console.log("handler ",handler);
                         if(test == "Rect1"){
                             this.element.onclick = this.on;
                         }
