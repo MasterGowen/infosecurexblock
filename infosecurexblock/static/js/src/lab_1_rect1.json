@@ -213,7 +213,7 @@
                     "fill": "black",
                     "id":"taskTextID"
                 },
-                "FileDiv":{
+                "FileDiv":{ 
                     "type": "image",
                      "x": "230",
                      "y": "60",
