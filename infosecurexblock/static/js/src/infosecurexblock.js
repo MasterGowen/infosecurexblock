@@ -40,12 +40,10 @@ function InfoSecureXBlock(runtime, element) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
                     self.addElementSVG(handler.amount, handler.Rect1);
-                    self.element.onclick = self.on;
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
                     self.addElement(handler.amount, handler.Rect2);
-                    self.element.onclick = self.on;
                 }
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
@@ -355,6 +353,7 @@ function InfoSecureXBlock(runtime, element) {
             this.element = document.createElementNS(this.NS, name);
             if (name == "svg") {
                 document.getElementById("widget").appendChild(this.element);
+                document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
             if (attributes) {
@@ -385,9 +384,11 @@ function InfoSecureXBlock(runtime, element) {
                     }
                     if (attributes[k] == "image") {
                         this.element.setAttributeNS(this.NS1, [k], attributes[k]);
+                        this.element.onclick = this.on;
                     }
                     else if (attributes[k] != "image") {
                         this.element.setAttributeNS(null, [k], attributes[k]);
+                        this.element.onclick = this.on;
                     }
                 }
                 return this.element;
@@ -439,6 +440,7 @@ function InfoSecureXBlock(runtime, element) {
                         this.element.innerHTML = 'Выполнение'
                     }
                     this.element.setAttribute([k], attributes[k]);
+                    this.element.onclick = this.on;
                 }
                 return this.element;
             }
