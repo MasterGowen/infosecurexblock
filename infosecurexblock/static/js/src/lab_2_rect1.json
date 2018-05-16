@@ -20,6 +20,16 @@
                 "stroke":"#0075b4",
                 "id": "userRect"
             },
+            "admRect":{
+                "type": "rect",
+                "x": "315", 
+                "y": "580", 
+                "width": "200", 
+                "height": "200", 
+                "fill":"#f5f5f5",
+                "stroke":"#0075b4",
+                "id": "admRect"
+            },
             "comp1":{
                 "type": "image",
                 "x": "100",

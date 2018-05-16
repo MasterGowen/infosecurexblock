@@ -46,6 +46,41 @@
             "y": "900",
             "id": "execid"
         },
+        "nothing":{
+            "type": "div",
+            "x": "100",
+            "y": "950",
+            "id": "nothing",
+            "class":"draggable"
+        },
+        "wx":{
+            "type": "div",
+            "x": "200",
+            "y": "950",
+            "id": "wx",
+            "class":"draggable"
+        },
+        "rx":{
+            "type": "div",
+            "x": "300",
+            "y": "950",
+            "id": "rx",
+            "class":"draggable"
+        },
+        "rw":{
+            "type": "div",
+            "x": "100",
+            "y": "980",
+            "id": "rw",
+            "class":"draggable"
+        },   
+        "rwx":{
+            "type": "div",
+            "x": "200",
+            "y": "980",
+            "id": "rwx",
+            "class":"draggable"
+        },
         "button":{
             "type": "button",
             "class": "submit btn-brand",

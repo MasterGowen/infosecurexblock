@@ -382,6 +382,9 @@ function InfoSecureXBlock(runtime, element) {
                     if((name=="text")&&(attributes[k]=="admin")){
                         this.element.innerHTML = 'Администратор'
                     }
+                    if((name=="text")&&(attributes[k]=="article")){
+                        this.element.innerHTML = 'Статья'
+                    }
                     if (attributes[k] == "image") {
                         this.element.setAttributeNS(this.NS1, [k], attributes[k]);
                         this.element.onclick = this.on;
