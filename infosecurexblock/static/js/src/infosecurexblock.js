@@ -442,6 +442,21 @@ function InfoSecureXBlock(runtime, element) {
                     if ((name == "div") && (attributes[k] == "execid")) {
                         this.element.innerHTML = 'Выполнение'
                     }
+                    if ((name == "div") && (attributes[k] == "nothing")) {
+                        this.element.innerHTML = 'Отсутствие прав'
+                    }
+                    if ((name == "div") && (attributes[k] == "wx")) {
+                        this.element.innerHTML = 'права на запись и выполнение'
+                    }
+                    if ((name == "div") && (attributes[k] == "rx")) {
+                        this.element.innerHTML = 'права на чтение и выполнение'
+                    }
+                    if ((name == "div") && (attributes[k] == "rw")) {
+                        this.element.innerHTML = 'права на чтение и запись'
+                    }
+                    if ((name == "div") && (attributes[k] == "rwx")) {
+                        this.element.innerHTML = 'полные права'
+                    }
                     this.element.setAttribute([k], attributes[k]);
                     this.element.onclick = this.on;
                 }
