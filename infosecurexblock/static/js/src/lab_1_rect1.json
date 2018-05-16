@@ -213,14 +213,14 @@
                     "fill": "black",
                     "id":"taskTextID"
                 },
-                "FileDiv":{ 
-                    "type": "image",
-                     "x": "230",
-                     "y": "60",
-                     "width": "100",
-                     "height": "100", 
-                     "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/bubble.svg",
-                     "id": "File1Id"
+                "FileDiv":{
+                    "type": "ellipse",
+                    "cx": "260", 
+                    "cy": "115", 
+                    "rx": "60", 
+                    "ry": "30",
+                    "fill":"white",
+                    "id": "File1Id"
                 },
                 "FileText":{
                     "type":"text",
