@@ -118,6 +118,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             server_3_icon=self.runtime.local_resource_url(self, "public/images/server-3.svg"),
             file_icon=self.runtime.local_resource_url(self, "public/images/file.svg"),
             wifi_icon=self.runtime.local_resource_url(self, "public/images/wifi.svg"),
+            bubble_icon=self.runtime.local_resource_url(self, "public/images/bubble.svg"),
         )
         css_urls = ("static/css/infosecurexblock.css",)  # css_context
         load_resources(js_urls, css_urls, fragment)
