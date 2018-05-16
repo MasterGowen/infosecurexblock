@@ -381,13 +381,24 @@ function InfoSecureXBlock(runtime, element) {
                     if((name=="text")&&(attributes[k]=="admin")){
                         this.element.innerHTML = 'Администратор'
                     }
-                    if (attributes[k] == "image") {
-                        this.element.setAttributeNS(this.NS1, [k], attributes[k]);
-                        this.element.onclick = this.on;
+                    if(attributes[k]=="image"){
+                        this.element.setAttributeNS(this.NS1,'href',attributes[k]);
+                        var test=Object.keys(this.jsonObj);
+                        if(test == "Rect1"){
+                            this.element.onclick = this.on;
+                        }
+                        else if(test == "Rect3"){
+                            this.element.onclick = null;
+                        }
                     }
-                    else if (attributes[k] != "image") {
-                        this.element.setAttributeNS(null, [k], attributes[k]);
-                        this.element.onclick = this.on;
+                    else if (attributes[k]!="image"){
+                        this.element.setAttributeNS(null,[k],attributes[k]);
+                        if(test == "Rect2"){
+                            this.element.onclick = this.on;
+                        }
+                        else if(test == "Rect4"){
+                            
+                        }
                     }
                 }
                 return this.element;
@@ -438,8 +449,14 @@ function InfoSecureXBlock(runtime, element) {
                     if ((name == "div") && (attributes[k] == "execid")) {
                         this.element.innerHTML = 'Выполнение'
                     }
-                    this.element.setAttribute([k], attributes[k]);
-                    this.element.onclick = this.on;
+                    this.element.setAttribute([k],attributes[k]);
+                    var test = Object.keys(this.jsonObj);
+                    if(test == "Rect2"){
+                        this.element.onclick = this.on;
+                    }
+                    else if(test == "Rect4"){
+                        this.element.addEventListener('mousedown',Start.dragMouseDown);
+                    }
                 }
                 return this.element;
             }
