@@ -112,11 +112,13 @@ function InfoSecureXBlock(runtime, element) {
                 remember = this.id;
             }
             if (this.id == 'task') {
+                active('arrowid');
                 active('taskId');
                 active('taskTextID');
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
             }
             if (this.id == 'taskId') {
+                deactive('arrowid');
                 deactive('taskId');
                 deactive('taskTextID');
             }
@@ -229,7 +231,7 @@ function InfoSecureXBlock(runtime, element) {
             if (!elem) return;
         
             dragObject.elem = elem;
-            
+
             dragObject.downX = e.pageX;
             dragObject.downY = e.pageY;
             
