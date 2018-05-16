@@ -32,19 +32,22 @@
             "type": "div",
             "x": "100",
             "y": "900",
-            "id": "readid"
+            "id": "readid",
+            "class":"draggable"
         },
         "write":{
             "type": "div",
             "x": "200",
             "y": "900",
-            "id": "writeid"
+            "id": "writeid",
+            "class":"draggable"
         },
         "execute":{
             "type": "div",
             "x": "300",
             "y": "900",
-            "id": "execid"
+            "id": "execid",
+            "class":"draggable"
         },
         "nothing":{
             "type": "div",
