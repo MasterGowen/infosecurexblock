@@ -218,100 +218,149 @@ function InfoSecureXBlock(runtime, element) {
             }
             console.log(student_answer);
         }
-        static dragMouseDown(e) {
 
-            var dragObject;
-	        var mouseOffset;
-            e = fixEvent(e)
-            if (e.which!=1) return
-            dragObject  = this;
-            //console.log(dragObject);
-            // получить сдвиг элемента относительно курсора мыши
-            mouseOffset = getMouseOffset(this, e)
+    
+        static dragMouseDown(e) {
+            var dragObject = {};
+            var self = this;
+            if (e.which != 1) return;
+    
+            var elem = e.target.closest('.draggable');
+            if (!elem) return;
+        
+            dragObject.elem = elem;
+        
+            // запомним, что элемент нажат на текущих координатах pageX/pageY
             dragObject.downX = e.pageX;
             dragObject.downY = e.pageY;
-    
-            // эти обработчики отслеживают процесс и окончание переноса
-            document.onmousemove = mouseMove;
-            document.onmouseup = mouseUp;
-            document.onmouseout = mouseOut;
-    
-            // отменить перенос и выделение текста при клике на тексте
-            document.ondragstart = function() { return false }
+            
+            document.onmousemove = function(e){
+                onMouseMove(e)
+            };
+            document.onmouseup = onMouseUp;
+          
+            this.onDragEnd = function(dragObject, dropElem) {};
+            this.onDragCancel = function(dragObject) {dragObject.avatar.rollback();};
             document.body.onselectstart = function() { return false }
     
-            return false
-        function fixEvent(e) {
-            // получить объект событие для IE
-            e = e || window.event
+            return false;
         
-            // добавить pageX/pageY для IE
-            if ( e.pageX == null && e.clientX != null ) {
-                var html = document.documentElement
-                var body = document.body
-                e.pageX = e.clientX + (html && html.scrollLeft || body && body.scrollLeft || 0) - (html.clientLeft || 0)
-                e.pageY = e.clientY + (html && html.scrollTop || body && body.scrollTop || 0) - (html.clientTop || 0)
+          function onMouseMove(e) {
+            if (!dragObject.elem) return; // элемент не зажат
+        
+            if (!dragObject.avatar) { // если перенос не начат...
+              var moveX = e.pageX - dragObject.downX;
+              var moveY = e.pageY - dragObject.downY;
+        
+              // если мышь передвинулась в нажатом состоянии недостаточно далеко
+              if (Math.abs(moveX) < 3 && Math.abs(moveY) < 3) {
+                return;
+              }
+        
+              // начинаем перенос
+              dragObject.avatar = createAvatar(e); // создать аватар
+              if (!dragObject.avatar) { // отмена переноса, нельзя "захватить" за эту часть элемента
+                dragObject = {};
+                return;
+              }
+        
+              // аватар создан успешно
+              // создать вспомогательные свойства shiftX/shiftY
+              var coords = getCoords(dragObject.avatar);
+              dragObject.shiftX = dragObject.downX - coords.left;
+              dragObject.shiftY = dragObject.downY - coords.top;
+        
+              startDrag(e); // отобразить начало переноса
             }
         
-            // добавить which для IE
-            if (!e.which && e.button) {
-                e.which = e.button & 1 ? 1 : ( e.button & 2 ? 3 : ( e.button & 4 ? 2 : 0 ) )
+            // отобразить перенос объекта при каждом движении мыши
+            dragObject.avatar.style.left = e.pageX - dragObject.shiftX + 'px';
+            dragObject.avatar.style.top = e.pageY - dragObject.shiftY + 'px';
+        
+            return false;
+          }
+        
+          function onMouseUp(e) {
+            if (dragObject.avatar) { // если перенос идет
+                finishDrag(e);
             }
         
-            return e
-        }
-        function getMouseOffset(target, e) {
-            var docPos	= Start.getPosition(target)
-            return {x:e.pageX - docPos.x, y:e.pageY - docPos.y}
-        }
-        function mouseUp(){
-            dragObject = null
-
-            // очистить обработчики, т.к перенос закончен
-            document.onmousemove = null
-            document.onmouseup = null
-            document.onmouseout = null
-            document.ondragstart = null
-            document.body.onselectstart = null
-        }
-        function mouseOut(){
-            dragObject = null
-
-            // очистить обработчики, т.к перенос закончен
-            document.onmousemove = null
-            document.onmouseup = null
-            document.onmouseout = null
-            document.ondragstart = null
-            document.body.onselectstart = null
-        }
-        function mouseMove(event){
+            // перенос либо не начинался, либо завершился
+            // в любом случае очистим "состояние переноса" dragObject
+            dragObject = {};
+          }
+        
+          function finishDrag(e) {
+            var dropElem = findDroppable(e);
+        
+            if (!dropElem) {
+              self.onDragCancel(dragObject);
+            } else {
+              self.onDragEnd(dragObject, dropElem);
+            }
+          }
+        
+          function createAvatar(e) {
+        
+            // запомнить старые свойства, чтобы вернуться к ним при отмене переноса
+            var avatar = dragObject.elem;
+            var old = {
+              parent: avatar.parentNode,
+              nextSibling: avatar.nextSibling,
+              position: avatar.position || '',
+              left: avatar.left || '',
+              top: avatar.top || '',
+              zIndex: avatar.zIndex || ''
+            };
+        
+            // функция для отмены переноса
+            avatar.rollback = function() {
+              old.parent.insertBefore(avatar, old.nextSibling);
+              avatar.style.position = old.position;
+              avatar.style.left = old.left;
+              avatar.style.top = old.top;
+              avatar.style.zIndex = old.zIndex
+            };
+        
+            return avatar;
+          }
+        
+          function startDrag(e) {
+            var avatar = dragObject.avatar;
+        
+            // инициировать начало переноса
+            document.body.appendChild(avatar);
+            avatar.style.zIndex = 9999;
+            avatar.style.position = 'absolute';
+          }
+        
+          function findDroppable(event) {
+            // спрячем переносимый элемент
+            dragObject.avatar.hidden = true;
+        
+            // получить самый вложенный элемент под курсором мыши
+            var elem = document.elementFromPoint(event.clientX, event.clientY);
+        
+            // показать переносимый элемент обратно
+            dragObject.avatar.hidden = false;
+        
+            if (elem == null) {
+              // такое возможно, если курсор мыши "вылетел" за границу окна
+              return null;
+            }
+        
+            return elem.closest('.droppable');
+          }
+            function getCoords(elem) { // кроме IE8-
+            var box = elem.getBoundingClientRect();
             
-            event = fixEvent(event);
-            if(event.target.id!="widget"&& event.target.id!="checkid"){
-                event.target.style.position = 'absolute';
-                event.target.style.top = event.pageY - mouseOffset.y + 'px';
-                event.target.style.left = event.pageX - mouseOffset.x + 'px';
+            return {
+                top: box.top + pageYOffset,
+                left: box.left + pageXOffset
+            };
             }
-        }
-         
-    }   
-        static getPosition(e){
-            var left = 0
-            var top  = 0
-        
-            while (e.offsetParent){
-                left += e.offsetLeft
-                top  += e.offsetTop
-                e	 = e.offsetParent
-            }
-        
-            left += e.offsetLeft
-            top  += e.offsetTop
-        
-            return {x:left, y:top}
-        }
+        } 
     }
-
     function checkIsIPV4(entry) {
         var blocks = entry.split(".");
         if (blocks.length === 4) {
