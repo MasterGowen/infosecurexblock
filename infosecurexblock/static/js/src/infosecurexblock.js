@@ -383,7 +383,7 @@ function InfoSecureXBlock(runtime, element) {
                     }
                     if(attributes[k]=="image"){
                         this.element.setAttributeNS(this.NS1,'href',attributes[k]);
-                        var test=Object.keys(this.jsonObj);
+                        var test=Object.keys(handler);
                         if(test == "Rect1"){
                             this.element.onclick = this.on;
                         }
@@ -450,7 +450,7 @@ function InfoSecureXBlock(runtime, element) {
                         this.element.innerHTML = 'Выполнение'
                     }
                     this.element.setAttribute([k],attributes[k]);
-                    var test = Object.keys(this.jsonObj);
+                    var test = Object.keys(handler);
                     if(test == "Rect2"){
                         this.element.onclick = this.on;
                     }
