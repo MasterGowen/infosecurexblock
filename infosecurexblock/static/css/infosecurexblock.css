@@ -70,13 +70,16 @@ object {
   
 #taskId {
     display: none;
-    display: none;
     fill: #f3faffef;
     stroke: #0075b4;
 }
   
 #taskTextID {
     display: none; }
+
+#arrowid{
+    display: none;
+}
   
 #comp1 path {
     stroke: rgba(0, 0, 0, 0.5);
