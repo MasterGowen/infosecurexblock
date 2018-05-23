@@ -327,8 +327,26 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
-            dragObject.avatar.hidden = false;
-        
+            if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
+                elem.farthestViewportElement.children[2].style.stroke = "green";
+                elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
+                dragObject.avatar.hidden = true;
+            }
+            else if((elem.id == "redacRect" || elem.id == "comp2"|| elem.id == "comp3") && dragObject.avatar.id == "rw"){
+                elem.farthestViewportElement.children[1].style.stroke = "green";
+                elem.farthestViewportElement.children[1].style.fill = "#f2fff4";
+                dragObject.avatar.hidden = true;
+            }
+            else if((elem.id == "admRect" || elem.id == "compadm") && dragObject.avatar.id == "rwx"){
+                elem.farthestViewportElement.children[3].style.stroke = "green";
+                elem.farthestViewportElement.children[3].style.fill = "#f2fff4";
+                dragObject.avatar.hidden = true;
+            }
+            else {
+                dragObject.avatar.hidden = false;
+                dragObject.avatar.rollback();
+            }
+            
             if (elem == null) {
               return null;
             }
