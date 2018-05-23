@@ -331,16 +331,19 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[2].style.stroke = "green";
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
+                elem.farthestViewportElement.children[0].style.stroke = "none";
             }
             else if((elem.id == "redacRect" || elem.id == "comp2"|| elem.id == "comp3") && dragObject.avatar.id == "rw"){
                 elem.farthestViewportElement.children[1].style.stroke = "green";
                 elem.farthestViewportElement.children[1].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
+                elem.farthestViewportElement.children[0].style.stroke = "none";
             }
             else if((elem.id == "admRect" || elem.id == "compadm") && dragObject.avatar.id == "rwx"){
                 elem.farthestViewportElement.children[3].style.stroke = "green";
                 elem.farthestViewportElement.children[3].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
+                elem.farthestViewportElement.children[0].style.stroke = "none";
             }
             else {
                 elem.farthestViewportElement.children[0].style.stroke = "red";
