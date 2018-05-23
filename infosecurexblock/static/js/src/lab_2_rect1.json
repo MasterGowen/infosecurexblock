@@ -41,7 +41,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "comp1",
-                "class": "comp1",
+                "class": "droppable",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
             },
             "transfer":{
@@ -62,6 +62,7 @@
                 "height": "100",
                 "color": "#11111",
                 "id": "comp4",
+                "class": "droppable",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
             },
         "comp2":
@@ -73,6 +74,7 @@
             "height": "100",
             "color": "#11111",
             "id": "comp2",
+            "class": "droppable",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
         },
         "comp3":{
@@ -83,6 +85,7 @@
             "height": "100",
             "color": "#11111",
             "id": "comp3",
+            "class": "droppable",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
         },
         "compadm":{
@@ -93,6 +96,7 @@
             "height": "100",
             "color": "#11111",
             "id": "compadm",
+            "class": "droppable",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
         },
         "ip1":{
@@ -102,6 +106,7 @@
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
+            "class": "droppable",
             "id":"ip1"
         },
         "ip2":{
@@ -111,6 +116,7 @@
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
+            "class": "droppable",
             "id":"ip2"
         },
         "ip3":{
@@ -120,6 +126,7 @@
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
+            "class": "droppable",
             "id":"ip3"
         },
         "ip4":{
@@ -129,6 +136,7 @@
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
+            "class": "droppable",
             "id":"ip4"
         },
         "ip5":{
@@ -138,6 +146,7 @@
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
+            "class": "droppable",
             "id":"ip5"
         },
         "redact":{
