@@ -343,6 +343,7 @@ function InfoSecureXBlock(runtime, element) {
                 dragObject.avatar.hidden = true;
             }
             else {
+                elem.farthestViewportElement.children[0].style.stroke = "red";
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
             }
