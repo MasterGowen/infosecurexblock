@@ -239,6 +239,15 @@
                     "fontFamily":"SegoeUI",
                     "fill": "black",
                     "id":"File1TextID2"
+                },
+            "arrow":{
+                "type": "image",
+                "x": "165",
+                "y": "40",
+                "width": "20",
+                "height": "20",
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
+                "id": "arrowid"
                 }
     }
 }
