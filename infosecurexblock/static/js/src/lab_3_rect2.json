@@ -1,0 +1,25 @@
+{"Rect2":
+    { 
+        "divAction": {
+        "type": "div",
+        "x": "0", 
+        "y": "850", 
+        "width": "850", 
+        "height": "250", 
+        "background-color":"white",
+        "id": "action"
+        },
+        "four":{
+            "type": "input",
+            "class": "three",
+            "placeholder": "Численный ответ",
+            "id": "e"
+        },
+        "button":{
+            "type": "button",
+            "class": "submit btn-brand",
+            "color":"#000",
+            "id":"checkid"
+        }
+    }
+}
