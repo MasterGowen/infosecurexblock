@@ -524,7 +524,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             //this.constract();
             this.connectionLab1(rect1HandlerUrl, 1);
-            document.svg.addEventListener('click',Start.on);
+            document.getElementsByTagName('svg').addEventListener('click',Start.on);
         }
 
         constract(name) {
