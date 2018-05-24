@@ -392,7 +392,6 @@ function InfoSecureXBlock(runtime, element) {
             this.element = document.createElementNS(this.NS, name);
             if (name == "svg") {
                 document.getElementById("widget").appendChild(this.element);
-                document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
             if (attributes) {
@@ -555,6 +554,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             //this.constract();
             this.connectionLab2(rect1HandlerUrl, 1);
+            document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
         }
 
         constract(name) {
