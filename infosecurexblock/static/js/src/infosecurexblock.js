@@ -30,13 +30,10 @@ function InfoSecureXBlock(runtime, element) {
             }
         }
 
-        connection(handler, labId) {
+        connectionLab1(handler, labId) {
             var self = this;
 
             function success(handler) {
-                if(handler == "Rect1"){
-                    console.log("HI",handler);
-                }
                 console.log(handler);
                 console.log(labId);
                 if (handler.Rect1) {
@@ -48,6 +45,25 @@ function InfoSecureXBlock(runtime, element) {
                     handler.amount = Object.keys(handler.Rect2).length;
                     self.addElement(handler.amount, handler.Rect2);
                 }
+            }
+
+            (function () {
+                $.ajax({
+                    type: "POST",
+                    url: handler,
+                    data: {"lab_id": labId},
+                    success: success
+                });
+
+            })()
+
+        }
+        connectionLab2(handler,labId){
+            var self = this;
+
+            function success(handler) {
+                console.log(handler);
+                console.log(labId);
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
@@ -68,7 +84,6 @@ function InfoSecureXBlock(runtime, element) {
                 });
 
             })()
-
         }
 
         on() {
@@ -398,7 +413,7 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             //this.constract();
-            this.connection(rect1HandlerUrl, 1);
+            this.connectionLab1(rect1HandlerUrl, 1);
         }
 
         constract(name) {
@@ -457,15 +472,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         appendNodeSVG(element) {
-            //var test =  document.querySelector('g');
-            // var test1= document.createElement('g');
-            // test.setAttribute("class","test1");
             var svg = document.querySelector('svg');
-            //svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
-            /*         if(this.element.classList=="rect1"){
-                        document.querySelector('svg').appendChild(element);
-                    } */
-            //test.appendChild(test1);
             return svg.appendChild(element);
         }
 
@@ -481,7 +488,7 @@ function InfoSecureXBlock(runtime, element) {
     class Rect2 extends Start {
         constructor() {
             super();
-            this.connection(rect1HandlerUrl, 2);
+            this.connectionLab1(rect1HandlerUrl, 2);
         }
 
         createElementSimple(name, attributes) {
@@ -534,9 +541,87 @@ function InfoSecureXBlock(runtime, element) {
         }
     }
 
-    class Rect3 extends Rect2 {
+    class Rect3 extends Rect1 {
         constructor() {
-            super();
+            super()
+            this.defaultSet = {
+                x: 0,
+                y: 0,
+                width: 850,
+                height: 850,
+                fill: '#f5f5f5',
+                class: 'rect1'
+            }
+            //this.constract();
+            this.connectionLab2(rect1HandlerUrl, 1);
+        }
+
+        constract(name) {
+            return this.createElementSVG(name, this.defaultSet);
+        }
+
+        createElementSVG(name, attributes) {
+            this.NS = "http://www.w3.org/2000/svg";
+            this.NS1 = "http://www.w3.org/1999/xlink";
+            this.element = document.createElementNS(this.NS, name);
+            if (name == "svg") {
+                document.getElementById("widget").appendChild(this.element);
+                document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
+                //document.querySelector('svg').appendChild(document.createElement('g'));
+            }
+            if (attributes) {
+                for (var k in attributes) {
+                    if ((name == "text") && (attributes[k] == "ip1")) {
+                        this.element.innerHTML = '192.168.0.3'
+                    }
+                    if ((name == "text") && (attributes[k] == "ip2")) {
+                        this.element.innerHTML = '192.168.0.4'
+                    }
+                    if ((name == "text") && (attributes[k] == "ip3")) {
+                        this.element.innerHTML = '192.168.0.5'
+                    }
+                    if((name=="text")&&(attributes[k]=="ip4")){
+                        this.element.innerHTML = '192.168.0.2'
+                    }
+                    if((name=="text")&&(attributes[k]=="ip5")){
+                        this.element.innerHTML = '192.168.0.6'
+                    }
+                    if((name=="text")&&(attributes[k]=="redact")){
+                        this.element.innerHTML = 'Редакторы'
+                    }
+                    if((name=="text")&&(attributes[k]=="users")){
+                        this.element.innerHTML = 'Пользователи'
+                    }
+                    if((name=="text")&&(attributes[k]=="admin")){
+                        this.element.innerHTML = 'Администратор'
+                    }
+                    if((name=="text")&&(attributes[k]=="article")){
+                        this.element.innerHTML = 'Статья'
+                    }
+                    if (attributes[k] == "image") {
+                        this.element.setAttributeNS(this.NS1, [k], attributes[k]);
+                        this.element.onclick = this.on;
+                    }
+                    else if (attributes[k] != "image") {
+                        this.element.setAttributeNS(null, [k], attributes[k]);
+                        this.element.onclick = this.on;
+                    }
+                }
+                return this.element;
+            }
+        }
+
+        appendNodeSVG(element) {
+            var svg = document.querySelector('svg');
+            return svg.appendChild(element);
+        }
+
+        addElementSVG(amount, jsonObj) {
+            // console.log(amount,jsonObj);
+            for (amount in jsonObj) {
+                //console.log(jsonObj[amount].type,jsonObj[amount]);
+                this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type, jsonObj[amount]));
+            }
         }
     }
 
