@@ -1,45 +1,57 @@
 {
     "Rect1":{
-        
-        "but":{
+        "comp1":{
             "type": "image",
-            "x": "750",
-            "y": "30",
-            "width": "40",
-            "height": "40",
+            "x": "160",
+            "y": "500",
+            "width": "100",
+            "height": "100",
             "color": "#11111",
-            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
-            "id": "task"
-            },
-            
-            "butFile":{
-                "type": "image",
-                "x": "390",
-                "y": "83",
-                "width": "20",
-                "height": "20",
-                "color": "#11111",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/file.svg",
-                "id": "File1"
-                },
-                "taskDiv":{
-                    "type": "rect",
-                    "x": "150", 
-                    "y": "30", 
-                    "width": "750", 
-                    "height": "750", 
-                    "fill":"white",
-                    "id": "taskId"
-                },
-                "taskText":{
-                    "type":"text",
-                    "x": "170",
-                    "y": "50",
-                    "fontSize":"20",
-                    "fontFamily":"SegoeUI",
-                    "fill": "black",
-                    "id":"taskTextID"
-                },
+            "id": "comp1",
+            "class": "comp1",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
+        },
+        "transfer":{
+            "type": "image",
+            "x": "350",
+            "y": "60",
+            "width": "100",
+            "height": "100",
+            "color": "#11111",
+            "id": "2",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/transfer.svg"
+        },
+        "db":{
+            "type": "image",
+            "x": "100",
+            "y": "300",
+            "width": "100",
+            "height": "100",
+            "color": "#11111",
+            "id": "3",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/server-3.svg"
+        },
+    "comp2":
+        {
+        "type": "image",
+        "x": "370",
+        "y": "500",
+        "width": "100",
+        "height": "100",
+        "color": "#11111",
+        "id": "comp2",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
+    },
+    "comp3":{
+        "type": "image",
+        "x": "580",
+        "y": "500",
+        "width": "100",
+        "height": "100",
+        "color": "#11111",
+        "id": "comp3",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
+    },
     "ip1":{
         "type":"text",
         "x": "160",
@@ -49,7 +61,90 @@
         "fill": "black",
         "id":"ip1"
     },
-     "Circle1":
+    "ip2":{
+        "type":"text",
+        "x": "370",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"ip2"
+    },
+    "ip3":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"ip3"
+    },
+    "LineComDB":
+    {
+    "type": "line",
+    "x1": "190",
+    "y1": "380",
+    "x2": "445",
+    "y2": "385",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "7"
+    },
+    "LineComClo":
+    {
+    "type": "line",
+    "x1": "400",
+    "y1": "150",
+    "x2": "400",
+    "y2": "330",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "8"
+    },
+    "LineCom1Com":
+    {
+    "type": "line",
+    "x1": "355",
+    "y1": "384",
+    "x2": "220",
+    "y2": "503",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "9"
+    },
+    "LineCom2Com":
+    {
+    "type": "line",
+    "x1": "400",
+    "y1": "370",
+    "x2": "400",
+    "y2": "503",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "10"
+    },
+    "LineCom3Com":
+    {
+    "type": "line",
+    "x1": "445",
+    "y1": "384",
+    "x2": "600",
+    "y2": "503",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "11"
+    },
+    "wifi":{
+        "type": "image",
+        "x": "350",
+        "y": "300",
+        "width": "100",
+        "height": "100",
+        "color": "#11111",
+        "id": "5",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/wifi.svg"
+    },
+    "Circle1":
         {
         "type": "circle",
         "cx": "445",
@@ -78,7 +173,72 @@
         "stroke-width": "4",
         "stroke": "blue",
         "id": "15"
-        }
+        },
+        "but":{
+        "type": "image",
+        "x": "750",
+        "y": "30",
+        "width": "40",
+        "height": "40",
+        "color": "#11111",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
+        "id": "task"
+        },
         
+        "butFile":{
+            "type": "image",
+            "x": "390",
+            "y": "83",
+            "width": "20",
+            "height": "20",
+            "color": "#11111",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/file.svg",
+            "id": "File1"
+            },
+            "taskDiv":{
+                "type": "rect",
+                "x": "150", 
+                "y": "30", 
+                "width": "750", 
+                "height": "750", 
+                "fill":"white",
+                "id": "taskId"
+            },
+            "taskText":{
+                "type":"text",
+                "x": "170",
+                "y": "50",
+                "fontSize":"20",
+                "fontFamily":"SegoeUI",
+                "fill": "black",
+                "id":"taskTextID"
+            },
+            "FileDiv":{
+                "type": "ellipse",
+                "cx": "260", 
+                "cy": "115", 
+                "rx": "60", 
+                "ry": "30",
+                "fill":"white",
+                "id": "File1Id"
+            },
+            "FileText":{
+                "type":"text",
+                "x": "177",
+                "y": "50",
+                "fontSize":"10",
+                "fontFamily":"SegoeUI",
+                "fill": "black",
+                "id":"File1TextID"
+            },
+            "FileText2":{
+                "type":"text",
+                "x": "205",
+                "y": "120",
+                "fontSize":"10",
+                "fontFamily":"SegoeUI",
+                "fill": "black",
+                "id":"File1TextID2"
+            }
 }
 }
