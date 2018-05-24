@@ -184,16 +184,33 @@
         "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
         "id": "task"
         },
-        
         "butFile":{
             "type": "image",
-            "x": "390",
+            "x": "400",
             "y": "83",
             "width": "20",
             "height": "20",
             "color": "#11111",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/file.svg",
             "id": "File1"
+            },
+            "FileText":{
+                "type":"text",
+                "x": "177",
+                "y": "50",
+                "fontSize":"10",
+                "fontFamily":"SegoeUI",
+                "fill": "black",
+                "id":"File1TextID"
+            },
+            "FileText2":{
+                "type":"text",
+                "x": "205",
+                "y": "120",
+                "fontSize":"10",
+                "fontFamily":"SegoeUI",
+                "fill": "black",
+                "id":"File1TextID2"
             },
             "taskDiv":{
                 "type": "rect",
@@ -213,32 +230,14 @@
                 "fill": "black",
                 "id":"taskTextID"
             },
-            "FileDiv":{
-                "type": "ellipse",
-                "cx": "260", 
-                "cy": "115", 
-                "rx": "60", 
-                "ry": "30",
-                "fill":"white",
-                "id": "File1Id"
-            },
-            "FileText":{
-                "type":"text",
-                "x": "177",
-                "y": "50",
-                "fontSize":"10",
-                "fontFamily":"SegoeUI",
-                "fill": "black",
-                "id":"File1TextID"
-            },
-            "FileText2":{
-                "type":"text",
-                "x": "205",
-                "y": "120",
-                "fontSize":"10",
-                "fontFamily":"SegoeUI",
-                "fill": "black",
-                "id":"File1TextID2"
-            }
+            "arrow":{
+                "type": "image",
+                "x": "165",
+                "y": "40",
+                "width": "20",
+                "height": "20",
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
+                "id": "arrowid"
+                }
 }
 }
