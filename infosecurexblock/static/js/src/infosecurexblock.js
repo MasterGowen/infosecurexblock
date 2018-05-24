@@ -541,7 +541,7 @@ function InfoSecureXBlock(runtime, element) {
         }
     }
 
-    class Rect3 extends Rect1 {
+    class Rect3 extends Start {
         constructor() {
             super()
             this.defaultSet = {
