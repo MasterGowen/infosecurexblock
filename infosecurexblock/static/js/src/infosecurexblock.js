@@ -89,7 +89,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         static on() {
-            //console.log(this);
+            console.log(this);
             var elem;
             var student_answer = {};
 
