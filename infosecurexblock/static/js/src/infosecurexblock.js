@@ -29,8 +29,6 @@ function InfoSecureXBlock(runtime, element) {
                 var rect4 = new Rect4();
                 rect1.createElementSVG('svg');
                 rect1.appendNodeSVG(rect1.constract('rect'));
-                rect3.createElementSVG('svg');
-                rect3.appendNodeSVG(rect3.constract('rect'));
             }
         }
 
