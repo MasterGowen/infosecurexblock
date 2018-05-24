@@ -631,7 +631,7 @@ function InfoSecureXBlock(runtime, element) {
     class Rect4 extends Start {
         constructor() {
             super();
-            this.connectionLab1(rect1HandlerUrl, 2);
+            this.connectionLab2(rect1HandlerUrl, 2);
         }
 
         createElementSimple(name, attributes) {
