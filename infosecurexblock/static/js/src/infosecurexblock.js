@@ -34,6 +34,9 @@ function InfoSecureXBlock(runtime, element) {
             var self = this;
 
             function success(handler) {
+                if(handler == "Rect1"){
+                    console.log("HI",handler);
+                }
                 console.log(handler);
                 console.log(labId);
                 if (handler.Rect1) {
