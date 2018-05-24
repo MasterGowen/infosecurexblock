@@ -386,42 +386,6 @@ function InfoSecureXBlock(runtime, element) {
             };
             }
         } 
-    }
-    function checkIsIPV4(entry) {
-        var blocks = entry.split(".");
-        if (blocks.length === 4) {
-            return blocks.every(function (block) {
-                return parseInt(block, 10) >= 0 && parseInt(block, 10) <= 255;
-            });
-        }
-        return false;
-    }
-
-    function isNumeric(n) {
-
-        return !isNaN(parseFloat(n)) && isFinite(n);
-
-    }
-
-    class Rect1 extends Start {
-        constructor() {
-            super()
-            this.defaultSet = {
-                x: 0,
-                y: 0,
-                width: 850,
-                height: 850,
-                fill: '#f5f5f5',
-                class: 'rect1'
-            }
-            //this.constract();
-            this.connectionLab1(rect1HandlerUrl, 1);
-        }
-
-        constract(name) {
-            return this.createElementSVG(name, this.defaultSet);
-        }
-
         createElementSVG(name, attributes) {
             this.NS = "http://www.w3.org/2000/svg";
             this.NS1 = "http://www.w3.org/1999/xlink";
@@ -485,14 +449,6 @@ function InfoSecureXBlock(runtime, element) {
                 this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type, jsonObj[amount]));
             }
         }
-    }
-
-    class Rect2 extends Start {
-        constructor() {
-            super();
-            this.connectionLab1(rect1HandlerUrl, 2);
-        }
-
         createElementSimple(name, attributes) {
             this.element = document.createElement(name);
             if (name === 'button') {
@@ -540,6 +496,49 @@ function InfoSecureXBlock(runtime, element) {
 
         appendNode(element) {
             return document.getElementById('widget').appendChild(element);
+        }
+    }
+    
+    function checkIsIPV4(entry) {
+        var blocks = entry.split(".");
+        if (blocks.length === 4) {
+            return blocks.every(function (block) {
+                return parseInt(block, 10) >= 0 && parseInt(block, 10) <= 255;
+            });
+        }
+        return false;
+    }
+
+    function isNumeric(n) {
+
+        return !isNaN(parseFloat(n)) && isFinite(n);
+
+    }
+
+    class Rect1 extends Start {
+        constructor() {
+            super()
+            this.defaultSet = {
+                x: 0,
+                y: 0,
+                width: 850,
+                height: 850,
+                fill: '#f5f5f5',
+                class: 'rect1'
+            }
+            //this.constract();
+            this.connectionLab1(rect1HandlerUrl, 1);
+        }
+
+        constract(name) {
+            return this.createElementSVG(name, this.defaultSet);
+        }
+    }
+
+    class Rect2 extends Start {
+        constructor() {
+            super();
+            this.connectionLab1(rect1HandlerUrl, 2);
         }
     }
 
