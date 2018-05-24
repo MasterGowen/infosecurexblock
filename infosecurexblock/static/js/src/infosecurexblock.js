@@ -25,8 +25,12 @@ function InfoSecureXBlock(runtime, element) {
             this.star = () => {
                 var rect1 = new Rect1();
                 var rect2 = new Rect2();
+                var rect3 = new Rect3();
+                var rect4 = new Rect4();
                 rect1.createElementSVG('svg');
                 rect1.appendNodeSVG(rect1.constract('rect'));
+                rect3.createElementSVG('svg');
+                rect3.appendNodeSVG(rect3.constract('rect'));
             }
         }
 
@@ -622,6 +626,61 @@ function InfoSecureXBlock(runtime, element) {
                 //console.log(jsonObj[amount].type,jsonObj[amount]);
                 this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type, jsonObj[amount]));
             }
+        }
+    }
+    class Rect4 extends Start {
+        constructor() {
+            super();
+            this.connectionLab1(rect1HandlerUrl, 2);
+        }
+
+        createElementSimple(name, attributes) {
+            this.element = document.createElement(name);
+            if (name === 'button') {
+                this.element.innerHTML = "Отправить на проверку";
+            }
+            if (attributes) {
+                for (var k in attributes) {
+                    if ((name == "div") && (attributes[k] == "readid")) {
+                        this.element.innerHTML = 'Чтение'
+                    }
+                    if ((name == "div") && (attributes[k] == "writeid")) {
+                        this.element.innerHTML = 'Запись'
+                    }
+                    if ((name == "div") && (attributes[k] == "execid")) {
+                        this.element.innerHTML = 'Выполнение'
+                    }
+                    if ((name == "div") && (attributes[k] == "nothing")) {
+                        this.element.innerHTML = 'Отсутствие прав'
+                    }
+                    if ((name == "div") && (attributes[k] == "wx")) {
+                        this.element.innerHTML = 'права на запись и выполнение'
+                    }
+                    if ((name == "div") && (attributes[k] == "rx")) {
+                        this.element.innerHTML = 'права на чтение и выполнение'
+                    }
+                    if ((name == "div") && (attributes[k] == "rw")) {
+                        this.element.innerHTML = 'права на чтение и запись'
+                    }
+                    if ((name == "div") && (attributes[k] == "rwx")) {
+                        this.element.innerHTML = 'полные права'
+                    }
+                    this.element.setAttribute([k], attributes[k]);
+                    this.element.onclick = this.on;
+                }
+                return this.element;
+            }
+        }
+
+        addElement(amount, jsonObj) {
+            for (amount in jsonObj) {
+                //console.log(jsonObj[amount].type);
+                this.appendNode(this.createElementSimple(jsonObj[amount].type, jsonObj[amount]));
+            }
+        }
+
+        appendNode(element) {
+            return document.getElementById('widget').appendChild(element);
         }
     }
 
