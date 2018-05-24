@@ -88,7 +88,7 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
-        on() {
+        static on() {
             //console.log(this);
             var elem;
             var student_answer = {};
@@ -425,11 +425,9 @@ function InfoSecureXBlock(runtime, element) {
                     }
                     if (attributes[k] == "image") {
                         this.element.setAttributeNS(this.NS1, [k], attributes[k]);
-                        this.element.onclick = this.on;
                     }
                     else if (attributes[k] != "image") {
                         this.element.setAttributeNS(null, [k], attributes[k]);
-                        this.element.onclick = this.on;
                     }
                 }
                 return this.element;
@@ -480,7 +478,6 @@ function InfoSecureXBlock(runtime, element) {
                         this.element.innerHTML = 'полные права'
                     }
                     this.element.setAttribute([k], attributes[k]);
-                    this.element.onclick = this.on;
                 }
                 return this.element;
             }
@@ -527,6 +524,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             //this.constract();
             this.connectionLab1(rect1HandlerUrl, 1);
+            document.getElementById("widget").addEventListener('click',Start.on);
         }
 
         constract(name) {
