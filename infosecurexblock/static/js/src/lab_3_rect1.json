@@ -1,5 +1,5 @@
 {
-    "Rect1":{
+    "Rect5":{
         
     
     "ip3":{
@@ -11,16 +11,25 @@
         "fill": "black",
         "id":"ip3"
     },
-    "Circle1":
-        {
-        "type": "circle",
-        "cx": "445",
-        "cy": "384",
-        "r": "2",
-        "stroke-width": "4",
-        "stroke": "blue",
-        "id": "13"
-        },
+    "Link":{
+        "type": "ellipse",
+        "cx": "260", 
+        "cy": "115", 
+        "rx": "60", 
+        "ry": "30",
+        "fill":"white",
+        "id": "Link"
+    },
+    "Link2":{
+        "type": "ellipse",
+        "cx": "360", 
+        "cy": "215", 
+        "rx": "40", 
+        "ry": "40",
+        "fill":"white",
+        "id": "Link"
+    },
+    
         "but":{
         "type": "image",
         "x": "750",

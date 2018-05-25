@@ -154,6 +154,9 @@ function InfoSecureXBlock(runtime, element) {
                 active('File1TextID');
                 active('File1TextID2');
             }
+            if (this.id == "Link"){
+                document.getElementById('Link').style.display = "block";
+            }
             if ((this.id == 'checkid') && (document.getElementById(this.id).value != undefined)) {
                 var k = document.getElementById('ip').value;
                 var d = document.getElementById('d').value;
