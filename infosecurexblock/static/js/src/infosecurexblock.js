@@ -568,6 +568,32 @@ function InfoSecureXBlock(runtime, element) {
             this.connectionLab2(rect1HandlerUrl, 2);
         }
     }
+    class Rect5 extends Start {
+        constructor() {
+            super()
+            this.defaultSet = {
+                x: 0,
+                y: 0,
+                width: 850,
+                height: 850,
+                fill: '#f5f5f5',
+                class: 'rect1'
+            }
+            //this.constract();
+            this.connectionLab3(rect1HandlerUrl, 1);
+            document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
+        }
+
+        constract(name) {
+            return this.createElementSVG(name, this.defaultSet);
+        }
+    }
+    class Rect6 extends Start {
+        constructor() {
+            super();
+            this.connectionLab3(rect1HandlerUrl, 2);
+        }
+    }
 
 
 //автоматически вызываемая функция создаёт пространство
