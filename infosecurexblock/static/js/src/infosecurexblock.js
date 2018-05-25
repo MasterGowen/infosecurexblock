@@ -94,14 +94,14 @@ function InfoSecureXBlock(runtime, element) {
             function success(handler) {
                 console.log(handler);
                 console.log(labId);
-                if (handler.Rect1) {
-                    handler.amount = Object.keys(handler.Rect1).length;
+                if (handler.Rect5) {
+                    handler.amount = Object.keys(handler.Rect5).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
-                    self.addElementSVG(handler.amount, handler.Rect1);
+                    self.addElementSVG(handler.amount, handler.Rect5);
                 }
-                if (handler.Rect2) {
-                    handler.amount = Object.keys(handler.Rect2).length;
-                    self.addElement(handler.amount, handler.Rect2);
+                if (handler.Rect6) {
+                    handler.amount = Object.keys(handler.Rect6).length;
+                    self.addElement(handler.amount, handler.Rect6);
                 }
             }
 
