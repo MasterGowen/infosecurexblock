@@ -88,6 +88,7 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
+       
         connectionLab3(handler, labId) {
             var self = this;
 
@@ -96,7 +97,7 @@ function InfoSecureXBlock(runtime, element) {
                 console.log(labId);
                 if (handler.Rect5) {
                     handler.amount = Object.keys(handler.Rect5).length;
-                    //console.log(this.amount,this.jsonObj.Rect1);
+                    //console.log(this.amount,this.jsonObj.Rect5);
                     self.addElementSVG(handler.amount, handler.Rect5);
                 }
                 if (handler.Rect6) {
@@ -160,7 +161,7 @@ function InfoSecureXBlock(runtime, element) {
                 remember = this.id;
             }
             if (this.id == 'task') {
-                active('arrowid');
+              //  active('arrowid');
                 active('taskId');
                 active('taskTextID');
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
