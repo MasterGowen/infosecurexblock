@@ -596,6 +596,7 @@ function InfoSecureXBlock(runtime, element) {
             this.connectionLab2(rect1HandlerUrl, 2);
         }
     }
+    
     class Rect5 extends Start {
         constructor() {
             super()
@@ -609,7 +610,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             //this.constract();
             this.connectionLab3(rect1HandlerUrl, 1);
-            document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
+            document.getElementById('widget').addEventListener('click',Start.on);
         }
 
         constract(name) {
