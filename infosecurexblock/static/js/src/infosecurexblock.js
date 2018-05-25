@@ -88,6 +88,34 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
+        connectionLab3(handler, labId) {
+            var self = this;
+
+            function success(handler) {
+                console.log(handler);
+                console.log(labId);
+                if (handler.Rect1) {
+                    handler.amount = Object.keys(handler.Rect1).length;
+                    //console.log(this.amount,this.jsonObj.Rect1);
+                    self.addElementSVG(handler.amount, handler.Rect1);
+                }
+                if (handler.Rect2) {
+                    handler.amount = Object.keys(handler.Rect2).length;
+                    self.addElement(handler.amount, handler.Rect2);
+                }
+            }
+
+            (function () {
+                $.ajax({
+                    type: "POST",
+                    url: handler,
+                    data: {"lab_id": labId},
+                    success: success
+                });
+
+            })()
+
+        }
         static on() {
             console.log(this);
             var elem;
