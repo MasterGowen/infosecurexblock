@@ -161,7 +161,7 @@ function InfoSecureXBlock(runtime, element) {
                 remember = this.id;
             }
             if (this.id == 'task') {
-              //  active('arrowid');
+                active('arrowid');
                 active('taskId');
                 active('taskTextID');
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
@@ -205,6 +205,9 @@ function InfoSecureXBlock(runtime, element) {
             }
             if (this.id == "Link"){
                 document.getElementById('Link').style.display = "block";
+            }
+            if (this.id == "checkid2"){
+                Random();
             }
             if ((this.id == 'checkid') && (document.getElementById(this.id).value != undefined)) {
                 var k = document.getElementById('ip').value;
@@ -542,7 +545,11 @@ function InfoSecureXBlock(runtime, element) {
         return !isNaN(parseFloat(n)) && isFinite(n);
 
     }
-
+    
+    function Random(){
+        
+        Math.random(id_num);
+    }
     class Rect1 extends Start {
         constructor() {
             super()

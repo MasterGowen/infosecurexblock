@@ -2,16 +2,97 @@
     "Rect5":{
         
     
-    "ip3":{
+    "link1":{
         "type":"text",
         "x": "580",
         "y": "620",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "black",
-        "id":"ip3"
+        "id":"link1"
     },
-    "Link":{
+    "link2":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link2"
+    },
+    "link3":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link3"
+    },
+    "link4":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link4"
+    },
+    "link5":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link5"
+    },
+    "link6":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link6"
+    },
+    "link7":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link7"
+    },
+    "link8":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link8"
+    },
+    "link9":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link9"
+    },
+    "link10":{
+        "type":"text",
+        "x": "580",
+        "y": "620",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"link10"
+    },
+    "Link1":{
         "type": "ellipse",
         "cx": "260", 
         "cy": "115", 
