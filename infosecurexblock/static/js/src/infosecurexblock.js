@@ -394,7 +394,13 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById("widget").appendChild(this.element);
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
+
+            check(name,attributes);
+
             if (attributes) {
+                return this.element;
+            }
+            function check(name,attributes){
                 for (var k in attributes) {
                     if ((name == "text") && (attributes[k] == "ip1")) {
                         this.element.innerHTML = '192.168.0.3'
@@ -430,8 +436,7 @@ function InfoSecureXBlock(runtime, element) {
                         this.element.setAttributeNS(null, [k], attributes[k]);
                     }
                 }
-                return this.element;
-            }
+        }
         }
 
         appendNodeSVG(element) {
@@ -440,7 +445,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         addElementSVG(amount, jsonObj) {
-            // console.log(amount,jsonObj);
+            console.log(amount,jsonObj);
             for (amount in jsonObj) {
                 //console.log(jsonObj[amount].type,jsonObj[amount]);
                 this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type, jsonObj[amount]));
@@ -524,7 +529,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             //this.constract();
             this.connectionLab1(rect1HandlerUrl, 1);
-            document.getElementById('widget').addEventListener('click',Start.on);
+            document.querySelector('svg').addEventListener('click',Start.on);
         }
 
         constract(name) {
