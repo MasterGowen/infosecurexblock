@@ -32,14 +32,14 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             this.star = () => {
+                this.createElementSVG('svg');
+                this.appendNodeSVG(this.constract('rect'));
                 if(this.connectionLab1(rect1HandlerUrl,1)||this.connectionLab1(rect1HandlerUrl,2)){
                     new Lab1();
                 }
                 else if(this.connectionLab2(rect1HandlerUrl,1) || this.connectionLab2(rect1HandlerUrl,2)){
                     new Lab2();
                 }
-                this.createElementSVG('svg');
-                this.appendNodeSVG(this.constract('rect'));
             }
         }
 
