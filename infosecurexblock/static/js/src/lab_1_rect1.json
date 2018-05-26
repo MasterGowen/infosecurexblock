@@ -88,7 +88,7 @@
         "y2": "385",
         "stroke-width": "3",
         "stroke": "lightgrey",
-        "id": "7"
+        "id": "line_db"
         },
         "LineComClo":
         {
@@ -99,7 +99,7 @@
         "y2": "330",
         "stroke-width": "3",
         "stroke": "lightgrey",
-        "id": "8"
+        "id": "line_wifi"
         },
         "LineCom1Com":
         {
@@ -110,7 +110,7 @@
         "y2": "503",
         "stroke-width": "3",
         "stroke": "lightgrey",
-        "id": "9"
+        "id": "line_comp1"
         },
         "LineCom2Com":
         {
@@ -121,7 +121,7 @@
         "y2": "503",
         "stroke-width": "3",
         "stroke": "lightgrey",
-        "id": "10"
+        "id": "line_comp2"
         },
         "LineCom3Com":
         {
@@ -132,7 +132,7 @@
         "y2": "503",
         "stroke-width": "3",
         "stroke": "lightgrey",
-        "id": "11"
+        "id": "line_comp3"
         },
         "wifi":{
             "type": "image",
