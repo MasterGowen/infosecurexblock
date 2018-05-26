@@ -188,7 +188,8 @@ function InfoSecureXBlock(runtime, element) {
             if ((evt.id == "comp1") || (evt.id == 'ip1')) {
                 document.getElementById('ip').value = '192.168.0.3';
                 //document.getElementById('class').fill = 'black';
-                document.getElementById('line_comp1').style.stroke = "#f2fff4";
+                document.getElementById('line_wifi').style.stroke = "green";
+                document.getElementById('line_comp1').style.stroke = "green";
                 document.getElementById('line_comp2').style.stroke = "lightgrey";
                 document.getElementById('line_comp3').style.stroke = "lightgrey";
                 active('File1Id');
@@ -196,9 +197,9 @@ function InfoSecureXBlock(runtime, element) {
                 active('File1TextID2');
             }
             if ((evt.id == "comp2") || (evt.id == 'ip2')) {
-                document.getElementById('ip').value = '192.168.0.4'; //lightgrey
+                document.getElementById('ip').value = '192.168.0.4';
                 document.getElementById('line_comp1').style.stroke = "lightgrey";
-                document.getElementById('line_comp2').style.stroke = "#f2fff4";
+                document.getElementById('line_comp2').style.stroke = "green";
                 document.getElementById('line_comp3').style.stroke = "lightgrey";
                 active('File1Id');
                 active('File1TextID');
@@ -208,7 +209,7 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById('ip').value = '192.168.0.5';
                 document.getElementById('line_comp1').style.stroke = "lightgrey";
                 document.getElementById('line_comp2').style.stroke = "lightgrey";
-                document.getElementById('line_comp3').style.stroke = "#f2fff4";
+                document.getElementById('line_comp3').style.stroke = "green";
                 active('File1Id');
                 active('File1TextID');
                 active('File1TextID2');
