@@ -1,4 +1,4 @@
-{"Rect2":
+{"Rect6":
     { 
         "divAction": {
         "type": "div",
@@ -19,7 +19,7 @@
             "type": "button",
             "class": "submit btn-brand",
             "color":"#000",
-            "id":"checkid"
+            "id":"checkid2"
         }
     }
 }

@@ -88,6 +88,35 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
+       
+        connectionLab3(handler, labId) {
+            var self = this;
+
+            function success(handler) {
+                console.log(handler);
+                console.log(labId);
+                if (handler.Rect5) {
+                    handler.amount = Object.keys(handler.Rect5).length;
+                    //console.log(this.amount,this.jsonObj.Rect5);
+                    self.addElementSVG(handler.amount, handler.Rect5);
+                }
+                if (handler.Rect6) {
+                    handler.amount = Object.keys(handler.Rect6).length;
+                    self.addElement(handler.amount, handler.Rect6);
+                }
+            }
+
+            (function () {
+                $.ajax({
+                    type: "POST",
+                    url: handler,
+                    data: {"lab_id": labId},
+                    success: success
+                });
+
+            })()
+
+        }
         static on() {
             console.log(this);
             var elem;
@@ -173,6 +202,12 @@ function InfoSecureXBlock(runtime, element) {
                 active('File1Id');
                 active('File1TextID');
                 active('File1TextID2');
+            }
+            if (this.id == "Link"){
+                document.getElementById('Link').style.display = "block";
+            }
+            if (this.id == "checkid2"){
+                Random();
             }
             if ((this.id == 'checkid') && (document.getElementById(this.id).value != undefined)) {
                 var k = document.getElementById('ip').value;
@@ -515,7 +550,11 @@ function InfoSecureXBlock(runtime, element) {
         return !isNaN(parseFloat(n)) && isFinite(n);
 
     }
-
+    
+    function Random(){
+        
+        Math.random(id_num);
+    }
     class Rect1 extends Start {
         constructor() {
             super()
@@ -568,6 +607,33 @@ function InfoSecureXBlock(runtime, element) {
         constructor() {
             super();
             this.connectionLab2(rect1HandlerUrl, 2);
+        }
+    }
+    
+    class Rect5 extends Start {
+        constructor() {
+            super()
+            this.defaultSet = {
+                x: 0,
+                y: 0,
+                width: 850,
+                height: 850,
+                fill: '#f5f5f5',
+                class: 'rect1'
+            }
+            //this.constract();
+            this.connectionLab3(rect1HandlerUrl, 1);
+            document.getElementById('widget').addEventListener('click',Start.on);
+        }
+
+        constract(name) {
+            return this.createElementSVG(name, this.defaultSet);
+        }
+    }
+    class Rect6 extends Start {
+        constructor() {
+            super();
+            this.connectionLab3(rect1HandlerUrl, 2);
         }
     }
 
