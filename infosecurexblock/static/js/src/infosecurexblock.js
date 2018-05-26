@@ -47,6 +47,10 @@ function InfoSecureXBlock(runtime, element) {
             }
         }
 
+        constract(name) {
+            return this.createElementSVG(name, this.defaultSet);
+        }
+
         connectionLab1(handler, labId) {
             var self = this;
 
