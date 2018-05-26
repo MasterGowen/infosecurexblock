@@ -582,6 +582,7 @@ function InfoSecureXBlock(runtime, element) {
             super()
             this.connectionLab1(rect1HandlerUrl, 1);
             this.connectionLab1(rect1HandlerUrl, 2);
+            console.log("lab1");
             document.getElementById("widget").addEventListener('click',Start.on);
         }
     }
