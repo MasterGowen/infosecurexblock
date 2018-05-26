@@ -118,7 +118,7 @@ function InfoSecureXBlock(runtime, element) {
 
         }
         static on() {
-            console.log(this);
+            console.log("ON funcction:",this);
             var elem;
             var student_answer = {};
 
@@ -429,49 +429,45 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById("widget").appendChild(this.element);
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
-
-            check(name,attributes);
+            for (var k in attributes) {
+                if ((name == "text") && (attributes[k] == "ip1")) {
+                    this.element.innerHTML = '192.168.0.3'
+                }
+                if ((name == "text") && (attributes[k] == "ip2")) {
+                    this.element.innerHTML = '192.168.0.4'
+                }
+                if ((name == "text") && (attributes[k] == "ip3")) {
+                    this.element.innerHTML = '192.168.0.5'
+                }
+                if((name=="text")&&(attributes[k]=="ip4")){
+                    this.element.innerHTML = '192.168.0.2'
+                }
+                if((name=="text")&&(attributes[k]=="ip5")){
+                    this.element.innerHTML = '192.168.0.6'
+                }
+                if((name=="text")&&(attributes[k]=="redact")){
+                    this.element.innerHTML = 'Редакторы'
+                }
+                if((name=="text")&&(attributes[k]=="users")){
+                    this.element.innerHTML = 'Пользователи'
+                }
+                if((name=="text")&&(attributes[k]=="admin")){
+                    this.element.innerHTML = 'Администратор'
+                }
+                if((name=="text")&&(attributes[k]=="article")){
+                    this.element.innerHTML = 'Статья'
+                }
+                if (attributes[k] == "image") {
+                    this.element.setAttributeNS(this.NS1, [k], attributes[k]);
+                }
+                else if (attributes[k] != "image") {
+                    this.element.setAttributeNS(null, [k], attributes[k]);
+                }
+            }
 
             if (attributes) {
                 return this.element;
             }
-            function check(name,attributes){
-                for (var k in attributes) {
-                    if ((name == "text") && (attributes[k] == "ip1")) {
-                        this.element.innerHTML = '192.168.0.3'
-                    }
-                    if ((name == "text") && (attributes[k] == "ip2")) {
-                        this.element.innerHTML = '192.168.0.4'
-                    }
-                    if ((name == "text") && (attributes[k] == "ip3")) {
-                        this.element.innerHTML = '192.168.0.5'
-                    }
-                    if((name=="text")&&(attributes[k]=="ip4")){
-                        this.element.innerHTML = '192.168.0.2'
-                    }
-                    if((name=="text")&&(attributes[k]=="ip5")){
-                        this.element.innerHTML = '192.168.0.6'
-                    }
-                    if((name=="text")&&(attributes[k]=="redact")){
-                        this.element.innerHTML = 'Редакторы'
-                    }
-                    if((name=="text")&&(attributes[k]=="users")){
-                        this.element.innerHTML = 'Пользователи'
-                    }
-                    if((name=="text")&&(attributes[k]=="admin")){
-                        this.element.innerHTML = 'Администратор'
-                    }
-                    if((name=="text")&&(attributes[k]=="article")){
-                        this.element.innerHTML = 'Статья'
-                    }
-                    if (attributes[k] == "image") {
-                        this.element.setAttributeNS(this.NS1, [k], attributes[k]);
-                    }
-                    else if (attributes[k] != "image") {
-                        this.element.setAttributeNS(null, [k], attributes[k]);
-                    }
-                }
-        }
         }
 
         appendNodeSVG(element) {
@@ -568,7 +564,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             //this.constract();
             this.connectionLab1(rect1HandlerUrl, 1);
-            document.querySelector('svg').addEventListener('click',Start.on);
+            document.body.addEventListener('click',Start.on);
         }
 
         constract(name) {
