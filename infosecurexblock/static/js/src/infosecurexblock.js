@@ -2,7 +2,6 @@
 function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
-    var choiseLab;
 
     function successCheck(result) {
         //console.log(result);
@@ -32,14 +31,10 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             this.star = () => {
+                new Lab1();
+                new Lab2();
                 this.createElementSVG('svg');
                 this.appendNodeSVG(this.constract('rect'));
-                if(this.connectionLab1(rect1HandlerUrl,1)||this.connectionLab1(rect1HandlerUrl,2)){
-                    new Lab1();
-                }
-                else if(this.connectionLab2(rect1HandlerUrl,1) || this.connectionLab2(rect1HandlerUrl,2)){
-                    new Lab2();
-                }
             }
         }
 
@@ -51,8 +46,6 @@ function InfoSecureXBlock(runtime, element) {
             var self = this;
 
             function success(handler) {
-                console.log(handler);
-                console.log(labId);
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
@@ -79,8 +72,6 @@ function InfoSecureXBlock(runtime, element) {
             var self = this;
 
             function success(handler) {
-                console.log(handler);
-                console.log(labId);
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
                     //console.log(this.amount,this.jsonObj.Rect1);
@@ -589,23 +580,10 @@ function InfoSecureXBlock(runtime, element) {
 
     class Lab2 extends Start {
         constructor() {
-            super();
+            super()
             this.connectionLab2(rect1HandlerUrl, 1);
             this.connectionLab2(rect1HandlerUrl, 2);
             document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
-        }
-    }
-    class Rect5 extends Start {
-        constructor() {
-            super()
-            this.connectionLab3(rect1HandlerUrl, 1);
-            document.getElementById('widget').addEventListener('click',Start.on);
-        }
-    }
-    class Rect6 extends Start {
-        constructor() {
-            super();
-            this.connectionLab3(rect1HandlerUrl, 2);
         }
     }
 
