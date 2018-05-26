@@ -5,7 +5,7 @@ function InfoSecureXBlock(runtime, element) {
     var choiseLab;
 
     function successCheck(result) {
-        console.log(result);
+        //console.log(result);
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
@@ -18,18 +18,26 @@ function InfoSecureXBlock(runtime, element) {
             $('.attempts', element).text(result.attempts);
             document.getElementsByClassName('.submit').style.opacity="0.65"; 
             document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
-             }
+            }
     }
 
     class Start {
         constructor() {
+            this.defaultSet = {
+                x: 0,
+                y: 0,
+                width: 850,
+                height: 850,
+                fill: '#f5f5f5',
+                class: 'rect1'
+            }
             this.star = () => {
-                var rect1 = new Rect1();
-                var rect2 = new Rect2();
-                var rect3 = new Rect3();
-                var rect4 = new Rect4();
-                rect1.createElementSVG('svg');
-                rect1.appendNodeSVG(rect1.constract('rect'));
+                new Rect1();
+                new Rect2();
+                new Rect3();
+                new Rect4();
+                this.createElementSVG('svg');
+                this.appendNodeSVG(this.constract('rect'));
             }
         }
 
@@ -44,9 +52,18 @@ function InfoSecureXBlock(runtime, element) {
                     //console.log(this.amount,this.jsonObj.Rect1);
                     self.addElementSVG(handler.amount, handler.Rect1);
                 }
+                else if(handler.Rect3){
+                    handler.amount = Object.keys(handler.Rect3).length;
+                    //console.log(this.amount,this.jsonObj.Rect1);
+                    self.addElementSVG(handler.amount, handler.Rect3);
+                }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
                     self.addElement(handler.amount, handler.Rect2);
+                }
+                else if(handler.Rect4){
+                    handler.amount = Object.keys(handler.Rect4).length;
+                    self.addElement(handler.amount, handler.Rect4);
                 }
             }
 
@@ -566,31 +583,14 @@ function InfoSecureXBlock(runtime, element) {
     class Rect1 extends Start {
         constructor() {
             super()
-            this.defaultSet = {
-                x: 0,
-                y: 0,
-                width: 850,
-                height: 850,
-                fill: '#f5f5f5',
-                class: 'rect1'
-            }
-            //this.constract();
-            choiseLab = 1;
-            if(choiseLab==1)
             this.connectionLab1(rect1HandlerUrl, 1);
             document.getElementById("widget").addEventListener('click',Start.on);
-        }
-
-        constract(name) {
-            return this.createElementSVG(name, this.defaultSet);
         }
     }
 
     class Rect2 extends Start {
         constructor() {
             super();
-            choiseLab = 1;
-            if(choiseLab==1)
             this.connectionLab1(rect1HandlerUrl, 2);
         }
     }
@@ -598,52 +598,22 @@ function InfoSecureXBlock(runtime, element) {
     class Rect3 extends Start {
         constructor() {
             super()
-            this.defaultSet = {
-                x: 0,
-                y: 0,
-                width: 850,
-                height: 850,
-                fill: '#f5f5f5',
-                class: 'rect1'
-            }
-            //this.constract();
-            choiseLab = 2;
-            if(choiseLab==2)
-            this.connectionLab2(rect1HandlerUrl, 1);
+            this.connectionLab1(rect1HandlerUrl, 1);
             document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
-        }
-
-        constract(name) {
-            return this.createElementSVG(name, this.defaultSet);
         }
     }
     class Rect4 extends Start {
         constructor() {
             super();
-            choiseLab = 2;
-            if(choiseLab==2)
-            this.connectionLab2(rect1HandlerUrl, 2);
+            this.connectionLab1(rect1HandlerUrl, 2);
         }
     }
     
     class Rect5 extends Start {
         constructor() {
             super()
-            this.defaultSet = {
-                x: 0,
-                y: 0,
-                width: 850,
-                height: 850,
-                fill: '#f5f5f5',
-                class: 'rect1'
-            }
-            //this.constract();
             this.connectionLab3(rect1HandlerUrl, 1);
             document.getElementById('widget').addEventListener('click',Start.on);
-        }
-
-        constract(name) {
-            return this.createElementSVG(name, this.defaultSet);
         }
     }
     class Rect6 extends Start {
