@@ -2,6 +2,7 @@
 function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
+    var choiseLab;
 
     function successCheck(result) {
         console.log(result);
@@ -118,18 +119,18 @@ function InfoSecureXBlock(runtime, element) {
 
         }
         static on() {
-            console.log("ON funcction:",this);
+            //console.log("ON funcction:",this);
             var evt = event.target;
             var elem;
             var student_answer = {};
 
             function active(idNum) {
-                elem = document.getElementById(idNum)
+                elem = document.getElementById(idNum);
                 elem.style.display = 'block';
             }
 
             function deactive(idNum) {
-                elem = document.getElementById(idNum)
+                elem = document.getElementById(idNum);
                 elem.style.display = 'none';
             }
             var remember = "";
@@ -574,8 +575,10 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             //this.constract();
+            choiseLab = 1;
+            if(choiseLab==1)
             this.connectionLab1(rect1HandlerUrl, 1);
-            document.body.addEventListener('click',Start.on);
+            document.getElementById("widget").addEventListener('click',Start.on);
         }
 
         constract(name) {
@@ -586,6 +589,8 @@ function InfoSecureXBlock(runtime, element) {
     class Rect2 extends Start {
         constructor() {
             super();
+            choiseLab = 1;
+            if(choiseLab==1)
             this.connectionLab1(rect1HandlerUrl, 2);
         }
     }
@@ -602,6 +607,8 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             //this.constract();
+            choiseLab = 2;
+            if(choiseLab==2)
             this.connectionLab2(rect1HandlerUrl, 1);
             document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
         }
@@ -613,6 +620,8 @@ function InfoSecureXBlock(runtime, element) {
     class Rect4 extends Start {
         constructor() {
             super();
+            choiseLab = 2;
+            if(choiseLab==2)
             this.connectionLab2(rect1HandlerUrl, 2);
         }
     }
