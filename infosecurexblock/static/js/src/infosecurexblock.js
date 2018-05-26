@@ -33,14 +33,10 @@ function InfoSecureXBlock(runtime, element) {
             }
             this.star = () => {
                 if(this.connectionLab1(rect1HandlerUrl,1)||this.connectionLab1(rect1HandlerUrl,2)){
-                    this.connectionLab1(rect1HandlerUrl,1);
-                    this.connectionLab1(rect1HandlerUrl,2);
-                    document.getElementById("widget").addEventListener('click',Start.on);
+                    new Lab1();
                 }
                 else if(this.connectionLab2(rect1HandlerUrl,1) || this.connectionLab2(rect1HandlerUrl,2)){
-                    this.connectionLab2(rect1HandlerUrl,1);
-                    this.connectionLab2(rect1HandlerUrl,2);
-                    document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
+                    new Lab2();
                 }
                 this.createElementSVG('svg');
                 this.appendNodeSVG(this.constract('rect'));
@@ -581,35 +577,23 @@ function InfoSecureXBlock(runtime, element) {
         
         Math.random(id_num);
     }
-    class Rect1 extends Start {
+    class Lab1 extends Start {
         constructor() {
             super()
             this.connectionLab1(rect1HandlerUrl, 1);
+            this.connectionLab1(rect1HandlerUrl, 2);
             document.getElementById("widget").addEventListener('click',Start.on);
         }
     }
 
-    class Rect2 extends Start {
+    class Lab2 extends Start {
         constructor() {
             super();
-            this.connectionLab1(rect1HandlerUrl, 2);
-        }
-    }
-
-    class Rect3 extends Start {
-        constructor() {
-            super()
             this.connectionLab2(rect1HandlerUrl, 1);
+            this.connectionLab2(rect1HandlerUrl, 2);
             document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
         }
     }
-    class Rect4 extends Start {
-        constructor() {
-            super();
-            this.connectionLab2(rect1HandlerUrl, 2);
-        }
-    }
-    
     class Rect5 extends Start {
         constructor() {
             super()
