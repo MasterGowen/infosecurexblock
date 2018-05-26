@@ -44,6 +44,7 @@ function InfoSecureXBlock(runtime, element) {
 
         connectionLab1(handler, labId) {
             var self = this;
+            console.log(lab_id);
 
             function success(handler) {
                 if (handler.Rect1) {
@@ -62,6 +63,12 @@ function InfoSecureXBlock(runtime, element) {
                     type: "POST",
                     url: handler,
                     data: {"lab_id": labId},
+                    success: success
+                });
+                $.ajax({
+                    type: "GET",
+                    url: handler,
+                    lab_id: lab_id,
                     success: success
                 });
 
