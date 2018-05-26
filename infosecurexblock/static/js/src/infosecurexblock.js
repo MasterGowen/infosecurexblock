@@ -119,6 +119,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         static on() {
             console.log("ON funcction:",this);
+            var evt = event.target;
             var elem;
             var student_answer = {};
 
@@ -132,16 +133,16 @@ function InfoSecureXBlock(runtime, element) {
                 elem.style.display = 'none';
             }
             var remember = "";
-            if (this.id == 'comp1') {
+            if (evt.id == 'comp1') {
                 document.getElementById("comp1").style.opacity = "0.5";
                 if (remember != null) {
 
                     document.getElementById("comp2").style.opacity = "1";
                     document.getElementById("comp3").style.opacity = "1";
                 }
-                remember = this.id;
+                remember = evt.id;
             }
-            if (this.id == 'comp2') {
+            if (evt.id == 'comp2') {
                 document.getElementById("comp2").style.opacity = "0.5";
 
                 if (remember != null) {
@@ -149,67 +150,67 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("comp1").style.opacity = "1";
                     document.getElementById("comp3").style.opacity = "1";
                 }
-                remember = this.id;
+                remember = evt.id;
             }
-            if (this.id == 'comp3') {
+            if (evt.id == 'comp3') {
                 document.getElementById("comp3").style.opacity = "0.5";
 
                 if (remember != null) {
                     document.getElementById("comp2").style.opacity = "1";
                     document.getElementById("comp1").style.opacity = "1";
                 }
-                remember = this.id;
+                remember = evt.id;
             }
-            if (this.id == 'task') {
+            if (evt.id == 'task') {
                 active('arrowid');
                 active('taskId');
                 active('taskTextID');
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
             }
-            if (this.id == 'taskId') {
+            if (evt.id == 'taskId') {
                 deactive('arrowid');
                 deactive('taskId');
                 deactive('taskTextID');
             }
-            if (this.id == 'File1') {
+            if (evt.id == 'File1') {
                 active('File1Id');
                 active('File1TextID');
                 active('File1TextID2');
                 document.getElementById("File1TextID").innerHTML = "Сообщение:406 9915660 05464616061 - 9915660";
                 document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
             }
-            if (this.id != "File1") {
+            if (evt.id != "File1") {
                 deactive('File1Id');
                 deactive('File1TextID');
                 deactive('File1TextID2');
 
             }
-            if ((this.id == "comp1") || (this.id == 'ip1')) {
+            if ((evt.id == "comp1") || (evt.id == 'ip1')) {
                 document.getElementById('ip').value = '192.168.0.3';
                 //document.getElementById('class').fill = 'black';
                 active('File1Id');
                 active('File1TextID');
                 active('File1TextID2');
             }
-            if ((this.id == "comp2") || (this.id == 'ip2')) {
+            if ((evt.id == "comp2") || (evt.id == 'ip2')) {
                 document.getElementById('ip').value = '192.168.0.4';
                 active('File1Id');
                 active('File1TextID');
                 active('File1TextID2');
             }
-            if ((this.id == "comp3") || (this.id == 'ip3')) {
+            if ((evt.id == "comp3") || (evt.id == 'ip3')) {
                 document.getElementById('ip').value = '192.168.0.5';
                 active('File1Id');
                 active('File1TextID');
                 active('File1TextID2');
             }
-            if (this.id == "Link"){
+            if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
             }
-            if (this.id == "checkid2"){
+            if (evt.id == "checkid2"){
                 Random();
             }
-            if ((this.id == 'checkid') && (document.getElementById(this.id).value != undefined)) {
+            if ((evt.id == 'checkid') && (document.getElementById(evt.id).value != undefined)) {
                 var k = document.getElementById('ip').value;
                 var d = document.getElementById('d').value;
                 var N = document.getElementById('N').value;
@@ -270,7 +271,7 @@ function InfoSecureXBlock(runtime, element) {
                                     getQuest();
                                 } */
             }
-            else if (this.id == 'checkid') {
+            else if (evt.id == 'checkid') {
                 console.log('Error:не все поля заполненны.')
             }
             console.log(student_answer);
