@@ -32,10 +32,14 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             this.star = () => {
-                new Rect1();
-                new Rect2();
-                new Rect3();
-                new Rect4();
+                if(this.connectionLab1(rect1HandlerUrl,1)){
+                    this.connectionLab1(rect1HandlerUrl,1);
+                    this.connectionLab1(rect1HandlerUrl,2);
+                }
+                else if(this.connectionLab2(rect1HandlerUrl,1)){
+                    this.connectionLab2(rect1HandlerUrl,1);
+                    this.connectionLab2(rect1HandlerUrl,2);
+                }
                 this.createElementSVG('svg');
                 this.appendNodeSVG(this.constract('rect'));
             }
@@ -52,18 +56,9 @@ function InfoSecureXBlock(runtime, element) {
                     //console.log(this.amount,this.jsonObj.Rect1);
                     self.addElementSVG(handler.amount, handler.Rect1);
                 }
-                else if(handler.Rect3){
-                    handler.amount = Object.keys(handler.Rect3).length;
-                    //console.log(this.amount,this.jsonObj.Rect1);
-                    self.addElementSVG(handler.amount, handler.Rect3);
-                }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
                     self.addElement(handler.amount, handler.Rect2);
-                }
-                else if(handler.Rect4){
-                    handler.amount = Object.keys(handler.Rect4).length;
-                    self.addElement(handler.amount, handler.Rect4);
                 }
             }
 
@@ -598,14 +593,14 @@ function InfoSecureXBlock(runtime, element) {
     class Rect3 extends Start {
         constructor() {
             super()
-            this.connectionLab1(rect1HandlerUrl, 1);
+            this.connectionLab2(rect1HandlerUrl, 1);
             document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
         }
     }
     class Rect4 extends Start {
         constructor() {
             super();
-            this.connectionLab1(rect1HandlerUrl, 2);
+            this.connectionLab2(rect1HandlerUrl, 2);
         }
     }
     
