@@ -68,7 +68,7 @@ function InfoSecureXBlock(runtime, element) {
                 $.ajax({
                     type: "GET",
                     url: handler,
-                    lab_id: lab_id,
+                    dat: lab_id,
                     success: success
                 });
 
