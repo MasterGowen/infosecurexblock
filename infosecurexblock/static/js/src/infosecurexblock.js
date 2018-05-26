@@ -32,12 +32,12 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             this.star = () => {
-                if(this.connectionLab1(rect1HandlerUrl,1)&&this.connectionLab1(rect1HandlerUrl,2)){
+                if(this.connectionLab1(rect1HandlerUrl,1)||this.connectionLab1(rect1HandlerUrl,2)){
                     this.connectionLab1(rect1HandlerUrl,1);
                     this.connectionLab1(rect1HandlerUrl,2);
                     document.getElementById("widget").addEventListener('click',Start.on);
                 }
-                else if(this.connectionLab2(rect1HandlerUrl,1)&& this.connectionLab2(rect1HandlerUrl,2)){
+                else if(this.connectionLab2(rect1HandlerUrl,1) || this.connectionLab2(rect1HandlerUrl,2)){
                     this.connectionLab2(rect1HandlerUrl,1);
                     this.connectionLab2(rect1HandlerUrl,2);
                     document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
