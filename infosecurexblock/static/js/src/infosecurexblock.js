@@ -181,27 +181,27 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById('line_comp1').style.stroke = "green";
                 document.getElementById('line_comp2').style.stroke = "lightgrey";
                 document.getElementById('line_comp3').style.stroke = "lightgrey";
-                active('File1Id');
-                active('File1TextID');
-                active('File1TextID2');
+                Start.active('File1Id');
+                Start.active('File1TextID');
+                Start.active('File1TextID2');
             }
             if ((evt.id == "comp2") || (evt.id == 'ip2')) {
                 document.getElementById('ip').value = '192.168.0.4';
                 document.getElementById('line_comp1').style.stroke = "lightgrey";
                 document.getElementById('line_comp2').style.stroke = "green";
                 document.getElementById('line_comp3').style.stroke = "lightgrey";
-                active('File1Id');
-                active('File1TextID');
-                active('File1TextID2');
+                Start.active('File1Id');
+                Start.active('File1TextID');
+                Start.active('File1TextID2');
             }
             if ((evt.id == "comp3") || (evt.id == 'ip3')) {
                 document.getElementById('ip').value = '192.168.0.5';
                 document.getElementById('line_comp1').style.stroke = "lightgrey";
                 document.getElementById('line_comp2').style.stroke = "lightgrey";
                 document.getElementById('line_comp3').style.stroke = "green";
-                active('File1Id');
-                active('File1TextID');
-                active('File1TextID2');
+                Start.active('File1Id');
+                Start.active('File1TextID');
+                Start.active('File1TextID2');
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -278,15 +278,15 @@ function InfoSecureXBlock(runtime, element) {
             var elem;
             var student_answer = {};
             if (evt.id == 'task') {
-                active('arrowid');
-                active('taskId');
-                active('taskTextID');
+                Startactive('arrowid');
+                Start.active('taskId');
+                Start.active('taskTextID');
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
             }
             if (evt.id == 'taskId') {
-                deactive('arrowid');
-                deactive('taskId');
-                deactive('taskTextID');
+                Start.deactive('arrowid');
+                Start.deactive('taskId');
+                Start.deactive('taskTextID');
             }
             if (evt.id == "checkid2"){
                 Random();
