@@ -12,7 +12,7 @@ button.submit {
     cursor: pointer;
 }
 #Link{
-    display:none;
+    display:block;
     opacity:0.5;
 }
 #widget {
