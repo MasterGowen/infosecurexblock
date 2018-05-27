@@ -35,6 +35,7 @@
         },
         "button":{
             "type": "button",
+            "disabled":"false",
             "class": "submit btn-brand",
             "color":"#000",
             "id":"checkid"
