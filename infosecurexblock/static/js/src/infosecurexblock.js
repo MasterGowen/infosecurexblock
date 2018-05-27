@@ -279,6 +279,17 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             var elem;
             var student_answer = {};
+            if (evt.id == 'task') {
+                active('arrowid');
+                active('taskId');
+                active('taskTextID');
+                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
+            }
+            if (evt.id == 'taskId') {
+                deactive('arrowid');
+                deactive('taskId');
+                deactive('taskTextID');
+            }
             if (evt.id == "checkid2"){
                 Random();
             }
