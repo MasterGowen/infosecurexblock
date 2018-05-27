@@ -20,6 +20,9 @@ function InfoSecureXBlock(runtime, element) {
             document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
             }
     }
+    var test = {
+        'test':'lab1'
+    }
 
     function successCheckLab(result) {
         console.log('succesCheckLAB : ',result);
@@ -46,6 +49,19 @@ function InfoSecureXBlock(runtime, element) {
 
         constract(name) {
             return this.createElementSVG(name, this.defaultSet);
+        }
+
+        checkAnswerLab(checkHandlerLab,test) {
+            console.log("checkHandlerLab :", checkHandlerLab);
+            (function () {
+                $.ajax({
+                    type: "POST",
+                    url: checkHandlerLab,
+                    data: JSON.stringify(test),
+                    success: successCheckLab
+                });
+
+            })()
         }
 
         connectionLab1(handler, labId) {
@@ -581,22 +597,7 @@ function InfoSecureXBlock(runtime, element) {
             this.connectionLab1(rect1HandlerUrl, 2);
             //console.log("lab1");
             document.getElementById("widget").addEventListener('click',Start.on);
-            var test = {
-                'test':'lab1'
-            }
-            function checkAnswerLab(checkHandlerLab,test) {
-                console.log("checkHandlerLab :", checkHandlerLab);
-                (function () {
-                    $.ajax({
-                        type: "POST",
-                        url: checkHandlerLab,
-                        data: JSON.stringify(test),
-                        success: successCheckLab
-                    });
-
-                })()
-            }
-            checkAnswerLab(checkHandlerLab,test);
+            this.checkAnswerLab(checkHandlerLab,test);
         }
     }
 
@@ -606,6 +607,7 @@ function InfoSecureXBlock(runtime, element) {
             this.connectionLab2(rect1HandlerUrl, 1);
             this.connectionLab2(rect1HandlerUrl, 2);
             document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
+            this.checkAnswerLab(checkHandlerLab,test);
         }
     }
 
