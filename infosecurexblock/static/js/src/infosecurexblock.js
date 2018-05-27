@@ -29,28 +29,17 @@ function InfoSecureXBlock(runtime, element) {
         switch(result.lab_id){
             case 1:{
                 document.getElementById('widget').addEventListener('click', Start.onLab1);
+                document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
             case 2:{
                 document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
-                document.getElementById('widget').addEventListener('click', ()=> {
-                    var evt = event.target;
-                    if (evt.id == 'task') {
-                        Start.active('arrowid');
-                        Start.active('taskId');
-                        Start.active('taskTextID');
-                        document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
-                    }
-                    if (evt.id == 'taskId') {
-                        Start.deactive('arrowid');
-                        Start.deactive('taskId');
-                        Start.deactive('taskTextID');
-                    }
-                })
+                document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
             case 3:{
                 document.getElementById('widget').addEventListener('click', Start.onLab3);
+                document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
             case 4:{
@@ -80,6 +69,21 @@ function InfoSecureXBlock(runtime, element) {
 
         constract(name) {
             return this.createElementSVG(name, this.defaultSet);
+        }
+
+        static taskBlock() {
+            var evt = event.target;
+            if (evt.id == 'task') {
+                Start.active('arrowid');
+                Start.active('taskId');
+                Start.active('taskTextID');
+                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
+            }
+            if (evt.id == 'taskId') {
+                Start.deactive('arrowid');
+                Start.deactive('taskId');
+                Start.deactive('taskTextID');
+            }
         }
 
         checkAnswerLab(checkHandlerLab,test) {
@@ -165,17 +169,6 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("comp1").style.opacity = "1";
                 }
                 remember = evt.id;
-            }
-            if (evt.id == 'task') {
-                Start.active('arrowid');
-                Start.active('taskId');
-                Start.active('taskTextID');
-                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
-            }
-            if (evt.id == 'taskId') {
-                Start.deactive('arrowid');
-                Start.deactive('taskId');
-                Start.deactive('taskTextID');
             }
             if (evt.id == 'File1') {
                 Start.active('File1Id');
@@ -292,17 +285,6 @@ function InfoSecureXBlock(runtime, element) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
-            if (evt.id == 'task') {
-                Start.active('arrowid');
-                Start.active('taskId');
-                Start.active('taskTextID');
-                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
-            }
-            if (evt.id == 'taskId') {
-                Start.deactive('arrowid');
-                Start.deactive('taskId');
-                Start.deactive('taskTextID');
-            }
             if (evt.id == "checkid2"){
                 Random();
             }
