@@ -584,7 +584,7 @@ function InfoSecureXBlock(runtime, element) {
                 console.log("checkHandlerLab :", checkHandlerLab);
                 (function () {
                     $.ajax({
-                        type: "GET",
+                        type: "POST",
                         url: checkHandlerLab,
                         //data: JSON.stringify(student_answer),
                         success: successCheckLab
