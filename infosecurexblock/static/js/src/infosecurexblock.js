@@ -2,6 +2,7 @@
 function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
+    var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
 
     function successCheck(result) {
         console.log("result:", result);
@@ -18,6 +19,9 @@ function InfoSecureXBlock(runtime, element) {
             document.getElementsByClassName('.submit').style.opacity="0.65"; 
             document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
             }
+    }
+    function successCheckLab(result) {
+        console.log('succesCheckLAB : ',result);
     }
 
     class Start {
@@ -43,9 +47,9 @@ function InfoSecureXBlock(runtime, element) {
             return this.createElementSVG(name, this.defaultSet);
         }
 
-        connectionLab1(handler, labId, lab_id) {
+        connectionLab1(handler, labId) {
             var self = this;
-            console.log(lab_id);
+            //console.log(lab_id);
 
             function success(handler) {
                 if (handler.Rect1) {
@@ -576,6 +580,19 @@ function InfoSecureXBlock(runtime, element) {
             this.connectionLab1(rect1HandlerUrl, 2);
             console.log("lab1");
             document.getElementById("widget").addEventListener('click',Start.on);
+            function checkAnswerLab(checkHandlerLab) {
+                console.log("checkHandlerLab :", checkHandlerLab);
+                (function () {
+                    $.ajax({
+                        type: "GET",
+                        url: checkHandlerLab,
+                        //data: JSON.stringify(student_answer),
+                        success: successCheckLab
+                    });
+
+                })()
+            }
+            checkAnswerLab(checkHandlerLab);
         }
     }
 
