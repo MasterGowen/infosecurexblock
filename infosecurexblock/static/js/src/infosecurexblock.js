@@ -36,6 +36,11 @@ function InfoSecureXBlock(runtime, element) {
             document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
             console.log('dragMouse');
         }
+        else if(result.lab_id == 3)
+        {
+            document.getElementById('widget').addEventListener('click', Start.on_lab3);
+           
+        }
         console.log('succesCheckLAB : ',result.lab_id);
     }
 
@@ -256,9 +261,7 @@ function InfoSecureXBlock(runtime, element) {
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
             }
-            if (evt.id == "checkid2"){
-                Random();
-            }
+            
             if ((evt.id == 'checkid') && (document.getElementById(evt.id).value != undefined)) {
                 var k = document.getElementById('ip').value;
                 var d = document.getElementById('d').value;
@@ -326,7 +329,15 @@ function InfoSecureXBlock(runtime, element) {
             console.log(student_answer);
         }
 
-    
+        static on_lab3() {
+            //console.log("ON funcction:",this);
+            var evt = event.target;
+            var elem;
+            var student_answer = {};
+            if (evt.id == "checkid2"){
+                Random();
+            }
+        }
         static dragMouseDown(e) {
             var dragObject = {};
             var self = this;
@@ -624,8 +635,8 @@ function InfoSecureXBlock(runtime, element) {
     class Lab3 extends Start {
         constructor() {
             super()
-            //this.connectionLab3(rect1HandlerUrl, 1);
-            //this.connectionLab3(rect1HandlerUrl, 2);
+            this.connectionLab3(rect1HandlerUrl, 1);
+            this.connectionLab3(rect1HandlerUrl, 2);
             //console.log("lab3");
             //document.getElementById("widget").addEventListener('click',Start.on);
         }
