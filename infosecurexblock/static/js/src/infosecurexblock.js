@@ -9,14 +9,14 @@ function InfoSecureXBlock(runtime, element) {
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
-                document.getElementById('.checkid').setAttribute("disabled", "disabled"); 
+                document.getElementById('.checkid').setAttribute("disabled", null); 
                 document.getElementById('.checkid').style.cursor="not-allowed"; 
             }
             $(".success", element).text(result.points);
         }
         else { 
             $('.attempts', element).text(result.attempts);
-            document.getElementById('.checkid').setAttribute("disabled", "disabled"); 
+            document.getElementById('.checkid').setAttribute("disabled", null); 
             document.getElementById('.checkid').style.cursor="not-allowed"; 
             }
     }
