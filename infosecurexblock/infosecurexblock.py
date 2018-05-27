@@ -161,7 +161,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         self.answer = data
         self.attempts += 1
 
-        def checkRSA(data):
+        def checkLabs(data):
             if self.lab_id == 1:
                 ip = data["ip"]
                 d = int(data["d"])
@@ -203,7 +203,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     return True
 
         if answer_opportunity(self):
-            grade = checkRSA(data)
+            grade = checkLabs(data)
             self.grade = grade
             self.points = grade * self.weight
 
