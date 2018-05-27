@@ -31,8 +31,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     )
     weight = Integer(
         display_name=u"Maximum number of points",
-        help=(u"The maximum number of points",
-              u"a student can receive."),
+        help=u"",
         default=60,
         scope=Scope.settings
     )
