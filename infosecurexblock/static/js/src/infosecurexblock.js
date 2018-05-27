@@ -4,22 +4,20 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
 
-    document.getElementsByClassName('.submit').disabled  = false; 
-
     function successCheck(result) {
         console.log("result:", result);
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
-                document.getElementsByClassName('.submit').disabled  = true; 
-                document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
+                document.getElementsByClassName('.checkid').disabled  = true; 
+                document.getElementsByClassName('.checkid').style.cursor="not-allowed"; 
             }
             $(".success", element).text(result.points);
         }
         else { 
             $('.attempts', element).text(result.attempts);
-            document.getElementsByClassName('.submit').disabled  = true; 
-            document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
+            document.getElementsByClassName('.checkid').disabled  = true; 
+            document.getElementsByClassName('.checkid').style.cursor="not-allowed"; 
             }
     }
     var test = {
