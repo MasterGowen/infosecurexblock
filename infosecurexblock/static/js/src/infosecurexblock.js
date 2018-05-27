@@ -96,15 +96,14 @@ function InfoSecureXBlock(runtime, element) {
         }
 
        
-        connectionLab3(handler, labId) {
+        connectionLab1(handler, labId, lab_id) {
             var self = this;
+            console.log(lab_id);
 
             function success(handler) {
-                console.log(handler);
-                console.log(labId);
                 if (handler.Rect5) {
                     handler.amount = Object.keys(handler.Rect5).length;
-                    //console.log(this.amount,this.jsonObj.Rect5);
+                    //console.log(this.amount,this.jsonObj.Rect1);
                     self.addElementSVG(handler.amount, handler.Rect5);
                 }
                 if (handler.Rect6) {
