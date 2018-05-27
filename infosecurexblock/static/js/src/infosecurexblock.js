@@ -395,16 +395,16 @@ function InfoSecureXBlock(runtime, element) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
             var student_answer = {
-                'answerBlockRedac': '',
-                'answerBlockAdmin': '',
-                'answerBlockUsers': '',
+                'answerBlockRedac': superPos1,
+                'answerBlockAdmin': superPos2,
+                'answerBlockUsers': superPos3,
             };
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer.answerBlockUsers = true;
+                student_answer.superPos3 = true;
                 console.log("user:",student_answer);
             }
             else if((elem.id == "redacRect" || elem.id == "comp2"|| elem.id == "comp3") && dragObject.avatar.id == "rw"){
@@ -412,7 +412,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[1].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer.answerBlockRedac= true;
+                student_answer.superPos1= true;
                 console.log("redac:",student_answer);
             }
             else if((elem.id == "admRect" || elem.id == "compadm") && dragObject.avatar.id == "rwx"){
@@ -420,7 +420,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[3].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer.answerBlockAdmin=true;
+                student_answer.superPos2=true;
                 console.log("adm:",student_answer);
             }
             else {
