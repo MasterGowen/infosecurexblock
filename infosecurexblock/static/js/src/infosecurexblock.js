@@ -278,7 +278,7 @@ function InfoSecureXBlock(runtime, element) {
             var elem;
             var student_answer = {};
             if (evt.id == 'task') {
-                Startactive('arrowid');
+                Start.active('arrowid');
                 Start.active('taskId');
                 Start.active('taskTextID');
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
