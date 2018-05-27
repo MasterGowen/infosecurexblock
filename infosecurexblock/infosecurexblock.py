@@ -183,6 +183,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     
             elif self.lab_id == 2:
                 answer = data["answer"]
+                grade = 0
                 if answer & (grade == 0):
                     grade = 0.33
                     return grade
