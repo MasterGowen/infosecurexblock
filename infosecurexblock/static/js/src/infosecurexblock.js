@@ -394,8 +394,11 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
+            var superPos1=false,superPos2=false,superPos3=false;
             var student_answer = {
-                'answer': false,
+                'answerBlockRedac': superPos1,
+                'answerBlockAdmin': superPos2,
+                'answerBlockUsers': superPos3,
             };
             Start.checkAnswer(checkHandler, student_answer);
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
@@ -403,9 +406,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer = {
-                    'answer': true,
-                }
+                superPos3 = true;
                 Start.checkAnswer(checkHandler, student_answer);
             }
             else if((elem.id == "redacRect" || elem.id == "comp2"|| elem.id == "comp3") && dragObject.avatar.id == "rw"){
@@ -413,9 +414,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[1].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer = {
-                    'answer': true,
-                }
+                superPos1=true;
                 Start.checkAnswer(checkHandler, student_answer);
             }
             else if((elem.id == "admRect" || elem.id == "compadm") && dragObject.avatar.id == "rwx"){
@@ -423,9 +422,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[3].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer = {
-                    'answer': true,
-                }
+                superPos1=true;
                 Start.checkAnswer(checkHandler, student_answer);
             }
             else {
@@ -433,7 +430,9 @@ function InfoSecureXBlock(runtime, element) {
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
                 student_answer = {
-                    'answer': false,
+                'answerBlockRedac': superPos1,
+                'answerBlockAdmin': superPos2,
+                'answerBlockUsers': superPos3,
                 }
                 Start.checkAnswer(checkHandler, student_answer);
             }
