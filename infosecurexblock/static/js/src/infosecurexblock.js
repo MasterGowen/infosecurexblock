@@ -22,7 +22,13 @@ function InfoSecureXBlock(runtime, element) {
     }
     var test = {
         'test':'lab1'
-    }
+    };
+    
+    var student_answer = {
+        'answerBlockRedac': false,
+        'answerBlockAdmin': false,
+        'answerBlockUsers': false
+    };
 
     function successCheckLab(result) {
         if (result.result != "fail")
@@ -65,11 +71,6 @@ function InfoSecureXBlock(runtime, element) {
                 this.createElementSVG('svg');
                 this.appendNodeSVG(this.constract('rect'));
             }
-            var student_answer = {
-                'answerBlockRedac': false,
-                'answerBlockAdmin': false,
-                'answerBlockUsers': false,
-            };
         }
 
         constract(name) {
