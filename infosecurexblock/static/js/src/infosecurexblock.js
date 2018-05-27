@@ -394,11 +394,10 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
-            var superPos1=false,superPos2=false,superPos3=false;
             var student_answer = {
-                'answerBlockRedac': superPos1,
-                'answerBlockAdmin': superPos2,
-                'answerBlockUsers': superPos3,
+                'answerBlockRedac': false,
+                'answerBlockAdmin': false,
+                'answerBlockUsers': false,
             };
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
@@ -432,9 +431,9 @@ function InfoSecureXBlock(runtime, element) {
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
                 student_answer = {
-                'answerBlockRedac': superPos1,
-                'answerBlockAdmin': superPos2,
-                'answerBlockUsers': superPos3,
+                'answerBlockRedac': false,
+                'answerBlockAdmin': false,
+                'answerBlockUsers': false,
                 }
                 console.log('RED',student_answer);
                 Start.checkAnswer(checkHandler, student_answer);
