@@ -33,6 +33,20 @@ function InfoSecureXBlock(runtime, element) {
             }
             case 2:{
                 document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
+                document.getElementById('widget').addEventListener('click', ()=> {
+                    var evt = event.target;
+                    if (evt.id == 'task') {
+                        Start.active('arrowid');
+                        Start.active('taskId');
+                        Start.active('taskTextID');
+                        document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
+                    }
+                    if (evt.id == 'taskId') {
+                        Start.deactive('arrowid');
+                        Start.deactive('taskId');
+                        Start.deactive('taskTextID');
+                    }
+                })
                 break;
             }
             case 3:{
@@ -121,7 +135,6 @@ function InfoSecureXBlock(runtime, element) {
         static onLab1() {
             //console.log("ON funcction:",this);
             var evt = event.target;
-            var elem;
             var student_answer = {};
 
             var remember = "";
@@ -160,21 +173,21 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
             }
             if (evt.id == 'taskId') {
-                deactive('arrowid');
-                deactive('taskId');
-                deactive('taskTextID');
+                Start.deactive('arrowid');
+                Start.deactive('taskId');
+                Start.deactive('taskTextID');
             }
             if (evt.id == 'File1') {
-                active('File1Id');
-                active('File1TextID');
-                active('File1TextID2');
+                Start.active('File1Id');
+                Start.active('File1TextID');
+                Start.active('File1TextID2');
                 document.getElementById("File1TextID").innerHTML = "Сообщение:406 9915660 05464616061 - 9915660";
                 document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
             }
             if (evt.id != "File1") {
-                deactive('File1Id');
-                deactive('File1TextID');
-                deactive('File1TextID2');
+                Start.deactive('File1Id');
+                Start.deactive('File1TextID');
+                Start.deactive('File1TextID2');
 
             }
             if ((evt.id == "comp1") || (evt.id == 'ip1')) {
@@ -278,7 +291,6 @@ function InfoSecureXBlock(runtime, element) {
         static onLab3() {
             //console.log("ON funcction:",this);
             var evt = event.target;
-            var elem;
             var student_answer = {};
             if (evt.id == 'task') {
                 Start.active('arrowid');
