@@ -182,18 +182,21 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     return grade
                     
             elif self.lab_id == 2:
-                answer = data["answer"]
+                answer = bool(data["answer"])
                 grade = 0
-                if answer & (grade == 0):
+                if ( (answer==True) & (grade==0) ):
                     grade = 0.33
                     return grade
-                elif answer & (grade != 0):
+                elif ( (answer==True) & (grade!=0) ):
                     grade += 0.33
                     return grade
-                else:
+                elif ( (answer==False) & (grade!=0) ):
+                    return grade
+                elif ( (answer==False) & (grade==0) ):
                     grade = 0
                     return grade
-
+                
+                    
         def IsTheNumberSimple(n):
             if n < 2:
                 return False
