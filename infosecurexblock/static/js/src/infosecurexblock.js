@@ -395,9 +395,9 @@ function InfoSecureXBlock(runtime, element) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
             var student_answer = {
-                'answerBlockRedac': false,
-                'answerBlockAdmin': false,
-                'answerBlockUsers': false,
+                'answerBlockRedac': '',
+                'answerBlockAdmin': '',
+                'answerBlockUsers': '',
             };
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
