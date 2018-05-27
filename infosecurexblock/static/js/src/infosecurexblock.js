@@ -34,7 +34,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             case 2:{
                 document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
-                document.getElementById('widget').addEventListener('click',Start.taskBlock);
+                document.getElementById('widget').addEventListener('click', Start.taskBlock);
                 break;
             }
             case 3:{
