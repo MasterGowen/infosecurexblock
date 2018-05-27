@@ -405,7 +405,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                superPos3 = true;
+                student_answer.answerBlockUsers = true;
                 console.log("user:",student_answer);
                 Start.checkAnswer(checkHandler, student_answer);
             }
@@ -414,7 +414,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[1].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                superPos1=true;
+                student_answer.answerBlockRedac=true;
                 console.log("redac:",student_answer);
                 Start.checkAnswer(checkHandler, student_answer);
             }
@@ -423,7 +423,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[3].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                superPos1=true;
+                student_answer.answerBlockAdmin=true;
                 console.log("adm:",student_answer);
                 Start.checkAnswer(checkHandler, student_answer);
             }
