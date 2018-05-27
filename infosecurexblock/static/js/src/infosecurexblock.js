@@ -271,8 +271,8 @@ function InfoSecureXBlock(runtime, element) {
                         }
 
                     function checkAnswer(checkHandler, student_answer) {
-                        console.log("student_answer :", student_answer);
-                        console.log("checkHandler :", checkHandler);
+                        //console.log("student_answer :", student_answer);
+                        //console.log("checkHandler :", checkHandler);
                         (function () {
                             $.ajax({
                                 type: "POST",
@@ -497,7 +497,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         addElementSVG(amount, jsonObj) {
-            console.log(amount,jsonObj);
+            //console.log(amount,jsonObj);
             for (amount in jsonObj) {
                 //console.log(jsonObj[amount].type,jsonObj[amount]);
                 this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type, jsonObj[amount]));
@@ -577,7 +577,7 @@ function InfoSecureXBlock(runtime, element) {
             super()
             this.connectionLab1(rect1HandlerUrl, 1);
             this.connectionLab1(rect1HandlerUrl, 2);
-            console.log("lab1");
+            //console.log("lab1");
             document.getElementById("widget").addEventListener('click',Start.on);
             function checkAnswerLab(checkHandlerLab) {
                 console.log("checkHandlerLab :", checkHandlerLab);
@@ -609,7 +609,7 @@ function InfoSecureXBlock(runtime, element) {
             super()
             this.connectionLab3(rect1HandlerUrl, 1);
             this.connectionLab3(rect1HandlerUrl, 2);
-            console.log("lab3");
+            //console.log("lab3");
             document.getElementById("widget").addEventListener('click',Start.on);
         }
     }
