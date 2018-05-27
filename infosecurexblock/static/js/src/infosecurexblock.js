@@ -26,22 +26,25 @@ function InfoSecureXBlock(runtime, element) {
 
     function successCheckLab(result) {
         if (result.result != "fail")
-        if(result.lab_id == 1)
-        {
-            document.getElementById('widget').addEventListener('click', Start.on);
-            console.log('click');
+        switch(result.lab_id){
+            case 1:{
+                document.getElementById('widget').addEventListener('click', Start.onLab1);
+                break;
+            }
+            case 2:{
+                document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
+                break;
+            }
+            case 3:{
+                document.getElementById('widget').addEventListener('click', Start.onLab3);
+                break;
+            }
+            case 4:{
+
+                break;
+            }
+            console.log('succesCheckLAB : ',result.lab_id);
         }
-        else if(result.lab_id == 2)
-        {
-            document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
-            console.log('dragMouse');
-        }
-        else if(result.lab_id == 3)
-        {
-            document.getElementById('widget').addEventListener('click', Start.on_lab3);
-           
-        }
-        console.log('succesCheckLAB : ',result.lab_id);
     }
 
     class Start {
@@ -115,7 +118,7 @@ function InfoSecureXBlock(runtime, element) {
             elem = document.getElementById(idNum);
             elem.style.display = 'none';
         }
-        static on() {
+        static onLab1() {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var elem;
@@ -272,7 +275,7 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
-        static on_lab3() {
+        static onLab3() {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var elem;
