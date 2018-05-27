@@ -567,7 +567,6 @@ function InfoSecureXBlock(runtime, element) {
             this.checkAnswerLab(checkHandlerLab,test);
         }
     }
-    }
 
 //автоматически вызываемая функция создаёт пространство
 //рабочей области + формирует создание области настроек
