@@ -20,6 +20,7 @@ function InfoSecureXBlock(runtime, element) {
             document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
             }
     }
+
     function successCheckLab(result) {
         console.log('succesCheckLAB : ',result);
     }
@@ -580,19 +581,22 @@ function InfoSecureXBlock(runtime, element) {
             this.connectionLab1(rect1HandlerUrl, 2);
             //console.log("lab1");
             document.getElementById("widget").addEventListener('click',Start.on);
-            function checkAnswerLab(checkHandlerLab) {
+            var test = {
+                'test':'lab1'
+            }
+            function checkAnswerLab(checkHandlerLab,test) {
                 console.log("checkHandlerLab :", checkHandlerLab);
                 (function () {
                     $.ajax({
                         type: "POST",
                         url: checkHandlerLab,
-                        //data: JSON.stringify(student_answer),
+                        data: JSON.stringify(test),
                         success: successCheckLab
                     });
 
                 })()
             }
-            checkAnswerLab(checkHandlerLab);
+            checkAnswerLab(checkHandlerLab,test);
         }
     }
 

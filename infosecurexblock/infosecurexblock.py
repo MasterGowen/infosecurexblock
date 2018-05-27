@@ -139,15 +139,15 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     # elif(lab_id==2):
     # print('test')
 
-    @XBlock.handler
-    def checkLab(self, unused_suffix=''):           
+    @XBlock.json_handler
+    def checkLab(self, data, unused_suffix=''):           
         if answer_opportunity(self):
-            # self.runtime.publish(self, 'grade', {
-            #     'value': grade,
-            #     'max_value': self.weight,
+
+            # self.runtime.publish(self, lab_id {
+            #         'value': self.lab_id
             # })
             response = {'result': 'success',
-                        'lab_id': self.lab_id
+                            'lab_id': self.lab_id
                         }
 
         else:
