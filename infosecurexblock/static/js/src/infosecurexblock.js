@@ -34,20 +34,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             case 2:{
                 document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
-                document.getElementById('widget').addEventListener('click', ()=> {
-                    var evt = event.target;
-                    if (evt.id == 'task') {
-                        Start.active('arrowid');
-                        Start.active('taskId');
-                        Start.active('taskTextID');
-                        document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
-                    }
-                    if (evt.id == 'taskId') {
-                        Start.deactive('arrowid');
-                        Start.deactive('taskId');
-                        Start.deactive('taskTextID');
-                     }
-                })
+                document.getElementById('widget').addEventListener('click', Start.taskBlock);
                 break;
             }
             case 3:{
