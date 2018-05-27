@@ -26,6 +26,16 @@ function InfoSecureXBlock(runtime, element) {
 
     function successCheckLab(result) {
         if (result.result != "fail")
+        if(result.lab_id == 1)
+        {
+            document.getElementById('widget').addEventListener('click', Start.on);
+            console.log('click');
+        }
+        else if(result.lab_id == 2)
+        {
+            document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
+            console.log('dragMouse');
+        }
         console.log('succesCheckLAB : ',result.lab_id);
     }
 
@@ -597,7 +607,7 @@ function InfoSecureXBlock(runtime, element) {
             this.connectionLab1(rect1HandlerUrl, 1);
             this.connectionLab1(rect1HandlerUrl, 2);
             //console.log("lab1");
-            document.getElementById("widget").addEventListener('click',Start.on);
+            //document.getElementById("widget").addEventListener('click',Start.on);
             this.checkAnswerLab(checkHandlerLab,test);
         }
     }
@@ -607,8 +617,7 @@ function InfoSecureXBlock(runtime, element) {
             super()
             this.connectionLab2(rect1HandlerUrl, 1);
             this.connectionLab2(rect1HandlerUrl, 2);
-            document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
-            this.checkAnswerLab(checkHandlerLab,test);
+            //document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
         }
     }
 
