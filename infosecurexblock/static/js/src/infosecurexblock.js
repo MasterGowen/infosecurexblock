@@ -5,7 +5,7 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
 
     function successCheck(result) {
-        console.log("result:", result);
+        //console.log("result:", result);
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
@@ -87,7 +87,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         checkAnswerLab(checkHandlerLab,test) {
-            console.log("checkHandlerLab :", checkHandlerLab);
+            //console.log("checkHandlerLab :", checkHandlerLab);
             (function () {
                 $.ajax({
                     type: "POST",
@@ -400,7 +400,6 @@ function InfoSecureXBlock(runtime, element) {
                 'answerBlockAdmin': superPos2,
                 'answerBlockUsers': superPos3,
             };
-            Start.checkAnswer(checkHandler, student_answer);
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
@@ -440,6 +439,7 @@ function InfoSecureXBlock(runtime, element) {
                 console.log('RED',student_answer);
                 Start.checkAnswer(checkHandler, student_answer);
             }
+            
             
             if (elem == null) {
               return null;
