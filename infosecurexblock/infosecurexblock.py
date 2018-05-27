@@ -135,11 +135,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         )))).read()
         return Response(body=file, charset='UTF-8',
                         content_type='text/plain')
-    @XBlock.handler
-    def rect2(self, data, suffix=''):
-        return Response(body=self.lab_id, charset='UTF-8',
-                        content_type='text/plain')
-
 
     # elif(lab_id==2):
     # print('test')

@@ -2,10 +2,9 @@
 function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
-    var rect2HandlerUrl = runtime.handlerUrl(element, 'rect2');
 
     function successCheck(result) {
-        //console.log(result);
+        console.log(result);
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
@@ -64,12 +63,6 @@ function InfoSecureXBlock(runtime, element) {
                     type: "POST",
                     url: handler,
                     data: {"lab_id": labId},
-                    success: success
-                });
-                $.ajax({
-                    type: "GET",
-                    url: handler,
-                    data: lab_id,
                     success: success
                 });
 
@@ -581,7 +574,6 @@ function InfoSecureXBlock(runtime, element) {
             super()
             this.connectionLab1(rect1HandlerUrl, 1);
             this.connectionLab1(rect1HandlerUrl, 2);
-            this.connectionLab1(rect2HandlerUrl, 1);
             console.log("lab1");
             document.getElementById("widget").addEventListener('click',Start.on);
         }
