@@ -106,21 +106,21 @@ function InfoSecureXBlock(runtime, element) {
 
         }
 
+        static active(idNum) {
+            elem = document.getElementById(idNum);
+            elem.style.display = 'block';
+        }
+
+        static deactive(idNum) {
+            elem = document.getElementById(idNum);
+            elem.style.display = 'none';
+        }
         static on() {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var elem;
             var student_answer = {};
 
-            function active(idNum) {
-                elem = document.getElementById(idNum);
-                elem.style.display = 'block';
-            }
-
-            function deactive(idNum) {
-                elem = document.getElementById(idNum);
-                elem.style.display = 'none';
-            }
             var remember = "";
             if (evt.id == 'comp1') {
                 document.getElementById("comp1").style.opacity = "0.5";
