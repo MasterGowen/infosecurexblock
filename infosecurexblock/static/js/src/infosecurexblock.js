@@ -100,7 +100,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
        
-        connectionLab1(handler, labId, lab_id) {
+        connectionLab3(handler, labId, lab_id) {
             var self = this;
             console.log(lab_id);
 
@@ -604,6 +604,15 @@ function InfoSecureXBlock(runtime, element) {
         }
     }
 
+    class Lab3 extends Start {
+        constructor() {
+            super()
+            this.connectionLab3(rect1HandlerUrl, 1);
+            this.connectionLab3(rect1HandlerUrl, 2);
+            console.log("lab3");
+            document.getElementById("widget").addEventListener('click',Start.on);
+        }
+    }
 
 //автоматически вызываемая функция создаёт пространство
 //рабочей области + формирует создание области настроек
