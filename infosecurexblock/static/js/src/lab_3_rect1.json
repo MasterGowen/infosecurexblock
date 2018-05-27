@@ -2,6 +2,17 @@
     "Rect1":{
         
     
+    "link0":{
+        "type":"input",
+        "x": "150",
+        "y": "120",
+        "fontSize":"20",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "placeholder": "http://google.com",
+        "class": "links",
+        "id":"link0"
+    },
     "link1":{
         "type":"text",
         "x": "150",
@@ -9,7 +20,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "black",
-        "id":"link1"
+        "id":"linkd1"
     },
     "link2":{
         "type":"text",
