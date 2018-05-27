@@ -394,6 +394,7 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
+            var superPos1,superPos2,superPos3
             var student_answer = {
                 'answerBlockRedac': superPos1,
                 'answerBlockAdmin': superPos2,
