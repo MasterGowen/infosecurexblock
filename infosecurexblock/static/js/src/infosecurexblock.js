@@ -2,6 +2,7 @@
 function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
+    var rect2HandlerUrl = runtime.handlerUrl(element, 'rect2');
 
     function successCheck(result) {
         //console.log(result);
@@ -42,7 +43,7 @@ function InfoSecureXBlock(runtime, element) {
             return this.createElementSVG(name, this.defaultSet);
         }
 
-        connectionLab1(handler, labId) {
+        connectionLab1(handler, labId, lab_id) {
             var self = this;
             console.log(lab_id);
 
@@ -578,8 +579,8 @@ function InfoSecureXBlock(runtime, element) {
     class Lab1 extends Start {
         constructor() {
             super()
-            this.connectionLab1(rect1HandlerUrl, 1);
-            this.connectionLab1(rect1HandlerUrl, 2);
+            this.connectionLab1(rect1HandlerUrl, 1 , 1);
+            this.connectionLab1(rect1HandlerUrl, 2 , 2);
             console.log("lab1");
             document.getElementById("widget").addEventListener('click',Start.on);
         }
