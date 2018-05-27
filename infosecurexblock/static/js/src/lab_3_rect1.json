@@ -1,18 +1,6 @@
 {
     "Rect1":{
         
-    
-    "link0":{
-        "type":"input",
-        "x": "150",
-        "y": "120",
-        "fontSize":"20",
-        "fontFamily":"Roboto",
-        "fill": "black",
-        "placeholder": "http://google.com",
-        "class": "links",
-        "id":"link0"
-    },
     "link1":{
         "type":"text",
         "x": "150",
@@ -20,7 +8,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "black",
-        "id":"linkd1"
+        "id":"link1"
     },
     "link2":{
         "type":"text",
@@ -164,16 +152,34 @@
         "rx": "60", 
         "ry": "30",
         "fill":"white",
-        "id": "Link"
+        "id": "Link1"
     },
     "Link2":{
-        "type": "ellipse",
-        "cx": "360", 
-        "cy": "215", 
-        "rx": "40", 
-        "ry": "40",
-        "fill":"white",
-        "id": "Link"
+        "type":"ellipse",
+        "cx": "150",
+        "cy": "120",
+        "rx": "60",
+        "ry":"30",
+        "fill": "white",
+        "id":"Link2"
+    },
+    "Link3":{
+        "type":"ellipse",
+        "cx": "180",
+        "cy": "200",
+        "rx": "60",
+        "ry":"30",
+        "fill": "white",
+        "id":"Link3"
+    },
+    "Link4":{
+        "type":"ellipse",
+        "cx": "280",
+        "cy": "420",
+        "rx": "60",
+        "ry":"30",
+        "fill": "white",
+        "id":"Link4"
     },
     
         "but":{
