@@ -110,12 +110,12 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         static active(idNum) {
-            elem = document.getElementById(idNum);
+            var elem = document.getElementById(idNum);
             elem.style.display = 'block';
         }
 
         static deactive(idNum) {
-            elem = document.getElementById(idNum);
+            var elem = document.getElementById(idNum);
             elem.style.display = 'none';
         }
         static onLab1() {
