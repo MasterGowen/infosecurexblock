@@ -9,15 +9,15 @@ function InfoSecureXBlock(runtime, element) {
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
-                document.getElementsByClassName('.submit').disabled  = true; 
-                document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
+                document.getElementById('.checkid').setAttribute("disabled", "disabled"); 
+                document.getElementById('.checkid').style.cursor="not-allowed"; 
             }
             $(".success", element).text(result.points);
         }
         else { 
             $('.attempts', element).text(result.attempts);
-            document.getElementsByClassName('.submit').disabled  = true; 
-            document.getElementsByClassName('.submit').style.cursor="not-allowed"; 
+            document.getElementById('.checkid').setAttribute("disabled", "disabled"); 
+            document.getElementById('.checkid').style.cursor="not-allowed"; 
             }
     }
     var test = {
@@ -55,9 +55,7 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             this.star = () => {
-                new Lab1();
-                new Lab2();
-                new Lab3();
+                new Labs();
                 this.createElementSVG('svg');
                 this.appendNodeSVG(this.constract('rect'));
             }
@@ -80,7 +78,7 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
-        connectionLab1(handler, labId) {
+        connectionLabs(handler, labId) {
             var self = this;
             //console.log(lab_id);
 
@@ -107,60 +105,7 @@ function InfoSecureXBlock(runtime, element) {
             })()
 
         }
-        connectionLab2(handler,labId){
-            var self = this;
 
-            function success(handler) {
-                if (handler.Rect3) {
-                    handler.amount = Object.keys(handler.Rect3).length;
-                    //console.log(this.amount,this.jsonObj.Rect1);
-                    self.addElementSVG(handler.amount, handler.Rect3);
-                }
-                if (handler.Rect4) {
-                    handler.amount = Object.keys(handler.Rect4).length;
-                    self.addElement(handler.amount, handler.Rect4);
-                }
-            }
-
-            (function () {
-                $.ajax({
-                    type: "POST",
-                    url: handler,
-                    data: {"lab_id": labId},
-                    success: success
-                });
-
-            })()
-        }
-
-       
-        connectionLab3(handler, labId, lab_id) {
-            var self = this;
-            console.log(lab_id);
-
-            function success(handler) {
-                if (handler.Rect5) {
-                    handler.amount = Object.keys(handler.Rect5).length;
-                    //console.log(this.amount,this.jsonObj.Rect1);
-                    self.addElementSVG(handler.amount, handler.Rect5);
-                }
-                if (handler.Rect6) {
-                    handler.amount = Object.keys(handler.Rect6).length;
-                    self.addElement(handler.amount, handler.Rect6);
-                }
-            }
-
-            (function () {
-                $.ajax({
-                    type: "POST",
-                    url: handler,
-                    data: {"lab_id": labId},
-                    success: success
-                });
-
-            })()
-
-        }
         static on() {
             //console.log("ON funcction:",this);
             var evt = event.target;
@@ -661,34 +606,14 @@ function InfoSecureXBlock(runtime, element) {
         
         Math.random(id_num);
     }
-    class Lab1 extends Start {
+    class Labs extends Start {
         constructor() {
             super()
-            this.connectionLab1(rect1HandlerUrl, 1);
-            this.connectionLab1(rect1HandlerUrl, 2);
+            this.connectionLabs(rect1HandlerUrl, 1);
+            this.connectionLabs(rect1HandlerUrl, 2);
             //console.log("lab1");
             //document.getElementById("widget").addEventListener('click',Start.on);
             this.checkAnswerLab(checkHandlerLab,test);
-        }
-    }
-
-    class Lab2 extends Start {
-        constructor() {
-            super()
-            this.connectionLab2(rect1HandlerUrl, 1);
-            this.connectionLab2(rect1HandlerUrl, 2);
-            //document.getElementById("widget").addEventListener('mousedown',Start.dragMouseDown);
-        }
-    }
-
-    class Lab3 extends Start {
-        constructor() {
-            super()
-            this.connectionLab3(rect1HandlerUrl, 1);
-            this.connectionLab3(rect1HandlerUrl, 2);
-            //console.log("lab3");
-            //
-            //document.getElementById("widget").addEventListener('click',Start.on);
         }
     }
 
