@@ -30,9 +30,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.settings
     )
     weight = Integer(
-        display_name=u"Максимальное количество баллов",
-        help=(u"Максимальное количество баллов",
-              u"которое может получить студент."),
+        display_name=u"Maximum number of points",
+        help=(u"The maximum number of points",
+              u"a student can receive."),
         default=60,
         scope=Scope.settings
     )
@@ -73,7 +73,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.user_state
     )
 
-    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts")
+    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight")
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
