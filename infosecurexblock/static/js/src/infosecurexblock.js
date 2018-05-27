@@ -96,7 +96,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
        
-        connectionLab1(handler, labId, lab_id) {
+        connectionLab3(handler, labId, lab_id) {
             var self = this;
             console.log(lab_id);
 
