@@ -4,6 +4,8 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
 
+    document.getElementsByClassName('.submit').disabled  = false; 
+
     function successCheck(result) {
         console.log("result:", result);
         if (result.result != "fail") {
