@@ -18,6 +18,10 @@ button.submit {
 #link1, #link2, #link3, #link4, #link5, #link6, #link7, #link8, #link9, #link10, #link11, #link12, #link13, #link14, #link15, #link16{
     text-decoration:underline;
 }
+Link :hover {
+    color: #ffe; /* Цвет текста активного пункта */
+    background-color: yellow; /* Цвет фона активного пункта */
+   }
 #widget {
     /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
     height: 1050px;
