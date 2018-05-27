@@ -624,10 +624,10 @@ function InfoSecureXBlock(runtime, element) {
     class Lab3 extends Start {
         constructor() {
             super()
-            this.connectionLab3(rect1HandlerUrl, 1);
-            this.connectionLab3(rect1HandlerUrl, 2);
+            //this.connectionLab3(rect1HandlerUrl, 1);
+            //this.connectionLab3(rect1HandlerUrl, 2);
             //console.log("lab3");
-            document.getElementById("widget").addEventListener('click',Start.on);
+            //document.getElementById("widget").addEventListener('click',Start.on);
         }
     }
 
