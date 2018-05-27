@@ -25,7 +25,8 @@ function InfoSecureXBlock(runtime, element) {
     }
 
     function successCheckLab(result) {
-        console.log('succesCheckLAB : ',result);
+        if (result.result != "fail")
+        console.log('succesCheckLAB : ',result.lab_id);
     }
 
     class Start {
