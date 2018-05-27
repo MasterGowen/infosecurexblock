@@ -185,7 +185,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 answerRedac = bool(data["answerBlockRedac"])
                 answerAdmin = bool(data["answerBlockAdmin"])
                 answerUsers = bool(data["answerBlockUsers"])
-                grade = 0
                 if answerRedac:
                     grade += 0.33
                     return grade
@@ -194,6 +193,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     return grade
                 elif answerUsers:
                     grade += 0.33
+                    return grade
+                else:
+                    grade = 0 
                     return grade
 
         def IsTheNumberSimple(n):
