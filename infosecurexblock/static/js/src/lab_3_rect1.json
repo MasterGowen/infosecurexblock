@@ -3,12 +3,14 @@
         
     
     "link1":{
-        "type":"text",
+        "type":"input",
         "x": "150",
         "y": "120",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "black",
+        "placeholder": "http://google.com",
+        "class": "links",
         "id":"link1"
     },
     "link2":{
