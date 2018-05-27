@@ -9,15 +9,15 @@ function InfoSecureXBlock(runtime, element) {
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
-                document.getElementById('.checkid').setAttribute("disabled", "disabled"); 
-                document.getElementById('.checkid').style.cursor="not-allowed"; 
+                document.getElementById('checkid').setAttribute("disabled", null); 
+                document.getElementById('checkid').style.cursor="not-allowed"; 
             }
             $(".success", element).text(result.points);
         }
         else { 
             $('.attempts', element).text(result.attempts);
-            document.getElementById('.checkid').setAttribute("disabled", "disabled"); 
-            document.getElementById('.checkid').style.cursor="not-allowed"; 
+            document.getElementById('checkid').setAttribute("disabled", null); 
+            document.getElementById('checkid').style.cursor="not-allowed"; 
             }
     }
     var test = {
@@ -246,22 +246,7 @@ function InfoSecureXBlock(runtime, element) {
                             'N': document.getElementById('N').value,
                             'e': document.getElementById('e').value
                         }
-
-                    function checkAnswer(checkHandler, student_answer) {
-                        //console.log("student_answer :", student_answer);
-                        //console.log("checkHandler :", checkHandler);
-                        (function () {
-                            $.ajax({
-                                type: "POST",
-                                url: checkHandler,
-                                data: JSON.stringify(student_answer),
-                                success: successCheck
-                            });
-
-                        })()
-                    }
-
-                    checkAnswer(checkHandler, student_answer);
+                    Start.checkAnswer(checkHandler, student_answer);
                 }
 
                 /*                 if(student_answer!={}){
@@ -272,6 +257,19 @@ function InfoSecureXBlock(runtime, element) {
                 console.log('Error:не все поля заполненны.')
             }
             console.log(student_answer);
+        }
+        static checkAnswer(checkHandler, student_answer) {
+            //console.log("student_answer :", student_answer);
+            //console.log("checkHandler :", checkHandler);
+            (function () {
+                $.ajax({
+                    type: "POST",
+                    url: checkHandler,
+                    data: JSON.stringify(student_answer),
+                    success: successCheck
+                });
+
+            })()
         }
 
         static on_lab3() {
@@ -399,28 +397,48 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
+            var student_answer = {
+                'answer': false,
+            };
+            Start.checkAnswer(checkHandler, student_answer);
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
+                student_answer = {
+                    'answer': true,
+                }
+                Start.checkAnswer(checkHandler, student_answer);
             }
             else if((elem.id == "redacRect" || elem.id == "comp2"|| elem.id == "comp3") && dragObject.avatar.id == "rw"){
                 elem.farthestViewportElement.children[1].style.stroke = "green";
                 elem.farthestViewportElement.children[1].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
+                student_answer = {
+                    'answer': true,
+                }
+                Start.checkAnswer(checkHandler, student_answer);
             }
             else if((elem.id == "admRect" || elem.id == "compadm") && dragObject.avatar.id == "rwx"){
                 elem.farthestViewportElement.children[3].style.stroke = "green";
                 elem.farthestViewportElement.children[3].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
+                student_answer = {
+                    'answer': true,
+                }
+                Start.checkAnswer(checkHandler, student_answer);
             }
             else {
                 elem.farthestViewportElement.children[0].style.stroke = "red";
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
+                student_answer = {
+                    'answer': false,
+                }
+                Start.checkAnswer(checkHandler, student_answer);
             }
             
             if (elem == null) {
