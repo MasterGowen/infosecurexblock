@@ -184,8 +184,26 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 answerRedac = data["answerBlockRedac"]
                 answerAdmin = data["answerBlockAdmin"]
                 answerUsers = data["answerBlockUsers"]
+                if answerRedac or answerAdmin:
+                    self.grade = 0.6
+                    return self.grade
+                if answerAdmin or answerUsers:
+                    self.grade = 0.6
+                    return self.grade
+                if answerRedac or answerUsers:
+                    self.grade = 0.6
+                    return self.grade
+                elif answerRedac:
+                    self.grade = 0.3
+                    return self.grade
+                elif answerAdmin:
+                    self.grade = 0.3
+                    return self.grade
+                elif answerUsers:
+                    self.grade = 0.3
+                    return self.grade
                 if answerRedac or answerUsers or answerAdmin:
-                    self.grade += 0.3
+                    self.grade = 1
                     return self.grade
                 else:
                     self.grade = 0 
