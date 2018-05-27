@@ -67,7 +67,7 @@ function InfoSecureXBlock(runtime, element) {
                     success: success
                 });
                 $.ajax({
-                    type: "POST",
+                    type: "GET",
                     url: handler,
                     data: lab_id,
                     success: success
@@ -579,8 +579,9 @@ function InfoSecureXBlock(runtime, element) {
     class Lab1 extends Start {
         constructor() {
             super()
-            this.connectionLab1(rect1HandlerUrl, 1 , 1);
-            this.connectionLab1(rect1HandlerUrl, 2 , 2);
+            this.connectionLab1(rect1HandlerUrl, 1);
+            this.connectionLab1(rect1HandlerUrl, 2);
+            this.connectionLab1(rect2HandlerUrl, 1);
             console.log("lab1");
             document.getElementById("widget").addEventListener('click',Start.on);
         }
