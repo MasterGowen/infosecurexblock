@@ -31,8 +31,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     )
     weight = Integer(
         display_name=u"Maximum number of points",
-        help=(u"The maximum number of points",
-              u"a student can receive."),
+        help=u"",
         default=60,
         scope=Scope.settings
     )
@@ -182,22 +181,33 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     return grade
                     
             elif self.lab_id == 2:
-                answerRedac = bool(data["answerBlockRedac"])
-                answerAdmin = bool(data["answerBlockAdmin"])
-                answerUsers = bool(data["answerBlockUsers"])
-                grade
-                if answerRedac:
-                    grade += 0.33
-                    return grade
+                answerRedac = data["answerBlockRedac"]
+                answerAdmin = data["answerBlockAdmin"]
+                answerUsers = data["answerBlockUsers"]
+                if answerRedac & answerUsers & answerAdmin:
+                    self.grade = 1
+                    return self.grade
+                elif answerRedac & answerAdmin:
+                    self.grade = 0.6
+                    return self.grade
+                elif answerAdmin & answerUsers:
+                    self.grade = 0.6
+                    return self.grade
+                elif answerRedac & answerUsers:
+                    self.grade = 0.6
+                    return self.grade
+                elif answerRedac:
+                    self.grade = 0.3
+                    return self.grade
                 elif answerAdmin:
-                    grade += 0.33
-                    return grade
+                    self.grade = 0.3
+                    return self.grade
                 elif answerUsers:
-                    grade += 0.33
-                    return grade
+                    self.grade = 0.3
+                    return self.grade
                 else:
-                    grade = 0 
-                    return grade
+                    self.grade = 0 
+                    return self.grade
 
         def IsTheNumberSimple(n):
             if n < 2:
