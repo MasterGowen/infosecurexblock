@@ -65,6 +65,11 @@ function InfoSecureXBlock(runtime, element) {
                 this.createElementSVG('svg');
                 this.appendNodeSVG(this.constract('rect'));
             }
+            var student_answer = {
+                'answerBlockRedac': false,
+                'answerBlockAdmin': false,
+                'answerBlockUsers': false,
+            };
         }
 
         constract(name) {
@@ -394,18 +399,12 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
-            var superPos1,superPos2,superPos3
-            var student_answer = {
-                'answerBlockRedac': superPos1,
-                'answerBlockAdmin': superPos2,
-                'answerBlockUsers': superPos3,
-            };
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer.superPos3 = true;
+                student_answer.answerBlockUsers = true;
                 console.log("user:",student_answer);
             }
             else if((elem.id == "redacRect" || elem.id == "comp2"|| elem.id == "comp3") && dragObject.avatar.id == "rw"){
@@ -413,7 +412,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[1].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer.superPos1= true;
+                student_answer.answerBlockRedac= true;
                 console.log("redac:",student_answer);
             }
             else if((elem.id == "admRect" || elem.id == "compadm") && dragObject.avatar.id == "rwx"){
@@ -421,7 +420,7 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[3].style.fill = "#f2fff4";
                 dragObject.avatar.hidden = true;
                 elem.farthestViewportElement.children[0].style.stroke = "none";
-                student_answer.superPos2=true;
+                student_answer.answerBlockAdmin=true;
                 console.log("adm:",student_answer);
             }
             else {
@@ -435,6 +434,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 console.log('RED',student_answer);
             }
+            console.log("result_answer :",student_answer);
             Start.checkAnswer(checkHandler, student_answer);
             
             
