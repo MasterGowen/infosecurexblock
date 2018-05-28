@@ -4,6 +4,8 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
 
+
+
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -77,7 +79,7 @@ function InfoSecureXBlock(runtime, element) {
             return this.createElementSVG(name, this.defaultSet);
         }
 
-        static taskBlock() {
+        static taskBlock(event) {
             var evt = event.target;
             if (evt.id == 'task') {
                 Start.active('arrowid');
@@ -142,7 +144,7 @@ function InfoSecureXBlock(runtime, element) {
             var elem = document.getElementById(idNum);
             elem.style.display = 'none';
         }
-        static onLab1() {
+        static onLab1(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
@@ -287,7 +289,7 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
-        static onLab3() {
+        static onLab3(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
