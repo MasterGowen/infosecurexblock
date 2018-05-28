@@ -79,7 +79,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         data = pkg_resources.resource_string(__name__, path)
         return data.decode("utf8")
 
-    
     def student_view(self, context=None):
         """
         The primary view of the InfoSecureXBlock, shown to students
@@ -92,7 +91,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             "max_attempts": self.max_attempts,
             "attempts": self.attempts,
             "points": self.points,
-
 
         }
 
@@ -117,7 +115,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             server_3_icon=self.runtime.local_resource_url(self, "public/images/server-3.svg"),
             file_icon=self.runtime.local_resource_url(self, "public/images/file.svg"),
             wifi_icon=self.runtime.local_resource_url(self, "public/images/wifi.svg"),
-            )
+        )
         css_urls = ("static/css/infosecurexblock.css",)  # css_context
         load_resources(js_urls, css_urls, fragment)
         fragment.initialize_js('InfoSecureXBlock')
@@ -139,21 +137,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     # print('test')
 
     @XBlock.json_handler
-    def checkLab(self, data, unused_suffix=''):           
-        if answer_opportunity(self):
-
-            # self.runtime.publish(self, lab_id {
-            #         'value': self.lab_id
-            # })
-            response = {'result': 'success',
-                            'lab_id': self.lab_id
-                        }
-
-        else:
-            response = {'result': 'fail',
-                        'lab_id': self.lab_id
-                        }
-        return response
+    def checkLab(self, data, unused_suffix=''):
+        return {'result': 'success' if answer_opportunity(self) else "fail",
+                'lab_id': self.lab_id
+                }
 
     @XBlock.json_handler
     def check(self, data, unused_suffix=''):
@@ -162,60 +149,30 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
         def checkLabs(data):
             if self.lab_id == 1:
-                ip = data["ip"]
-                d = int(data["d"])
-                N = int(data["N"])
-                answer0 = int(data["e"])
+                ip, d, N, answer0 = data["ip"], int(data["d"]), int(data["N"]), int(data["e"])
                 answer2 = [int(r) for r in list(str(answer0))]
                 right = [14, 10, 18, 16, 14]
-                j = 0
-                k = len(str(answer0))
                 if IsTheNumberSimple(d):
                     for j, k in enumerate(copy.deepcopy(right)):
                         right[j] = right[j] ** d % N
-                if ((str(right) == str(answer2)) & (ip == "192.168.0.4")):
-                        grade = 1
-                        return grade
+                if (str(right) == str(answer2)) & (ip == "192.168.0.4"):
+                    return 1
                 else:
-                    grade = 0
-                    return grade
-                    
+                    return 0
+
             elif self.lab_id == 2:
-                answerRedac = data["answerBlockRedac"]
-                answerAdmin = data["answerBlockAdmin"]
-                answerUsers = data["answerBlockUsers"]
-                if answerRedac & answerUsers & answerAdmin:
-                    self.grade = 1
-                    return self.grade
-                elif answerRedac & answerAdmin:
-                    self.grade = 0.6
-                    return self.grade
-                elif answerAdmin & answerUsers:
-                    self.grade = 0.6
-                    return self.grade
-                elif answerRedac & answerUsers:
-                    self.grade = 0.6
-                    return self.grade
-                elif answerRedac:
-                    self.grade = 0.3
-                    return self.grade
-                elif answerAdmin:
-                    self.grade = 0.3
-                    return self.grade
-                elif answerUsers:
-                    self.grade = 0.3
-                    return self.grade
-                else:
-                    self.grade = 0 
-                    return self.grade
+                correctness_list = [data["answerBlockRedac"],
+                                    data["answerBlockAdmin"],
+                                    data["answerBlockUsers"],
+                                    ]
+                return sum(correctness_list) / len(correctness_list)
 
         def IsTheNumberSimple(n):
             if n < 2:
                 return False
             if n == 2:
                 return True
-            l = 2
-            for l in range(n):
+            for l in range(2, n):
                 if n % 2 == 0:
                     return False
                 else:
@@ -227,7 +184,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             self.points = grade * self.weight
 
             self.runtime.publish(self, 'grade', {
-                'value': grade,
+                'value': self.grade,
                 'max_value': self.weight,
             })
             response = {'result': 'success',
