@@ -145,7 +145,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     @XBlock.json_handler
     def check(self, data, unused_suffix=''):
         self.answer = data
-        self.attempts += 1
 
         def checkLabs(data):
             if self.lab_id == 1:
@@ -187,6 +186,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 'value': self.grade,
                 'max_value': self.weight,
             })
+            self.attempts += 1
             response = {'result': 'success',
                         'correct': grade,
                         'weight': self.weight,
