@@ -141,12 +141,14 @@ function InfoSecureXBlock(runtime, element) {
 
         static active(idNum) {
             var elem = document.getElementById(idNum);
+            console.log(idNum);
             elem.classList.remove("taskClose");
             elem.classList.add("taskOpen");
         }
     
         static deactive(idNum) {
             var elem = document.getElementById(idNum);
+            console.log(idNum);
             elem.classList.remove("taskOpen");
             elem.classList.add("taskClose");
         }
@@ -304,7 +306,7 @@ function InfoSecureXBlock(runtime, element) {
             }
         }
         static onLab4(event){
-            
+
         }
         static dragMouseDown(e) {
             var dragObject = {};
