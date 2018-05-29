@@ -135,12 +135,14 @@ function InfoSecureXBlock(runtime, element) {
 
         static active(idNum) {
             var elem = document.getElementById(idNum);
-            elem.style.display = 'block';
+            elem.classList.remove("taskClose");
+            elem.classList.add("taskOpen");
         }
-
+    
         static deactive(idNum) {
             var elem = document.getElementById(idNum);
-            elem.style.display = 'none';
+            elem.classList.remove("taskOpen");
+            elem.classList.add("taskClose");
         }
         static onLab1() {
             //console.log("ON funcction:",this);
