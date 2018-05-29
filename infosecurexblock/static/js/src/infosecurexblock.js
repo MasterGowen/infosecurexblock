@@ -43,11 +43,13 @@ function InfoSecureXBlock(runtime, element) {
             }
             case 2:{
                 document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
+                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click', Start.taskBlock);
                 break;
             }
             case 3:{
                 document.getElementById('widget').addEventListener('click', Start.onLab3);
+                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
