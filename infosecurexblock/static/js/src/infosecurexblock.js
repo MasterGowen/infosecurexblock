@@ -37,6 +37,7 @@ function InfoSecureXBlock(runtime, element) {
         switch(result.lab_id){
             case 1:{
                 document.getElementById('widget').addEventListener('click', Start.onLab1);
+                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
@@ -51,7 +52,9 @@ function InfoSecureXBlock(runtime, element) {
                 break;
             }
             case 4:{
-
+                document.getElementById('widget').addEventListener('click', Start.onLab4);
+                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
+                document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
             console.log('succesCheckLAB : ',result.lab_id);
@@ -81,7 +84,6 @@ function InfoSecureXBlock(runtime, element) {
 
         static taskBlock(event) {
             var evt = event.target;
-            document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
             if (evt.id == 'task') {
                 Start.active('arrowid');
                 Start.active('taskId');
