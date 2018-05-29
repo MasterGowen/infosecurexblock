@@ -116,15 +116,6 @@
         "class": "droppable",
         "id":"ip5"
     },
-    "article":{
-        "type":"text",
-        "x": "370",
-        "y": "50",
-        "fontSize":"20",
-        "fontFamily":"Roboto",
-        "fill": "black",
-        "id":"article"
-    },
     "LineCom13":
     {
     "type": "line",
@@ -220,15 +211,6 @@
         "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
         "id": "task"
         },
-            "arrow":{
-                "type": "image",
-                "x": "165",
-                "y": "40",
-                "width": "20",
-                "height": "20",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
-                "id": "arrowid"
-                },
             "taskDiv":{
                 "type": "rect",
                 "x": "150", 
@@ -238,7 +220,16 @@
                 "fill": "#f3faffef",
                 "stroke":"#0075b4",
                 "id": "taskId"
-            },
+            },         
+            "arrow":{
+                "type": "image",
+                "x": "165",
+                "y": "40",
+                "width": "20",
+                "height": "20",
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
+                "id": "arrowid"
+                },
             "taskText":{
                 "type":"text",
                 "x": "170",
