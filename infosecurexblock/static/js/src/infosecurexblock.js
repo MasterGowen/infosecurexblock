@@ -81,11 +81,11 @@ function InfoSecureXBlock(runtime, element) {
 
         static taskBlock(event) {
             var evt = event.target;
+            document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
             if (evt.id == 'task') {
                 Start.active('arrowid');
                 Start.active('taskId');
                 Start.active('taskTextID');
-                document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
             }
             if (evt.id == 'taskId') {
                 Start.deactive('arrowid');
