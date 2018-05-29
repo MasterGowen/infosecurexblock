@@ -87,13 +87,18 @@ function InfoSecureXBlock(runtime, element) {
         static taskBlock(event) {
             var evt = event.target;
             if (evt.id == 'task') {
-                Start.active('arrowid');
                 Start.active('taskId');
+                Start.active('arrowid');
                 Start.active('taskTextID');
             }
             if (evt.id == 'taskId') {
-                Start.deactive('arrowid');
                 Start.deactive('taskId');
+                Start.deactive('arrowid');
+                Start.deactive('taskTextID');
+            }
+            if(evt.id == 'arrowid'){
+                Start.deactive('taskId');
+                Start.deactive('arrowid');
                 Start.deactive('taskTextID');
             }
         }
@@ -212,6 +217,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             if ((evt.id == "comp2") || (evt.id == 'ip2')) {
                 document.getElementById('ip').value = '192.168.0.4';
+                document.getElementById('line_wifi').style.stroke = "green";
                 document.getElementById('line_comp1').style.stroke = "lightgrey";
                 document.getElementById('line_comp2').style.stroke = "green";
                 document.getElementById('line_comp3').style.stroke = "lightgrey";
@@ -221,6 +227,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             if ((evt.id == "comp3") || (evt.id == 'ip3')) {
                 document.getElementById('ip').value = '192.168.0.5';
+                document.getElementById('line_wifi').style.stroke = "green";
                 document.getElementById('line_comp1').style.stroke = "lightgrey";
                 document.getElementById('line_comp2').style.stroke = "lightgrey";
                 document.getElementById('line_comp3').style.stroke = "green";
