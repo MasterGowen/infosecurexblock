@@ -303,6 +303,9 @@ function InfoSecureXBlock(runtime, element) {
                 Random();
             }
         }
+        static onLab4(event){
+            
+        }
         static dragMouseDown(e) {
             var dragObject = {};
             var self = this;
