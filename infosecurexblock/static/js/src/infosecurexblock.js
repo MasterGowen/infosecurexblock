@@ -309,36 +309,36 @@ function InfoSecureXBlock(runtime, element) {
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link1").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                Start.deactive("link1");
-                Start.deactive("Link1");
+                deactive("link1");
+                deactive("Link1");
             }console.log(mas);
             if (evt.id =="link2"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link2").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                Start.deactive("link2");
-                Start.deactive("Link2");
+                deactive("link2");
+                deactive("Link2");
             }
             if (evt.id =="link3"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link3").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                Start.deactive("link3");
-                Start.deactive("Link3");
+                deactive("link3");
+                deactive("Link3");
             }
             if (evt.id =="link4"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link4").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                Start.deactive("link4");
-                Start.deactive("Link4");
+                deactive("link4");
+                deactive("Link4");
             }
             if (evt.id =="link5"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link5").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                Start.deactive("link5");
-                Start.deactive("Link5");
+                deactive("link5");
+                deactive("Link5");
             }
             
             if (evt.id == "checkid2"){
