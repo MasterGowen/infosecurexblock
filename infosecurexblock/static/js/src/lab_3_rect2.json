@@ -12,8 +12,8 @@
         "four":{
             "type": "input",
             "class": "three",
-            "placeholder": "Численный ответ",
-            "id": "e"
+            "placeholder": "Место для ссылок",
+            "id": "lab3_links"
         },
         "button":{
             "type": "button",
