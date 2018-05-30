@@ -314,7 +314,7 @@ function InfoSecureXBlock(runtime, element) {
                 mas[mas_count]=document.getElementById("link1").value; mas_count++;
             }console.log(mas);
             if (evt.id == "checkid2"){
-                document.getElementById("lab3_links").value = mas;
+                document.getElementById("lab3_links").value = "hi";//mas;
                 Random();
             }
         }
