@@ -356,7 +356,7 @@ function InfoSecureXBlock(runtime, element) {
                                 } */
             }
                // Random();
-            }
+            
         }
         static onLab4(event){
 
