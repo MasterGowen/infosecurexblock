@@ -308,7 +308,7 @@ function InfoSecureXBlock(runtime, element) {
             var mas = new Array(mas_count); 
             if (evt.id =="link5"){
                 console.log(evt.id);
-                mas[mas_count]+=document.getElementById("link5").value; mas_count++;
+                mas[mas_count]=document.getElementById("link5").value; mas_count++;console.log(mas);
             }console.log(mas);
             
             if (evt.id == "checkid2"){
