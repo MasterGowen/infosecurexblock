@@ -308,12 +308,13 @@ function InfoSecureXBlock(runtime, element) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
-            
+            var mas = []; mas_count=0;
             if (evt.id =="Link1"){
                 console.log(evt.id);
-                document.getElementById('lab3_links').value = document.getElementById("link1").value; 
-            }
+                mas[mas_count]=document.getElementById("link1").value; mas_count++;
+            }console.log(mas);
             if (evt.id == "checkid2"){
+                document.getElementById("lab3_links").value = mas;
                 Random();
             }
         }
