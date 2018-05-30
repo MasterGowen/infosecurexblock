@@ -3,7 +3,7 @@
         
     "link1":{
         "type":"text",
-        "x": "150",
+        "x": "120",
         "y": "120",
         "fontSize":"20",
         "fontFamily":"Roboto",
@@ -149,7 +149,7 @@
         "type": "ellipse",
         "cx": "150", 
         "cy": "120", 
-        "rx": "100", 
+        "rx": "110", 
         "ry": "30",
         "fill":"white",
         "id": "Link1"
@@ -158,7 +158,7 @@
         "type":"ellipse",
         "cx": "180",
         "cy": "200",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link2"
@@ -167,7 +167,7 @@
         "type":"ellipse",
         "cx": "280",
         "cy": "420",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link3"
@@ -176,7 +176,7 @@
         "type":"ellipse",
         "cx": "380",
         "cy": "320",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link4"
@@ -185,7 +185,7 @@
         "type":"ellipse",
         "cx": "480",
         "cy": "20",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link5"
@@ -195,7 +195,7 @@
         "type":"ellipse",
         "cx": "80",
         "cy": "520",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link6"
@@ -205,7 +205,7 @@
         "type":"ellipse",
         "cx": "400",
         "cy": "320",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link7"
@@ -215,7 +215,7 @@
         "type":"ellipse",
         "cx": "280",
         "cy": "220",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link8"
@@ -225,7 +225,7 @@
         "type":"ellipse",
         "cx": "180",
         "cy": "520",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link9"
@@ -234,7 +234,7 @@
         "type":"ellipse",
         "cx": "380",
         "cy": "340",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link10"
@@ -244,7 +244,7 @@
         "type":"ellipse",
         "cx": "80",
         "cy": "620",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link11"
@@ -254,7 +254,7 @@
         "type":"ellipse",
         "cx": "480",
         "cy": "620",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link12"
@@ -264,7 +264,7 @@
         "type":"ellipse",
         "cx": "480",
         "cy": "400",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link13"
@@ -274,7 +274,7 @@
         "type":"ellipse",
         "cx": "260",
         "cy": "420",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link14"
@@ -284,7 +284,7 @@
         "type":"ellipse",
         "cx": "500",
         "cy": "300",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link15"
@@ -294,7 +294,7 @@
         "type":"ellipse",
         "cx": "580",
         "cy": "420",
-        "rx": "60",
+        "rx": "110",
         "ry":"30",
         "fill": "white",
         "id":"Link16"
