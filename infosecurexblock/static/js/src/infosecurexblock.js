@@ -4,8 +4,6 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
 
-
-
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -300,7 +298,6 @@ function InfoSecureXBlock(runtime, element) {
                     data: JSON.stringify(student_answer),
                     success: successCheck
                 });
-
             })()
         }
 
@@ -314,8 +311,8 @@ function InfoSecureXBlock(runtime, element) {
                 mas[mas_count]=document.getElementById("link1").value; mas_count++;
             }console.log(mas);
             if (evt.id == "checkid2"){
-                document.getElementById("lab3_links").value = "hi";//mas;
-                Random();
+                document.getElementById("lab3_links").value = mas;
+               // Random();
             }
         }
         static onLab4(event){
