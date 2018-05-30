@@ -152,7 +152,7 @@
         "rx": "60", 
         "ry": "30",
         "fill":"white",
-        "id": "Link"
+        "id": "Link1"
     },
     "Link2":{
         "type":"ellipse",
@@ -161,7 +161,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link2"
     },
     "Link3":{
         "type":"ellipse",
@@ -170,7 +170,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link3"
     },
     "Link4":{
         "type":"ellipse",
@@ -179,7 +179,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link4"
     },
     "Link5":{
         "type":"ellipse",
@@ -188,7 +188,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link5"
     },
     
     "Link6":{
@@ -198,7 +198,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link6"
     },
     
     "Link7":{
@@ -208,7 +208,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link7"
     },
     
     "Link8":{
@@ -218,7 +218,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link8"
     },
     
     "Link9":{
@@ -228,7 +228,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link9"
     },
     "Link10":{
         "type":"ellipse",
@@ -237,7 +237,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link10"
     },
     
     "Link11":{
@@ -247,7 +247,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link11"
     },
     
     "Link12":{
@@ -257,7 +257,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link12"
     },
     
     "Link13":{
@@ -267,7 +267,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link13"
     },
     
     "Link14":{
@@ -277,7 +277,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link14"
     },
     
     "Link15":{
@@ -287,7 +287,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link15"
     },
     
     "Link16":{
@@ -297,7 +297,7 @@
         "rx": "60",
         "ry":"30",
         "fill": "white",
-        "id":"Link"
+        "id":"Link16"
     },
         "but":{
         "type": "image",

@@ -306,11 +306,31 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             var student_answer = {};var mas_count=0;
             var mas = new Array(mas_count); 
+            if (evt.id =="link1"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link1").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+            }console.log(mas);
+            if (evt.id =="link2"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link2").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+            }
+            if (evt.id =="link3"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link3").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+            }
+            if (evt.id =="link4"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link4").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+            }
             if (evt.id =="link5"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link5").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-            }console.log(mas);
+            }
             
             if (evt.id == "checkid2"){
                 var mas2 = mas.toString();
