@@ -313,6 +313,8 @@ function InfoSecureXBlock(runtime, element) {
             
             if (evt.id == "checkid2"){
                 var mas2 = mas.toString();
+                console.log(mas);
+                console.log(mas2);
                 document.getElementById("lab3_links").value = mas2;
                // Random();
             }
