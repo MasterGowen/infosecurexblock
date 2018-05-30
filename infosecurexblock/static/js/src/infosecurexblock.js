@@ -300,7 +300,6 @@ function InfoSecureXBlock(runtime, element) {
                 });
             })()
         }
-
         static onLab3(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
@@ -310,33 +309,52 @@ function InfoSecureXBlock(runtime, element) {
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link1").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
+                Start.deactive("link1");
+                Start.deactive("Link1");
             }console.log(mas);
             if (evt.id =="link2"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link2").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
+                Start.deactive("link2");
+                Start.deactive("Link2");
             }
             if (evt.id =="link3"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link3").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
+                Start.deactive("link3");
+                Start.deactive("Link3");
             }
             if (evt.id =="link4"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link4").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
+                Start.deactive("link4");
+                Start.deactive("Link4");
             }
             if (evt.id =="link5"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link5").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
+                Start.deactive("link5");
+                Start.deactive("Link5");
             }
             
             if (evt.id == "checkid2"){
-                var mas2 = mas.toString();
-                console.log(mas);
-                console.log(mas2);
+                
                 document.getElementById("lab3_links").value = mas2;
+                var student_answer =
+                        {
+                            'mas': document.getElementById('lab3_links').value
+                        }
+                    Start.checkAnswer(checkHandler, student_answer);
+                
+
+                /*                 if(student_answer!={}){
+                                    getQuest();
+                                } */
+            }
                // Random();
             }
         }
