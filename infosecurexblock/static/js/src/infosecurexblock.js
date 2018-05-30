@@ -309,36 +309,36 @@ function InfoSecureXBlock(runtime, element) {
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link1").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                document.getElementById("link1").display.style = "none";
-                document.getElementById("Link1").display.style = "none";
+                document.getElementById("link1").style.display = "none";
+                document.getElementById("Link1").style.display = "none";
             }console.log(mas);
             if (evt.id =="link2"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link2").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                document.getElementById("link2").display.style = "none";
-                document.getElementById("Link2").display.style = "none";
+                document.getElementById("link2").style.display = "none";
+                document.getElementById("Link2").style.display = "none";
             }
             if (evt.id =="link3"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link3").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                document.getElementById("link3").display.style = "none";
-                document.getElementById("Link3").display.style = "none";
+                document.getElementById("link3").style.display = "none";
+                document.getElementById("Link3").style.display = "none";
             }
             if (evt.id =="link4"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link4").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                document.getElementById("link4").display.style = "none";
-                document.getElementById("Link4").display.style = "none";
+                document.getElementById("link4").style.display = "none";
+                document.getElementById("Link4").style.display = "none";
             }
             if (evt.id =="link5"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link5").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
-                document.getElementById("link5").display.style = "none";
-                document.getElementById("Link5").display.style = "none";
+                document.getElementById("link5").style.display = "none";
+                document.getElementById("Link5").style.display = "none";
             }
             
             if (evt.id == "checkid2"){
