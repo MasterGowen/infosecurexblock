@@ -26,6 +26,10 @@ button.submit {
     background-color: yellow; /* Цвет фона активного пункта */
   
    }
+   #lab3_links{
+       width:300px;
+       height: 500px;
+   }
 #widget {
     /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
     height: 1050px;
