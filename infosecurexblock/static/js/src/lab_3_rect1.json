@@ -149,7 +149,7 @@
         "type": "ellipse",
         "cx": "150", 
         "cy": "120", 
-        "rx": "60", 
+        "rx": "100", 
         "ry": "30",
         "fill":"white",
         "id": "Link1"
