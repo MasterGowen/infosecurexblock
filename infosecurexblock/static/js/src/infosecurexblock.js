@@ -303,15 +303,15 @@ function InfoSecureXBlock(runtime, element) {
         static onLab3(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
-            var student_answer = {};var mas_count=0;
-            var mas = new Array(mas_count); 
+            var student_answer = {};var mas_weight=16; var mas_count = 0;
+            var mas = new Array(mas_weight); 
             if (evt.id =="Link1"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link1").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
                 document.getElementById("link1").style.display = "none";
                 document.getElementById("Link1").style.display = "none";
-            }console.log(mas);
+            }
             if (evt.id =="Link2"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link2").textContent; mas_count++;console.log(mas);
@@ -419,7 +419,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             if (evt.id == "checkid2"){
                 
-                document.getElementById("lab3_links").value = mas2;
+                document.getElementById("lab3_links").value = mas;
                 var student_answer =
                         {
                             'mas': document.getElementById('lab3_links').value
@@ -636,7 +636,7 @@ function InfoSecureXBlock(runtime, element) {
                     this.element.innerHTML = "http://google.com"
                 }
                 if ((name=="text")&&(attributes[k]=="link2")){
-                    this.element.innerHTML = "https://www.skbbank.ex.com"
+                    this.element.innerHTML = "https://www.bank.ex.com"
                 }
                 if ((name=="text")&&(attributes[k]=="link3")){
                     this.element.innerHTML = "http://gogle.com"
