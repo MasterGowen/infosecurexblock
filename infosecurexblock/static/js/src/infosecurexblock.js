@@ -305,42 +305,118 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             var student_answer = {};var mas_count=0;
             var mas = new Array(mas_count); 
-            if (evt.id =="link1"){
+            if (evt.id =="Link1"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link1").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
                 document.getElementById("link1").style.display = "none";
                 document.getElementById("Link1").style.display = "none";
             }console.log(mas);
-            if (evt.id =="link2"){
+            if (evt.id =="Link2"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link2").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
                 document.getElementById("link2").style.display = "none";
                 document.getElementById("Link2").style.display = "none";
             }
-            if (evt.id =="link3"){
+            if (evt.id =="Link3"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link3").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
                 document.getElementById("link3").style.display = "none";
                 document.getElementById("Link3").style.display = "none";
             }
-            if (evt.id =="link4"){
+            if (evt.id =="Link4"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link4").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
                 document.getElementById("link4").style.display = "none";
                 document.getElementById("Link4").style.display = "none";
             }
-            if (evt.id =="link5"){
+            if (evt.id =="Link5"){
                 console.log(evt.id);
                 mas[mas_count]=document.getElementById("link5").textContent; mas_count++;console.log(mas);
                 document.getElementById("lab3_links").value = mas;
                 document.getElementById("link5").style.display = "none";
                 document.getElementById("Link5").style.display = "none";
             }
-            
+            if (evt.id =="Link6"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link6").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link6").style.display = "none";
+                document.getElementById("Link6").style.display = "none";
+            }
+            if (evt.id =="Link7"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link7").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link7").style.display = "none";
+                document.getElementById("Link7").style.display = "none";
+            }
+            if (evt.id =="Link8"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link8").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link8").style.display = "none";
+                document.getElementById("Link8").style.display = "none";
+            }
+            if (evt.id =="Link9"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link9").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link9").style.display = "none";
+                document.getElementById("Link9").style.display = "none";
+            }
+            if (evt.id =="Link10"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link10").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link10").style.display = "none";
+                document.getElementById("Link10").style.display = "none";
+            }
+            if (evt.id =="Link11"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link11").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link11").style.display = "none";
+                document.getElementById("Link11").style.display = "none";
+            }
+            if (evt.id =="Link12"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link12").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link12").style.display = "none";
+                document.getElementById("Link12").style.display = "none";
+            }
+            if (evt.id =="Link13"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link13").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link13").style.display = "none";
+                document.getElementById("Link13").style.display = "none";
+            }
+            if (evt.id =="Link14"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link14").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link14").style.display = "none";
+                document.getElementById("Link14").style.display = "none";
+            }
+            if (evt.id =="Link15"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link15").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link15").style.display = "none";
+                document.getElementById("Link15").style.display = "none";
+            }
+            if (evt.id =="Link16"){
+                console.log(evt.id);
+                mas[mas_count]=document.getElementById("link16").textContent; mas_count++;console.log(mas);
+                document.getElementById("lab3_links").value = mas;
+                document.getElementById("link16").style.display = "none";
+                document.getElementById("Link16").style.display = "none";
+            }
             if (evt.id == "checkid2"){
                 
                 document.getElementById("lab3_links").value = mas2;
