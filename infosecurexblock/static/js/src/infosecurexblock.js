@@ -242,29 +242,29 @@ function InfoSecureXBlock(runtime, element) {
             var student_answer = {};
              var mas_count = 0;
             var mas = new Array(); 
-            evt.id == "Link1" && linkFixate(["link1","Link1"]);
-            evt.id == "Link2" && linkFixate(["link2","Link2"]);
-            evt.id == "Link3" && linkFixate(["link3","Link3"]);
-            evt.id == "Link4" && linkFixate(["link4","Link4"]);
-            evt.id == "Link5" && linkFixate(["link5","Link5"]);
-            evt.id == "Link6" && linkFixate(["link6","Link6"]);
-            evt.id == "Link7" && linkFixate(["link7","Link7"]);
-            evt.id == "Link8" && linkFixate(["link8","Link8"]);
-            evt.id == "Link9" && linkFixate(["link9","Link9"]);
-            evt.id == "Link10" && linkFixate(["link10","Link10"]);
-            evt.id == "Link11" && linkFixate(["link11","Link11"]);
-            evt.id == "Link12" && linkFixate(["link12","Link12"]);
-            evt.id == "Link13" && linkFixate(["link13","Link13"]);
-            evt.id == "Link14" && linkFixate(["link14","Link14"]);
-            evt.id == "Link15" && linkFixate(["link15","Link15"]);
-            evt.id == "Link16" && linkFixate(["link16","Link16"]);
+            evt.id == "Link1" && linkFixate([".link1","Link1"]);
+            evt.id == "Link2" && linkFixate([".link2","Link2"]);
+            evt.id == "Link3" && linkFixate([".link3","Link3"]);
+            evt.id == "Link4" && linkFixate([".link4","Link4"]);
+            evt.id == "Link5" && linkFixate([".link5","Link5"]);
+            evt.id == "Link6" && linkFixate([".link6","Link6"]);
+            evt.id == "Link7" && linkFixate([".link7","Link7"]);
+            evt.id == "Link8" && linkFixate([".link8","Link8"]);
+            evt.id == "Link9" && linkFixate([".link9","Link9"]);
+            evt.id == "Link10" && linkFixate([".link10","Link10"]);
+            evt.id == "Link11" && linkFixate([".link11","Link11"]);
+            evt.id == "Link12" && linkFixate([".link12","Link12"]);
+            evt.id == "Link13" && linkFixate([".link13","Link13"]);
+            evt.id == "Link14" && linkFixate([".link14","Link14"]);
+            evt.id == "Link15" && linkFixate([".link15","Link15"]);
+            evt.id == "Link16" && linkFixate([".link16","Link16"]);
 
             function linkFixate(idNum){
-                document.getElementById(idNum[0]).style.display = "none";
+                document.getElementsByClassName(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
                 var student_answer =
                 {
-                    'link' : document.getElementById(idNum[0]).textContent
+                    'link' : document.querySelector(idNum[0]).getAttribute("id")
                 }
                 console.log(student_answer);
                 Start.checkAnswer(checkHandler, student_answer);

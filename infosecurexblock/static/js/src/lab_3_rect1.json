@@ -8,7 +8,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link1"
+        "class":"link1",
+        "id":"1"
     },
     "link2":{
         "type":"text",
@@ -17,7 +18,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link2"
+        "class":"link2",
+        "id":"2"
     },
     "link3":{
         "type":"text",
@@ -26,7 +28,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link3"
+        "class":"link3",
+        "id":"3"
     },
     "link4":{
         "type":"text",
@@ -35,7 +38,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link4"
+        "class":"link4",
+        "id":"4"
     },
     "link5":{
         "type":"text",
@@ -44,7 +48,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link5"
+        "class":"link5",
+        "id":"5"
     },
     "link6":{
         "type":"text",
@@ -53,7 +58,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link6"
+        "class":"link6",
+        "id":"6"
     },
     "link7":{
         "type":"text",
@@ -62,7 +68,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link7"
+        "class":"link7",
+        "id":"7"
     },
     "link8":{
         "type":"text",
@@ -71,7 +78,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link8"
+        "class":"link8",
+        "id":"8"
     },
     "link9":{
         "type":"text",
@@ -80,7 +88,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link9"
+        "class":"link9",
+        "id":"9"
     },
     "link10":{
         "type":"text",
@@ -89,7 +98,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link10"
+        "class":"link10",
+        "id":"10"
     },
     "link11":{
         "type":"text",
@@ -98,7 +108,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link11"
+        "class":"link11",
+        "id":"11"
     },
     "link12":{
         "type":"text",
@@ -107,7 +118,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link12"
+        "class":"link12",
+        "id":"12"
     },
     "link13":{
         "type":"text",
@@ -116,7 +128,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link13"
+        "class":"link13",
+        "id":"13"
     },
     "link14":{
         "type":"text",
@@ -125,7 +138,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link14"
+        "class":"link14",
+        "id":"14"
     },
     "link15":{
         "type":"text",
@@ -134,7 +148,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link15"
+        "class":"link15",
+        "id":"15"
     },
     "link16":{
         "type":"text",
@@ -143,7 +158,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "id":"link16"
+        "class":"link16",
+        "id":"16"
     },
     "Link1":{
         "type": "ellipse",

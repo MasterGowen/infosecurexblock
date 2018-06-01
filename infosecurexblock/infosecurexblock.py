@@ -165,6 +165,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     data["answerBlockUsers"],
                                     ]
                 return sum(correctness_list) / float(len(correctness_list))
+            elif self.lab_id == 3:
+                test = data["link"]
+                return 1
 
         def IsTheNumberSimple(n):
             if n < 2:
