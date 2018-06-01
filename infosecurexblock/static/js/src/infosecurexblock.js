@@ -147,49 +147,22 @@ function InfoSecureXBlock(runtime, element) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
-
-            var remember = "";
-            if (evt.id == 'comp1') {
-                document.getElementById("comp1").style.opacity = "0.5";
-                if (remember != null) {
-
-                    document.getElementById("comp2").style.opacity = "1";
-                    document.getElementById("comp3").style.opacity = "1";
-                }
-                remember = evt.id;
-            }
-            if (evt.id == 'comp2') {
-                document.getElementById("comp2").style.opacity = "0.5";
-
-                if (remember != null) {
-                    //    alert(remember);
-                    document.getElementById("comp1").style.opacity = "1";
-                    document.getElementById("comp3").style.opacity = "1";
-                }
-                remember = evt.id;
-            }
-            if (evt.id == 'comp3') {
-                document.getElementById("comp3").style.opacity = "0.5";
-
-                if (remember != null) {
-                    document.getElementById("comp2").style.opacity = "1";
-                    document.getElementById("comp1").style.opacity = "1";
-                }
-                remember = evt.id;
-            }
+            evt.id == "comp1" && connect(['comp1','comp2','comp3','activeComp']);
+            evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp']);
+            evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp']);
             evt.id == 'File1' && fileShow();
             evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2']);
-            ((evt.id == 'comp1') || (evt.id == 'ip1')) && connectLine(['line_comp1','line_comp2','line_comp3']);
-            ((evt.id == 'comp2') || (evt.id == 'ip2')) && connectLine(['line_comp2','line_comp1','line_comp3']);
-            ((evt.id == 'comp3') || (evt.id == 'ip3')) && connectLine(['line_comp3','line_comp1','line_comp2']);
+            ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
+            ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
+            ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
 
-            
+
             function connectLine(idNum) {
                // document.getElementById('ip').value = '192.168.0.3';
-                document.getElementById('line_wifi').classList.add("connnectOpen");
-                document.getElementById(idNum[0]).classList.add("connnectOpen");
-                document.getElementById(idNum[1]).classList.remove("connnectOpen");
-                document.getElementById(idNum[2]).classList.remove("connnectOpen");
+                document.getElementById('line_wifi').classList.add(idNum[3]);
+                document.getElementById(idNum[0]).classList.add(idNum[3]);
+                document.getElementById(idNum[1]).classList.remove(idNum[3]);
+                document.getElementById(idNum[2]).classList.remove(idNum[3]);
                 fileShow();
             }
             function fileShow() {
