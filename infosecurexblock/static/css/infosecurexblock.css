@@ -85,7 +85,10 @@ object {
 #cloud {
     padding-bottom: 10px;
     padding-left: 50px; }
-  
+
+.connnectOpen{
+    stroke: green;
+}
 .taskOpen{
   transition-property: visibility, opacity;
   transition-duration: 0s, 1s;

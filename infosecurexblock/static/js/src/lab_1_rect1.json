@@ -221,6 +221,7 @@
                     "rx": "60", 
                     "ry": "30",
                     "fill":"white",
+                    "class":"taskClose",
                     "id": "File1Id"
                 },
                 "FileText":{
@@ -230,6 +231,7 @@
                     "fontSize":"10",
                     "fontFamily":"SegoeUI",
                     "fill": "black",
+                    "class":"taskClose",
                     "id":"File1TextID"
                 },
                 "FileText2":{
@@ -239,6 +241,7 @@
                     "fontSize":"10",
                     "fontFamily":"SegoeUI",
                     "fill": "black",
+                    "class":"taskClose",
                     "id":"File1TextID2"
                 },
             "arrow":{
