@@ -89,11 +89,13 @@ object {
 .connnectOpen{
     stroke: green;
 }
+.activeComp{
+    opacity: 0.6;
+  }
 .taskOpen{
   transition-property: visibility, opacity;
   transition-duration: 0s, 1s;
 }
-
 .taskClose{
   opacity: 0;
   visibility: hidden;
