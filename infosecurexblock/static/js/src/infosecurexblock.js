@@ -265,7 +265,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
                     mas.push(document.getElementById(idNum[0]).textContent); 
                     mas_count++;
-                    console.log(mas);
+                    console.log(mas[]);
                     document.getElementById("lab3_links").value = mas;
                     document.getElementById(idNum[0]).style.display = "none";
                     document.getElementById(idNum[1]).style.display = "none";
