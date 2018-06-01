@@ -258,11 +258,14 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate(["link14","Link14"]);
             evt.id == "Link15" && linkFixate(["link15","Link15"]);
             evt.id == "Link16" && linkFixate(["link16","Link16"]);
+
             function linkFixate(idNum){
                 for(var k in idNum){
                     console.log(idNum[k]);
                 }
-                    mas[mas_count]=document.getElementById(idNum[0]).textContent; mas_count++;console.log(mas);
+                    mas.push(document.getElementById(idNum[0]).textContent); 
+                    mas_count++;
+                    console.log(mas);
                     document.getElementById("lab3_links").value = mas;
                     document.getElementById(idNum[0]).style.display = "none";
                     document.getElementById(idNum[1]).style.display = "none";
