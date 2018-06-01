@@ -167,7 +167,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 return sum(correctness_list) / float(len(correctness_list))
             elif self.lab_id == 3:
                 test = int(data["link"])
-                if((test == 1) or (test == 5) or (test == 10)):
+                if((test == 1) or (test == 5) or (test == 12)):
                     return 1
                 else:
                     return 0
