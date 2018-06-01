@@ -144,14 +144,14 @@ function InfoSecureXBlock(runtime, element) {
 
         static active(idNum) {
             var elem = document.getElementById(idNum);
-            console.log(idNum);
+            //console.log(idNum);
             elem.classList.remove("taskClose");
             elem.classList.add("taskOpen");
         }
     
         static deactive(idNum) {
             var elem = document.getElementById(idNum);
-            console.log(idNum);
+            //console.log(idNum);
             elem.classList.remove("taskOpen");
             elem.classList.add("taskClose");
         }
@@ -303,7 +303,8 @@ function InfoSecureXBlock(runtime, element) {
         static onLab3(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
-            var student_answer = {};var mas_weight=16; var mas_count = 0;
+            var student_answer = {};
+            var mas_weight=16; var mas_count = 0;
             var mas = new Array(mas_weight); 
             if (evt.id =="Link1"){
                 console.log(evt.id);
