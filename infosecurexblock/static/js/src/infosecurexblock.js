@@ -260,22 +260,22 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link16" && linkFixate(["link16","Link16"]);
 
             function linkFixate(idNum){
-                for(var k in idNum){
-                    console.log(idNum[k]);
+                document.getElementById(idNum[0]).style.display = "none";
+                document.getElementById(idNum[1]).style.display = "none";
+                var student_answer =
+                {
+                    'link' : document.getElementById(idNum[0]).textContent
                 }
-                    mas.push(document.getElementById(idNum[0]).textContent); 
-                    mas_count++;
-                    console.log(mas[]);
-                    document.getElementById("lab3_links").value = mas;
-                    document.getElementById(idNum[0]).style.display = "none";
-                    document.getElementById(idNum[1]).style.display = "none";
+                console.log(student_answer);
+                Start.checkAnswer(checkHandler, student_answer);
             }
             if (evt.id == "checkid2"){
                 
                 document.getElementById("lab3_links").value = mas;
                 var student_answer =
                         {
-                            'mas': document.getElementById('lab3_links').value
+                            'mas': document.getElementById('lab3_links').value,
+                            'link' : document.getElementById(idNum[0]).textContent
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 
