@@ -84,21 +84,9 @@ function InfoSecureXBlock(runtime, element) {
 
         static taskBlock(event) {
             var evt = event.target;
-            if (evt.id == 'task') {
-                Start.active('taskId');
-                Start.active('arrowid');
-                Start.active('taskTextID');
-            }
-            if (evt.id == 'taskId') {
-                Start.deactive('taskId');
-                Start.deactive('arrowid');
-                Start.deactive('taskTextID');
-            }
-            if(evt.id == 'arrowid'){
-                Start.deactive('taskId');
-                Start.deactive('arrowid');
-                Start.deactive('taskTextID');
-            }
+                evt.id == 'task' && Start.active(['taskId','arrowid','taskTextID']);
+                evt.id == 'taskId' && Start.deactive(['taskId','arrowid','taskTextID']);
+                evt.id == 'arrowid' && Start.deactive(['taskId','arrowid','taskTextID']);
         }
 
         checkAnswerLab(checkHandlerLab,test) {
@@ -143,17 +131,17 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         static active(idNum) {
-            var elem = document.getElementById(idNum);
-            //console.log(idNum);
-            elem.classList.remove("taskClose");
-            elem.classList.add("taskOpen");
+            for(var k in idNum){
+                document.getElementById(idNum[k]).classList.remove("taskClose");
+                document.getElementById(idNum[k]).classList.add("taskOpen");
+            };
         }
     
         static deactive(idNum) {
-            var elem = document.getElementById(idNum);
-            //console.log(idNum);
-            elem.classList.remove("taskOpen");
-            elem.classList.add("taskClose");
+            for(var k in idNum){
+                document.getElementById(idNum[k]).classList.remove("taskOpen");
+                document.getElementById(idNum[k]).classList.add("taskClose");
+            };
         }
         static onLab1(event) {
             //console.log("ON funcction:",this);
@@ -189,49 +177,25 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 remember = evt.id;
             }
-            if (evt.id == 'File1') {
-                Start.active('File1Id');
-                Start.active('File1TextID');
-                Start.active('File1TextID2');
+            evt.id == 'File1' && fileShow();
+            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2']);
+            ((evt.id == 'comp1') || (evt.id == 'ip1')) && connectLine(['line_comp1','line_comp2','line_comp3']);
+            ((evt.id == 'comp2') || (evt.id == 'ip2')) && connectLine(['line_comp2','line_comp1','line_comp3']);
+            ((evt.id == 'comp3') || (evt.id == 'ip3')) && connectLine(['line_comp3','line_comp1','line_comp2']);
+
+            
+            function connectLine(idNum) {
+               // document.getElementById('ip').value = '192.168.0.3';
+                document.getElementById('line_wifi').classList.add("connnectOpen");
+                document.getElementById(idNum[0]).classList.add("connnectOpen");
+                document.getElementById(idNum[1]).classList.remove("connnectOpen");
+                document.getElementById(idNum[2]).classList.remove("connnectOpen");
+                fileShow();
+            }
+            function fileShow() {
+                Start.active(['File1Id','File1TextID','File1TextID2']);
                 document.getElementById("File1TextID").innerHTML = "Сообщение:406 9915660 05464616061 - 9915660";
                 document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
-            }
-            if (evt.id != "File1") {
-                Start.deactive('File1Id');
-                Start.deactive('File1TextID');
-                Start.deactive('File1TextID2');
-
-            }
-            if ((evt.id == "comp1") || (evt.id == 'ip1')) {
-                document.getElementById('ip').value = '192.168.0.3';
-                //document.getElementById('class').fill = 'black';
-                document.getElementById('line_wifi').style.stroke = "green";
-                document.getElementById('line_comp1').style.stroke = "green";
-                document.getElementById('line_comp2').style.stroke = "lightgrey";
-                document.getElementById('line_comp3').style.stroke = "lightgrey";
-                Start.active('File1Id');
-                Start.active('File1TextID');
-                Start.active('File1TextID2');
-            }
-            if ((evt.id == "comp2") || (evt.id == 'ip2')) {
-                document.getElementById('ip').value = '192.168.0.4';
-                document.getElementById('line_wifi').style.stroke = "green";
-                document.getElementById('line_comp1').style.stroke = "lightgrey";
-                document.getElementById('line_comp2').style.stroke = "green";
-                document.getElementById('line_comp3').style.stroke = "lightgrey";
-                Start.active('File1Id');
-                Start.active('File1TextID');
-                Start.active('File1TextID2');
-            }
-            if ((evt.id == "comp3") || (evt.id == 'ip3')) {
-                document.getElementById('ip').value = '192.168.0.5';
-                document.getElementById('line_wifi').style.stroke = "green";
-                document.getElementById('line_comp1').style.stroke = "lightgrey";
-                document.getElementById('line_comp2').style.stroke = "lightgrey";
-                document.getElementById('line_comp3').style.stroke = "green";
-                Start.active('File1Id');
-                Start.active('File1TextID');
-                Start.active('File1TextID2');
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -304,8 +268,9 @@ function InfoSecureXBlock(runtime, element) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
-            var mas_weight=16; var mas_count = 0;
-            var mas = new Array(mas_weight); 
+             var mas_count = 0;
+            var mas = new Array(); 
+            evt.id == "Link1" && linkFixate(["link1","lab3_links","link1","Link1"]);
             if (evt.id =="Link1"){
                 console.log(evt.id);
                 mas.push(document.getElementById("link1").textContent); mas_count++;console.log(mas);
@@ -417,6 +382,15 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById("lab3_links").value = mas;
                 document.getElementById("link16").style.display = "none";
                 document.getElementById("Link16").style.display = "none";
+            }
+            function linkFixate(idNum){
+                for(var k in idNum){
+                    console.log(idNum[k]);
+                }
+                    mas[mas_count]=document.getElementById(idNum[0]).textContent; mas_count++;console.log(mas);
+                    document.getElementById(idNum[1]).value = mas;
+                    document.getElementById(idNum[2]).style.display = "none";
+                    document.getElementById(idNum[3]).style.display = "none";
             }
             if (evt.id == "checkid2"){
                 
