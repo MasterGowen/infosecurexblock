@@ -147,9 +147,9 @@ function InfoSecureXBlock(runtime, element) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
-            evt.id == "comp1" && connect(['comp1','comp2','comp3','activeComp']);
-            evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp']);
-            evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp']);
+            evt.id == "comp1" && connect(['comp1','comp2','comp3','activeComp','192.168.0.3']);
+            evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
+            evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
             evt.id == 'File1' && fileShow();
             evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2']);
             ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
@@ -158,7 +158,7 @@ function InfoSecureXBlock(runtime, element) {
 
 
             function connect(idNum) {
-               // document.getElementById('ip').value = '192.168.0.3';
+                if(idNum[4])document.getElementById('ip').value = idNum[4];
                 document.getElementById('line_wifi').classList.add(idNum[3]);
                 document.getElementById(idNum[0]).classList.add(idNum[3]);
                 document.getElementById(idNum[1]).classList.remove(idNum[3]);
@@ -223,7 +223,6 @@ function InfoSecureXBlock(runtime, element) {
             else if (evt.id == 'checkid') {
                 console.log('Error:не все поля заполненны.')
             }
-            console.log(student_answer);
         }
         static checkAnswer(checkHandler, student_answer) {
             //console.log("student_answer :", student_answer);
