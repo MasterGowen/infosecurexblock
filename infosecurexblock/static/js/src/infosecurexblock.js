@@ -157,7 +157,7 @@ function InfoSecureXBlock(runtime, element) {
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
 
 
-            function connectLine(idNum) {
+            function connect(idNum) {
                // document.getElementById('ip').value = '192.168.0.3';
                 document.getElementById('line_wifi').classList.add(idNum[3]);
                 document.getElementById(idNum[0]).classList.add(idNum[3]);
