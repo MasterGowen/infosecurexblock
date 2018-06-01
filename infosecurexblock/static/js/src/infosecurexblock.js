@@ -260,7 +260,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link16" && linkFixate([".link16","Link16"]);
 
             function linkFixate(idNum){
-                document.getElementsByClassName(idNum[0]).style.display = "none";
+                document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
                 var student_answer =
                 {
