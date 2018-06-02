@@ -308,6 +308,7 @@ function InfoSecureXBlock(runtime, element) {
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
+                document.getElementById("lab3_links").value = document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
                 var student_answer =
                 {
@@ -321,8 +322,8 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById("lab3_links").value = mas;
                 var student_answer =
                         {
-                            'mas': document.getElementById('lab3_links').value//,
-                            //'link' : document.getElementById(idNum[0]).textContent
+                            'mas': document.getElementById('lab3_links').value,
+                            'link' : document.getElementById(idNum[0]).textContent
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 
