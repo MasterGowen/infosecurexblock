@@ -194,7 +194,6 @@ function InfoSecureXBlock(runtime, element) {
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
 
-
             function connect(idNum) {
                 if(idNum[4])document.getElementById('ip').value = idNum[4];
                 document.getElementById('line_wifi').classList.add(idNum[3]);
@@ -308,7 +307,7 @@ function InfoSecureXBlock(runtime, element) {
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                document.getElementById("lab3_links").value = "ddd";//document.getElementById(idNum).textContent;
+                document.getElementById("lab3_links").innerHTML = document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
                 var student_answer =
                 {
