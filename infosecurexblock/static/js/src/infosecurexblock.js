@@ -242,7 +242,7 @@ function InfoSecureXBlock(runtime, element) {
             var student_answer = {};
              var mas_count = 0;
             var mas = new Array();
-            // НАСТЯ ПРОСТИ ! :з 
+            
             evt.id == "Link1" && linkFixate([".link1","Link1"]);
             evt.id == "Link2" && linkFixate([".link2","Link2"]);
             evt.id == "Link3" && linkFixate([".link3","Link3"]);
@@ -260,7 +260,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link15" && linkFixate([".link15","Link15"]);
             evt.id == "Link16" && linkFixate([".link16","Link16"]);
 
-            alert('НАСТЯ ПРОСТИ ! :з');
+            
 
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
