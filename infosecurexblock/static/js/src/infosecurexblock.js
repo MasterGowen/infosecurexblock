@@ -236,13 +236,18 @@ function InfoSecureXBlock(runtime, element) {
                 });
             })()
         }
+        static getRandomInt(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
         static onLab3(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
              var mas_count = 0;
             var mas = new Array();
-            
+            var random = this.getRandomInt(1,16);
+            document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate([".link1","Link1"]);
             evt.id == "Link2" && linkFixate([".link2","Link2"]);
             evt.id == "Link3" && linkFixate([".link3","Link3"]);
