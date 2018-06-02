@@ -34,25 +34,32 @@ function InfoSecureXBlock(runtime, element) {
         if (result.result != "fail")
         switch(result.lab_id){
             case 1:{
+                Start.connectionLabs(rect1HandlerUrl, 1);
+                Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab1);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
             case 2:{
+                Start.connectionLabs(rect1HandlerUrl, 1);
+                Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click', Start.taskBlock);
                 break;
             }
             case 3:{
+                setTimeout(Start.connectionLabs(rect1HandlerUrl, 1),1000);
+                Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab3);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
-                setTimeout(self.addElementSVG(handler.amount, handler.Rect1),1000);
                 break;
             }
             case 4:{
+                Start.connectionLabs(rect1HandlerUrl, 1);
+                Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab4);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
@@ -103,7 +110,7 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
-        connectionLabs(handler, labId) {
+        static connectionLabs(handler, labId) {
             var self = this;
             //console.log(lab_id);
             console.log(result.lab_id);
@@ -129,6 +136,9 @@ function InfoSecureXBlock(runtime, element) {
 
             })()
 
+        }
+        static lab3Load(result){
+            setTimeout(self.addElementSVG(handler.amount, handler.Rect1),1000);
         }
 
         static active(idNum) {
@@ -641,8 +651,6 @@ function InfoSecureXBlock(runtime, element) {
     class Labs extends Start {
         constructor() {
             super()
-            this.connectionLabs(rect1HandlerUrl, 1);
-            this.connectionLabs(rect1HandlerUrl, 2);
             //console.log("lab1");
             //document.getElementById("widget").addEventListener('click',Start.on);
             this.checkAnswerLab(checkHandlerLab,test);
