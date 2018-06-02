@@ -17,9 +17,13 @@ button.submit {
     cursor:pointer;
     opacity: 0.5;
     transition: opacity 0.4s;
+}#link1, #link2, #link3, #link4, #link5, #link6, #link7, #link8, #link9, #link10, #link11, #link12, #link13, #link14, #link15, #link16{
+    display:none;
+ 
 }
 .link1, .link2, .link3, .link4, .link5, .link6, .link7, .link8, .link9, .link10, .link11, .link12, .link13, .link14, .link15, .link16{
-    text-decoration:underline; z-index: 10;display:none;
+    text-decoration:underline; z-index: 10;
+    display:none;
 }
 .link1:hover, .link2:hover, .link3:hover, .link4:hover, .link5:hover, .link6:hover, .link7:hover, .link8:hover, .link9:hover, .link10:hover, .link11:hover, .link12:hover, .link13:hover, .link14:hover, .link15:hover, .link16:hover {
     color: #ffe; /* Цвет текста активного пункта */
