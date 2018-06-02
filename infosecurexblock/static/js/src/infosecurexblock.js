@@ -273,6 +273,7 @@ function InfoSecureXBlock(runtime, element) {
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
+                mas.push(document.querySelector(idNum[0]).getAttribute("id"));
                 var student_answer =
                 {
                     'link' : document.querySelector(idNum[0]).getAttribute("id")
