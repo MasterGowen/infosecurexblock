@@ -307,7 +307,7 @@ function InfoSecureXBlock(runtime, element) {
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                document.getElementById("lab3_links").innerHTML = document.getElementById(idNum).value;
+                document.getElementById("lab3_links").innerHTML ="ddd"; //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
                 var student_answer =
                 {
