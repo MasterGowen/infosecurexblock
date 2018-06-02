@@ -44,7 +44,7 @@
     "link5":{
         "type":"text",
         "x": "380",
-        "y": "20",
+        "y": "120",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
@@ -73,7 +73,7 @@
     },
     "link8":{
         "type":"text",
-        "x": "210",
+        "x": "510",
         "y": "220",
         "fontSize":"20",
         "fontFamily":"Roboto",
@@ -83,8 +83,8 @@
     },
     "link9":{
         "type":"text",
-        "x": "110",
-        "y": "520",
+        "x": "310",
+        "y": "620",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
@@ -200,7 +200,7 @@
     "Link5":{
         "type":"ellipse",
         "cx": "480",
-        "cy": "20",
+        "cy": "120",
         "rx": "110",
         "ry":"30",
         "fill": "white",
@@ -229,7 +229,7 @@
     
     "Link8":{
         "type":"ellipse",
-        "cx": "280",
+        "cx": "580",
         "cy": "220",
         "rx": "110",
         "ry":"30",
@@ -239,8 +239,8 @@
     
     "Link9":{
         "type":"ellipse",
-        "cx": "180",
-        "cy": "520",
+        "cx": "380",
+        "cy": "620",
         "rx": "110",
         "ry":"30",
         "fill": "white",
