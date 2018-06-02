@@ -29,6 +29,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         resettable_editor=False,
         scope=Scope.settings
     )
+    right = 0.0
     weight = Integer(
         display_name=u"Maximum number of points",
         help=u"",
@@ -167,9 +168,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 return sum(correctness_list) / float(len(correctness_list))
             elif self.lab_id == 3:
                 test = int(data["link"])
-                right = 0.0
                 if((test == 1) or (test == 5) or (test == 11) or (test==4) or (test ==8) or (test==9) or (test>=13)):
-                    return right=right+0.1
+                    right+=0.1
+                    return right
                 else:
                     return 0
 
