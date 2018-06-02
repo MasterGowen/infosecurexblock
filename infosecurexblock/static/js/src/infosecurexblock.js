@@ -105,12 +105,12 @@ function InfoSecureXBlock(runtime, element) {
         connectionLabs(handler, labId) {
             var self = this;
             //console.log(lab_id);
-            console.log(labId);
+            console.log(result.lab_id);
             function success(handler) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     self.addElementSVG(handler.amount, handler.Rect1);
-                    if (labId=="3"){
+                    if (result.lab_idlabId=="3"){
                         setTimeout(self.addElement(handler.amount, handler.Rect2),1000);
                     }
                 }
