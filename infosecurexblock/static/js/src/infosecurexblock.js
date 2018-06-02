@@ -249,8 +249,8 @@ function InfoSecureXBlock(runtime, element) {
             var mas = new Array();
             
             var random = this.getRandomInt(1,16);
-            setTimeout(func, 1000);
-            document.getElementById('random').display.style = "block";
+            //setTimeout(func, 1000);
+           // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate([".link1","Link1"]);
             evt.id == "Link2" && linkFixate([".link2","Link2"]);
             evt.id == "Link3" && linkFixate([".link3","Link3"]);
