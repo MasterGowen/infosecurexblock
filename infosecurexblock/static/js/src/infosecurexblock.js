@@ -14,6 +14,8 @@ function InfoSecureXBlock(runtime, element) {
             }
             $(".success", element).text(result.points);
         }
+        //n
+        
         else { 
             $('.attempts', element).text(result.attempts);
             document.getElementById('checkid').setAttribute("disabled", null); 
