@@ -169,7 +169,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             elif self.lab_id == 3:
                 test = int(data["link"])
                 if((test == 1) or (test == 5) or (test == 11) or (test==4) or (test ==8) or (test==9) or (test>=13)):
-                    self.right=0.1
+                    self.right=0.1+self.right
                 return sum(float(self.right))
 
 

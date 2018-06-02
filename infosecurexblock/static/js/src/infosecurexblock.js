@@ -23,7 +23,7 @@ function InfoSecureXBlock(runtime, element) {
     var test = {
         'test':'lab1'
     };
-    
+    //
     var student_answer = {
         'answerBlockRedac': false,
         'answerBlockAdmin': false,
