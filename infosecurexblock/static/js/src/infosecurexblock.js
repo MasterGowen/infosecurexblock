@@ -317,7 +317,7 @@ function InfoSecureXBlock(runtime, element) {
                 console.log(student_answer);
                 Start.checkAnswer(checkHandler, student_answer);
             }
-            if (evt.id == "checkid2"){
+           /* if (evt.id == "checkid2"){
                 
                 document.getElementById("lab3_links").value = mas;
                 var student_answer =
@@ -327,7 +327,7 @@ function InfoSecureXBlock(runtime, element) {
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 
-                }
+                }*/
                // Random();
             
         }
