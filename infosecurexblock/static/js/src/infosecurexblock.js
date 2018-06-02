@@ -109,12 +109,13 @@ function InfoSecureXBlock(runtime, element) {
             function success(handler) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
-                    //console.log(this.amount,this.jsonObj.Rect1);
                     self.addElementSVG(handler.amount, handler.Rect1);
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
+                    
                     self.addElement(handler.amount, handler.Rect2);
+                    if (lab_id=="3"){setTimeout(self.addElement(handler.amount, handler.Rect2),100);}
                 }
             }
 
@@ -246,7 +247,9 @@ function InfoSecureXBlock(runtime, element) {
             var student_answer = {};
              var mas_count = 0;
             var mas = new Array();
+            
             var random = this.getRandomInt(1,16);
+            setTimeout(func, 1000);
             document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate([".link1","Link1"]);
             evt.id == "Link2" && linkFixate([".link2","Link2"]);
@@ -264,8 +267,6 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate([".link14","Link14"]);
             evt.id == "Link15" && linkFixate([".link15","Link15"]);
             evt.id == "Link16" && linkFixate([".link16","Link16"]);
-
-            
 
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
