@@ -50,7 +50,7 @@ function InfoSecureXBlock(runtime, element) {
                 break;
             }
             case 3:{
-                setTimeout(Start.connectionLabs(rect1HandlerUrl, 1),5000);
+                setTimeout(Start.connectionLabs3(rect1HandlerUrl, 1),5000);
                 Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab3);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
@@ -118,6 +118,33 @@ function InfoSecureXBlock(runtime, element) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     self.addElementSVG(handler.amount, handler.Rect1);                   
+                }
+                if (handler.Rect2) {
+                    handler.amount = Object.keys(handler.Rect2).length;
+                    self.addElement(handler.amount, handler.Rect2);
+                    
+                }
+            }
+
+            (function () {
+                $.ajax({
+                    type: "POST",
+                    url: handler,
+                    data: {"lab_id": labId},
+                    success: success
+                });
+
+            })()
+
+        }
+        static connectionLabs3(handler, labId) {
+            var self = this;
+            //console.log(lab_id);
+            console.log(result.lab_id);
+            function success(handler) {
+                if (handler.Rect1) {
+                    handler.amount = Object.keys(handler.Rect1).length;
+                    setTimeout(self.addElementSVG(handler.amount, handler.Rect1),5000);                   
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
@@ -579,6 +606,7 @@ function InfoSecureXBlock(runtime, element) {
                 this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type, jsonObj[amount]));
             }
         }
+
         createElementSimple(name, attributes) {
             this.element = document.createElement(name);
             if (name === 'button') {
@@ -627,7 +655,116 @@ function InfoSecureXBlock(runtime, element) {
             return document.getElementById('widget').appendChild(element);
         }
     }
-    
+    createElementSVG3(name, attributes) {
+            this.NS = "http://www.w3.org/2000/svg";
+            this.NS1 = "http://www.w3.org/1999/xlink";
+            this.element = document.createElementNS(this.NS, name);
+            if (name == "svg") {
+                document.getElementById("widget").appendChild(this.element);
+                //document.querySelector('svg').appendChild(document.createElement('g'));
+            }
+            for (var k in attributes) {
+                if ((name == "text") && (attributes[k] == "ip1")) {
+                    this.element.innerHTML = '192.168.0.3'
+                }
+                if ((name == "text") && (attributes[k] == "ip2")) {
+                    this.element.innerHTML = '192.168.0.4'
+                }
+                if ((name == "text") && (attributes[k] == "ip3")) {
+                    this.element.innerHTML = '192.168.0.5'
+                }
+                if((name=="text")&&(attributes[k]=="ip4")){
+                    this.element.innerHTML = '192.168.0.2'
+                }
+                if((name=="text")&&(attributes[k]=="ip5")){
+                    this.element.innerHTML = '192.168.0.6'
+                }
+                if((name=="text")&&(attributes[k]=="redact")){
+                    this.element.innerHTML = 'Редакторы'
+                }
+                if((name=="text")&&(attributes[k]=="users")){
+                    this.element.innerHTML = 'Пользователи'
+                }
+                if((name=="text")&&(attributes[k]=="admin")){
+                    this.element.innerHTML = 'Администратор'
+                }
+                if((name=="text")&&(attributes[k]=="article")){
+                    this.element.innerHTML = 'Статья'
+                }
+                if ((name=="text")&&(attributes[k]=="link1")){
+                    this.element.innerHTML = "http://google.com"
+                }
+                if ((name=="text")&&(attributes[k]=="link2")){
+                    this.element.innerHTML = "https://www.bank.ex.com"
+                }
+                if ((name=="text")&&(attributes[k]=="link3")){
+                    this.element.innerHTML = "http://gogle.com"
+                }
+                if ((name=="text")&&(attributes[k]=="link4")){
+                    this.element.innerHTML = "http://media.ls.urfu.ru"
+                }
+                if ((name=="text")&&(attributes[k]=="link5")){
+                    this.element.innerHTML = "https://ru.wikipedia.org"
+                }
+                if ((name=="text")&&(attributes[k]=="link6")){
+                    this.element.innerHTML = "https://urfu.ru.u"
+                }
+                if ((name=="text")&&(attributes[k]=="link7")){
+                    this.element.innerHTML = "http://trafficconverter.biz"
+                }
+                if ((name=="text")&&(attributes[k]=="link8")){
+                    this.element.innerHTML = "https://vk.com"
+                }
+                if ((name=="text")&&(attributes[k]=="link9")){
+                    this.element.innerHTML = "https://alfabank.ru/"
+                }
+                if ((name=="text")&&(attributes[k]=="link10")){
+                    this.element.innerHTML = "http://vk.my.page.bl"
+                }
+                if ((name=="text")&&(attributes[k]=="link11")){
+                    this.element.innerHTML = "https://intuit.ru"
+                }
+                if ((name=="text")&&(attributes[k]=="link12")){
+                    this.element.innerHTML = "https://facebok.com"
+                }
+                if ((name=="text")&&(attributes[k]=="link13")){
+                    this.element.innerHTML = "https://yandex.ru"
+                }
+                if ((name=="text")&&(attributes[k]=="link14")){
+                    this.element.innerHTML = "https://e1.ru"
+                }
+                if ((name=="text")&&(attributes[k]=="link15")){
+                    this.element.innerHTML = "https://pogoda.ru"
+                }
+                if ((name=="text")&&(attributes[k]=="link16")){
+                    this.element.innerHTML = "https://news.com"
+                }
+
+                if (attributes[k] == "image") {
+                    this.element.setAttributeNS(this.NS1, [k], attributes[k]);
+                }
+                else if (attributes[k] != "image") {
+                    this.element.setAttributeNS(null, [k], attributes[k]);
+                }
+            }
+
+            if (attributes) {
+                return this.element;
+            }
+        }
+
+        appendNodeSVG(element) {
+            var svg = document.querySelector('svg');
+            return svg.appendChild(element);
+        }
+
+        addElementSVG(amount, jsonObj) {
+            //console.log(amount,jsonObj);
+            for (amount in jsonObj) {
+                //console.log(jsonObj[amount].type,jsonObj[amount]);
+                this.appendNodeSVG(this.createElementSVG(jsonObj[amount].type, jsonObj[amount]));
+            }
+        }
     function checkIsIPV4(entry) {
         var blocks = entry.split(".");
         if (blocks.length === 4) {
