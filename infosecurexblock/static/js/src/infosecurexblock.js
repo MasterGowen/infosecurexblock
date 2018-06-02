@@ -49,7 +49,7 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById('widget').addEventListener('click', Start.onLab3);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
-                setTimeout(self.addElement(handler.amount, handler.Rect2),1000);
+                setTimeout(self.addElementSVG(handler.amount, handler.Rect1),1000);
                 break;
             }
             case 4:{
@@ -110,8 +110,7 @@ function InfoSecureXBlock(runtime, element) {
             function success(handler) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
-                    self.addElementSVG(handler.amount, handler.Rect1);
-                    
+                    self.addElementSVG(handler.amount, handler.Rect1);                   
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
