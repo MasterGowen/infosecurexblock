@@ -113,9 +113,9 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
-                    
+                    console.log(labId);
                     self.addElement(handler.amount, handler.Rect2);
-                    if (lab_id=="3"){setTimeout(self.addElement(handler.amount, handler.Rect2),100);}
+                    if (labId=="3"){setTimeout(self.addElement(handler.amount, handler.Rect2),100);}
                 }
             }
 
