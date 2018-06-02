@@ -110,11 +110,12 @@ function InfoSecureXBlock(runtime, element) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     self.addElementSVG(handler.amount, handler.Rect1);
-                    if (labId=="3"){setTimeout(self.addElement(handler.amount, handler.Rect2),100);}
+                    if (labId=="3"){
+                        setTimeout(self.addElement(handler.amount, handler.Rect2),1000);
+                    }
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
-                  
                     self.addElement(handler.amount, handler.Rect2);
                     
                 }
