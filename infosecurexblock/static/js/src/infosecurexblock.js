@@ -49,6 +49,7 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById('widget').addEventListener('click', Start.onLab3);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
+                setTimeout(self.addElement(handler.amount, handler.Rect2),1000);
                 break;
             }
             case 4:{
@@ -110,9 +111,7 @@ function InfoSecureXBlock(runtime, element) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     self.addElementSVG(handler.amount, handler.Rect1);
-                    if (result.lab_id=="3"){
-                        setTimeout(self.addElement(handler.amount, handler.Rect2),1000);
-                    }
+                    
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
@@ -273,7 +272,7 @@ function InfoSecureXBlock(runtime, element) {
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                mas.push(document.getElementById(idNum[0]).value);
+               // mas.push(document.getElementById(idNum[0]).value);
                 var student_answer =
                 {
                     'link' : document.querySelector(idNum[0]).getAttribute("id")
