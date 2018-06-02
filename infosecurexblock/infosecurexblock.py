@@ -29,7 +29,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         resettable_editor=False,
         scope=Scope.settings
     )
-    right = 0.0
+    
     weight = Integer(
         display_name=u"Maximum number of points",
         help=u"",
@@ -169,8 +169,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             elif self.lab_id == 3:
                 test = int(data["link"])
                 if((test == 1) or (test == 5) or (test == 11) or (test==4) or (test ==8) or (test==9) or (test>=13)):
-                    self.right=0.1+self.right
-                    return sum(self.right)
+                    sight=0.1+sight
+                    return sum(sight)
 
 
         def IsTheNumberSimple(n):
