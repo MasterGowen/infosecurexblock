@@ -316,7 +316,7 @@ function InfoSecureXBlock(runtime, element) {
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
                 student_answer3.link1  = document.querySelector(idNum[0]).getAttribute("id")
-                //student_answer3.link2  = document.querySelector(idNum[0]).getAttribute("id")
+                student_answer3.link2  = document.querySelector(idNum[0]).getAttribute("id")
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
             }
