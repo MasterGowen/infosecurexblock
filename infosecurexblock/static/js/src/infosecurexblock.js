@@ -131,7 +131,7 @@ function InfoSecureXBlock(runtime, element) {
         static connectionLabs(handler, labId) {
             var self = this;
             //console.log(lab_id);
-            console.log(result.lab_id);
+            //console.log(result.lab_id);
             function success(handler) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
