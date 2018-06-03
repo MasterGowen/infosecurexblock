@@ -294,7 +294,40 @@ function InfoSecureXBlock(runtime, element) {
             }, 8000);
             setTimeout(()=>{
                 Start.active(["link5", "Link5"]);
-            }, 8000);
+            }, 10000);
+            setTimeout(()=>{
+                Start.active(["link6", "Link6"]);
+            }, 12000);
+            setTimeout(()=>{
+                Start.active(["link7", "Link7"]);
+            }, 14000);
+            setTimeout(()=>{
+                Start.active(["link8", "Link8"]);
+            }, 16000);
+            setTimeout(()=>{
+                Start.active(["link9", "Link9"]);
+            }, 18000);
+            setTimeout(()=>{
+                Start.active(["link10", "Link10"]);
+            }, 22000);
+            setTimeout(()=>{
+                Start.active(["link11", "Link11"]);
+            }, 24000);
+            setTimeout(()=>{
+                Start.active(["link12", "Link12"]);
+            }, 26000);
+            setTimeout(()=>{
+                Start.active(["link13", "Link13"]);
+            }, 28000);
+            setTimeout(()=>{
+                Start.active(["link14", "Link14"]);
+            }, 30000);
+            setTimeout(()=>{
+                Start.active(["link15", "Link15"]);
+            }, 32000);
+            setTimeout(()=>{
+                Start.active(["link16", "Link16"]);
+            }, 34000);
 /*             setTimeout(Start.active(["link6", "Link6"]), 10000);
             setTimeout(Start.active(["link7", "Link7"]), 12000);
             setTimeout(Start.active(["link8", "Link8"]), 14000);
