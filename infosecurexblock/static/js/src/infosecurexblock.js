@@ -380,7 +380,7 @@ function InfoSecureXBlock(runtime, element) {
                 push3.push(document.getElementById(idNum[0].value));
                                 
             }
-            docusment.getElementById("lab3_links").value =push3;
+            document.getElementById("lab3_links").value =push3;
             
             //console.log(student_answer3);
             //Start.checkAnswer(checkHandler, student_answer3);
