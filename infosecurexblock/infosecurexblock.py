@@ -73,8 +73,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         default=0,
         scope=Scope.user_state
     )
-    grade = math.floor(grade)
-    
+
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight")
 
     def resource_string(self, path):
@@ -187,7 +186,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     data["link15"],
                                     data["link16"],
                                     ]
-                return sum(correctness_list) / float(len(correctness_list)-7)
+                return int(sum(correctness_list) / float(len(correctness_list)-7))
             elif self.lab_id == 4:
                 pass
 
