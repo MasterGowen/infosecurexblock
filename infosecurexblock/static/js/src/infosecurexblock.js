@@ -29,6 +29,9 @@ function InfoSecureXBlock(runtime, element) {
         'answerBlockAdmin': false,
         'answerBlockUsers': false
     };
+    var student_answer3 = {
+        'link': "0"
+    };
 
     function successCheckLab(result) {
         if (result.result != "fail")
