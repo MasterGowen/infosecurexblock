@@ -29,6 +29,9 @@ function InfoSecureXBlock(runtime, element) {
         'answerBlockAdmin': false,
         'answerBlockUsers': false
     };
+    var student_answer3 = {
+        'link1': false
+    };
 
     function successCheckLab(result) {
         if (result.result != "fail")
@@ -311,23 +314,15 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[1]).style.display = "none";
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
-                var student_answer =
+                 student_answer3 =
                 {
                     
-                    'link1' : document.querySelector(idNum[0]).getAttribute(l1),
-                    'link2' : document.querySelector(idNum[0]).getAttribute(l2),
-                    'link3' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link4' : document.querySelector(idNum[0]).getAttribute(l4),
-                    'link5' : document.querySelector(idNum[0]).getAttribute(l5),
-                    'link6' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link7' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link8' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link9' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link10' : document.querySelector(idNum[0]).getAttribute("id")
+                    'link1' : document.querySelector(idNum[0]).getAttribute("id")
+            
                 }
                 console.log(student_answer);
-                
-            }Start.checkAnswer(checkHandler, student_answer);
+                Start.checkAnswer(checkHandler, student_answer);
+            }
            /* if (evt.id == "checkid2"){
                 
                 document.getElementById("lab3_links").value = mas;
