@@ -30,13 +30,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         resettable_editor=False,
         scope=Scope.settings
     )
-    quest_text = String(
-        display_name='quest text labs3',
-        default="Task",
-        multiline_editor=True,
-        resettable_editor=False,
-        scope=Scope.settings
-    )
     sight = 0.0
     weight = Integer(
         display_name=u"Maximum number of points",
@@ -100,7 +93,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             "max_attempts": self.max_attempts,
             "attempts": self.attempts,
             "points": self.points,
-            "quest_text":self.quest_text,
 
         }
 
@@ -196,7 +188,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     ]
                 return sum(correctness_list) / float(len(correctness_list)-6)
             elif self.lab_id == 4:
-                self.editable_fields = ('quest_text')
+                pass
 
         def IsTheNumberSimple(n):
             if n < 2:
