@@ -326,8 +326,8 @@ function InfoSecureXBlock(runtime, element) {
                     'link10' : document.querySelector(idNum[0]).getAttribute("id")
                 }
                 console.log(student_answer);
-                Start.checkAnswer(checkHandler, student_answer);
-            }
+                
+            }Start.checkAnswer(checkHandler, student_answer);
            /* if (evt.id == "checkid2"){
                 
                 document.getElementById("lab3_links").value = mas;
