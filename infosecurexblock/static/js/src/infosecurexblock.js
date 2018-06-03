@@ -320,7 +320,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link10" && linkFixate([".link10","Link10","link10"]);
             evt.id == "Link11" && linkFixate([".link11","Link11","link11"]);
             evt.id == "Link12" && linkFixate([".link12","Link12","link12"]);
-            evt.id == "Link13" && linkFixate([".link13","Link13","link13"]);
+            evt.id == "Link13" && linkFixate([".link13","Link13","link1213"]);
             evt.id == "Link14" && linkFixate([".link14","Link14","link14"]);
             evt.id == "Link15" && linkFixate([".link15","Link15","link15"]);
             evt.id == "Link16" && linkFixate([".link16","Link16","link16"]);
