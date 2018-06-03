@@ -285,11 +285,13 @@ function InfoSecureXBlock(runtime, element) {
             var mas = new Array();
             
             var random = this.getRandomInt(1,16);
+           var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
+           var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
             //setTimeout(func, 1000);
            // document.getElementById('random').display.style = "block";
-            evt.id == "Link1" && linkFixate([".link1","Link1"]);
-            evt.id == "Link2" && linkFixate([".link2","Link2"]);
-            evt.id == "Link3" && linkFixate([".link3","Link3"]);
+            evt.id == "Link1" && linkFixate([".link1","Link1"]) && l1;
+            evt.id == "Link2" && linkFixate([".link2","Link2"])&& l2;
+            evt.id == "Link3" && linkFixate([".link3","Link3"]) &&l3;
             evt.id == "Link4" && linkFixate([".link4","Link4"]);
             evt.id == "Link5" && linkFixate([".link5","Link5"]);
             evt.id == "Link6" && linkFixate([".link6","Link6"]);
@@ -303,16 +305,16 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate([".link14","Link14"]);
             evt.id == "Link15" && linkFixate([".link15","Link15"]);
             evt.id == "Link16" && linkFixate([".link16","Link16"]);
-
+            document.getElementById("lab3_links").innerHTML ="ddd";
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                document.getElementById("lab3_links").innerHTML ="ddd"; //document.getElementById(idNum).value;
+                 //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
                 var student_answer =
                 {
                     
-                    'link1' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link1' : document.querySelector(idNum[0]).getAttribute(l1),
                     'link2' : document.querySelector(idNum[0]).getAttribute("id"),
                     'link3' : document.querySelector(idNum[0]).getAttribute("id"),
                     'link4' : document.querySelector(idNum[0]).getAttribute("id"),
