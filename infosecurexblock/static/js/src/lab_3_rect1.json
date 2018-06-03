@@ -33,7 +33,7 @@
     },
     "link4":{
         "type":"text",
-        "x": "310",
+        "x": "110",
         "y": "320",
         "fontSize":"20",
         "fontFamily":"Roboto",
@@ -143,8 +143,8 @@
     },
     "link15":{
         "type":"text",
-        "x": "430",
-        "y": "300",
+        "x": "630",
+        "y": "350",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
@@ -154,7 +154,7 @@
     "link16":{
         "type":"text",
         "x": "510",
-        "y": "500",
+        "y": "600",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
@@ -193,7 +193,7 @@
     },
     "Link4":{
         "type":"ellipse",
-        "cx": "380",
+        "cx": "180",
         "cy": "320",
         "rx": "110",
         "ry":"30",
@@ -312,8 +312,8 @@
     
     "Link15":{
         "type":"ellipse",
-        "cx": "500",
-        "cy": "300",
+        "cx": "700",
+        "cy": "350",
         "rx": "110",
         "ry":"30",
         "fill": "white",
@@ -324,7 +324,7 @@
     "Link16":{
         "type":"ellipse",
         "cx": "580",
-        "cy": "500",
+        "cy": "600",
         "rx": "110",
         "ry":"30",
         "fill": "white",
