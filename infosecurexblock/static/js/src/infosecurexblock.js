@@ -68,7 +68,7 @@ function InfoSecureXBlock(runtime, element) {
                 break;
             }
             case 3:{
-                setTimeout(Start.connectionLabs3(rect1HandlerUrl, 1),5000);
+                setTimeout(Start.connectionLabs(rect1HandlerUrl, 1),5000);
                 Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab3);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
