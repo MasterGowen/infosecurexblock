@@ -3,6 +3,7 @@
 import pkg_resources
 import json
 import os
+import math
 
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String, JSONField
