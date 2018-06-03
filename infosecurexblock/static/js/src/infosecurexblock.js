@@ -292,6 +292,9 @@ function InfoSecureXBlock(runtime, element) {
             setTimeout(()=>{
                 Start.active(["link4", "Link4"]);
             }, 8000);
+            setTimeout(()=>{
+                Start.active(["link5", "Link5"]);
+            }, 8000);
 /*             setTimeout(Start.active(["link6", "Link6"]), 10000);
             setTimeout(Start.active(["link7", "Link7"]), 12000);
             setTimeout(Start.active(["link8", "Link8"]), 14000);
@@ -333,7 +336,6 @@ function InfoSecureXBlock(runtime, element) {
                     console.log(student_answer3.res[i])
                 }
                 console.log(res);
-                //
                 //console.log(student_answer3.res[1]);                          
                 console.log(student_answer3[idNum[2]]);
                 student_answer3[0]  = true;
