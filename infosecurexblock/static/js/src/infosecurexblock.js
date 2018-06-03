@@ -327,8 +327,8 @@ function InfoSecureXBlock(runtime, element) {
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
                console.log(idNum[2]);
-               console.log(idNum[2]);
                 idNum[2]  = true;
+                console.log(idNum[2]);
                
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
