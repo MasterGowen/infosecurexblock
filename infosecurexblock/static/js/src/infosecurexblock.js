@@ -314,13 +314,13 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[1]).style.display = "none";
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
-                var student_answer =
+                student_answer3 =
                 {
-                    
-                    'link1' : document.querySelector(idNum[0]).getAttribute(l1)
+                    'link1' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link2' : document.querySelector(idNum[0]).getAttribute("id")
                 }
-                console.log(student_answer);
-                Start.checkAnswer(checkHandler, student_answer);
+                console.log(student_answer3);
+                Start.checkAnswer(checkHandler, student_answer3);
             }
            /* if (evt.id == "checkid2"){
                 
