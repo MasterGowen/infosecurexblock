@@ -315,7 +315,7 @@ function InfoSecureXBlock(runtime, element) {
                 {
                     
                     'link1' : document.querySelector(idNum[0]).getAttribute(l1),
-                    'link2' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link2' : document.querySelector(idNum[0]).getAttribute(l2),
                     'link3' : document.querySelector(idNum[0]).getAttribute("id"),
                     'link4' : document.querySelector(idNum[0]).getAttribute("id"),
                     'link5' : document.querySelector(idNum[0]).getAttribute("id"),
