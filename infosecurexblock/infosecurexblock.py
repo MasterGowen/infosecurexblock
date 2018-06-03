@@ -171,7 +171,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 test = int(data["link"])
                 test2 = int(data["mas"])
                 if((test == 1) or (test == 5) or (test == 11) or (test==4) or (test ==8) or (test==9) or (test>=13)):
-                    return  sight+=0.1
+                    self.sight+=0.1
+                    return self.sight
+
 
         def IsTheNumberSimple(n):
             if n < 2:
