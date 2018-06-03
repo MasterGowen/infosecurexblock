@@ -30,7 +30,7 @@ function InfoSecureXBlock(runtime, element) {
         'answerBlockUsers': false
     };
     var student_answer3 = {
-        'link1': false
+        'link': 0
     };
 
     function successCheckLab(result) {
