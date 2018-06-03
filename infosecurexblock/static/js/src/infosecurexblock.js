@@ -295,8 +295,8 @@ function InfoSecureXBlock(runtime, element) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         static func(id,ID){
-            document.getElementById(id).style.display = "block";
-            document.getElementById(ID).style.display = "block";
+            active(id);
+            active(ID);
         }
         
         static onLab3(event) {
