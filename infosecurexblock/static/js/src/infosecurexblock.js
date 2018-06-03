@@ -317,16 +317,7 @@ function InfoSecureXBlock(runtime, element) {
                 var student_answer =
                 {
                     
-                    'link1' : document.querySelector(idNum[0]).getAttribute(l1),
-                    'link2' : document.querySelector(idNum[0]).getAttribute(l2),
-                    'link3' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link4' : document.querySelector(idNum[0]).getAttribute(l4),
-                    'link5' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link6' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link7' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link8' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link9' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link10' : document.querySelector(idNum[0]).getAttribute("id")
+                    'link1' : document.querySelector(idNum[0]).getAttribute(l1)
                 }
                 console.log(student_answer);
                 Start.checkAnswer(checkHandler, student_answer);

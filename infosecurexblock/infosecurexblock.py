@@ -29,7 +29,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         resettable_editor=False,
         scope=Scope.settings
     )
-    
+    sight = 0.0
     weight = Integer(
         display_name=u"Maximum number of points",
         help=u"",
@@ -47,7 +47,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         default={},
         scope=Scope.user_state
     )
-
+    
     max_attempts = Integer(
         display_name=u"Maximum number of attempts",
         help=u"",
@@ -146,7 +146,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     @XBlock.json_handler
     def check(self, data, unused_suffix=''):
         self.answer = data
-
+        
         def checkLabs(data):
             if self.lab_id == 1:
                 ip, d, N, answer0 = data["ip"], int(data["d"]), int(data["N"]), int(data["e"])
