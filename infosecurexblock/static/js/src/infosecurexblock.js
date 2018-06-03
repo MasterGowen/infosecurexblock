@@ -30,8 +30,22 @@ function InfoSecureXBlock(runtime, element) {
         'answerBlockUsers': false
     };
     var student_answer3 = {
-        'link1': 0,
-        'link2': 0
+        'link1': false,
+        'link2': false,
+        'link3': false,
+        'link4': false,
+        'link5': false,
+        'link6': false,
+        'link7': false,
+        'link8': false,
+        'link9': false,
+        'link10': false,
+        'link11': false,
+        'link12': false,
+        'link13': false,
+        'link14': false,
+        'link15': false,
+        'link16': false,
     };
 
     function successCheckLab(result) {
@@ -293,11 +307,11 @@ function InfoSecureXBlock(runtime, element) {
            var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
             //setTimeout(func, 1000);
            // document.getElementById('random').display.style = "block";
-            evt.id == "Link1" && linkFixate([".link1","Link1"]) && l1;
-            evt.id == "Link2" && linkFixate([".link2","Link2"])&& l2;
-            evt.id == "Link3" && linkFixate([".link3","Link3"]) &&l3;
-            evt.id == "Link4" && linkFixate([".link4","Link4"])&&l4;
-            evt.id == "Link5" && linkFixate([".link5","Link5"]);
+            evt.id == "Link1" && linkFixate([".link1","Link1","link1"]);
+            evt.id == "Link2" && linkFixate([".link2","Link2"]);
+            evt.id == "Link3" && linkFixate([".link3","Link3"]);
+            evt.id == "Link4" && linkFixate([".link4","Link4"]);
+            evt.id == "Link5" && linkFixate([".link5","Link5","link5"]);
             evt.id == "Link6" && linkFixate([".link6","Link6"]);
             evt.id == "Link7" && linkFixate([".link7","Link7"]);
             evt.id == "Link8" && linkFixate([".link8","Link8"]);
@@ -309,14 +323,14 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate([".link14","Link14"]);
             evt.id == "Link15" && linkFixate([".link15","Link15"]);
             evt.id == "Link16" && linkFixate([".link16","Link16"]);
-            document.getElementById("lab3_links").innerHTML ="ddd";
+            document.getElementById("lab3_links").value ="ddd";
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
-                student_answer3.link1  = document.querySelector(idNum[0]).getAttribute("id")
-                student_answer3.link2  = document.querySelector(idNum[0]).getAttribute("id")
+                student_answer3.idNum[2]  = true
+               
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
             }
