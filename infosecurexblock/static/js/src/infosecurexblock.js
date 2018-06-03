@@ -1,3 +1,4 @@
+
 /* Javascript for InfoSecureXBlock. */
 function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
@@ -332,6 +333,7 @@ function InfoSecureXBlock(runtime, element) {
                     console.log(student_answer3.res[i])
                 }
                 console.log(res);
+                //
                 //console.log(student_answer3.res[1]);                          
                 console.log(student_answer3[idNum[2]]);
                 student_answer3[0]  = true;
