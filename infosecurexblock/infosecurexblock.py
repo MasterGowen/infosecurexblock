@@ -171,6 +171,15 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 correctness_list = [data["link1"],
                                     data["link2"],
                                     data["link3"],
+                                    data["link4"],
+                                    data["link5"],
+                                    data["link6"],
+                                    data["link7"],
+                                    data["link8"],
+                                    data["link9"],
+                                    data["link10"],
+                                    data["link11"],
+                                    data["link12"],
                                     ]
                 return sum(correctness_list) / float(len(correctness_list))
 

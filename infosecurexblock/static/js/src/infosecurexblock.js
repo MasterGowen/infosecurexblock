@@ -341,21 +341,21 @@ function InfoSecureXBlock(runtime, element) {
             var push3 =[];
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate([".link1","Link1","link1"],student_answer3);
-            evt.id == "Link2" && linkFixate([".link2","Link2","link2"]);
-            evt.id == "Link3" && linkFixate([".link3","Link3","link3"]);
-            evt.id == "Link4" && linkFixate([".link4","Link4","link4"]);
-            evt.id == "Link5" && linkFixate([".link5","Link5","link5"]);
-            evt.id == "Link6" && linkFixate([".link6","Link6","link6"]);
-            evt.id == "Link7" && linkFixate([".link7","Link7","link7"]);
-            evt.id == "Link8" && linkFixate([".link8","Link8","link8"]);
-            evt.id == "Link9" && linkFixate([".link9","Link9","link9"]);
-            evt.id == "Link10" && linkFixate([".link10","Link10","link10"]);
-            evt.id == "Link11" && linkFixate([".link11","Link11","link11"]);
-            evt.id == "Link12" && linkFixate([".link12","Link12","link12"]);
-            evt.id == "Link13" && linkFixate([".link13","Link13","link1213"]);
-            evt.id == "Link14" && linkFixate([".link14","Link14","link14"]);
-            evt.id == "Link15" && linkFixate([".link15","Link15","link15"]);
-            evt.id == "Link16" && linkFixate([".link16","Link16","link16"]);
+            evt.id == "Link2" && linkFixate([".link2","Link2","link2"],student_answer3);
+            evt.id == "Link3" && linkFixate([".link3","Link3","link3"],student_answer3);
+            evt.id == "Link4" && linkFixate([".link4","Link4","link4"],student_answer3);
+            evt.id == "Link5" && linkFixate([".link5","Link5","link5"],student_answer3);
+            evt.id == "Link6" && linkFixate([".link6","Link6","link6"],student_answer3);
+            evt.id == "Link7" && linkFixate([".link7","Link7","link7"],student_answer3);
+            evt.id == "Link8" && linkFixate([".link8","Link8","link8"],student_answer3);
+            evt.id == "Link9" && linkFixate([".link9","Link9","link9"],student_answer3);
+            evt.id == "Link10" && linkFixate([".link10","Link10","link10"],student_answer3);
+            evt.id == "Link11" && linkFixate([".link11","Link11","link11"],student_answer3);
+            evt.id == "Link12" && linkFixate([".link12","Link12","link12"],student_answer3);
+            evt.id == "Link13" && linkFixate([".link13","Link13","link13"],student_answer3);
+            evt.id == "Link14" && linkFixate([".link14","Link14","link14"],student_answer3);
+            evt.id == "Link15" && linkFixate([".link15","Link15","link15"],student_answer3);
+            evt.id == "Link16" && linkFixate([".link16","Link16","link16"],student_answer3);
           
             function linkFixate(idNum,student_answer3){
                 document.querySelector(idNum[0]).style.display = "none";
@@ -380,7 +380,7 @@ function InfoSecureXBlock(runtime, element) {
                 push3.push(document.getElementById(idNum[0].value));
                                 
             }
-            document.getElementById("lab3_links").value =push3;
+            docusment.getElementById("lab3_links").value =push3;
             
             //console.log(student_answer3);
             //Start.checkAnswer(checkHandler, student_answer3);
