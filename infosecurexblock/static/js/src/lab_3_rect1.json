@@ -63,7 +63,7 @@
     },
     "link7":{
         "type":"text",
-        "x": "330",
+        "x": "290",
         "y": "480",
         "fontSize":"20",
         "fontFamily":"Roboto",
@@ -143,7 +143,7 @@
     },
     "link15":{
         "type":"text",
-        "x": "630",
+        "x": "760",
         "y": "350",
         "fontSize":"20",
         "fontFamily":"Roboto",
@@ -153,8 +153,8 @@
     },
     "link16":{
         "type":"text",
-        "x": "510",
-        "y": "600",
+        "x": "610",
+        "y": "500",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
@@ -312,7 +312,7 @@
     
     "Link15":{
         "type":"ellipse",
-        "cx": "700",
+        "cx": "830",
         "cy": "350",
         "rx": "110",
         "ry":"30",
@@ -323,8 +323,8 @@
     
     "Link16":{
         "type":"ellipse",
-        "cx": "580",
-        "cy": "600",
+        "cx": "680",
+        "cy": "500",
         "rx": "110",
         "ry":"30",
         "fill": "white",
