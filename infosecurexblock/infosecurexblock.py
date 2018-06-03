@@ -180,6 +180,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     data["link10"],
                                     data["link11"],
                                     data["link12"],
+                                    data["link13"],
+                                    data["link14"],
+                                    data["link15"],
+                                    data["link16"],
                                     ]
                 return sum(correctness_list) / float(len(correctness_list))
 
