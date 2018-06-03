@@ -45,7 +45,7 @@ function InfoSecureXBlock(runtime, element) {
         'link13': false,
         'link14': false,
         'link15': false,
-        'link16': false,
+        'link16': false
     };
 
     function successCheckLab(result) {
@@ -329,7 +329,7 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[1]).style.display = "none";
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
-                student_answer3.idNum[2]  = true
+                student_answer3.idNum[2] = true;
                
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);

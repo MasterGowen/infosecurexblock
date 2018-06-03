@@ -168,7 +168,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 return sum(correctness_list) / float(len(correctness_list))
 
             elif self.lab_id == 3:
-               return 1
+                return 1
 
 
         def IsTheNumberSimple(n):
