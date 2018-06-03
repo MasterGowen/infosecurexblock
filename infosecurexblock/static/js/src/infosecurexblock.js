@@ -344,6 +344,7 @@ function InfoSecureXBlock(runtime, element) {
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
             }
+            //
             //console.log(student_answer3);
             //Start.checkAnswer(checkHandler, student_answer3);
            /* if (evt.id == "checkid2"){
