@@ -395,25 +395,13 @@ function InfoSecureXBlock(runtime, element) {
                 push3.push(document.getElementById(idNum[0].value));
                                 
             }
-            document.getElementById("lab3_links").value =push3;
-            
-            //console.log(student_answer3);
-            //Start.checkAnswer(checkHandler, student_answer3);
-           /* if (evt.id == "checkid2"){
-                
-                document.getElementById("lab3_links").value = mas;
-                var student_answer =
-                        {
-                            'mas': document.getElementById('lab3_links').value,
-                            'link' : document.getElementById(idNum[0]).textContent
-                        }
-                    Start.checkAnswer(checkHandler, student_answer);
-                
-                }*/
-               // Random();
+            document.getElementById("lab3_links").value = push3;
             
         }
         static onLab4(event){
+            var evt = event.target;
+            
+
         }
         static dragMouseDown(e) {
             var dragObject = {};
