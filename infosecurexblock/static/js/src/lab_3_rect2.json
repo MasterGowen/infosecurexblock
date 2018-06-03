@@ -14,12 +14,7 @@
             "class": "three",
             "placeholder": "Сохранённые ссылки",
             "id": "lab3_links"
-        },
-        "button":{
-            "type": "button",
-            "class": "submit btn-brand",
-            "color":"#000",
-            "id":"checkid2"
         }
+        
     }
 }

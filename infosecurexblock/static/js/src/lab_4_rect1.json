@@ -201,6 +201,13 @@
         "stroke": "#0075b4",
         "id": "14"
         },
+        "rectEvent1":{
+            "x": "100",
+            "y": "300",
+            "width": "200",
+            "height": "150",
+            "class":"rectEvent1"
+        },
         "but":{
         "type": "image",
         "x": "750",
@@ -215,7 +222,7 @@
                 "type": "rect",
                 "x": "150", 
                 "y": "30", 
-                "width": "750", 
+                "width": "750",    
                 "height": "750", 
                 "fill": "#f3faffef",
                 "stroke":"#0075b4",
