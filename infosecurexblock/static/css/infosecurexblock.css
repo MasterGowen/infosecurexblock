@@ -26,9 +26,9 @@ button.submit {
   
    }
    #lab3_links{
-       float: center;
+       float: right;
        width:400px;
-       height: 50px;
+       height: 30px;
    }
 #widget {
     /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
