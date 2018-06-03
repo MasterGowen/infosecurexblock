@@ -8,8 +8,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link1",
-        "id":"1"
+        "class":"link1 taskClose",
+        "id":"link1"
     },
     "link2":{
         "type":"text",
@@ -18,8 +18,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link2",
-        "id":"2"
+        "class":"link2 taskClose",
+        "id":"link2"
     },
     "link3":{
         "type":"text",
@@ -28,8 +28,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link3",
-        "id":"3"
+        "class":"link3 taskClose",
+        "id":"link3"
     },
     "link4":{
         "type":"text",
@@ -38,8 +38,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link4",
-        "id":"4"
+        "class":"link4 taskClose",
+        "id":"link3"
     },
     "link5":{
         "type":"text",
@@ -48,8 +48,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link5",
-        "id":"5"
+        "class":"link5 taskClose",
+        "id":"link5"
     },
     "link6":{
         "type":"text",
@@ -58,8 +58,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link6",
-        "id":"6"
+        "class":"link6 taskClose",
+        "id":"link6"
     },
     "link7":{
         "type":"text",
@@ -68,8 +68,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link7",
-        "id":"7"
+        "class":"link7 taskClose",
+        "id":"link7"
     },
     "link8":{
         "type":"text",
@@ -78,8 +78,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link8",
-        "id":"8"
+        "class":"link8 taskClose",
+        "id":"link8"
     },
     "link9":{
         "type":"text",
@@ -88,8 +88,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link9",
-        "id":"9"
+        "class":"link9 taskClose",
+        "id":"link9"
     },
     "link10":{
         "type":"text",
@@ -98,8 +98,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link10",
-        "id":"10"
+        "class":"link10 taskClose",
+        "id":"link10"
     },
     "link11":{
         "type":"text",
@@ -108,8 +108,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link11",
-        "id":"11"
+        "class":"link11 taskClose",
+        "id":"link11"
     },
     "link12":{
         "type":"text",
@@ -118,8 +118,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link12",
-        "id":"12"
+        "class":"link12 taskClose",
+        "id":"link12"
     },
     "link13":{
         "type":"text",
@@ -128,8 +128,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link13",
-        "id":"13"
+        "class":"link13 taskClose",
+        "id":"link13"
     },
     "link14":{
         "type":"text",
@@ -138,8 +138,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link14",
-        "id":"14"
+        "class":"link14 taskClose",
+        "id":"link14"
     },
     "link15":{
         "type":"text",
@@ -148,8 +148,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link15",
-        "id":"15"
+        "class":"link15 taskClose",
+        "id":"link15"
     },
     "link16":{
         "type":"text",
@@ -158,8 +158,8 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link16",
-        "id":"16"
+        "class":"link16 taskClose",
+        "id":"link16"
     },
     "Link1":{
         "type": "ellipse",
@@ -168,6 +168,7 @@
         "rx": "110", 
         "ry": "30",
         "fill":"white",
+        "class":"taskClose",
         "id": "Link1"
     },
     "Link2":{
@@ -177,6 +178,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link2"
     },
     "Link3":{
@@ -186,6 +188,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link3"
     },
     "Link4":{
@@ -195,6 +198,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link4"
     },
     "Link5":{
@@ -204,6 +208,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link5"
     },
     
@@ -214,6 +219,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link6"
     },
     
@@ -224,6 +230,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link7"
     },
     
@@ -234,6 +241,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link8"
     },
     
@@ -244,6 +252,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link9"
     },
     "Link10":{
@@ -253,6 +262,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link10"
     },
     
@@ -263,6 +273,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link11"
     },
     
@@ -273,6 +284,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link12"
     },
     
@@ -283,6 +295,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link13"
     },
     
@@ -293,6 +306,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link14"
     },
     
@@ -303,6 +317,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link15"
     },
     
@@ -313,6 +328,7 @@
         "rx": "110",
         "ry":"30",
         "fill": "white",
+        "class":"taskClose",
         "id":"Link16"
     },
         "but":{
