@@ -30,7 +30,8 @@ function InfoSecureXBlock(runtime, element) {
         'answerBlockUsers': false
     };
     var student_answer3 = {
-        'link': "0"
+        'link1': 0,
+        'link2': 0
     };
 
     function successCheckLab(result) {
@@ -314,11 +315,8 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[1]).style.display = "none";
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
-                student_answer3 =
-                {
-                    'link1' : document.querySelector(idNum[0]).getAttribute("id"),
-                    'link2' : document.querySelector(idNum[0]).getAttribute("id")
-                }
+                student_answer3.link1  = document.querySelector(idNum[0]).getAttribute("id")
+                //student_answer3.link2  = document.querySelector(idNum[0]).getAttribute("id")
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
             }
