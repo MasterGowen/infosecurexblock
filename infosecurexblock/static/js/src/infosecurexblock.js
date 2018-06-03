@@ -331,7 +331,7 @@ function InfoSecureXBlock(runtime, element) {
                     res.push(i);
                 }
                 console.log(res);
-                console.log(res[2]);                          
+                console.log(student_answer3.res);                          
                 console.log(student_answer3[0]);
                 student_answer3[0]  = true;
                 console.log(student_answer3[0]);
