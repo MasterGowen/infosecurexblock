@@ -196,7 +196,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     ]
                 return sum(correctness_list) / float(len(correctness_list)-6)
             elif self.lab_id == 4:
-                editable_fields = ('quest_text')
+                self.editable_fields = ('quest_text')
 
         def IsTheNumberSimple(n):
             if n < 2:
