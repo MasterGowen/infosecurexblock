@@ -45,31 +45,39 @@ function InfoSecureXBlock(runtime, element) {
         'link13': false,
         'link14': false,
         'link15': false,
-        'link16': false
+        'link16': false,
     };
 
     function successCheckLab(result) {
         if (result.result != "fail")
         switch(result.lab_id){
             case 1:{
+                Start.connectionLabs(rect1HandlerUrl, 1);
+                Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab1);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
             case 2:{
+                Start.connectionLabs(rect1HandlerUrl, 1);
+                Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('mousedown', Start.dragMouseDown);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click', Start.taskBlock);
                 break;
             }
             case 3:{
+                setTimeout(Start.connectionLabs3(rect1HandlerUrl, 1),5000);
+                Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab3);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
             }
             case 4:{
+                Start.connectionLabs(rect1HandlerUrl, 1);
+                Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab4);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
@@ -120,10 +128,10 @@ function InfoSecureXBlock(runtime, element) {
             })()
         }
 
-        connectionLabs(handler, labId) {
+        static connectionLabs(handler, labId) {
             var self = this;
             //console.log(lab_id);
-            //console.log(result.lab_id);
+            console.log(result.lab_id);
             function success(handler) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
@@ -150,7 +158,7 @@ function InfoSecureXBlock(runtime, element) {
         static connectionLabs3(handler, labId) {
             var self = this;
             //console.log(lab_id);
-            //console.log(result.lab_id);
+            console.log(result.lab_id);
             function success(handler) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
@@ -286,7 +294,11 @@ function InfoSecureXBlock(runtime, element) {
         static getRandomInt(min, max){
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-
+        static func(id,ID){
+            document.getElementById(id).style.display = "block";
+            document.getElementById(ID).style.display = "block";
+        }
+        
         static onLab3(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
@@ -294,10 +306,27 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             var mas = new Array();
             
-            //var random = this.getRandomInt(1,16);
+            var random = this.getRandomInt(1,16);
            var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
            var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
-            //setTimeout(func, 1000);
+            setTimeout(func("link1", "Link1"), 5000);
+            setTimeout(func("link2", "Link2"), 5000);
+            setTimeout(func("link3", "Link3"), 5000);
+            setTimeout(func("link4", "Link4"), 5000);
+            setTimeout(func("link5", "Link5"), 5000);
+            setTimeout(func("link6", "Link6"), 5000);
+            setTimeout(func("link7", "Link7"), 5000);
+            setTimeout(func("link8", "Link8"), 5000);
+            setTimeout(func("link9", "Link9"), 5000);
+            setTimeout(func("link10", "Link10"), 5000);
+            setTimeout(func("link11", "Link11"), 5000);
+            setTimeout(func("link12", "Link12"), 5000);
+            setTimeout(func("link13", "Link13"), 5000);
+            setTimeout(func("link14", "Link14"), 5000);
+            setTimeout(func("link15", "Link15"), 5000);
+            setTimeout(func("link16", "Link16"), 5000);           
+
+
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate([".link1","Link1","link1"]);
             evt.id == "Link2" && linkFixate([".link2","Link2",,"link2"]);
@@ -315,13 +344,13 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate([".link14","Link14","link14"]);
             evt.id == "Link15" && linkFixate([".link15","Link15","link15"]);
             evt.id == "Link16" && linkFixate([".link16","Link16","link16"]);
-            document.getElementById("lab3_links").value ="ddd";
+            document.getElementById("lab3_links").value =mas;
             function linkFixate(idNum){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
-                student_answer3.idNum[2] = true;
+                student_answer3.idNum[2]  = true
                
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
@@ -684,8 +713,6 @@ function InfoSecureXBlock(runtime, element) {
     class Labs extends Start {
         constructor() {
             super()
-            this.connectionLabs(rect1HandlerUrl, 1);
-            this.connectionLabs(rect1HandlerUrl, 2);
             //console.log("lab1");
             //document.getElementById("widget").addEventListener('click',Start.on);
             this.checkAnswerLab(checkHandlerLab,test);
