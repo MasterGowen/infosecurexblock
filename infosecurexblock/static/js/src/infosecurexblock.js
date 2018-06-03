@@ -294,7 +294,7 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             var mas = new Array();
             
-            var random = this.getRandomInt(1,16);
+            //var random = this.getRandomInt(1,16);
            var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
            var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
             //setTimeout(func, 1000);
