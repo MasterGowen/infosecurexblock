@@ -168,18 +168,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 return sum(correctness_list) / float(len(correctness_list))
 
             elif self.lab_id == 3:
-                correctness_list = [data["link1"],
-                                    data["link4"],
-                                    data["link5"],
-                                    data["link8"],
-                                    data["link9"],
-                                    data["link11"],
-                                    data["link13"],
-                                    data["link14"],
-                                    data["link15"],
-                                    data["link16"]
-                                    ]
-                return sum(correctness_list) / float(len(correctness_list))
+               return 1
 
 
         def IsTheNumberSimple(n):
