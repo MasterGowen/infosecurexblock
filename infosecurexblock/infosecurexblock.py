@@ -185,7 +185,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     data["link15"],
                                     data["link16"],
                                     ]
-                return sum(correctness_list) / 10)
+                return sum(correctness_list) / 10
 
 
         def IsTheNumberSimple(n):
