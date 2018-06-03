@@ -357,7 +357,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate([".link14","Link14","link14"]);
             evt.id == "Link15" && linkFixate([".link15","Link15","link15"]);
             evt.id == "Link16" && linkFixate([".link16","Link16","link16"]);
-            document.getElementById("lab3_links").value =mas;
+          
             function linkFixate(idNum,student_answer3){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
@@ -366,17 +366,18 @@ function InfoSecureXBlock(runtime, element) {
                 var res = [];
                 for (var i in student_answer3) {
                     res.push(i);
-                    console.log(student_answer3.res[i])
                 }
                 //
                 console.log(res);
                 //console.log(student_answer3.res[1]);                          
                 console.log(student_answer3[idNum[2]]);
-                student_answer3[0]  = true;
-                console.log(student_answer3[0]);
+                student_answer3[link1]  = true;
+                console.log(student_answer3[link1]);
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
+                document.getElementById("lab3_links").value =res;
             }
+            
             //console.log(student_answer3);
             //Start.checkAnswer(checkHandler, student_answer3);
            /* if (evt.id == "checkid2"){

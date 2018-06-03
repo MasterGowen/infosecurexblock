@@ -12,7 +12,7 @@
         "four":{
             "type": "input",
             "class": "three",
-            "placeholder": "Место для ссылок",
+            "placeholder": "Сохранённые ссылки",
             "id": "lab3_links"
         },
         "button":{
