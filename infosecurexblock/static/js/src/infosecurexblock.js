@@ -304,7 +304,7 @@ function InfoSecureXBlock(runtime, element) {
             setTimeout(Start.active(["link16", "Link16"]), 34000); */
 
            // document.getElementById('random').display.style = "block";
-            evt.id == "Link1" && linkFixate([".link1","Link1",link1]);
+            evt.id == "Link1" && linkFixate([".link1","Link1"],student_answer3);
             evt.id == "Link2" && linkFixate([".link2","Link2","link2"]);
             evt.id == "Link3" && linkFixate([".link3","Link3","link3"]);
             evt.id == "Link4" && linkFixate([".link4","Link4","link4"]);
@@ -321,15 +321,14 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link15" && linkFixate([".link15","Link15","link15"]);
             evt.id == "Link16" && linkFixate([".link16","Link16","link16"]);
             document.getElementById("lab3_links").value =mas;
-            function linkFixate(idNum){
+            function linkFixate(idNum,student_answer3){
                 document.querySelector(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
                 //document.getElementById(idNum).value;
                 // mas.push(document.getElementById(idNum[0]).value);
-                console.log(student_answer3.idNum[2]);
-                student_answer3.idNum[2]  = true;
-                console.log(student_answer3.idNum[2]);
-               
+                console.log(student_answer3[0]);
+                student_answer3[0]  = true;
+                console.log(student_answer3[0]);
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
             }
