@@ -310,10 +310,18 @@ function InfoSecureXBlock(runtime, element) {
            var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
            var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
             //Start.active(["link1", "Link1","link2", "Link2","link3", "Link3","link4", "Link4","link5", "Link5","link6", "Link6"]);
-            setTimeout(testDelay, 1000);
-            setTimeout(testDelay1, 4000);
-            setTimeout(testDelay2, 6000);
-            setTimeout(testDelay3, 8000);
+            setTimeout(()=>{
+                Start.active(["link1", "Link1"]);
+            }, 1000);
+            setTimeout(()=> {
+                Start.active(["link2", "Link2"]);
+            }, 4000);
+            setTimeout(()=>{
+                Start.active(["link3", "Link3"]);
+            }, 6000);
+            setTimeout(()=>{
+                Start.active(["link4", "Link4"]);
+            }, 8000);
 /*             setTimeout(Start.active(["link6", "Link6"]), 10000);
             setTimeout(Start.active(["link7", "Link7"]), 12000);
             setTimeout(Start.active(["link8", "Link8"]), 14000);
@@ -325,19 +333,6 @@ function InfoSecureXBlock(runtime, element) {
             setTimeout(Start.active(["link14", "Link14"]), 28000);
             setTimeout(Start.active(["link15", "Link15"]), 30000);
             setTimeout(Start.active(["link16", "Link16"]), 34000); */
-            
-            function testDelay() {
-                Start.active(["link1", "Link1"]);
-            }
-            function testDelay1() {
-                Start.active(["link2", "Link2"]);
-            }
-            function testDelay2() {
-                Start.active(["link3", "Link3"]);
-            }
-            function testDelay3() {
-                Start.active(["link4", "Link4"]);
-            }
 
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate([".link1","Link1","link1"]);
