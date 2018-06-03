@@ -275,7 +275,6 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
-            var mas = new Array();
             
           //  var random = this.getRandomInt(1,16);
            var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
@@ -339,7 +338,7 @@ function InfoSecureXBlock(runtime, element) {
             setTimeout(Start.active(["link14", "Link14"]), 28000);
             setTimeout(Start.active(["link15", "Link15"]), 30000);
             setTimeout(Start.active(["link16", "Link16"]), 34000); */
-
+            var push3 =[];
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate([".link1","Link1","link1"],student_answer3);
             evt.id == "Link2" && linkFixate([".link2","Link2","link2"]);
@@ -371,12 +370,17 @@ function InfoSecureXBlock(runtime, element) {
                 console.log(res);
                 //console.log(student_answer3.res[1]);                          
                 console.log(student_answer3[idNum[2]]);
-                student_answer3[link1]  = true;
-                console.log(student_answer3[link1]);
+                student_answer3[idNum[2]] = true;
+                student_answer3.link1  = true;
+                student_answer3.link2  = true;
+                student_answer3.link3  = true;
+                //console.log(student_answer3.link1);
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
-                document.getElementById("lab3_links").value =res;
+                push3.push(document.getElementById(idNum[0].value));
+                                
             }
+            document.getElementById("lab3_links").value =push3;
             
             //console.log(student_answer3);
             //Start.checkAnswer(checkHandler, student_answer3);
