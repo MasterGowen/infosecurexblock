@@ -155,36 +155,6 @@ function InfoSecureXBlock(runtime, element) {
             })()
 
         }
-        static connectionLabs3(handler, labId) {
-            var self = this;
-            //console.log(lab_id);
-           // console.log(result.lab_id);
-            function success(handler) {
-                if (handler.Rect1) {
-                    handler.amount = Object.keys(handler.Rect1).length;
-                    setTimeout(self.addElementSVG(handler.amount, handler.Rect1),5000);                   
-                }
-                if (handler.Rect2) {
-                    handler.amount = Object.keys(handler.Rect2).length;
-                    self.addElement(handler.amount, handler.Rect2);
-                    
-                }
-            }
-
-            (function () {
-                $.ajax({
-                    type: "POST",
-                    url: handler,
-                    data: {"lab_id": labId},
-                    success: success
-                });
-
-            })()
-
-        }
-        static lab3Load(result){
-            setTimeout(self.addElementSVG(handler.amount, handler.Rect1),1000);
-        }
 
         static active(idNum) {
             for(var k in idNum){
@@ -309,7 +279,6 @@ function InfoSecureXBlock(runtime, element) {
           //  var random = this.getRandomInt(1,16);
            var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
            var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
-            //Start.active(["link1", "Link1","link2", "Link2","link3", "Link3","link4", "Link4","link5", "Link5","link6", "Link6"]);
             setTimeout(()=>{
                 Start.active(["link1", "Link1"]);
             }, 1000);
@@ -357,6 +326,8 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[1]).style.display = "none";
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
+               console.log(idNum[2]);
+               console.log(student_answer3.idNum[2]);
                 student_answer3.idNum[2]  = true
                
                 console.log(student_answer3);
