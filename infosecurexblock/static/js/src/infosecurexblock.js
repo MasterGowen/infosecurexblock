@@ -306,25 +306,25 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             var mas = new Array();
             
-            var random = this.getRandomInt(1,16);
+          //  var random = this.getRandomInt(1,16);
            var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
            var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
-            setTimeout(func("link1", "Link1"), 5000);
-            setTimeout(func("link2", "Link2"), 5000);
-            setTimeout(func("link3", "Link3"), 5000);
-            setTimeout(func("link4", "Link4"), 5000);
-            setTimeout(func("link5", "Link5"), 5000);
-            setTimeout(func("link6", "Link6"), 5000);
-            setTimeout(func("link7", "Link7"), 5000);
-            setTimeout(func("link8", "Link8"), 5000);
-            setTimeout(func("link9", "Link9"), 5000);
-            setTimeout(func("link10", "Link10"), 5000);
-            setTimeout(func("link11", "Link11"), 5000);
-            setTimeout(func("link12", "Link12"), 5000);
-            setTimeout(func("link13", "Link13"), 5000);
-            setTimeout(func("link14", "Link14"), 5000);
-            setTimeout(func("link15", "Link15"), 5000);
-            setTimeout(func("link16", "Link16"), 5000);           
+            setTimeout(Start.func("link1", "Link1"), 5000);
+            setTimeout(Start.func("link2", "Link2"), 5000);
+            setTimeout(Start.func("link3", "Link3"), 5000);
+            setTimeout(Start.func("link4", "Link4"), 5000);
+            setTimeout(Start.func("link5", "Link5"), 5000);
+            setTimeout(Start.func("link6", "Link6"), 5000);
+            setTimeout(Start.func("link7", "Link7"), 5000);
+            setTimeout(Start.func("link8", "Link8"), 5000);
+            setTimeout(Start.func("link9", "Link9"), 5000);
+            setTimeout(Start.func("link10", "Link10"), 5000);
+            setTimeout(Start.func("link11", "Link11"), 5000);
+            setTimeout(Start.func("link12", "Link12"), 5000);
+            setTimeout(Start.func("link13", "Link13"), 5000);
+            setTimeout(Start.func("link14", "Link14"), 5000);
+            setTimeout(Start.func("link15", "Link15"), 5000);
+            setTimeout(Start.func("link16", "Link16"), 5000);           
 
 
            // document.getElementById('random').display.style = "block";
