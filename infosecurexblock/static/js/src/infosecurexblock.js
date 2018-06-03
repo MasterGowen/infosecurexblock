@@ -29,9 +29,6 @@ function InfoSecureXBlock(runtime, element) {
         'answerBlockAdmin': false,
         'answerBlockUsers': false
     };
-    var student_answer3 = {
-        'link': 0
-    };
 
     function successCheckLab(result) {
         if (result.result != "fail")
@@ -284,7 +281,7 @@ function InfoSecureXBlock(runtime, element) {
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
-             var mas_count = 0;
+            var mas_count = 0;
             var mas = new Array();
             
             var random = this.getRandomInt(1,16);
@@ -296,7 +293,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link2" && linkFixate([".link2","Link2"])&& l2;
             evt.id == "Link3" && linkFixate([".link3","Link3"]) &&l3;
             evt.id == "Link4" && linkFixate([".link4","Link4"])&&l4;
-            evt.id == "Link5" && linkFixate([".link5","Link5"]&&l5);
+            evt.id == "Link5" && linkFixate([".link5","Link5"]);
             evt.id == "Link6" && linkFixate([".link6","Link6"]);
             evt.id == "Link7" && linkFixate([".link7","Link7"]);
             evt.id == "Link8" && linkFixate([".link8","Link8"]);
@@ -314,11 +311,19 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[1]).style.display = "none";
                  //document.getElementById(idNum).value;
                // mas.push(document.getElementById(idNum[0]).value);
-                 student_answer3 =
+                var student_answer =
                 {
                     
-                    'link1' : document.querySelector(idNum[0]).getAttribute("id")
-            
+                    'link1' : document.querySelector(idNum[0]).getAttribute(l1),
+                    'link2' : document.querySelector(idNum[0]).getAttribute(l2),
+                    'link3' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link4' : document.querySelector(idNum[0]).getAttribute(l4),
+                    'link5' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link6' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link7' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link8' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link9' : document.querySelector(idNum[0]).getAttribute("id"),
+                    'link10' : document.querySelector(idNum[0]).getAttribute("id")
                 }
                 console.log(student_answer);
                 Start.checkAnswer(checkHandler, student_answer);
