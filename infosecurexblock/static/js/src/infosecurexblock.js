@@ -326,13 +326,19 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[1]).style.display = "none";
                 //document.getElementById(idNum).value;
                 // mas.push(document.getElementById(idNum[0]).value);
+                var res = [];
+                for (var i in student_answer3) {
+                    res.push(i);
+                }
+                console.log(res);
+                console.log(res[2]);                          
                 console.log(student_answer3[0]);
                 student_answer3[0]  = true;
                 console.log(student_answer3[0]);
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
             }
-            console.log(student_answer3);
+            //console.log(student_answer3);
             //Start.checkAnswer(checkHandler, student_answer3);
            /* if (evt.id == "checkid2"){
                 
