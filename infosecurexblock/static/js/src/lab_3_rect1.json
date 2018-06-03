@@ -39,7 +39,7 @@
         "fontFamily":"Roboto",
         "fill": "blue",
         "class":"link4 taskClose",
-        "id":"link3"
+        "id":"link4"
     },
     "link5":{
         "type":"text",
