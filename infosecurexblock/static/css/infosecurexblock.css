@@ -26,7 +26,7 @@ button.submit {
   
    }
    #lab3_links{
-       float: right;
+       float: center;
        width:400px;
        height: 30px;
    }

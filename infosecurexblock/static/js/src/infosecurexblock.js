@@ -284,10 +284,10 @@ function InfoSecureXBlock(runtime, element) {
             }, 1000);
             setTimeout(()=>{
                 Start.deactive(["link1", "Link1"]);
-            }, 3000);
+            }, 4000);
             setTimeout(()=> {
                 Start.active(["link2", "Link2"]);
-            }, 4000);
+            }, 5000);
             setTimeout(()=>{
                 Start.deactive(["link2", "Link2"]);
             }, 6000);
