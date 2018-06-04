@@ -402,9 +402,9 @@ function InfoSecureXBlock(runtime, element) {
                 var res = [];
                 for (var i in student_answer3) {
                     res.push(i);
-                    document.getElementById("lab3_links").value = res;
+                 
                 }
-                
+                document.getElementById("lab3_links").value = "aa";
                 console.log(res);
                 //console.log(student_answer3.res[1]);                          
                 console.log(student_answer3[idNum[0]]);
