@@ -24,7 +24,7 @@
     "link3":{
         "type":"text",
         "x": "310",
-        "y": "720",
+        "y": "620",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
@@ -184,7 +184,7 @@
     "Link3":{
         "type":"ellipse",
         "cx": "380",
-        "cy": "720",
+        "cy": "620",
         "rx": "110",
         "ry":"30",
         "fill": "white",
