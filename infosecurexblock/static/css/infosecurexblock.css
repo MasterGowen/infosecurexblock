@@ -106,7 +106,7 @@ object {
   transition-delay: 0s, 1s;
   
 }
-#Link1:hover{fill:lightblue; opacity:0.2;}
+#Link1:hover, #Link2:hover, #Link3:hover, #Link4:hover, #Link5:hover, #Link6:hover, #Link7:hover, #Link8:hover, #Link9:hover, #Link10:hover, #Link11:hover, #Link12:hover, #Link13:hover, #Link14:hover, #Link15:hover, #Link16:hover{fill:lightblue; opacity:0.2;}
 #comp1 path {
     stroke: rgba(0, 0, 0, 0.5);
     stroke-width: 20; }
