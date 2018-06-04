@@ -397,11 +397,12 @@ function InfoSecureXBlock(runtime, element) {
             function linkFixate(idNum,student_answer3){
                 document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                //document.getElementById(idNum).value;
+                
                 // mas.push(document.getElementById(idNum[0]).value);
                 var res = [];
                 for (var i in student_answer3) {
                     res.push(i);
+                    document.getElementById("lab3_links").value = res;
                 }
                 
                 console.log(res);
