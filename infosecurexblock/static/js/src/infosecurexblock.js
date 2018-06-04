@@ -433,7 +433,7 @@ function InfoSecureXBlock(runtime, element) {
                 push3.push(document.getElementById(idNum[0].value));
                                 
             }
-            document.getElementById("lab3_links").value = push3;
+            //document.getElementById("lab3_links").value = push3;
             
         }
         static onLab4(event){
