@@ -169,7 +169,6 @@
         "ry": "30",
         "fill":"white",
         "class":"taskClose",
-        "class": "Link1",
         "id": "Link1"
     },
     "Link2":{
@@ -180,7 +179,6 @@
         "ry":"30",
         "fill": "white",
         "class":"taskClose",
-        "class": "Link2",
         "id":"Link2"
     },
     "Link3":{
