@@ -21,12 +21,12 @@ button.submit {
     text-decoration:underline; z-index: 10;
 }
 .link1:hover, .link2:hover, .link3:hover, .link4:hover, .link5:hover, .link6:hover, .link7:hover, .link8:hover, .link9:hover, .link10:hover, .link11:hover, .link12:hover, .link13:hover, .link14:hover, .link15:hover, .link16:hover {
-    color: #ffe; /* Цвет текста активного пункта */
-    background-color: yellow; /* Цвет фона активного пункта */
+    color: blueviolet; /* Цвет текста активного пункта */
+    background-color: white; /* Цвет фона активного пункта */
   
    }
    #lab3_links{
-       float: center;
+       margin-left: 300px;
        width:400px;
        height: 30px;
    }
