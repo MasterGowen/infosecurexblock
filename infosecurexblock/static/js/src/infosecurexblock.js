@@ -423,7 +423,7 @@ function InfoSecureXBlock(runtime, element) {
                     idNum[0]=="link15" ||
                     idNum[0]=="link16" ){
                             student_answer3[idNum[0]] = true;
-                }
+                }//
                 else if (idNum[0]=="link2" || idNum[0]=="link6" || idNum[0]=="link10"
                 || idNum[0]=="link12" || idNum[0]=="link3" ||
                idNum[0]=="link7")
