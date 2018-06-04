@@ -105,7 +105,7 @@ object {
   transition-duration: 1s, 0s;
   transition-delay: 0s, 1s;
 }
-.taskClose:hover{fill:blue;}
+.Link1:hover{fill:blue;}
   
 #comp1 path {
     stroke: rgba(0, 0, 0, 0.5);
