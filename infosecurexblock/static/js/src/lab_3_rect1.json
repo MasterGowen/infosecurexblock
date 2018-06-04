@@ -33,7 +33,7 @@
     },
     "link4":{
         "type":"text",
-        "x": "110",
+        "x": "100",
         "y": "320",
         "fontSize":"20",
         "fontFamily":"Roboto",

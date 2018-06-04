@@ -393,7 +393,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate(["link14","Link14"],student_answer3);
             evt.id == "Link15" && linkFixate(["link15","Link15"],student_answer3);
             evt.id == "Link16" && linkFixate(["link16","Link16"],student_answer3);
-          
+            document.getElementById("lab3_links").innerHTML = "aa";
             function linkFixate(idNum,student_answer3){
                 document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
@@ -404,7 +404,7 @@ function InfoSecureXBlock(runtime, element) {
                     res.push(i);
                  
                 }
-                document.getElementById("lab3_links").value = "aa";
+                
                 console.log(res);
                 //console.log(student_answer3.res[1]);                          
                 console.log(student_answer3[idNum[0]]);
