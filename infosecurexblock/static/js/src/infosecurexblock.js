@@ -276,7 +276,6 @@ function InfoSecureXBlock(runtime, element) {
             var student_answer = {};
             var mas_count = 0;
             
-          //  var random = this.getRandomInt(1,16);
            var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
            var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
             setTimeout(()=>{
@@ -393,7 +392,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate(["link14","Link14"],student_answer3);
             evt.id == "Link15" && linkFixate(["link15","Link15"],student_answer3);
             evt.id == "Link16" && linkFixate(["link16","Link16"],student_answer3);
-            document.getElementById("lab3_links").innerHTML = mas;
+            document.getElementById("lab3_links").value = mas;
             function linkFixate(idNum,student_answer3){
                 document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
@@ -611,6 +610,7 @@ function InfoSecureXBlock(runtime, element) {
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
             for (var k in attributes) {
+                
                 if ((name == "text") && (attributes[k] == "ip1")) {
                     this.element.innerHTML = '192.168.0.3'
                 }
