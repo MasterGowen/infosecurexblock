@@ -393,11 +393,11 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link14" && linkFixate(["link14","Link14"],student_answer3);
             evt.id == "Link15" && linkFixate(["link15","Link15"],student_answer3);
             evt.id == "Link16" && linkFixate(["link16","Link16"],student_answer3);
-            document.getElementById("lab3_links").innerHTML = "aa";
+            
             function linkFixate(idNum,student_answer3){
                 document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                
+                document.getElementById("lab3_links").innerHTML = "aa";
                 // mas.push(document.getElementById(idNum[0]).value);
                 var res = [];
                 for (var i in student_answer3) {
