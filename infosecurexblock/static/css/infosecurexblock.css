@@ -25,6 +25,7 @@ button.submit {
     background-color: white; /* Цвет фона активного пункта */
   
    }
+
    .link1:hover{color:white;}
    #lab3_links{
        margin-left: 200px;
@@ -104,6 +105,7 @@ object {
   transition-duration: 1s, 0s;
   transition-delay: 0s, 1s;
 }
+.taskClose:hover{fill:blue;}
   
 #comp1 path {
     stroke: rgba(0, 0, 0, 0.5);
