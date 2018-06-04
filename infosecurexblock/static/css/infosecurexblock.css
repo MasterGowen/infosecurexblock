@@ -104,9 +104,9 @@ object {
   transition-property: opacity, visibility;
   transition-duration: 1s, 0s;
   transition-delay: 0s, 1s;
-  fill:lightblue;
+  
 }
-
+.taskClose:hover{fill:lightblue; opacity:0.2;}
 #comp1 path {
     stroke: rgba(0, 0, 0, 0.5);
     stroke-width: 20; }
