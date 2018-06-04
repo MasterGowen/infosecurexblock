@@ -285,7 +285,12 @@ function InfoSecureXBlock(runtime, element) {
             setTimeout(()=>{
                 Start.deactive(["link1", "Link1"]);
             }, 4000);
-           
+            setTimeout(()=> {
+                Start.active(["link2", "Link2"]);
+            }, 5000);
+            setTimeout(()=>{
+                Start.deactive(["link2", "Link2"]);
+            }, 8000);
             var push3 =[];
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
