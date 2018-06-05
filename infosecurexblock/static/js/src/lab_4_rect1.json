@@ -449,14 +449,14 @@
                 "id":"taskTextID"
             },
             "arrow":{
-                    "type": "image",
-                    "x": "165",
-                    "y": "40",
-                    "width": "20",
-                    "height": "20",
-                    "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
-                    "id": "arrowid"
-                    }
+                "type": "image",
+                "x": "165",
+                "y": "40",
+                "width": "20",
+                "height": "20",
+                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
+                "id": "arrowid"
+                }
         },
         "Rect3":{
             "textEvent":{
