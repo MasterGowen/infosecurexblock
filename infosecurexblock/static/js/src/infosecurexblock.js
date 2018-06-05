@@ -145,6 +145,10 @@ function InfoSecureXBlock(runtime, element) {
                     handler.amount = Object.keys(handler.Rect2).length;
                     self.addElement(handler.amount, handler.Rect2);            
                 }
+                if (handler.Rect3) {
+                    handler.amount = Object.keys(handler.Rect3).length;
+                    self.addElement(handler.amount, handler.Rect3);            
+                }
             }
 
             (function () {
