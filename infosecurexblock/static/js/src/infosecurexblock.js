@@ -142,9 +142,11 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 if (handler.Rect2) {
                     handler.amount = Object.keys(handler.Rect2).length;
-                    self.addElement(handler.amount, handler.Rect2);
-                    
+                    self.addElement(handler.amount, handler.Rect2);            
                 }
+                if (handler.Rect3) {
+                    handler.amount = Object.keys(handler.Rect3).length;
+                    self.addElementSVG(handler.amount, handler.Rect3);
             }
 
             (function () {
@@ -720,11 +722,20 @@ function InfoSecureXBlock(runtime, element) {
             };
             }
         } 
+        addElementTextSVG(amount, jsonObj) {
+            //console.log(amount,jsonObj);
+            for (amount in jsonObj) {
+                //console.log(jsonObj);
+                console.log(jsonObj[amount].idnum);
+                document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
+                }
+            }
         createElementSVG(name, attributes) {
             this.NS = "http://www.w3.org/2000/svg";
             this.NS1 = "http://www.w3.org/1999/xlink";
             this.element = document.createElementNS(this.NS, name);
             if (name == "svg") {
+                this.element.setAttributeNS(null, 'id', 'star')
                 document.getElementById("widget").appendChild(this.element);
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
