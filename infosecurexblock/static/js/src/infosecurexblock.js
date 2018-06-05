@@ -147,7 +147,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
-                    self.addElement(handler.amount, handler.Rect3);            
+                    self.addElementTextSVG(handler.amount, handler.Rect3);            
                 }
             }
 
