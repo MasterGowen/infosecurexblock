@@ -8,7 +8,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link1 taskClose",
+        "class": "taskClose",
         "id":"link1"
     },
     "link2":{
@@ -18,7 +18,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link2 taskClose",
+        "class":"taskClose",
         "id":"link2"
     },
     "link3":{
@@ -28,7 +28,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link3 taskClose",
+        "class":"taskClose",
         "id":"link3"
     },
     "link4":{
@@ -38,7 +38,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link4 taskClose",
+        "class":"taskClose",
         "id":"link4"
     },
     "link5":{
@@ -48,7 +48,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link5 taskClose",
+        "class":"taskClose",
         "id":"link5"
     },
     "link6":{
@@ -58,7 +58,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link6 taskClose",
+        "class":"taskClose",
         "id":"link6"
     },
     "link7":{
@@ -68,7 +68,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link7 taskClose",
+        "class":"taskClose",
         "id":"link7"
     },
     "link8":{
@@ -78,7 +78,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link8 taskClose",
+        "class":"taskClose",
         "id":"link8"
     },
     "link9":{
@@ -88,7 +88,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link9 taskClose",
+        "class":"taskClose",
         "id":"link9"
     },
     "link10":{
@@ -98,7 +98,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link10 taskClose",
+        "class":"taskClose",
         "id":"link10"
     },
     "link11":{
@@ -108,7 +108,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link11 taskClose",
+        "class":"taskClose",
         "id":"link11"
     },
     "link12":{
@@ -118,7 +118,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link12 taskClose",
+        "class":"taskClose",
         "id":"link12"
     },
     "link13":{
@@ -128,7 +128,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link13 taskClose",
+        "class":"taskClose",
         "id":"link13"
     },
     "link14":{
@@ -138,7 +138,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link14 taskClose",
+        "class":"taskClose",
         "id":"link14"
     },
     "link15":{
@@ -148,7 +148,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link15 taskClose",
+        "class":"taskClose",
         "id":"link15"
     },
     "link16":{
@@ -158,7 +158,7 @@
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
-        "class":"link16 taskClose",
+        "class":"taskClose",
         "id":"link16"
     },
     "Link1":{
