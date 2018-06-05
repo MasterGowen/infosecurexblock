@@ -357,25 +357,25 @@ function InfoSecureXBlock(runtime, element) {
             }, 63000);
             setTimeout(()=>{
                 Start.deactive2(["link13", "Link13"]);
-            }, 64000);
-            setTimeout(()=>{
-                Start.active(["link14", "Link14"]);
             }, 66000);
             setTimeout(()=>{
-                Start.deactive2(["link14", "Link14"]);
-            }, 69000);
+                Start.active(["link14", "Link14"]);
+            }, 68000);
             setTimeout(()=>{
-                Start.active(["link15", "Link15"]);
+                Start.deactive2(["link14", "Link14"]);
             }, 71000);
             setTimeout(()=>{
+                Start.active(["link15", "Link15"]);
+            }, 73000);
+            setTimeout(()=>{
                 Start.deactive2(["link15", "Link15"]);
-            }, 74000);
+            }, 77000);
             setTimeout(()=>{
                 Start.active(["link16", "Link16"]);
-            }, 76000);
+            }, 79000);
             setTimeout(()=>{
                 Start.deactive2(["link16", "Link16"]);
-            }, 79000);
+            }, 82000);
             var push3 =[]; var mas = [];
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
