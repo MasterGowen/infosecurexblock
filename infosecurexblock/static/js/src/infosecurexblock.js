@@ -290,8 +290,8 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             
             var t= 3000;
-            Time3Lab(t, ["link1","Link1"]);
-            Time3Lab(t, ["link2","Link2"]);
+            Time3Lab(t, ["link1","Link1"]);t+=3000;
+            Time3Lab(t, ["link2","Link2"]);t+=300;
             Time3Lab(t, ["link3","Link2"]);
          /*   setTimeout(()=>{
                 Start.active(["link1", "Link1"]);
