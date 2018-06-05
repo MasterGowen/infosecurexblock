@@ -470,7 +470,7 @@ function InfoSecureXBlock(runtime, element) {
         //Lab 4
         static onLab4(event){
             var evt = event.target;
-            if(evt.id=='butStart' || evt.id=='butStartText'){
+            if(evt.id=='butStart' || evt.id=='butStartText' || evt.id=='butText'){
                 Start.deactive(['butStart','butStartText']);
                 setTimeout(()=> {
                     Start.active(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
