@@ -280,6 +280,7 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
+            
             setTimeout(()=>{
                 Start.active(["link1", "Link1"]);
             }, 3000);
@@ -437,7 +438,7 @@ function InfoSecureXBlock(runtime, element) {
                 console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
                 push3.push(document.getElementById(idNum[0].value));
-                                
+                push3.push(document.getElementById(idNum[1].value));              
             }
             //document.getElementById("lab3_links").value = push3;
             
