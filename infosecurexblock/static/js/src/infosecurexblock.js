@@ -113,9 +113,18 @@ function InfoSecureXBlock(runtime, element) {
 
         static taskBlock(event) {
             var evt = event.target;
-                evt.id == 'task' && Start.active(['taskId','arrowid','taskTextID']);
-                evt.id == 'taskId' && Start.deactive(['taskId','arrowid','taskTextID']);
-                evt.id == 'arrowid' && Start.deactive(['taskId','arrowid','taskTextID']);
+            if(evt.id == 'task'){
+                Start.active(["taskId","taskTextID","arrowid"]);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5']);
+            }
+            if(evt.id == 'taskId'){
+                Start.deactive(["taskId","taskTextID","arrowid"]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5']);
+            }
+            if(evt.id == 'arrowid'){
+                Start.deactive(["taskId","taskTextID","arrowid"]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5']);
+            }
         }
 
         checkAnswerLab(checkHandlerLab,test) {
@@ -715,10 +724,10 @@ function InfoSecureXBlock(runtime, element) {
             }
         } 
         addElementTextSVG(amount, jsonObj) {
-            console.log(amount,jsonObj);
+            //console.log(amount,jsonObj);
             for (amount in jsonObj) {
                 //console.log(jsonObj);
-                console.log(jsonObj[amount].idnum);
+                //console.log(jsonObj[amount].idnum);
                 document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                 }
             }
@@ -732,22 +741,6 @@ function InfoSecureXBlock(runtime, element) {
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
             for (var k in attributes) {
-                
-                if ((name == "text") && (attributes[k] == "ip1")) {
-                    this.element.innerHTML = '192.168.0.3'
-                }
-                if ((name == "text") && (attributes[k] == "ip2")) {
-                    this.element.innerHTML = '192.168.0.4'
-                }
-                if ((name == "text") && (attributes[k] == "ip3")) {
-                    this.element.innerHTML = '192.168.0.5'
-                }
-                if((name=="text")&&(attributes[k]=="ip4")){
-                    this.element.innerHTML = '192.168.0.2'
-                }
-                if((name=="text")&&(attributes[k]=="ip5")){
-                    this.element.innerHTML = '192.168.0.6'
-                }
                 if((name=="text")&&(attributes[k]=="redact")){
                     this.element.innerHTML = 'Редакторы'
                 }
