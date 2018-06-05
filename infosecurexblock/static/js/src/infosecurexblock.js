@@ -290,10 +290,10 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             
             var t= 3000;
-            Time3Lab(t, ["link1","Link1"]);t+=3000;
+          /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
             Time3Lab(t, ["link2","Link2"]);t+=300;
-            Time3Lab(t, ["link3","Link2"]);
-         /*   setTimeout(()=>{
+            Time3Lab(t, ["link3","Link2"]);*/
+           setTimeout(()=>{
                 Start.active(["link1", "Link1"]);
             }, 3000);
             setTimeout(()=>{
@@ -389,7 +389,7 @@ function InfoSecureXBlock(runtime, element) {
             setTimeout(()=>{
                 Start.deactive2(["link16", "Link16"]);
             }, 82000);
-            */
+            
             var push3 =[]; var mas = [];
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
