@@ -582,9 +582,9 @@ function InfoSecureXBlock(runtime, element) {
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
                 student_answer = {
-                'answerBlockRedac': false,
-                'answerBlockAdmin': false,
-                'answerBlockUsers': false,
+                    'answerBlockRedac': false,
+                    'answerBlockAdmin': false,
+                    'answerBlockUsers': false,
                 }
                 console.log('RED',student_answer);
             }
