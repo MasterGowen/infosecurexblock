@@ -434,9 +434,9 @@
                 "x": "150", 
                 "y": "30", 
                 "width": "750", 
-                "height": "750",
+                "height": "750", 
                 "fill": "#f3faffef",
-                "stroke":"#0075b4", 
+                "stroke":"#0075b4",
                 "id": "taskId"
             },
             "taskText":{
