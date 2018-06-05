@@ -415,6 +415,7 @@
                 "type": "rect",
                 "x": "225",
                 "y": "400",
+                "rx":"5",
                 "width": "400",
                 "height": "150",
                 "id":"butStart",

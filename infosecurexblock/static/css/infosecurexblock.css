@@ -33,8 +33,11 @@ button.submit {
    }
 
    .butStart{
-    fill:white;
+    fill:#0075b4;
     stroke: #0075b4;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
    }
    #butText{
     font-size:45px;
@@ -65,23 +68,23 @@ button.submit {
   }
   
   .mouseNone{
-    fill:white;
+    fill:#0075b4;
     stroke: #0075b4;
   }
   
   .mouseOver{
-    fill:#0075b4;
+    fill:white;
     stroke: white;
   }
   
   .mouseNoneText{
-    fill:black;
-    stroke: black;
+    fill: white;
+    stroke: white;
   }
   
   .mouseOverText{
-    fill: white;
-    stroke: white;
+    fill: black;
+    stroke: black;
   }
   text{
       font-family: "Open Sans";
