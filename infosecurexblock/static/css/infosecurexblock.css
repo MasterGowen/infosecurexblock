@@ -37,7 +37,7 @@ button.submit {
     stroke: #0075b4;
    }
    #butText{
-    font-size:45;
+    font-size:45px;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
