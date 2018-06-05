@@ -31,7 +31,6 @@ button.submit {
        width:400px;
        height: 30px;
    }
-
    .butStart{
     fill:#0075b4;
     stroke: #0075b4;
@@ -74,7 +73,7 @@ button.submit {
   
   .mouseOver{
     fill:white;
-    stroke: white;
+    stroke: #0075b4;
   }
   
   .mouseNoneText{
