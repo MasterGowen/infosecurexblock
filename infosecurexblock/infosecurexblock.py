@@ -186,7 +186,24 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     data["link15"],
                                     data["link16"],
                                     ]
-                return sum(correctness_list) / float(len(correctness_list)-6)
+                none_list = [data["Link1"],
+                                    data["Link2"],
+                                    data["Link3"],
+                                    data["Link4"],
+                                    data["Link5"],
+                                    data["Link6"],
+                                    data["Link7"],
+                                    data["Link8"],
+                                    data["Link9"],
+                                    data["Link10"],
+                                    data["Link11"],
+                                    data["Link12"],
+                                    data["Link13"],
+                                    data["Link14"],
+                                    data["Link15"],
+                                    data["Link16"],
+                                    ]
+                return sum(correctness_list) / float(len(correctness_list)-6)-sum(none_list) / float(len(none_list)-6)
             elif self.lab_id == 4:
                 pass
 
