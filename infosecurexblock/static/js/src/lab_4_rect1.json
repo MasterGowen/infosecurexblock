@@ -419,16 +419,16 @@
                 "width": "400",
                 "height": "150",
                 "id":"butStart",
-                "class":"butStart taskOpen"
+                "class":"butStart taskOpen mouseNone"
             },
             "butStartText":{
                 "type": "text",
-                "x": "365",
+                "x": "360",
                 "y": "490",
                 "width": "400",
                 "height": "150",
                 "id":"butStartText",
-                "class":"butStartText taskOpen"
+                "class":"butStartText taskOpen mouseNoneText"
             },
             "taskDiv":{
                 "type": "rect",
