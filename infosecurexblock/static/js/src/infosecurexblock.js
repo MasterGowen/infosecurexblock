@@ -176,6 +176,7 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[1]).style.display = "none";
             };
         }
+        //Lab 1
         static onLab1(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
@@ -271,10 +272,6 @@ function InfoSecureXBlock(runtime, element) {
         static getRandomInt(min, max){
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        static func(id,ID){
-            active(id);
-            active(ID);
-        };
         static Time3Lab(t,idNum){
            
             setTimeout(()=>{
@@ -284,6 +281,7 @@ function InfoSecureXBlock(runtime, element) {
                 Start.deactive2([idNum[0], idNum[1]]);
             }, t);t+=3000;
         }
+        //Lab 3
         static onLab3(event) {
             var evt = event.target;
             var student_answer = {};
@@ -456,11 +454,111 @@ function InfoSecureXBlock(runtime, element) {
             //document.getElementById("lab3_links").value = push3;
             
         }
+        //Lab 4
         static onLab4(event){
             var evt = event.target;
-            
-
+            if(evt.id=='butStart' || evt.id=='butStartText'){
+                Start.deactive(['butStart','butStartText']);
+                setTimeout(()=> {
+                    Start.active(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
+                }, 2500);
+            }
+            if(evt.id == 'task'){
+                Start.active(["taskId","taskTextID"]);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5']);
+            }
+            if(evt.id == 'taskId'){
+                Start.deactive(["taskId","taskTextID"]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5']);
+            }
         }
+        static onLab4styleActive(event) {
+            var evt = event.target;
+            (evt.id == "butStart" || evt.id == 'butStartText' || evt.id == 'butText') && Start.mouseActive(['butStart','butStartText','butText']);
+            ((evt.id == "rectEvent1tap1Id") || (evt.id == 'lineClose1Id') || (evt.id == 'lineClose2Id'))&&Start.mouseActive(
+                ['rectEvent1tap1Id','lineClose1Id','lineClose2Id']
+            );
+            ((evt.id == "rectEvent1tap2Id") || (evt.id == 'lineCheckMark1Id') || (evt.id == 'lineCheckMark2Id'))&&Start.mouseActive(
+                ['rectEvent1tap2Id','lineCheckMark1Id','lineCheckMark2Id']
+            );
+            //information ip
+            ((evt.id == "infoUser02") || (evt.id == "infoUser02Rect") || (evt.id == "textinfoUser02Rect")||(evt.id == "textInfo02")) && Start.active(
+                ['infoUser02Rect','textinfoUser02Rect','textInfo02']
+            );
+            ((evt.id == "infoUser03") || (evt.id == "infoUser03Rect") || (evt.id == "textinfoUser03Rect")||(evt.id == "textInfo03")) && Start.active(
+                ['infoUser03Rect','textinfoUser03Rect','textInfo03']
+            );
+            ((evt.id == "infoUser04") || (evt.id == "infoUser04Rect") || (evt.id == "textinfoUser04Rect") || (evt.id == "textInfo04"))  && Start.active(
+                ['infoUser04Rect','textinfoUser04Rect','textInfo04']
+            );
+            ((evt.id == "infoUser05") || (evt.id == "infoUser05Rect") || (evt.id == "textinfoUser05Rect") || (evt.id == "textInfo05"))  && Start.active(
+                ['infoUser05Rect','textinfoUser05Rect','textInfo05']
+            );
+            ((evt.id == "infoUser06") || (evt.id == "infoUser06Rect") || (evt.id == "textinfoUser06Rect") || (evt.id == "textInfo06"))  && Start.active(
+                ['infoUser06Rect','textinfoUser06Rect','textInfo06']
+            );
+            ((evt.id == "infoCloud") || (evt.id == "infoCloudRect") || (evt.id == "textinfoCloudRect") || (evt.id == "textinfoCloud"))  && Start.active(
+                ['infoCloudRect','textinfoCloudRect','textinfoCloud']
+            );
+        }
+        static onLab4styleDeactive(event){
+            var evt = event.target;
+            (evt.id != "butStart" || evt.id != 'butStartText' && evt.id != 'butText') && Start.mouseDeactive(['butStart','butStartText','butText']);
+            ((evt.id != "rectEvent1tap1Id") || (evt.id != 'lineClose1Id') || (evt.id != 'lineClose2Id')) && Start.mouseDeactive(
+                ['rectEvent1tap1Id','lineClose1Id','lineClose2Id']
+            );
+            ((evt.id != "rectEvent1tap2Id") || (evt.id != 'lineCheckMark1Id') || (evt.id != 'lineCheckMark2Id')) && Start.mouseDeactive(
+                ['rectEvent1tap2Id','lineCheckMark1Id','lineCheckMark2Id']
+            );
+            //information ip 
+            ((evt.id != "infoUser02") && (evt.id != "infoUser02Rect") && (evt.id != "textinfoUser02Rect") && (evt.id != "textInfo02"))  && Start.deactive(
+                ['infoUser02Rect','textinfoUser02Rect','textInfo02']
+            );
+            ((evt.id != "infoUser03") && (evt.id != "infoUser03Rect") && (evt.id != "textinfoUser03Rect") && (evt.id != "textInfo03"))  && Start.deactive(
+                ['infoUser03Rect','textinfoUser03Rect','textInfo03']
+            );
+            ((evt.id != "infoUser04") && (evt.id != "infoUser04Rect") && (evt.id != "textinfoUser04Rect") && (evt.id != "textInfo04"))  && Start.deactive(
+                ['infoUser04Rect','textinfoUser04Rect','textInfo04']
+            );
+            ((evt.id != "infoUser05") && (evt.id != "infoUser05Rect") && (evt.id != "textinfoUser05Rect") && (evt.id != "textInfo05"))  && Start.deactive(
+                ['infoUser05Rect','textinfoUser05Rect','textInfo05']
+            );
+            ((evt.id != "infoUser06") && (evt.id != "infoUser06Rect") && (evt.id != "textinfoUser06Rect") && (evt.id != "textInfo06"))  && Start.deactive(
+                ['infoUser06Rect','textinfoUser06Rect','textInfo06']
+            );
+            ((evt.id != "infoCloud") && (evt.id != "infoCloudRect") && (evt.id != "textinfoCloudRect") && (evt.id != "textinfoCloud"))  && Start.deactive(
+                ['infoCloudRect','textinfoCloudRect','textinfoCloud']
+            );
+        }
+    
+        static mouseActive(idNum){
+            for(var k in idNum){
+                if(idNum[k] == "butText"){
+                    document.getElementById(idNum[k]).classList.remove("mouseNoneText");
+                    document.getElementById(idNum[k]).classList.add("mouseOverText");
+                }
+                else {
+                    document.getElementById(idNum[k]).classList.remove("mouseNone");
+                    document.getElementById(idNum[k]).classList.add("mouseOver");
+                }
+            }
+        }
+    
+        static mouseDeactive(idNum){
+            for(var k in idNum){
+                if(idNum[k] == "butText"){
+                    document.getElementById(idNum[k]).classList.remove("mouseOverText");
+                    document.getElementById(idNum[k]).classList.add("mouseNoneText");
+                }
+                else {
+                    document.getElementById(idNum[k]).classList.remove("mouseOver");
+                    document.getElementById(idNum[k]).classList.add("mouseNone");   
+                }
+    
+            };
+        }
+
+        //Lab 2
         static dragMouseDown(e) {
             var dragObject = {};
             var self = this;
