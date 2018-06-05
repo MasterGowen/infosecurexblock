@@ -80,6 +80,8 @@ function InfoSecureXBlock(runtime, element) {
                // Start.connectionLabs(rect1HandlerUrl, 1);
                // Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('widget').addEventListener('click', Start.onLab4);
+                document.getElementById("widget").addEventListener('mouseover',Start.onLab4styleActive);
+                document.getElementById("widget").addEventListener('mouseout',Start.onLab4styleDeactive);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
                 break;
