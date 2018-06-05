@@ -473,13 +473,13 @@
                 "type":"tspan",
                 "idnum":"textinfoUser02Rect",
                 "class":"taskClose",
-                "value":"<tspan x='220px' id='textInfo02' dy='1em'>Бухгалтер</tspan>"
+                "value":"<tspan x='220px' id='textInfo02' dy='1em'>Сотрудник отдела охраны</tspan>"
             },
             "textInfo03":{
                 "type":"tspan",
                 "idnum":"textinfoUser03Rect",
                 "class":"taskClose",
-                "value":"<tspan x='220px' id='textInfo03' dy='1em'>Бухгалтер</tspan>"
+                "value":"<tspan x='220px' id='textInfo03' dy='1em'>Секретарь</tspan>"
             },
             "textInfo04":{
                 "type":"tspan",
