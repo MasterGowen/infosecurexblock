@@ -31,6 +31,59 @@ button.submit {
        width:400px;
        height: 30px;
    }
+
+   .butStart{
+    fill:white;
+    stroke: #0075b4;
+   }
+   #butText{
+    font-size:45;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+   }
+   .rectEvent1, .infoUser02Rect, .infoUser03Rect, .infoUser04Rect, .infoUser05Rect, .infoUser06Rect, .infoCloudRect{
+      fill:white;
+      stroke: #0075b4;
+   }
+   .rectEvent1tap1, .rectEvent1tap2{
+    fill:white;
+    stroke: #0075b4;
+  }
+  .lineClose1, .lineCheckMark1{
+    stroke: #0075b4;
+  }
+  .lineClose2, .lineCheckMark2{
+    stroke: #0075b4;
+  }
+  .textRectEvent{
+    color: black;
+  }
+  
+  .mouseNone{
+    fill:white;
+    stroke: #0075b4;
+  }
+  
+  .mouseOver{
+    fill:#0075b4;
+    stroke: white;
+  }
+  
+  .mouseNoneText{
+    fill:black;
+    stroke: black;
+  }
+  
+  .mouseOverText{
+    fill: white;
+    stroke: white;
+  }
+  
 #widget {
     /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
     height: 1050px;
