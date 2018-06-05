@@ -2,12 +2,13 @@
     "Rect1":{
         
     "link1":{
-        "type":"text",
+        "type":"image",
         "x": "80",
         "y": "120",
         "fontSize":"20",
         "fontFamily":"Roboto",
         "fill": "blue",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/wifi.svg",
         "class":"link1 taskClose",
         "id":"link1"
     },

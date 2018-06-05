@@ -280,7 +280,7 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
-            if (evt.id =="taskId"){
+            
             setTimeout(()=>{
                 Start.active(["link1", "Link1"]);
             }, 3000);
@@ -441,7 +441,7 @@ function InfoSecureXBlock(runtime, element) {
                 push3.push(document.getElementById(idNum[1].value));              
             }
             //document.getElementById("lab3_links").value = push3;
-        }  
+            
         }
         static onLab4(event){
             var evt = event.target;
