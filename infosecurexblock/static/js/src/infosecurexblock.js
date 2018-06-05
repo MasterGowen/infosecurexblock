@@ -280,7 +280,7 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
-            if (evt =="taskId"){
+            if (evt.id =="taskId"){
             setTimeout(()=>{
                 Start.active(["link1", "Link1"]);
             }, 3000);
