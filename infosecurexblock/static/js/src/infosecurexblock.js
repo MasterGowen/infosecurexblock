@@ -170,6 +170,12 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[k]).classList.add("taskClose");
             };
         }
+        static deactive2(idNum) {
+            for(var k in idNum){
+                document.querySelector("."+idNum[0]).style.display = "none";
+                document.getElementById(idNum[1]).style.display = "none";
+            };
+        }
         static onLab1(event) {
             //console.log("ON funcction:",this);
             var evt = event.target;
@@ -271,108 +277,104 @@ function InfoSecureXBlock(runtime, element) {
         }
         
         static onLab3(event) {
-            //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
-            
-           var l2="link1";var l2=2;var l3=3;var l4=4;var l5=5;
-           var l6=6;var l7=7;var l8=8; var l9=9;var l10=10;
             setTimeout(()=>{
                 Start.active(["link1", "Link1"]);
             }, 3000);
             setTimeout(()=>{
-                Start.deactive(["link1", "Link1"]);
+                Start.deactive2(["link1", "Link1"]);
             }, 6000);
             setTimeout(()=> {
                 Start.active(["link2", "Link2"]);
             }, 8000);
             setTimeout(()=>{
-                Start.deactive(["link2", "Link2"]);
+                Start.deactive2(["link2", "Link2"]);
             }, 11000);
             setTimeout(()=>{
                 Start.active(["link3", "Link3"]);
             }, 13000);
             setTimeout(()=>{
-                Start.deactive(["link3", "Link3"]);
+                Start.deactive2(["link3", "Link3"]);
             }, 16000);
             setTimeout(()=>{
                 Start.active(["link4", "Link4"]);
             }, 18000);
             setTimeout(()=>{
-                Start.deactive(["link4", "Link4"]);
+                Start.deactive2(["link4", "Link4"]);
             }, 21000);
             setTimeout(()=>{
                 Start.active(["link5", "Link5"]);
             }, 23000);
             setTimeout(()=>{
-                Start.deactive(["link5", "Link5"]);
+                Start.deactive2(["link5", "Link5"]);
             }, 26000);
             setTimeout(()=>{
                 Start.active(["link6", "Link6"]);
             }, 28000);
             setTimeout(()=>{
-                Start.deactive(["link6", "Link6"]);
+                Start.deactive2(["link6", "Link6"]);
             }, 31000);
             setTimeout(()=>{
                 Start.active(["link7", "Link7"]);
             }, 33000);
             setTimeout(()=>{
-                Start.deactive(["link7", "Link7"]);
+                Start.deactive2(["link7", "Link7"]);
             }, 36000);
             setTimeout(()=>{
                 Start.active(["link8", "Link8"]);
             }, 38000);
             setTimeout(()=>{
-                Start.deactive(["link8", "Link8"]);
+                Start.deactive2(["link8", "Link8"]);
             }, 41000);
             setTimeout(()=>{
                 Start.active(["link9", "Link9"]);
             }, 43000);
             setTimeout(()=>{
-                Start.deactive(["link9", "Link9"]);
+                Start.deactive2(["link9", "Link9"]);
             }, 46000);
             setTimeout(()=>{
                 Start.active(["link10", "Link10"]);
             }, 48000);
             setTimeout(()=>{
-                Start.deactive(["link10", "Link10"]);
+                Start.deactive2(["link10", "Link10"]);
             }, 51000);
             setTimeout(()=>{
                 Start.active(["link11", "Link11"]);
             }, 53000);
             setTimeout(()=>{
-                Start.deactive(["link11", "Link11"]);
+                Start.deactive2(["link11", "Link11"]);
             }, 56000);
             setTimeout(()=>{
                 Start.active(["link12", "Link12"]);
             }, 58000);
             setTimeout(()=>{
-                Start.deactive(["link12", "Link12"]);
+                Start.deactive2(["link12", "Link12"]);
             }, 61000);
             setTimeout(()=>{
                 Start.active(["link13", "Link13"]);
             }, 63000);
             setTimeout(()=>{
-                Start.deactive(["link13", "Link13"]);
+                Start.deactive2(["link13", "Link13"]);
             }, 64000);
             setTimeout(()=>{
                 Start.active(["link14", "Link14"]);
             }, 66000);
             setTimeout(()=>{
-                Start.deactive(["link14", "Link14"]);
+                Start.deactive2(["link14", "Link14"]);
             }, 69000);
             setTimeout(()=>{
                 Start.active(["link15", "Link15"]);
             }, 71000);
             setTimeout(()=>{
-                Start.deactive(["link15", "Link15"]);
+                Start.deactive2(["link15", "Link15"]);
             }, 74000);
             setTimeout(()=>{
                 Start.active(["link16", "Link16"]);
             }, 76000);
             setTimeout(()=>{
-                Start.deactive(["link16", "Link16"]);
+                Start.deactive2(["link16", "Link16"]);
             }, 79000);
             var push3 =[]; var mas = [];
            // document.getElementById('random').display.style = "block";
@@ -396,7 +398,7 @@ function InfoSecureXBlock(runtime, element) {
             function linkFixate(idNum,student_answer3){
                 document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                document.getElementById("lab3_links").innerHTML = "aa";
+               // document.getElementById("lab3_links").innerHTML = "aa";
                 console.log(document.querySelector("."+idNum[0]).innerHTML);
                 mas.push(document.querySelector("."+idNum[0]).innerHTML);
                 
