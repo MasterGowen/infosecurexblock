@@ -463,7 +463,7 @@
             "textEvent":{
                 "type":"tspan",
                 "idnum":"textRectEventId",
-                "value":"<tspan>собирается скопировать</tspan><tspan x='160px' dy='1.2em'>все данные о расходах</tspan><tspan x='160px' dy='1.2em'>предприятия из сетевого</tspan><tspan x='160px' dy='1.2em'>хранилища и отправить по почте</tspan>"
+                "value":"<tspan>Cобирается скопировать</tspan><tspan x='160px' dy='1.2em'>все данные о расходах</tspan><tspan x='160px' dy='1.2em'>предприятия из сетевого</tspan><tspan x='160px' dy='1.2em'>хранилища и отправить по почте</tspan>"
             },
             "butText":{
                 "type":"tspan",
