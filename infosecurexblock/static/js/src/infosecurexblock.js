@@ -136,7 +136,7 @@ function InfoSecureXBlock(runtime, element) {
             //console.log(lab_id);
          //   console.log(result.lab_id);
             function success(handler) {
-                //console.log(handler.Rect3);
+                console.log(handler);
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     self.addElementSVG(handler.amount, handler.Rect1);                   
@@ -715,7 +715,7 @@ function InfoSecureXBlock(runtime, element) {
             }
         } 
         addElementTextSVG(amount, jsonObj) {
-            //console.log(amount,jsonObj);
+            console.log(amount,jsonObj);
             for (amount in jsonObj) {
                 //console.log(jsonObj);
                 console.log(jsonObj[amount].idnum);
