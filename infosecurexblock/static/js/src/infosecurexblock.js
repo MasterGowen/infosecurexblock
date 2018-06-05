@@ -274,14 +274,26 @@ function InfoSecureXBlock(runtime, element) {
         static func(id,ID){
             active(id);
             active(ID);
+        };
+        static Time3Lab(t,idNum){
+           
+            setTimeout(()=>{
+                Start.active([idNum[0], idNum[1]]);
+            }, t);t+=3000;
+            setTimeout(()=>{
+                Start.deactive2([idNum[0], idNum[1]]);
+            }, t);t+=3000;
         }
-        
         static onLab3(event) {
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
             
-            setTimeout(()=>{
+            var t= 3000;
+          /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
+            Time3Lab(t, ["link2","Link2"]);t+=300;
+            Time3Lab(t, ["link3","Link2"]);*/
+           setTimeout(()=>{
                 Start.active(["link1", "Link1"]);
             }, 3000);
             setTimeout(()=>{
@@ -377,6 +389,7 @@ function InfoSecureXBlock(runtime, element) {
             setTimeout(()=>{
                 Start.deactive2(["link16", "Link16"]);
             }, 82000);
+            
             var push3 =[]; var mas = [];
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
