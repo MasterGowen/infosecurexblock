@@ -146,7 +146,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
-                    self.addElementSVG(handler.amount, handler.Rect3);
+                    self.addElementTextSVG(handler.amount, handler.Rect3);
             }
 
             (function () {
@@ -160,7 +160,7 @@ function InfoSecureXBlock(runtime, element) {
             })()
 
         }
-
+    }
         static active(idNum) {
             for(var k in idNum){
                 document.getElementById(idNum[k]).classList.remove("taskClose");
