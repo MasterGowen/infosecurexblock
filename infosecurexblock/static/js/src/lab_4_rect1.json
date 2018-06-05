@@ -1,6 +1,4 @@
-
-{/*"href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"*/
-    {
+{
         "Rect1":{
             "comp1":{
                 "type": "image",
