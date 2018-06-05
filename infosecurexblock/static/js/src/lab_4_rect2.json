@@ -28,12 +28,6 @@
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black" 
-        },
-        "button":{
-            "type": "button",
-            "class": "submit btn-brand",
-            "color":"#000",
-            "id":"checkid"
         }
     }
 }
