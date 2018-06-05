@@ -480,7 +480,7 @@ function InfoSecureXBlock(runtime, element) {
                 Start.deactive(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
                 alert('TEST: Succes!');
             }
-            if(evt.id == 'lineCheckMark1Id'|| evt.id == 'lineCheckMark2Id' || evt.id == 'rectEvent2tap1Id'){
+            if(evt.id == 'lineCheckMark1Id'|| evt.id == 'lineCheckMark2Id' || evt.id == 'rectEvent1tap2Id'){
                 Start.deactive(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
                 alert('TEST: Wrong!');
             }
