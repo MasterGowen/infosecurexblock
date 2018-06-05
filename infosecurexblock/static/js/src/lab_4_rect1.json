@@ -473,7 +473,7 @@
                 "type":"tspan",
                 "idnum":"textinfoUser02Rect",
                 "class":"taskClose",
-                "value":"<tspan x='220px' id='textInfo02' dy='1em'>Сотрудник отдела охраны</tspan>"
+                "value":"<tspan x='220px' id='textInfo02' dy='1em'>Бухгалтер</tspan>"
             },
             "textInfo03":{
                 "type":"tspan",
