@@ -136,7 +136,7 @@ function InfoSecureXBlock(runtime, element) {
             //console.log(lab_id);
          //   console.log(result.lab_id);
             function success(handler) {
-                console.log(handler.Rect3);
+                //console.log(handler.Rect3);
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     self.addElementSVG(handler.amount, handler.Rect1);                   
