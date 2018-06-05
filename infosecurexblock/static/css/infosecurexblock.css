@@ -69,11 +69,11 @@ button.submit {
   
   .mouseNone{
     fill:#0075b4;
-    stroke: #0075b4;
+    stroke: white;
   }
   
   .mouseOver{
-    fill:rgb(250, 250, 250);
+    fill:white;
     stroke: #0075b4;
   }
   
