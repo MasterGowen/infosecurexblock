@@ -448,34 +448,14 @@
                 "fill": "black",
                 "id":"taskTextID"
             },
-                "FileText":{
-                    "type":"text",
-                    "x": "177",
-                    "y": "50",
-                    "fontSize":"10",
-                    "fontFamily":"SegoeUI",
-                    "fill": "black",
-                    "class":"taskOpen",
-                    "id":"File1TextID"
-                },
-                "FileText2":{
-                    "type":"text",
-                    "x": "205",
-                    "y": "120",
-                    "fontSize":"10",
-                    "fontFamily":"SegoeUI",
-                    "fill": "black",
-                    "class":"taskOpen",
-                    "id":"File1TextID2"
-                },
-                "arrow":{
+            "arrow":{
                     "type": "image",
                     "x": "165",
                     "y": "40",
                     "width": "20",
                     "height": "20",
                     "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
-                    "id": "arrow"
+                    "id": "arrowid"
                     }
         },
         "Rect3":{
