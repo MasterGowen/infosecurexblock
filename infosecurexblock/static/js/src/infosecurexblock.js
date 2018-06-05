@@ -476,6 +476,14 @@ function InfoSecureXBlock(runtime, element) {
                     Start.active(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
                 }, 2500);
             }
+            if(evt.id == 'lineClose1Id'|| evt.id == 'lineClose2Id' || evt.id == 'rectEvent1tap1Id'){
+                Start.deactive(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
+                alert('TEST: Succes!');
+            }
+            if(evt.id == 'lineCheckMark1Id'|| evt.id == 'lineCheckMark2Id' || evt.id == 'rectEvent2tap1Id'){
+                Start.deactive(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
+                alert('TEST: Wrong!');
+            }
         }
         static onLab4styleActive(event) {
             var evt = event.target;
