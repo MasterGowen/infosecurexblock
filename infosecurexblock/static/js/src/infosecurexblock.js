@@ -4,7 +4,9 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-
+    var param = getRandomInt(1,5).toString(); 
+    console.log(param);
+    var keys = "key_id"+param; var mes = "mes_id"+param;
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -116,15 +118,15 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
-                Start.deactive(['ip1','ip2','ip3','ip4','ip5', Start.keys, Start.mes]);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes]);
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5',Start.keys, Start.mes]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes]);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5', Start.keys, Start.mes]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes]);
             }
             if (evt.id == "key"){
                 console.log("zachlo v key");
@@ -200,9 +202,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         //Lab 1
         static onLab1(event) {
-            var param = getRandomInt(1,5).toString(); 
-                console.log(param);
-                var keys = "key_id"+param; var mes = "mes_id"+param;
+          
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
