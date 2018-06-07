@@ -218,6 +218,7 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[0]).classList.add(idNum[3]);
                 document.getElementById(idNum[1]).classList.remove(idNum[3]);
                 document.getElementById(idNum[2]).classList.remove(idNum[3]);
+
                 fileShow();
             }
           /*  function fileShow() {
@@ -227,6 +228,8 @@ function InfoSecureXBlock(runtime, element) {
             }*/
            
             function fileShow(){
+                var param = getRandomInt(1,5);
+                console.log(param);
                 Start.active(['File1Id','File1TextID','File1TextID2','key_id', 'mes_id']);
                //console.log(amount);
                // console.log(jsonObj);

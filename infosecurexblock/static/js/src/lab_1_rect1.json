@@ -259,7 +259,7 @@
             "idnum":"star", 
             "id": "key_id", 
             "class": "taskClose", 
-            "value":"<text x='240' y='120' id ='key_id' class='taskClose' >Ключ: 2,10</text>" 
+            "value":"<text x='220' y='120' id ='key_id' class='taskClose' >Ключ: 2,10</text>" 
             },
             "mes1":{"type":"text", 
                 "idnum":"star", 
