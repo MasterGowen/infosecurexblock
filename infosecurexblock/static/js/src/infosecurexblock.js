@@ -116,15 +116,15 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
-                Start.deactive(['ip1','ip2','ip3','ip4','ip5','key_id']);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5','key_id','mes_id']);
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5','key_id']);
+                Start.active(['ip1','ip2','ip3','ip4','ip5','key_id','mes_id']);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5','key_id']);
+                Start.active(['ip1','ip2','ip3','ip4','ip5','key_id', 'mes_id']);
             }
             if (evt.id == "key"){
                 console.log("zachlo v key");
@@ -207,7 +207,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
             evt.id == 'File1' && fileShow();
-            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2','key_id']);
+            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2','key_id','mes_id']);
             ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
@@ -227,7 +227,7 @@ function InfoSecureXBlock(runtime, element) {
             }*/
            
             function fileShow(){
-                Start.active(['File1Id','File1TextID','File1TextID2','key_id']);
+                Start.active(['File1Id','File1TextID','File1TextID2','key_id', 'mes_id']);
                //console.log(amount);
                // console.log(jsonObj);
                // Start.addElementTextSVG(amount, jsonObj);
@@ -792,19 +792,19 @@ function InfoSecureXBlock(runtime, element) {
                     this.element.innerHTML = "http://media.ls.urfu.ru"
                 }
                 if ((name=="text")&&(attributes[k]=="link5")){
-                    this.element.innerHTML = "https://ru.wikipedia.org"
+                    this.element.innerHTML = "http://ru.wikipedia.org"
                 }
                 if ((name=="text")&&(attributes[k]=="link6")){
                     this.element.innerHTML = "https://urfu.ru.u"
                 }
                 if ((name=="text")&&(attributes[k]=="link7")){
-                    this.element.innerHTML = "http://trafficconverter.biz"
+                    this.element.innerHTML = "http://traficonverter.biz"
                 }
                 if ((name=="text")&&(attributes[k]=="link8")){
                     this.element.innerHTML = "https://vk.com"
                 }
                 if ((name=="text")&&(attributes[k]=="link9")){
-                    this.element.innerHTML = "https://alfabank.ru/"
+                    this.element.innerHTML = "https://alfabank.ru"
                 }
                 if ((name=="text")&&(attributes[k]=="link10")){
                     this.element.innerHTML = "http://vk.my.page.bl"
