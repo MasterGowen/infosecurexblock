@@ -125,6 +125,9 @@ function InfoSecureXBlock(runtime, element) {
                 Start.deactive(["taskId","taskTextID","arrowid"]);
                 Start.active(['ip1','ip2','ip3','ip4','ip5']);
             }
+            if (evt.id == "key"){
+                Start.active(['taskClose']);
+            }
         }
 
         checkAnswerLab(checkHandlerLab,test) {
