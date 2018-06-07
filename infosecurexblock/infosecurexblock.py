@@ -138,17 +138,17 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         fragment = Fragment()
         fragment.add_content(
             render_template(
-                "static/html/setting_studio.html",
+                "static/html/infosecurexblock_studio.html",
                 context
             )
         )
 
         js_urls = (
-            "static/js/src/setting_studio.js",
+            "static/js/src/infosecurexblock_studio.js",
             )
 
         css_urls = (
-            "static/css/setting_studio.css",
+            "static/css/infosecurexblock_studio.css",
             )
 
         load_resources(js_urls, css_urls, fragment)
