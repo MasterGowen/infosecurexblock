@@ -216,14 +216,14 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById("File1TextID").innerHTML = "Сообщение:406 9915660 05464616061 - 9915660";
                 document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
             }*/
-            addElementTextSVG(amount, jsonObj) {
+           function addElementTextSVG2(amount, jsonObj) {
                 for (amount in jsonObj) {
                     document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                     }
                 }
             function fileShow(){
                 Start.active(['File1Id','File1TextID','File1TextID2']);
-                addElementTextSVG(amount, jsonObj);
+                addElementTextSVG2(amount, jsonObj);
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
