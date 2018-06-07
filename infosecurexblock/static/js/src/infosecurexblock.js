@@ -112,6 +112,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         static taskBlock(event) {
+           console.log("zachlo v taskblock");
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
@@ -126,6 +127,7 @@ function InfoSecureXBlock(runtime, element) {
                 Start.active(['ip1','ip2','ip3','ip4','ip5']);
             }
             if (evt.id == "key"){
+                console.log("zachlo v key");
                 Start.active(['taskClose']);
             }
         }
