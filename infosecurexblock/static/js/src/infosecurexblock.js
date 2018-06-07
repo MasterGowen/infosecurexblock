@@ -218,6 +218,7 @@ function InfoSecureXBlock(runtime, element) {
             }*/
            function addElementTextSVG2(amount, jsonObj) {
                 for (amount in jsonObj) {
+                    console.log(amount, jsonObj);
                     document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                     }
                 }
