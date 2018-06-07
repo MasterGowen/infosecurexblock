@@ -304,5 +304,61 @@
                                     "value":"<text x='350' y='90' id ='key_id' class='taskClose' >Сообщение:|10|6|4| |5|13|1|3|6|6|6| |12|1|8|4|2|0|1|12|12|6|9|-|5|13|1|3|6|6|6</text>" 
                                     }
 
+    ,
+        
+        "ip1":{
+            "type":"text",
+            "idnum":"star",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip1",
+            "value":"<text x='95' y='720' id ='ip1' class='taskClose' >192.168.0.3</text>"
+        },
+        "ip4":{
+            "type":"text",
+            "x": "650",
+            "y": "420",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip4",
+            "idnum":"star",
+            "value":"<text x='650' y='420' id ='ip2' class='taskClose'>192.168.0.4</text>"
+        },
+        "ip3":{
+            "type":"text",
+            "x": "645",
+            "y": "720",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip3",
+            "idnum":"star",
+            "class":"taskClose",
+            "value":"<text x='645' y='720' id ='ip3' class='taskClose'>192.168.0.5</text>"
+        },
+        "ip2":{
+            "type":"text",
+            "x": "100",
+            "y": "420",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip2",
+            "idnum":"star",
+            "value":"<text x='100' y='420' id ='ip4' class='taskClose'>192.168.0.2</text>"
+        },
+        "ip5":{
+            "type":"text",
+            "x": "360",
+            "y": "720",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip5",
+            "idnum":"star",
+            "value":"<text x='360' y='720' id ='ip5' class='taskClose'>192.168.0.6</text>"
+        }
     }
 }
