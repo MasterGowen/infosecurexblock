@@ -8,7 +8,7 @@ import math
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String, JSONField
 from xblock.fragment import Fragment
-from xblockutils.studio_editable import StudioEditableXBlockMixin
+from xblockutils.studio_editable import StudioEditableXBlockMixin , StudioContainerXBlockMixin
 
 from webob.response import Response
 
@@ -21,7 +21,7 @@ from .utils import (
 )
 
 
-class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
+class InfoSecureXBlock(StudioContainerXBlockMixin, XBlock):
     display_name = String(display_name='Display Name', default="infosecurexblock", scope=Scope.settings)
     task_text = String(
         display_name='Task text',
@@ -123,38 +123,38 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 
-    def studio_view(self, context=None):
+    # def studio_view(self, context=None):
 
-        context = {
-            "display_name": self.display_name,
-            "task_text": self.task_text,
-            "weight": self.weight,
-            "max_attempts": self.max_attempts,
-            "attempts": self.attempts,
-            "points": self.points,
+    #     context = {
+    #         "display_name": self.display_name,
+    #         "task_text": self.task_text,
+    #         "weight": self.weight,
+    #         "max_attempts": self.max_attempts,
+    #         "attempts": self.attempts,
+    #         "points": self.points,
 
-        }
+    #     }
 
-        fragment = Fragment()
-        fragment.add_content(
-            render_template(
-                "static/html/infosecurexblock_studio.html",
-                context
-            )
-        )
+    #     fragment = Fragment()
+    #     fragment.add_content(
+    #         render_template(
+    #             "static/html/infosecurexblock_studio.html",
+    #             context
+    #         )
+    #     )
 
-        js_urls = (
-            "static/js/src/infosecurexblock_studio.js",
-            )
+    #     js_urls = (
+    #         "static/js/src/infosecurexblock_studio.js",
+    #         )
 
-        css_urls = (
-            "static/css/infosecurexblock_studio.css",
-            )
+    #     css_urls = (
+    #         "static/css/infosecurexblock_studio.css",
+    #         )
 
-        load_resources(js_urls, css_urls, fragment)
+    #     load_resources(js_urls, css_urls, fragment)
 
-        fragment.initialize_js('InfoSecureXBlock')
-        return fragment
+    #     fragment.initialize_js('InfoSecureXBlock')
+    #     return fragment
 
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
