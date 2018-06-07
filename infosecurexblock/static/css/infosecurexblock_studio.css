@@ -4,7 +4,7 @@ svg {
 .modal-lg.modal-editor .modal-content{
     height: auto !important;
 }
-#widget {
+#widget_studio {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     height: 1050px;
     width: 850px;
