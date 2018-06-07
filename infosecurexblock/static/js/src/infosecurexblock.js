@@ -217,8 +217,9 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
             }*/
            function addElementTextSVG2(amount, jsonObj) {
+            console.log(amount, jsonObj);
                 for (amount in jsonObj) {
-                    console.log(amount, jsonObj);
+                  
                     document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                     }
                 }
