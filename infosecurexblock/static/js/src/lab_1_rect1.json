@@ -255,11 +255,11 @@
                 }
     },
     "Rect3":{
-        "key":{"type":"text",
-                "idnum": "star",
-                "id": "key_id",
-                "class": "taskClose",
-                "value":"<text x='117' y='50' idnum ='key' class='taskClose' >2,10</text>"
+        "key":{"type":"text", 
+            "idnum":"star", 
+            "id": "key_id", 
+            "class": "taskClose", 
+            "value":"<text x='117' y='50' id ='key_id' class='taskClose' >2,10</text>" 
             }
     }
 }
