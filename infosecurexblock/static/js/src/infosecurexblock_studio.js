@@ -16,10 +16,12 @@ function InfoSecureXBlock(runtime, element) {
                 this.appendNodeSVG(this.constract('rect'));
             }
         }
+        constract(name) {
+            return this.createElementSVG(name, this.defaultSet);
+        }
 
         createElementSVG(name, attributes) {
             this.NS = "http://www.w3.org/2000/svg";
-            this.NS1 = "http://www.w3.org/1999/xlink";
             this.element = document.createElementNS(this.NS, name);
             if (name == "svg") {
                 this.element.setAttributeNS(null, 'id', 'star')
@@ -28,6 +30,10 @@ function InfoSecureXBlock(runtime, element) {
             for (var k in attributes) {
                 this.element.setAttributeNS(null, [k], attributes[k]);
             }
+        }
+        appendNodeSVG(element) {
+            var svg = document.querySelector('svg');
+            return svg.appendChild(element);
         }
     }
 
