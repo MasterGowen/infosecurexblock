@@ -8,7 +8,7 @@ import math
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String, JSONField
 from xblock.fragment import Fragment
-from xblockutils.studio_editable import StudioEditableXBlockMixin , StudioContainerXBlockMixin
+from xblockutils.studio_editable import StudioEditableXBlockMixin
 
 from webob.response import Response
 
@@ -21,7 +21,7 @@ from .utils import (
 )
 
 
-class InfoSecureXBlock(StudioContainerXBlockMixin, XBlock):
+class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     display_name = String(display_name='Display Name', default="infosecurexblock", scope=Scope.settings)
     task_text = String(
         display_name='Task text',
