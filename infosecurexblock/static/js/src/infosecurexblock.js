@@ -230,9 +230,9 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 var param =  getRandomInt(1,5).toString(); 
                 console.log(param);
-                var keys = "key_id"+param;
+                var keys = "key_id"+param; var mes = "mes_id"+param;
                 console.log("keys --" ,keys);
-                Start.active(['File1Id','File1TextID','File1TextID2',keys, 'mes_id']);
+                Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
                //console.log(amount);
                // console.log(jsonObj);
                // Start.addElementTextSVG(amount, jsonObj);
