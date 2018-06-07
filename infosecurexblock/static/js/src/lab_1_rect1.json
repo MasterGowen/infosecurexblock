@@ -256,7 +256,7 @@
     },
     "Rect3":{
         "type":"tspan",
-                "id":"key",
+                "idnum":"key",
                 "class": "taskClose",
                 "value":"<tspan>Ключ: 2,10</tspan>"
         
