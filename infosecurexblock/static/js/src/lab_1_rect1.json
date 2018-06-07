@@ -255,7 +255,7 @@
                 }
     },
     "Rect3":{
-        "key":{"type":"tspan",
+        "key":{"type":"text",
                 "idnum":"key",
                 "class": "taskClose",
                 "value":"<text x='117' y='50' idnum ='key' class='taskClose' >2,10</text>"
