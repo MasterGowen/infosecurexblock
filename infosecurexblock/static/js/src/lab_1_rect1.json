@@ -258,7 +258,7 @@
         "key":{"type":"tspan",
                 "idnum":"key",
                 "class": "taskClose",
-                "value":"<tspan>Ключ: 2,10</tspan>"
-        }
+                "value":"<text x='117' y='50' idnum ='key' class='taskClose' >2,10</text>"
+            }
     }
 }
