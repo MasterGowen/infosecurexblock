@@ -746,7 +746,7 @@ function InfoSecureXBlock(runtime, element) {
             for (amount in jsonObj) {
                 //console.log(jsonObj);
                 //console.log(jsonObj[amount].idnum);
-                console.log("zashlo b addelementtextsvg", document.getElementById(jsonObj[amount].idnum);
+                console.log("zashlo b addelementtextsvg", document.getElementById(jsonObj[amount].idnum));
                 console.log(jsonObj[amount].value);
                 
                 document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
