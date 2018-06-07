@@ -8,7 +8,7 @@ function InfoSecureXBlock(runtime, element) {
                 width: 850,
                 height: 850,
                 fill: '#f5f5f5',
-                class: 'rect1'
+                class: 'rect2'
             }
             this.star = () => {
                 //new Labs();
@@ -26,7 +26,7 @@ function InfoSecureXBlock(runtime, element) {
             this.element = document.createElementNS(this.NS, name);
             console.log(this.element);
             if (name == "svg") {
-                this.element.setAttributeNS(null, 'id', 'star');
+                this.element.setAttributeNS(null, 'id', 'star_studio');
                 document.getElementById("widget_studio").appendChild(this.element);
             }
             if (attributes) {
@@ -37,7 +37,7 @@ function InfoSecureXBlock(runtime, element) {
             return this.element;
         }
         appendNodeSVG(element) {
-            var svg = document.querySelector('svg');
+            var svg = document.getElementById('star_studio');
             return svg.appendChild(element);
         }
     }
