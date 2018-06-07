@@ -156,6 +156,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
+                    console.log(handler.amount);
                     self.addElementTextSVG(handler.amount, handler.Rect3);            
                 }
             }
@@ -223,7 +224,7 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                     }
                 }
-            function fileShow(amount, jsonObj){
+            function fileShow(){
                 Start.active(['File1Id','File1TextID','File1TextID2']);
                 console.log(amount);
                 console.log(jsonObj);
