@@ -174,6 +174,7 @@ function InfoSecureXBlock(runtime, element) {
     }
         static active(idNum) {
             for(var k in idNum){
+                console.log("zashlo v active");
                 document.getElementById(idNum[k]).classList.remove("taskClose");
                 document.getElementById(idNum[k]).classList.add("taskOpen");
             };
@@ -745,6 +746,7 @@ function InfoSecureXBlock(runtime, element) {
             for (amount in jsonObj) {
                 //console.log(jsonObj);
                 //console.log(jsonObj[amount].idnum);
+                console.log("zashlo b addelementtextsvg", jsonObj[amount].idnum);
                 document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                 }
             }
