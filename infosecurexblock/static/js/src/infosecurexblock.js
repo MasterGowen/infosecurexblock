@@ -120,11 +120,11 @@ function InfoSecureXBlock(runtime, element) {
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5',keys,mes]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',Start.keys, Start.mes]);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5', Start.keys, Start.mes]);
             }
             if (evt.id == "key"){
                 console.log("zachlo v key");
