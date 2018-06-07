@@ -180,6 +180,7 @@ function InfoSecureXBlock(runtime, element) {
         static active(idNum) {
             for(var k in idNum){
                 console.log("zashlo v active");
+                console.log(document.getElementById(idNum[k]));
                 document.getElementById(idNum[k]).classList.remove("taskClose");
                 document.getElementById(idNum[k]).classList.add("taskOpen");
             };
