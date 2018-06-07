@@ -16,6 +16,7 @@ function InfoSecureXBlock(runtime, element) {
                 this.appendNodeSVG(this.constract('rect'));
             }
         }
+        
         constract(name) {
             return this.createElementSVG(name, this.defaultSet);
         }
