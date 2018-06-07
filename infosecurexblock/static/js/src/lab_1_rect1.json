@@ -259,25 +259,25 @@
             "idnum":"star", 
             "id": "key_id", 
             "class": "taskClose", 
-            "value":"<text x='250' y='120' id ='key_id' class='taskClose' >Ключ: 2,10</text>" 
+            "value":"<text x='240' y='120' id ='key_id' class='taskClose' >Ключ: 2,10</text>" 
             },
             "mes1":{"type":"text", 
                 "idnum":"star", 
                 "id": "mes_id", 
                 "class": "taskClose", 
-                "value":"<text x='250' y='120' id ='key_id' class='taskClose' >Сообщение:406 9915660 05464616061 - 9915660</text>" 
+                "value":"<text x='250' y='90' id ='key_id' class='taskClose' >Сообщение:406 9915660 05464616061 - 9915660</text>" 
                 },
             "key2":{"type":"text", 
                 "idnum":"star", 
                 "id": "key_id", 
                 "class": "taskClose", 
-                "value":"<text x='250' y='120' id ='key_id' class='taskClose' >Ключ: 3,10</text>" 
+                "value":"<text x='240' y='120' id ='key_id' class='taskClose' >Ключ: 3,10</text>" 
                 },
                 "mes2":{"type":"text", 
                     "idnum":"star", 
                     "id": "mes_id", 
                     "class": "taskClose", 
-                    "value":"<text x='250' y='120' id ='key_id' class='taskClose' >Сообщение: 806 7715660 05862414061 - 3715660</text>" 
+                    "value":"<text x='250' y='90' id ='key_id' class='taskClose' >Сообщение: 806 7715660 05862414061 - 3715660</text>" 
                     }
     }
 }
