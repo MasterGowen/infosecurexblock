@@ -11,7 +11,7 @@ function InfoSecureXBlock(runtime, element) {
                 class: 'rect1'
             }
             this.star = () => {
-                new Labs();
+                //new Labs();
                 this.createElementSVG('svg');
                 this.appendNodeSVG(this.constract('rect'));
             }
