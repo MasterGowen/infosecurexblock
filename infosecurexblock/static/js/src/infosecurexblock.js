@@ -748,6 +748,7 @@ function InfoSecureXBlock(runtime, element) {
                 //console.log(jsonObj[amount].idnum);
                 console.log("zashlo b addelementtextsvg", jsonObj[amount].idnum);
                 console.log(jsonObj[amount].value);
+                console.log(document.getElementById(jsonObj[amount].value));
                 document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                 }
             }
