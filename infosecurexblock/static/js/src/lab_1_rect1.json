@@ -52,33 +52,6 @@
             "id": "comp3",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
         },
-        "ip1":{
-            "type":"text",
-            "x": "160",
-            "y": "620",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"ip1"
-        },
-        "ip2":{
-            "type":"text",
-            "x": "370",
-            "y": "620",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"ip2"
-        },
-        "ip3":{
-            "type":"text",
-            "x": "580",
-            "y": "620",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"ip3"
-        },
         "LineComDB":
         {
         "type": "line",
@@ -305,7 +278,6 @@
                                     }
 
     ,
-        
         "ip1":{
             "type":"text",
             "idnum":"star",
@@ -313,52 +285,26 @@
             "fontFamily":"Roboto",
             "fill": "black",
             "id":"ip1",
-            "value":"<text x='95' y='720' id ='ip1' class='taskClose' >192.168.0.3</text>"
+            "value":"<text x='160' y='620' id ='ip1' class='taskClose' >192.168.0.3</text>"
         },
-        "ip4":{
+        "ip2":{
             "type":"text",
-            "x": "650",
-            "y": "420",
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
-            "id":"ip4",
+            "id":"ip2",
             "idnum":"star",
-            "value":"<text x='650' y='420' id ='ip2' class='taskClose'>192.168.0.4</text>"
+            "value":"<text x='370' y='620' id ='ip2' class='taskClose'>192.168.0.4</text>"
         },
         "ip3":{
             "type":"text",
-            "x": "645",
-            "y": "720",
             "fontSize":"20",
             "fontFamily":"Roboto",
             "fill": "black",
             "id":"ip3",
             "idnum":"star",
             "class":"taskClose",
-            "value":"<text x='645' y='720' id ='ip3' class='taskClose'>192.168.0.5</text>"
-        },
-        "ip2":{
-            "type":"text",
-            "x": "100",
-            "y": "420",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"ip2",
-            "idnum":"star",
-            "value":"<text x='100' y='420' id ='ip4' class='taskClose'>192.168.0.2</text>"
-        },
-        "ip5":{
-            "type":"text",
-            "x": "360",
-            "y": "720",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"ip5",
-            "idnum":"star",
-            "value":"<text x='360' y='720' id ='ip5' class='taskClose'>192.168.0.6</text>"
+            "value":"<text x='580' y='620' id ='ip3' class='taskClose'>192.168.0.5</text>"
         }
     }
 }
