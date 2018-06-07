@@ -123,7 +123,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 
-        def studio_view(self, context=None):
+    def studio_view(self, context=None):
 
         context = {
             "display_name": self.display_name,
