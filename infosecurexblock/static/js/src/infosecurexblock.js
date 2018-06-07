@@ -223,6 +223,8 @@ function InfoSecureXBlock(runtime, element) {
                 }
             function fileShow(amount, jsonObj){
                 Start.active(['File1Id','File1TextID','File1TextID2']);
+                console.log(amount);
+                console.log(jsonObj);
                 addElementTextSVG2(amount, jsonObj);
             }
             if (evt.id == "Link"){
