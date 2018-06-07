@@ -231,7 +231,6 @@ function InfoSecureXBlock(runtime, element) {
             }*/
            
             function fileShow(){
-                
                 console.log("keys --" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
                //console.log(amount);
@@ -446,10 +445,10 @@ function InfoSecureXBlock(runtime, element) {
                 document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
                // document.getElementById("lab3_links").innerHTML = "aa";
-                console.log(document.querySelector("."+idNum[0]).innerHTML);
+             //   console.log(document.querySelector("."+idNum[0]).innerHTML);
                 mas.push(document.querySelector("."+idNum[0]).innerHTML);
                 
-                console.log(mas);
+             //   console.log(mas);
                 // mas.push(document.getElementById(idNum[0]).value);
                 var res = [];
                 for (var i in student_answer3) {
@@ -457,9 +456,9 @@ function InfoSecureXBlock(runtime, element) {
                  
                 }
                 
-                console.log(res);
+              //  console.log(res);
                 //console.log(student_answer3.res[1]);                          
-                console.log(student_answer3[idNum[0]]);
+            //    console.log(student_answer3[idNum[0]]);
                 if (
                     idNum[0]=="link1" ||
                     idNum[0]=="link4" ||
@@ -481,7 +480,7 @@ function InfoSecureXBlock(runtime, element) {
                    student_answer3[idNum[1]] = true;//test
                }
                 //console.log(student_answer3.link1);
-                console.log(student_answer3);
+             //   console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
                 push3.push(document.getElementById(idNum[0].value));
                 push3.push(document.getElementById(idNum[1].value));              
