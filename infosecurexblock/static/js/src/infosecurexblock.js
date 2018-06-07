@@ -227,7 +227,7 @@ function InfoSecureXBlock(runtime, element) {
                 Start.active(['File1Id','File1TextID','File1TextID2']);
                 console.log(amount);
                 console.log(jsonObj);
-                self.addElementTextSVG(amount, jsonObj);
+                this.addElementTextSVG(amount, jsonObj);
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
