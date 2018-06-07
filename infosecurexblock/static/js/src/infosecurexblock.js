@@ -157,6 +157,7 @@ function InfoSecureXBlock(runtime, element) {
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
                     console.log("log",handler.amount);
+                    console.log("log2",handler.Rect3);
                     self.addElementTextSVG(handler.amount, handler.Rect3);            
                 }
             }
