@@ -783,7 +783,7 @@ function InfoSecureXBlock(runtime, element) {
                     this.element.innerHTML = "http://google.com"
                 }
                 if ((name=="text")&&(attributes[k]=="link2")){
-                    this.element.innerHTML = "https://www.bank.ex.com"
+                    this.element.innerHTML = "https://bank.ex.com"
                 }
                 if ((name=="text")&&(attributes[k]=="link3")){
                     this.element.innerHTML = "http://gogle.com"
