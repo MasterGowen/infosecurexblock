@@ -116,15 +116,15 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
-                Start.deactive(['ip1','ip2','ip3','ip4','ip5','key_id','mes_id']);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5',keys,mes]);
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5','key_id','mes_id']);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',keys,mes]);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5','key_id', 'mes_id']);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes]);
             }
             if (evt.id == "key"){
                 console.log("zachlo v key");
@@ -200,6 +200,9 @@ function InfoSecureXBlock(runtime, element) {
         }
         //Lab 1
         static onLab1(event) {
+            var param = getRandomInt(1,5).toString(); 
+                console.log(param);
+                var keys = "key_id"+param; var mes = "mes_id"+param;
             //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
@@ -207,7 +210,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
             evt.id == 'File1' && fileShow();
-            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2','key_id','mes_id']);
+            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2',keys,mes]);
             ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
@@ -228,10 +231,8 @@ function InfoSecureXBlock(runtime, element) {
             }*/
            
             function fileShow(){
-                var param = getRandomInt(1,5).toString(); 
-                console.log(param);
-                var keys = "key_id"+param; var mes = "mes_id"+param;
-                console.log("keys --" ,keys, typeof(mes)); 
+                
+                console.log("keys --" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
                //console.log(amount);
                // console.log(jsonObj);
