@@ -123,6 +123,39 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 
+        def studio_view(self, context=None):
+
+        context = {
+            "display_name": self.display_name,
+            "task_text": self.task_text,
+            "weight": self.weight,
+            "max_attempts": self.max_attempts,
+            "attempts": self.attempts,
+            "points": self.points,
+
+        }
+
+        fragment = Fragment()
+        fragment.add_content(
+            render_template(
+                "static/html/setting_studio.html",
+                context
+            )
+        )
+
+        js_urls = (
+            "static/js/src/setting_studio.js",
+            )
+
+        css_urls = (
+            "static/css/setting_studio.css",
+            )
+
+        load_resources(js_urls, css_urls, fragment)
+
+        fragment.initialize_js('InfoSecureXBlock')
+        return fragment
+
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
     @XBlock.handler
