@@ -27,9 +27,12 @@ function InfoSecureXBlock(runtime, element) {
                 this.element.setAttributeNS(null, 'id', 'star')
                 document.getElementById("widget").appendChild(this.element);
             }
-            for (var k in attributes) {
-                this.element.setAttributeNS(null, [k], attributes[k]);
+            if (attributes) {
+                for (var k in attributes) {
+                    this.element.setAttributeNS(null, [k], attributes[k]);
+                }
             }
+            return this.element;
         }
         appendNodeSVG(element) {
             var svg = document.querySelector('svg');
