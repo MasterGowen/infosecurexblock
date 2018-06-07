@@ -257,7 +257,7 @@
     "Rect3":{
         "key":{"type":"text",
                 "id": "key_id",
-                "class": "taskClose",
+                "class": "taskClose key_id",
                 "value":"<text x='117' y='50' idnum ='key' class='taskClose' >2,10</text>"
             }
     }
