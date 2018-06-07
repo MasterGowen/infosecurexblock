@@ -259,7 +259,7 @@
             "idnum":"star", 
             "id": "key_id", 
             "class": "taskClose", 
-            "value":"<text x='177' y='150' id ='key_id' class='taskClose' >2,10</text>" 
+            "value":"<text x='187' y='130' id ='key_id' class='taskClose' >2,10</text>" 
             }
     }
 }
