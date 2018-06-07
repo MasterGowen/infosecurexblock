@@ -156,7 +156,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
-                    console.log(handler.amount);
+                    console.log("log",handler.amount);
                     self.addElementTextSVG(handler.amount, handler.Rect3);            
                 }
             }
@@ -220,7 +220,7 @@ function InfoSecureXBlock(runtime, element) {
            
             function fileShow(){
                 Start.active(['File1Id','File1TextID','File1TextID2','key']);
-               // console.log(amount);
+               //console.log(amount);
                // console.log(jsonObj);
                // Start.addElementTextSVG(amount, jsonObj);
             }
