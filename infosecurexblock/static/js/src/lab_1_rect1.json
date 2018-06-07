@@ -264,7 +264,7 @@
         "fill": "black",
         "id":"key1",
         "idnum":"Key",
-        "value":"<text x='117' y='50' id ='key1' class='taskClose'>2,10</text>"
+        "value":"<text x='117' y='50' id ='key1' class='taskClose'>Ключ: 2,10</text>"
         }
     }
 }
