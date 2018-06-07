@@ -1,9 +1,11 @@
 svg {
     width: 850px;
     height: 850px; }
-
+.modal-content{
+    height: 1050px;
+}
 #widget {
-    /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     height: 1050px;
     width: 850px;
     display: block;
