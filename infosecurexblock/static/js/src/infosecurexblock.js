@@ -114,7 +114,7 @@ function InfoSecureXBlock(runtime, element) {
         }
 
         static taskBlock(event) {
-           console.log("zachlo v taskblock");
+          // console.log("zachlo v taskblock");
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
@@ -127,10 +127,6 @@ function InfoSecureXBlock(runtime, element) {
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
                 Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes]);
-            }
-            if (evt.id == "key"){
-                console.log("zachlo v key");
-                Start.active(['taskClose']);
             }
         }
 
@@ -152,7 +148,6 @@ function InfoSecureXBlock(runtime, element) {
             //console.log(lab_id);
          //   console.log(result.lab_id);
             function success(handler) {
-                console.log(handler);
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
                     self.addElementSVG(handler.amount, handler.Rect1);                   
@@ -163,8 +158,6 @@ function InfoSecureXBlock(runtime, element) {
                 }
                 if (handler.Rect3) {
                     handler.amount = Object.keys(handler.Rect3).length;
-                    console.log("log",handler.amount);
-                    console.log("log2",handler.Rect3);
                     self.addElementTextSVG(handler.amount, handler.Rect3);            
                 }
             }
@@ -181,8 +174,6 @@ function InfoSecureXBlock(runtime, element) {
     }
         static active(idNum) {
             for(var k in idNum){
-                console.log("zashlo v active");
-                console.log(document.getElementById(idNum[k]));
                 document.getElementById(idNum[k]).classList.remove("taskClose");
                 document.getElementById(idNum[k]).classList.add("taskOpen");
             };
@@ -231,7 +222,7 @@ function InfoSecureXBlock(runtime, element) {
             }*/
            
             function fileShow(){
-                console.log("keys --" ,keys, mes); 
+                console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
                //console.log(amount);
                // console.log(jsonObj);
