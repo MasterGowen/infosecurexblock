@@ -16,7 +16,7 @@ function InfoSecureXBlock(runtime, element) {
                 this.appendNodeSVG(this.constract('rect'));
             }
         }
-        
+
         constract(name) {
             return this.createElementSVG(name, this.defaultSet);
         }
@@ -24,8 +24,9 @@ function InfoSecureXBlock(runtime, element) {
         createElementSVG(name, attributes) {
             this.NS = "http://www.w3.org/2000/svg";
             this.element = document.createElementNS(this.NS, name);
+            console.log(this.element);
             if (name == "svg") {
-                this.element.setAttributeNS(null, 'id', 'star')
+                this.element.setAttributeNS(null, 'id', 'star');
                 document.getElementById("widget").appendChild(this.element);
             }
             if (attributes) {
