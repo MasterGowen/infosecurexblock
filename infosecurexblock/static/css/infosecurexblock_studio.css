@@ -1,8 +1,8 @@
 svg {
     width: 850px;
     height: 850px; }
-.modal-content{
-    height: 1050px;
+.modal-lg.modal-editor .modal-content{
+    height: auto !important;
 }
 #widget {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
