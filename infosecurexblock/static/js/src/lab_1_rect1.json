@@ -253,5 +253,18 @@
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
                 "id": "arrowid"
                 }
+    },
+    "Rect3":{
+        "key":{
+        "type":"text",
+        "x": "117",
+        "y": "50",
+        "fontSize":"10",
+        "fontFamily":"Roboto",
+        "fill": "black",
+        "id":"key1",
+        "idnum":"Key",
+        "value":"<text x='117' y='50' id ='key1' class='taskClose'>2,10</text>"
+        }
     }
 }

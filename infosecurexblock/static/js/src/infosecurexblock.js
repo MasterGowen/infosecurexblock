@@ -211,10 +211,14 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[2]).classList.remove(idNum[3]);
                 fileShow();
             }
-            function fileShow() {
+          /*  function fileShow() {
                 Start.active(['File1Id','File1TextID','File1TextID2']);
                 document.getElementById("File1TextID").innerHTML = "Сообщение:406 9915660 05464616061 - 9915660";
                 document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
+            }*/
+            function fileSHow(){
+                Start.active(['File1Id','File1TextID','File1TextID2']);
+                addElementTextSVG(amount, jsonObj);
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -894,10 +898,13 @@ function InfoSecureXBlock(runtime, element) {
         }
         return false;
     }
-
+    function getRandomInt(min, max) {///между максимумом(невключительно) и минимумом(включ)
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
     function isNumeric(n) {
 
-        return !isNaN(parseFloat(n)) && isFinite(n);
+        return !isNaN(parseFloat(n)) && isFinite(
+            n);
 
     }
     
