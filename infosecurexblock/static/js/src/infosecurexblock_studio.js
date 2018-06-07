@@ -27,7 +27,7 @@ function InfoSecureXBlock(runtime, element) {
             console.log(this.element);
             if (name == "svg") {
                 this.element.setAttributeNS(null, 'id', 'star');
-                document.getElementById("widget").appendChild(this.element);
+                document.getElementById("widget_studio").appendChild(this.element);
             }
             if (attributes) {
                 for (var k in attributes) {
