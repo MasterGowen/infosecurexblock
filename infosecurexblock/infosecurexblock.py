@@ -123,38 +123,38 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         fragment.initialize_js('InfoSecureXBlock')
         return fragment
 
-    # def studio_view(self, context=None):
+    def studio_view(self, context=None):
 
-    #     context = {
-    #         "display_name": self.display_name,
-    #         "task_text": self.task_text,
-    #         "weight": self.weight,
-    #         "max_attempts": self.max_attempts,
-    #         "attempts": self.attempts,
-    #         "points": self.points,
+        context = {
+            "display_name": self.display_name,
+            "task_text": self.task_text,
+            "weight": self.weight,
+            "max_attempts": self.max_attempts,
+            "attempts": self.attempts,
+            "points": self.points,
 
-    #     }
+        }
 
-    #     fragment = Fragment()
-    #     fragment.add_content(
-    #         render_template(
-    #             "static/html/infosecurexblock_studio.html",
-    #             context
-    #         )
-    #     )
+        fragment = Fragment()
+        fragment.add_content(
+            render_template(
+                "static/html/infosecurexblock_studio.html",
+                context
+            )
+        )
 
-    #     js_urls = (
-    #         "static/js/src/infosecurexblock_studio.js",
-    #         )
+        js_urls = (
+            "static/js/src/infosecurexblock_studio.js",
+            )
 
-    #     css_urls = (
-    #         "static/css/infosecurexblock_studio.css",
-    #         )
+        css_urls = (
+            "static/css/infosecurexblock_studio.css",
+            )
 
-    #     load_resources(js_urls, css_urls, fragment)
+        load_resources(js_urls, css_urls, fragment)
 
-    #     fragment.initialize_js('InfoSecureXBlock')
-    #     return fragment
+        fragment.initialize_js('InfoSecureXBlock')
+        return fragment
 
     # TO-DO: change this handler to perform your own actions.  You may need more
     # than one handler, or you may not need any handlers at all.
