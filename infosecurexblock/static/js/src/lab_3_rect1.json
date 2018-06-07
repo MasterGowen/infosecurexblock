@@ -33,7 +33,7 @@
     },
     "link4":{
         "type":"text",
-        "x": "100",
+        "x": "90",
         "y": "320",
         "fontSize":"20",
         "fontFamily":"Roboto",
@@ -93,7 +93,7 @@
     },
     "link10":{
         "type":"text",
-        "x": "310",
+        "x": "300",
         "y": "340",
         "fontSize":"20",
         "fontFamily":"Roboto",
