@@ -221,7 +221,7 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                     }
                 }
-            function fileShow(amount){
+            function fileShow(amount, jsonObj){
                 Start.active(['File1Id','File1TextID','File1TextID2']);
                 addElementTextSVG2(amount, jsonObj);
             }
