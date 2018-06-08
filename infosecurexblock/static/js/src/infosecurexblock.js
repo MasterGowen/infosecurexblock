@@ -8,7 +8,7 @@ function InfoSecureXBlock(runtime, element) {
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
-   var global_d = 0; var global_N = 0;
+   
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -237,26 +237,26 @@ function InfoSecureXBlock(runtime, element) {
                // var st = global_N_1.indexOf("Ключ:");
                 console.log("id --- ",global_N);
                 if (global =="key_id1" )
-              {   global_d= "2";
-                 global_N= "10";
+              {  var global_d= "2";
+                var global_N= "10";
                 console.log(global_N);
             }
             if (global =="key_id2" )
-              {   global_d= "3";
-                 global_N= "10";
+              {  var global_d= "3";
+                var global_N= "10";
                 console.log(global_N);
             }
             if (global =="key_id3" )
-              {   global_d= "3";
-                 global_N= "15";
+              {  var global_d= "3";
+                var global_N= "15";
                 console.log(global_N);
             }
             if (global =="key_id4" )
-              {   global_d= "5";
-                 global_N= "14";
+              { 
+                var global_d= "5";
+                var global_N= "14";
                 console.log(global_N);
             }
-         //   return global_d,global_N;
                
             }
             if (evt.id == "Link"){
@@ -280,12 +280,11 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-               // var global_d,global_N=Start.onLab1.fileShow();
-                if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
+                if (isNumeric(d) == false && empty != true|| d.toString()==this.global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
                 }
-                if (isNumeric(N) == false && empty != true || N.toString()!=global_N ) {
+                if (isNumeric(N) == false && empty != true || N.toString()!=this.global_N ) {
                     alert('Некорректный закрытый ключ (N).');
                     che++;
                 }
@@ -329,14 +328,15 @@ function InfoSecureXBlock(runtime, element) {
         static getRandomInt(min, max){
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        static Time3Lab(t,idNum){
-           
+        static Time3Lab(t,NumLink){
+           for(var k = 0; 0 < NumLink;k++){
             setTimeout(()=>{
-                Start.active([idNum[0], idNum[1]]);
+                Start.active(['link'+[k], 'Link'+[k]]);
             }, t);t+=3000;
             setTimeout(()=>{
-                Start.deactive2([idNum[0], idNum[1]]);
+                Start.deactive2(['link'+[k], 'Link'+[k]]);
             }, t);t+=3000;
+           }
         }
         //Lab 3
         static onLab3(event) {
@@ -345,105 +345,10 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             
             var t= 3000;
+            Start.Time3Lab(3000,16);
           /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
             Time3Lab(t, ["link2","Link2"]);t+=300;
             Time3Lab(t, ["link3","Link2"]);*/
-           setTimeout(()=>{
-                Start.active(["link1", "Link1"]);
-            }, 3000);
-            setTimeout(()=>{
-                Start.deactive2(["link1", "Link1"]);
-            }, 6000);
-            setTimeout(()=> {
-                Start.active(["link2", "Link2"]);
-            }, 8000);
-            setTimeout(()=>{
-                Start.deactive2(["link2", "Link2"]);
-            }, 11000);
-            setTimeout(()=>{
-                Start.active(["link3", "Link3"]);
-            }, 13000);
-            setTimeout(()=>{
-                Start.deactive2(["link3", "Link3"]);
-            }, 16000);
-            setTimeout(()=>{
-                Start.active(["link4", "Link4"]);
-            }, 18000);
-            setTimeout(()=>{
-                Start.deactive2(["link4", "Link4"]);
-            }, 21000);
-            setTimeout(()=>{
-                Start.active(["link5", "Link5"]);
-            }, 23000);
-            setTimeout(()=>{
-                Start.deactive2(["link5", "Link5"]);
-            }, 26000);
-            setTimeout(()=>{
-                Start.active(["link6", "Link6"]);
-            }, 28000);
-            setTimeout(()=>{
-                Start.deactive2(["link6", "Link6"]);
-            }, 31000);
-            setTimeout(()=>{
-                Start.active(["link7", "Link7"]);
-            }, 33000);
-            setTimeout(()=>{
-                Start.deactive2(["link7", "Link7"]);
-            }, 36000);
-            setTimeout(()=>{
-                Start.active(["link8", "Link8"]);
-            }, 38000);
-            setTimeout(()=>{
-                Start.deactive2(["link8", "Link8"]);
-            }, 41000);
-            setTimeout(()=>{
-                Start.active(["link9", "Link9"]);
-            }, 43000);
-            setTimeout(()=>{
-                Start.deactive2(["link9", "Link9"]);
-            }, 46000);
-            setTimeout(()=>{
-                Start.active(["link10", "Link10"]);
-            }, 48000);
-            setTimeout(()=>{
-                Start.deactive2(["link10", "Link10"]);
-            }, 51000);
-            setTimeout(()=>{
-                Start.active(["link11", "Link11"]);
-            }, 53000);
-            setTimeout(()=>{
-                Start.deactive2(["link11", "Link11"]);
-            }, 56000);
-            setTimeout(()=>{
-                Start.active(["link12", "Link12"]);
-            }, 58000);
-            setTimeout(()=>{
-                Start.deactive2(["link12", "Link12"]);
-            }, 61000);
-            setTimeout(()=>{
-                Start.active(["link13", "Link13"]);
-            }, 63000);
-            setTimeout(()=>{
-                Start.deactive2(["link13", "Link13"]);
-            }, 66000);
-            setTimeout(()=>{
-                Start.active(["link14", "Link14"]);
-            }, 68000);
-            setTimeout(()=>{
-                Start.deactive2(["link14", "Link14"]);
-            }, 71000);
-            setTimeout(()=>{
-                Start.active(["link15", "Link15"]);
-            }, 73000);
-            setTimeout(()=>{
-                Start.deactive2(["link15", "Link15"]);
-            }, 77000);
-            setTimeout(()=>{
-                Start.active(["link16", "Link16"]);
-            }, 79000);
-            setTimeout(()=>{
-                Start.deactive2(["link16", "Link16"]);
-            }, 82000);
             
             var push3 =[]; var mas = [];
            // document.getElementById('random').display.style = "block";
