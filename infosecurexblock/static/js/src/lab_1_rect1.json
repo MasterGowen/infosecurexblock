@@ -240,7 +240,7 @@
                 "idnum":"star", 
                 "id": "mes_id1", 
                 "class": "taskClose", 
-                "value":"<text x='30' y='20' id ='mes_id1' class='taskClose' >Сообщение:|4|0|6| |9|9|1|5|6|6|0| |0|5|4|6|4|6|1|6|0|6|1|-|9|9|1|5|6|6|0|9</text>" 
+                "value":"<text x='30' y='20' id ='mes_id1' class='taskClose' >Сообщение:|4|0|6| |9|9|1|5|6|6|0| |0|5|4|6|4|6|1|6|0|6|1|-|9|9|1|5|6|6|0|</text>" 
                 },
             "key2":{"type":"text", 
                 "idnum":"star", 

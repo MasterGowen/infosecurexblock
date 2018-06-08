@@ -6,7 +6,8 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = getRandomInt(1,5).toString(); 
     console.log(param);
-    var keys = "key_id"+param; var mes = "mes_id"+param;
+    var keys = "key_id"+param; 
+    var mes = "mes_id"+param;
    
     function successCheck(result) {
         //console.log("result:", result);
@@ -225,13 +226,14 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-                var global_d= document.getElementById("key_id1").value.text;
-                console.log(document.getElementById("key_id1").value.text);
-                var global_N= document.querySelector("N").value;
-                console.log(document.querySelector("N").value);
-               //console.log(amount);
-               // console.log(jsonObj);
-               // Start.addElementTextSVG(amount, jsonObj);
+                console.log(id);
+                if (id =="key_id1" )
+              {  var global_d= "2";
+                //document.getElementById("key_id1");
+               // console.log(document.getElementById("key_id1").value.text);
+                var global_N= "10";//document.querySelector("N").value;
+                console.log(document.querySelector("N").value);}
+               
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -254,11 +256,11 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                if (isNumeric(d) == false && empty != true|| d!=global_d) {
+                if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
                 }
-                if (isNumeric(N) == false && empty != true || N!=global_N ) {
+                if (isNumeric(N) == false && empty != true || N.toString()!=global_N ) {
                     alert('Некорректный закрытый ключ (N).');
                     che++;
                 }
