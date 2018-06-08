@@ -23,7 +23,7 @@ function InfoSecureXBlock(runtime, element) {
        global_N= "15";
       console.log(global_N);
   }
-  if (gkeys =="key_id4" )
+  if (keys =="key_id4" )
     { 
        global_d= "5";
       global_N= "14";
