@@ -238,7 +238,7 @@ function InfoSecureXBlock(runtime, element) {
                 var global_N_3 = document.getElementById("key_id1");
                 var global_N_4 = document.getElementById("key_id1");
                // var st = global_N_1.indexOf("Ключ:");
-                console.log("id --- ",global_N_, global_N_2, global_N_3, global_N_4);
+                console.log("id --- ",global_N_1, global_N_2, global_N_3, global_N_4);
                 if (id =="key_id1" )
               {  var global_d= "2";
                 //document.getElementById("key_id1");
