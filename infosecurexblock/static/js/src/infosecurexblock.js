@@ -329,14 +329,14 @@ function InfoSecureXBlock(runtime, element) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         static Time3Lab(t,NumLink){
-           for(var k in NumLink){
-               console.log('test');
-            setTimeout(()=>{
+           for(var k in 10){
+               console.log('test: ',[k],' ',t,' ',NumLink);
+/*             setTimeout(()=>{
                 Start.active(['link'+[k], 'Link'+[k]]);
             }, t);t+=3000;
             setTimeout(()=>{
                 Start.deactive2(['link'+[k], 'Link'+[k]]);
-            }, t);t+=3000;
+            }, t);t+=3000; */
            }
         }
         //Lab 3
