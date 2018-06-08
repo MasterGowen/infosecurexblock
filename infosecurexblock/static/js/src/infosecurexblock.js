@@ -182,7 +182,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         static value2(idNum) {
             for(var k in idNum){
-                document.getElementById(idNum[k]).value;
+                document.getElementById(idNum[k]).N.value;
             };
         }
         static deactive(idNum) {
@@ -230,8 +230,8 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-             var id = Start.value2([keys]);
-                console.log("id --- ",id);
+             var global_N = Start.value2([keys]);
+                console.log("id --- ",global_N);
                 if (id =="key_id1" )
               {  var global_d= "2";
                 //document.getElementById("key_id1");
