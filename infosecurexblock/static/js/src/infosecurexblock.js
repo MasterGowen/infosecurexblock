@@ -344,10 +344,10 @@ function InfoSecureXBlock(runtime, element) {
                         var linkNumid = ['link'+k,'Link'+k];
                         console.log(linkNumid);
                     setTimeout((k)=>{
-                         Start.active(['link'+k,'Link'+k]);
+                         Start.active(linkNumid);
                      }, time);time+=2000;
                     setTimeout((k)=>{
-                         Start.deactive2(['link'+k,'Link'+k]);
+                         Start.deactive2(linkNumid);
                      }, timeDeactive);timeDeactive+=time;
                     }
                  }
