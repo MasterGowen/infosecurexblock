@@ -225,8 +225,10 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-                var global_d= document.querySelector("d").value;
-                console.log(document.querySelector("d").value);
+                var global_d= document.getElementById("key_id1").value.text;
+                console.log(document.getElementById("key_id1").value.text);
+                var global_N= document.querySelector("N").value;
+                console.log(document.querySelector("N").value);
                //console.log(amount);
                // console.log(jsonObj);
                // Start.addElementTextSVG(amount, jsonObj);
@@ -256,7 +258,7 @@ function InfoSecureXBlock(runtime, element) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
                 }
-                if (isNumeric(N) == false && empty != true ) {
+                if (isNumeric(N) == false && empty != true || N!=global_N ) {
                     alert('Некорректный закрытый ключ (N).');
                     che++;
                 }
