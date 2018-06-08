@@ -230,7 +230,7 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-             var id = Start.value2(["key_id1"]);
+             var id = Start.value2([keys]);
                 console.log("id --- ",id);
                 if (id =="key_id1" )
               {  var global_d= "2";
