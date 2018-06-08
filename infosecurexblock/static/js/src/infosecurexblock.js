@@ -336,7 +336,7 @@ function InfoSecureXBlock(runtime, element) {
             var student_answer = {};
             var mas_count = 0;
             function Time3Lab(t,NumLink){
-                    //for(var k = 0; 0 < NumLink;k++){
+                    for(var k = 0; 0 < NumLink;k++){
                         console.log('test: ',t,' ',NumLink);
          /*             setTimeout(()=>{
                          Start.active(['link'+[k], 'Link'+[k]]);
@@ -344,7 +344,7 @@ function InfoSecureXBlock(runtime, element) {
                      setTimeout(()=>{
                          Start.deactive2(['link'+[k], 'Link'+[k]]);
                      }, t);t+=3000; */
-                    //}
+                    }
                  }
             var t= 3000;
             evt.id == 'taskId'&& Time3Lab(3000,16);
