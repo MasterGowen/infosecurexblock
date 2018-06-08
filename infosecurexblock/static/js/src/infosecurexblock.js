@@ -5,9 +5,11 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = getRandomInt(1,5).toString(); 
+    var param2 = getRandomInt(1,11).toString();
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
+    var links = "link_id"+param2;
     if (keys =="key_id1" )
     {   global_d= "2";
        global_N= "10";
@@ -314,6 +316,7 @@ function InfoSecureXBlock(runtime, element) {
             else if (evt.id == 'checkid') {
                 console.log('Error:не все поля заполненны.')
             }
+
         }
         static checkAnswer(checkHandler, student_answer) {
             //console.log("student_answer :", student_answer);
@@ -333,6 +336,7 @@ function InfoSecureXBlock(runtime, element) {
 
         //Lab 3
         static onLab3(event) {
+            //link заменить на links
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
