@@ -341,14 +341,17 @@ function InfoSecureXBlock(runtime, element) {
                     for(var k = 1; k < NumLink;k++){
                         console.log('test: ',time,' ',NumLink,' ',[k],' ',k,'  link'+k,' Link'+k);
                         //Start.active(['link'+[k], 'Link'+[k]]);
-                        var linkNumid = ['link'+k,'Link'+k];
-                        console.log(linkNumid);
+                        activeLink(['link'+k,'Link'+k]);
+                        //console.log(linkNumid);
                     setTimeout((k)=>{
                          Start.active(linkNumid);
                      }, time);time+=2000;
                     setTimeout((k)=>{
                          Start.deactive2(linkNumid);
                      }, timeDeactive);timeDeactive+=time;
+                    }
+                    function activeLink(linkNumid){
+                        console.log(linkNumid);
                     }
                  }
             evt.id == 'taskId'&& Time3Lab(3000,17);
