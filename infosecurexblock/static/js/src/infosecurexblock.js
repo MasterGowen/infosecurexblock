@@ -8,7 +8,7 @@ function InfoSecureXBlock(runtime, element) {
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
-   
+   var global_d = 0; var global_N = 0;
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -237,26 +237,26 @@ function InfoSecureXBlock(runtime, element) {
                // var st = global_N_1.indexOf("Ключ:");
                 console.log("id --- ",global_N);
                 if (global =="key_id1" )
-              {  var global_d= "2";
-                var global_N= "10";
+              {   global_d= "2";
+                 global_N= "10";
                 console.log(global_N);
             }
             if (global =="key_id2" )
-              {  var global_d= "3";
-                var global_N= "10";
+              {   global_d= "3";
+                 global_N= "10";
                 console.log(global_N);
             }
             if (global =="key_id3" )
-              {  var global_d= "3";
-                var global_N= "15";
+              {   global_d= "3";
+                 global_N= "15";
                 console.log(global_N);
             }
             if (global =="key_id4" )
-              {  var global_d= "5";
-                var global_N= "14";
+              {   global_d= "5";
+                 global_N= "14";
                 console.log(global_N);
             }
-            return global_d,global_N;
+         //   return global_d,global_N;
                
             }
             if (evt.id == "Link"){
@@ -280,7 +280,7 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                var global_d,global_N=Start.onLab1.fileShow();
+               // var global_d,global_N=Start.onLab1.fileShow();
                 if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
