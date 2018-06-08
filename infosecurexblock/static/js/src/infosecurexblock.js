@@ -182,9 +182,9 @@ function InfoSecureXBlock(runtime, element) {
         }
         static value2(idNum) {
             for(var k in idNum){
-                document.getElementById(idNum[k]).N;
+                document.getElementById(idNum[k]);
                 console.log(
-                    document.getElementById(idNum[k]).N);
+                    document.getElementById(idNum[k]));
             };
         }
         static deactive(idNum) {
