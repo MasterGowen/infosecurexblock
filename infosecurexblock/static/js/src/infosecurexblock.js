@@ -233,7 +233,7 @@ function InfoSecureXBlock(runtime, element) {
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
                 console.log("vivod",Start.value2([keys]));
-                var global_N_1 = document.getElementById(keys).text;
+                var global_N_1 = document.getElementById(keys).value;
                // var st = global_N_1.indexOf("Ключ:");
                 console.log("id --- ",global_N_1);
                 if (id =="key_id1" )
