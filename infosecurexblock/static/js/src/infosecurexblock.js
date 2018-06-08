@@ -8,7 +8,7 @@ function InfoSecureXBlock(runtime, element) {
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
-   var global_d=0, global_N=0;
+   var global_d, global_N =Start.onLab1.fileShow();
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -257,7 +257,7 @@ function InfoSecureXBlock(runtime, element) {
                 global_N= "14";
                 console.log(global_N);
             }
-               
+               return global_d, global_N;
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
