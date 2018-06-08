@@ -342,10 +342,10 @@ function InfoSecureXBlock(runtime, element) {
                     for(this.k=1; this.k < NumLink;this.k++){
                         console.log('test: ',time,' ',NumLink,' ',this.k,'  link'+this.k,' Link'+this.k);
                         //Start.active(['link'+[k], 'Link'+[k]]);
-                    setTimeout((k)=>{
+                    setTimeout(()=>{
                         Start.active(['link'+this.k,'Link'+this.k]);
                      }, time);time+=2000;
-                    setTimeout((k)=>{
+                    setTimeout(()=>{
                          Start.deactive2(['link'+this.k,'Link'+this.k]);
                      }, timeDeactive);timeDeactive+=time;
                     }
