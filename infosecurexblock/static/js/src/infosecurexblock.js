@@ -180,7 +180,11 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[k]).classList.add("taskOpen");
             };
         }
-    
+        static value(idNum) {
+            for(var k in idNum){
+                document.getElementById(idNum[k]).value;
+            };
+        }
         static deactive(idNum) {
             for(var k in idNum){
                 document.getElementById(idNum[k]).classList.remove("taskOpen");
@@ -226,6 +230,7 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
+             var id = value(keys);
                 console.log(id);
                 if (id =="key_id1" )
               {  var global_d= "2";
