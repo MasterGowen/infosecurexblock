@@ -336,7 +336,7 @@ function InfoSecureXBlock(runtime, element) {
             var student_answer = {};
             var mas_count = 0;
             function Time3Lab(t,NumLink){
-                    for(var k = 0; 0 < NumLink;k++){
+                    for(var k = 0; k < NumLink;k++){
                         console.log('test: ',t,' ',NumLink);
          /*             setTimeout(()=>{
                          Start.active(['link'+[k], 'Link'+[k]]);
