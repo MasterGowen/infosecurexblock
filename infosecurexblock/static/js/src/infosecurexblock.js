@@ -256,6 +256,7 @@ function InfoSecureXBlock(runtime, element) {
                 var global_N= "14";
                 console.log(global_N);
             }
+            return global_d,global_N;
                
             }
             if (evt.id == "Link"){
@@ -279,11 +280,12 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                if (isNumeric(d) == false && empty != true|| d.toString()==this.global_d) {
+                var global_d,global_N=Start.fileShow();
+                if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
                 }
-                if (isNumeric(N) == false && empty != true || N.toString()!=this.global_N ) {
+                if (isNumeric(N) == false && empty != true || N.toString()!=global_N ) {
                     alert('Некорректный закрытый ключ (N).');
                     che++;
                 }
