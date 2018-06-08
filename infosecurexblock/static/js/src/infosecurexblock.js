@@ -7,6 +7,8 @@ function InfoSecureXBlock(runtime, element) {
     var param = getRandomInt(1,5).toString(); 
     console.log(param);
     var keys = "key_id"+param; var mes = "mes_id"+param;
+    var global_d= document.querySelector("d").value;
+            console.log(document.querySelector("d").value);
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -249,11 +251,11 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                if (isNumeric(d) == false && empty != true) {
+                if (isNumeric(d) == false && empty != true|| d!=global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
                 }
-                if (isNumeric(N) == false && empty != true) {
+                if (isNumeric(N) == false && empty != true ) {
                     alert('Некорректный закрытый ключ (N).');
                     che++;
                 }
