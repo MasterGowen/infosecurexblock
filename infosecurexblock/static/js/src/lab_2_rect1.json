@@ -339,5 +339,23 @@
                     "id": "arrowid"
                     }
 
-    }
+    },"Rect3":{
+    "user1":{"type":"text", 
+        "idnum":"star", 
+        "id": "user_id1", 
+        "class": "taskClose", 
+        "value":"<text x='100' y='200' id ='user_id1' class='taskClose' >Пользователи</text>" 
+        },
+        "user2":{"type":"text", 
+            "idnum":"star", 
+            "id": "user_id2", 
+            "class": "taskClose", 
+            "value":"<text x='340' y='750' id ='user_id2' class='taskClose' >Администратор</text>" 
+            },
+            "user3":{"type":"text", 
+                "idnum":"star", 
+                "id": "user_id3", 
+                "class": "taskClose", 
+                "value":"<text x='640' y='200' id ='user_id3' class='taskClose' >Редакторы</text>" 
+                }}
 }
