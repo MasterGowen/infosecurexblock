@@ -337,21 +337,17 @@ function InfoSecureXBlock(runtime, element) {
             var student_answer = {};
             var mas_count = 0;
             function Time3Lab(time,NumLink){
+                this.k;
                 var timeDeactive = 3000;
-                    for(var k = 1; k < NumLink;k++){
-                        console.log('test: ',time,' ',NumLink,' ',[k],' ',k,'  link'+k,' Link'+k);
+                    for(this.k=1; this.k < NumLink;this.k++){
+                        console.log('test: ',time,' ',NumLink,' ',this.k,'  link'+this.k,' Link'+this.k);
                         //Start.active(['link'+[k], 'Link'+[k]]);
-                        activeLink(['link'+k,'Link'+k]);
-                        //console.log(linkNumid);
                     setTimeout((k)=>{
-                         Start.active(linkNumid);
+                        Start.active(['link'+this.k,'Link'+this.k]);
                      }, time);time+=2000;
                     setTimeout((k)=>{
-                         Start.deactive2(linkNumid);
+                         Start.deactive2(['link'+this.k,'Link'+this.k]);
                      }, timeDeactive);timeDeactive+=time;
-                    }
-                    function activeLink(linkNumid){
-                        console.log(linkNumid);
                     }
                  }
             evt.id == 'taskId'&& Time3Lab(3000,17);
