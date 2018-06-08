@@ -232,16 +232,30 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-                console.log("vivod",Start.value2([keys]));
-                var global_N_1 = document.getElementById(keys).value;
+              ///  console.log("vivod",Start.value2([keys]));
+                var global = document.getElementById(keys);
                // var st = global_N_1.indexOf("Ключ:");
                 console.log("id --- ",global_N_1);
-                if (id =="key_id1" )
+                if (global =="key_id1" )
               {  var global_d= "2";
-                //document.getElementById("key_id1");
-               // console.log(document.getElementById("key_id1").value.text);
-                var global_N= "10";//document.querySelector("N").value;
-                console.log(document.querySelector("N").value);}
+                var global_N= "10";
+                console.log(document.querySelector("N").value);
+            }
+            if (global =="key_id2" )
+              {  var global_d= "3";
+                var global_N= "10";
+                console.log(document.querySelector("N").value);
+            }
+            if (global =="key_id3" )
+              {  var global_d= "3";
+                var global_N= "15";
+                console.log(document.querySelector("N").value);
+            }
+            if (global =="key_id4" )
+              {  var global_d= "5";
+                var global_N= "14";
+                console.log(document.querySelector("N").value);
+            }
                
             }
             if (evt.id == "Link"){
