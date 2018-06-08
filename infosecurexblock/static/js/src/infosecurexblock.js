@@ -235,26 +235,26 @@ function InfoSecureXBlock(runtime, element) {
               ///  console.log("vivod",Start.value2([keys]));
                 var global = document.getElementById(keys);
                // var st = global_N_1.indexOf("Ключ:");
-                console.log("id --- ",global_N_1);
+                console.log("id --- ",global_N);
                 if (global =="key_id1" )
               {  var global_d= "2";
                 var global_N= "10";
-                console.log(document.querySelector("N").value);
+                console.log(global_N);
             }
             if (global =="key_id2" )
               {  var global_d= "3";
                 var global_N= "10";
-                console.log(document.querySelector("N").value);
+                console.log(global_N);
             }
             if (global =="key_id3" )
               {  var global_d= "3";
                 var global_N= "15";
-                console.log(document.querySelector("N").value);
+                console.log(global_N);
             }
             if (global =="key_id4" )
               {  var global_d= "5";
                 var global_N= "14";
-                console.log(document.querySelector("N").value);
+                console.log(global_N);
             }
                
             }
