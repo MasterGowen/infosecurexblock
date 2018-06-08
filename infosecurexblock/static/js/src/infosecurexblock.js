@@ -338,7 +338,8 @@ function InfoSecureXBlock(runtime, element) {
             function Time3Lab(time,NumLink){
                 var timeDeactive = 3000;
                     for(var k = 1; k < NumLink;k++){
-                        console.log('test: ',time,' ',NumLink,' ',[k]);
+                        console.log('test: ',time,' ',NumLink,' ',[k],' ',k);
+                        //Start.active(['link'+[k], 'Link'+[k]]);
                       setTimeout(()=>{
                          Start.active(['link'+[k], 'Link'+[k]]);
                      }, time);time+=2000;
@@ -347,7 +348,7 @@ function InfoSecureXBlock(runtime, element) {
                      }, timeDeactive);timeDeactive+=time;
                     }
                  }
-            evt.id == 'taskId'&& Time3Lab(3000,16);
+            evt.id == 'taskId'&& Time3Lab(3000,17);
           /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
             Time3Lab(t, ["link2","Link2"]);t+=300;
             Time3Lab(t, ["link3","Link2"]);*/
