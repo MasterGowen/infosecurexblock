@@ -335,18 +335,18 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
-            function Time3Lab(t,NumLink){
-                    for(var k = 0; k < NumLink;k++){
+            function Time3Lab(time,NumLink){
+                var timeDeactive = 3000;
+                    for(var k = 1; k < NumLink;k++){
                         console.log('test: ',t,' ',NumLink,' ',[k]);
                       setTimeout(()=>{
                          Start.active(['link'+[k], 'Link'+[k]]);
-                     }, t);t+=3000;
+                     }, time);time+=2000;
                      setTimeout(()=>{
                          Start.deactive2(['link'+[k], 'Link'+[k]]);
-                     }, t);t+=3000;
+                     }, timeDeactive);timeDeactive+=time;
                     }
                  }
-            var t= 3000;
             evt.id == 'taskId'&& Time3Lab(3000,16);
           /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
             Time3Lab(t, ["link2","Link2"]);t+=300;
