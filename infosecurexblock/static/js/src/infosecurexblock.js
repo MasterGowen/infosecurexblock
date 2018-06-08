@@ -279,11 +279,11 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
+                if (isNumeric(d) == false && empty != true|| d.toString()==this.global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
                 }
-                if (isNumeric(N) == false && empty != true || N.toString()!=global_N ) {
+                if (isNumeric(N) == false && empty != true || N.toString()!=this.global_N ) {
                     alert('Некорректный закрытый ключ (N).');
                     che++;
                 }
