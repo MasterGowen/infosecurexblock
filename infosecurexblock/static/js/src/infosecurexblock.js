@@ -6,7 +6,9 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = getRandomInt(1,5).toString(); 
     console.log(param);
-    var keys = "key_id"+param; var mes = "mes_id"+param;
+    var keys = "key_id"+param; 
+    var mes = "mes_id"+param;
+   
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -178,7 +180,13 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[k]).classList.add("taskOpen");
             };
         }
-    
+        static value2(idNum) {
+            for(var k in idNum){
+                document.getElementById(idNum[k]);
+                console.log(
+                    document.getElementById(idNum[k]));
+            };
+        }
         static deactive(idNum) {
             for(var k in idNum){
                 document.getElementById(idNum[k]).classList.remove("taskOpen");
@@ -224,9 +232,31 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-               //console.log(amount);
-               // console.log(jsonObj);
-               // Start.addElementTextSVG(amount, jsonObj);
+              ///  console.log("vivod",Start.value2([keys]));
+                var global = document.getElementById(keys);
+               // var st = global_N_1.indexOf("Ключ:");
+                console.log("id --- ",global_N);
+                if (global =="key_id1" )
+              {  var global_d= "2";
+                var global_N= "10";
+                console.log(global_N);
+            }
+            if (global =="key_id2" )
+              {  var global_d= "3";
+                var global_N= "10";
+                console.log(global_N);
+            }
+            if (global =="key_id3" )
+              {  var global_d= "3";
+                var global_N= "15";
+                console.log(global_N);
+            }
+            if (global =="key_id4" )
+              {  var global_d= "5";
+                var global_N= "14";
+                console.log(global_N);
+            }
+               
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -249,11 +279,11 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                if (isNumeric(d) == false && empty != true) {
+                if (isNumeric(d) == false && empty != true|| d.toString()==this.global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
                 }
-                if (isNumeric(N) == false && empty != true) {
+                if (isNumeric(N) == false && empty != true || N.toString()!=this.global_N ) {
                     alert('Некорректный закрытый ключ (N).');
                     che++;
                 }
