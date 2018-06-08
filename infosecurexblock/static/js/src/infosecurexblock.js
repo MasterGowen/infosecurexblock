@@ -280,7 +280,7 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                var global_d,global_N=Start.fileShow();
+                var global_d,global_N=Start.onLab1.fileShow();
                 if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
