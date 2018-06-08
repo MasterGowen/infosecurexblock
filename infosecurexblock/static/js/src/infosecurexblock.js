@@ -329,25 +329,25 @@ function InfoSecureXBlock(runtime, element) {
         static getRandomInt(min, max){
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        static Time3Lab(t,NumLink){
-           for(var k in NumLink){
-               console.log('test: ',[k],' ',t,' ',NumLink);
-/*             setTimeout(()=>{
-                Start.active(['link'+[k], 'Link'+[k]]);
-            }, t);t+=3000;
-            setTimeout(()=>{
-                Start.deactive2(['link'+[k], 'Link'+[k]]);
-            }, t);t+=3000; */
-           }
-        }
+
         //Lab 3
         static onLab3(event) {
             var evt = event.target;
             var student_answer = {};
             var mas_count = 0;
-            
+            function Time3Lab(t,NumLink){
+                    //for(var k = 0; 0 < NumLink;k++){
+                        console.log('test: ',[k],' ',t,' ',NumLink);
+         /*             setTimeout(()=>{
+                         Start.active(['link'+[k], 'Link'+[k]]);
+                     }, t);t+=3000;
+                     setTimeout(()=>{
+                         Start.deactive2(['link'+[k], 'Link'+[k]]);
+                     }, t);t+=3000; */
+                    //}
+                 }
             var t= 3000;
-            evt.id=='taskId'&& Start.Time3Lab(3000,16);
+            evt.id == 'taskId'&& Time3Lab(3000,16);
           /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
             Time3Lab(t, ["link2","Link2"]);t+=300;
             Time3Lab(t, ["link3","Link2"]);*/
