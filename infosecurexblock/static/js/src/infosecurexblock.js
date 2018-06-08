@@ -8,7 +8,27 @@ function InfoSecureXBlock(runtime, element) {
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
-   var global_d, global_N =Start.onLab1.fileShow();
+    if (keys =="key_id1" )
+    {   global_d= "2";
+       global_N= "10";
+      console.log(global_N);
+  }
+  if (keys =="key_id2" )
+    {   global_d= "3";
+       global_N= "10";
+      console.log(global_N);
+  }
+  if (keys =="key_id3" )
+    {   global_d= "3";
+       global_N= "15";
+      console.log(global_N);
+  }
+  if (gkeys =="key_id4" )
+    { 
+       global_d= "5";
+      global_N= "14";
+      console.log(global_N);
+  }
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -233,31 +253,11 @@ function InfoSecureXBlock(runtime, element) {
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
               ///  console.log("vivod",Start.value2([keys]));
-                var global = document.getElementById(keys);
+               // var global = document.getElementById(keys);
                // var st = global_N_1.indexOf("Ключ:");
-                console.log("id --- ",global_N);
-                if (global =="key_id1" )
-              {   global_d= "2";
-                 global_N= "10";
-                console.log(global_N);
-            }
-            if (global =="key_id2" )
-              {   global_d= "3";
-                 global_N= "10";
-                console.log(global_N);
-            }
-            if (global =="key_id3" )
-              {   global_d= "3";
-                 global_N= "15";
-                console.log(global_N);
-            }
-            if (global =="key_id4" )
-              { 
-                 global_d= "5";
-                global_N= "14";
-                console.log(global_N);
-            }
-               return global_d, global_N;
+              //  console.log("id --- ",global_N);
+              
+            //   return global_d, global_N;
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
