@@ -7,8 +7,7 @@ function InfoSecureXBlock(runtime, element) {
     var param = getRandomInt(1,5).toString(); 
     console.log(param);
     var keys = "key_id"+param; var mes = "mes_id"+param;
-    var global_d= document.querySelector("d").value;
-            console.log(document.querySelector("d").value);
+   
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -226,6 +225,8 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
+                var global_d= document.querySelector("d").value;
+                console.log(document.querySelector("d").value);
                //console.log(amount);
                // console.log(jsonObj);
                // Start.addElementTextSVG(amount, jsonObj);
