@@ -232,7 +232,7 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-             var global_N_1 = Start.value2([keys]);
+             var global_N_1 = Start.value2([keys]).toString();
                 var st = global_N_1.indexOf("Ключ:");
                 console.log("id --- ",global_N);
                 if (id =="key_id1" )
