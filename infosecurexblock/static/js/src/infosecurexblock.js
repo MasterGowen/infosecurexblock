@@ -180,7 +180,7 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[k]).classList.add("taskOpen");
             };
         }
-        static value(idNum) {
+        static value2(idNum) {
             for(var k in idNum){
                 document.getElementById(idNum[k]).value;
             };
@@ -230,7 +230,7 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-             var id = Start.value("id");
+             var id = Start.value2(["key_id1"]);
                 console.log("id --- ",id);
                 if (id =="key_id1" )
               {  var global_d= "2";
