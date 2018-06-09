@@ -249,22 +249,22 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             elif self.lab_id == 5:
                 answer0, key = data["e"], data["key"]
                 if (key=="key_id1"):
-                    if (str(answer0)=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ" || str(answer0)=="информационная безопасность" || str(answer0)=="Информационная безопасность"):
+                    if (str(answer0)=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ" or str(answer0)=="информационная безопасность" or str(answer0)=="Информационная безопасность"):
                         return 1
                     else:
                         return 0
                 if (key=="key_id2"):
-                    if (str(answer0)=="ИНфОРМАТИКА"|| str(answer0)=="Информатика"||str(answer0)=="информатика"||):
+                    if (str(answer0)=="ИНфОРМАТИКА" or str(answer0)=="Информатика" or str(answer0)=="информатика"):
                         return 1
                     else:
                         return 0
                 if (key=="key_id3"):
-                    if (str(answer0)=="ШИФРОВАНИЕ"|| str(answer0)=="Шифрование"||str(answer0)=="шифровние"||):
+                    if (str(answer0)=="ШИФРОВАНИЕ" or str(answer0)=="Шифрование" or str(answer0)=="шифрование"):
                         return 1
                     else:
                         return 0
                 if (key=="key_id4"):
-                    if (str(answer0)=="УГРОЗЫ ИНФОРМАТИКИ"|| str(answer0)=="Угрозы информатики"||str(answer0)=="угрозы информатики"||):
+                    if (str(answer0)=="УГРОЗЫ ИНФОРМАТИКИ" or str(answer0)=="Угрозы информатики" or str(answer0)=="угрозы информатики"):
                         return 1
                     else:
                         return 0
