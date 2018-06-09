@@ -413,7 +413,7 @@ function InfoSecureXBlock(runtime, element) {
                     res.push(i);
                  
                 }
-                console.log("linkiiiii ", (idNum[0]));
+                //console.log("linkiiiii ", (idNum[0]));
                 if (
                     idNum[0].toString()=="link_id1" ||
                     idNum[0].toString()=="link_id4" ||
