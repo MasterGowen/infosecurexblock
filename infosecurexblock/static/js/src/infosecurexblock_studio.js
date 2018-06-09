@@ -9,7 +9,9 @@ function StudioEditableXBlockMixin(runtime, element) {
 
     document.querySelector('#settings-tab').onclick = function(){
 	  document.querySelector('#settings-tab').classList.add('is-active-tabs');
+	  document.querySelector('#main-settings').classList.add('is-active');
 	  document.querySelector('#advanced-settings-tab').classList.remove('is-active-tabs');
+	  document.querySelector('#advanced-settings').classList.remove('is-active');
 
 	  document.querySelector('#main-settings').removeAttribute('hidden');
       document.querySelector('#advanced-settings').setAttribute('hidden', 'true');
@@ -17,7 +19,9 @@ function StudioEditableXBlockMixin(runtime, element) {
 
 	document.querySelector('#advanced-settings-tab').onclick = function(){
 	  document.querySelector('#settings-tab').classList.remove('is-active-tabs');
+	  document.querySelector('#main-settings').classList.remove('is-active');
 	  document.querySelector('#advanced-settings-tab').classList.add('is-active-tabs');
+	  document.querySelector('#advanced-settings').classList.add('is-active');
 
 	  document.querySelector('#main-settings').setAttribute('hidden', 'true');
       document.querySelector('#advanced-settings').removeAttribute('hidden');
