@@ -9,6 +9,8 @@ from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String, JSONField
 from xblock.fragment import Fragment
 from xblockutils.studio_editable import StudioEditableXBlockMixin
+from xblock.exceptions import JsonHandlerError
+from xblock.validation import Validation
 
 from webob.response import Response
 from xblockutils.resources import ResourceLoader
@@ -23,6 +25,38 @@ from .utils import (
 
 loader = ResourceLoader(__name__)
 
+
+class FutureFields(object):
+    """
+    A helper class whose attribute values come from the specified dictionary or fallback object.
+    This is only used by StudioEditableXBlockMixin and is not meant to be re-used anywhere else!
+    This class wraps an XBlock and makes it appear that some of the block's field values have
+    been changed to new values or deleted (and reset to default values). It does so without
+    actually modifying the XBlock. The only reason we need this is because the XBlock validation
+    API is built around attribute access, but often we want to validate data that's stored in a
+    dictionary before making changes to an XBlock's attributes (since any changes made to the
+    XBlock may get persisted even if validation fails).
+    """
+    def __init__(self, new_fields_dict, newly_removed_fields, fallback_obj):
+        """
+        Create an instance whose attributes come from new_fields_dict and fallback_obj.
+        Arguments:
+        new_fields_dict -- A dictionary of values that will appear as attributes of this object
+        newly_removed_fields -- A list of field names for which we will not use fallback_obj
+        fallback_obj -- An XBlock to use as a provider for any attributes not in new_fields_dict
+        """
+        self._new_fields_dict = new_fields_dict
+        self._blacklist = newly_removed_fields
+        self._fallback_obj = fallback_obj
+
+    def __getattr__(self, name):
+        try:
+            return self._new_fields_dict[name]
+        except KeyError:
+            if name in self._blacklist:
+                # Pretend like this field is not actually set, since we're going to be resetting it to default
+                return self._fallback_obj.fields[name].default
+        return getattr(self._fallback_obj, name)
 
 class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     display_name = String(
@@ -161,6 +195,74 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
         return fragment
 
+        @XBlock.json_handler
+        def submit_studio_edits(self, data, suffix=''):
+            """
+            AJAX handler for studio_view() Save button
+            """
+            values = {}  # dict of new field values we are updating
+            to_reset = []  # list of field names to delete from this XBlock
+            for field_name in self.editable_fields:
+                field = self.fields[field_name]
+                if field_name in data['values']:
+                    if isinstance(field, JSONField):
+                        values[field_name] = field.from_json(data['values'][field_name])
+                    else:
+                        raise JsonHandlerError(400, "Unsupported field type: {}".format(field_name))
+                elif field_name in data['defaults'] and field.is_set_on(self):
+                    to_reset.append(field_name)
+            self.clean_studio_edits(values)
+            validation = Validation(self.scope_ids.usage_id)
+            # We cannot set the fields on self yet, because even if validation fails, studio is going to save any changes we
+            # make. So we create a "fake" object that has all the field values we are about to set.
+            preview_data = FutureFields(
+                new_fields_dict=values,
+                newly_removed_fields=to_reset,
+                fallback_obj=self
+            )
+            self.validate_field_data(validation, preview_data)
+            if validation:
+                for field_name, value in values.iteritems():
+                    setattr(self, field_name, value)
+                for field_name in to_reset:
+                    self.fields[field_name].delete_from(self)
+                return {'result': 'success'}
+            else:
+                raise JsonHandlerError(400, validation.to_json())
+
+            def clean_studio_edits(self, data):
+                """
+                Given POST data dictionary 'data', clean the data before validating it.
+                e.g. fix capitalization, remove trailing spaces, etc.
+                """
+                # Example:
+                # if "name" in data:
+                #     data["name"] = data["name"].strip()
+                pass
+
+            def validate_field_data(self, validation, data):
+                """
+                Validate this block's field data. Instead of checking fields like self.name, check the
+                fields set on data, e.g. data.name. This allows the same validation method to be re-used
+                for the studio editor. Any errors found should be added to "validation".
+                This method should not return any value or raise any exceptions.
+                All of this XBlock's fields should be found in "data", even if they aren't being changed
+                or aren't even set (i.e. are defaults).
+                """
+                # Example:
+                # if data.count <=0:
+                #     validation.add(ValidationMessage(ValidationMessage.ERROR, u"Invalid count"))
+                pass
+
+            def validate(self):
+                """
+                Validates the state of this XBlock.
+                Subclasses should override validate_field_data() to validate fields and override this
+                only for validation not related to this block's field values.
+                """
+                validation = super(StudioEditableXBlockMixin, self).validate()
+                self.validate_field_data(validation, self)
+                return validation
     # def studio_view(self, context=None):
 
     #     context = {
