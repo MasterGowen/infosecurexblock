@@ -8,7 +8,7 @@ import math
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String, JSONField
 from xblock.fragment import Fragment
-from xblockutils.studio_editable import StudioEditableXBlockMixin
+from xblockutils.studio_editable import StudioEditableXBlockMixin, ThemableXBlockMixin
 from xblock.exceptions import JsonHandlerError
 from xblock.validation import Validation
 
@@ -122,6 +122,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         default=1,
         scope=Scope.settings
     )
+
+    default_theme_config = {
+        'package': 'StudioEditableXBlockMixin',
+        'locations': ['static/css/infosecurexblock_studio.css']
+    }
 
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", "lab_settings")
 
