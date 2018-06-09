@@ -348,7 +348,7 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             function Time3Lab(time,NumLink){
                 var k = 1;
-                var timeDeactive = 6000;
+                var timeDeactive = 6000; //3000
                 console.log("v time3lab", k, NumLink);
                     for(k=1; k<= NumLink; k++){
                         console.log("v cikle");
@@ -403,7 +403,8 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link16" && linkFixate(["link_id16","Link16"],student_answer3);
           document.getElementById("lab3_links").value = mas;
             function linkFixate(idNum,student_answer3){
-                document.querySelector("."+idNum[0]).style.display = "none";
+                //document.querySelector("."+idNum[0]).style.display = "none";
+                document.getElementById(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
                 mas.push(document.querySelector("."+idNum[0]).innerHTML);
                 
