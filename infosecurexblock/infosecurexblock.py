@@ -123,11 +123,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.settings
     )
 
-    default_theme_config = {
-        'package': 'StudioEditableXBlockMixin',
-        'locations': ['static/css/infosecurexblock_studio.css']
-    }
-
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", "lab_settings")
 
     def resource_string(self, path):
