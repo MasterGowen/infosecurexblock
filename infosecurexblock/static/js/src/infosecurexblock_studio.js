@@ -1,6 +1,17 @@
 function StudioEditableXBlockMixin(runtime, element) {
     "use strict";
 
+
+    //monkeypatching
+
+    var tabButtons = '<ul class="editor-modes action-list action-modes">' +
+        '<li class="is-action-item" data-mode="editor">' +
+        '<a href="#" class="editor-button is-set">Редактор</a>' +
+        '</li><li class="is-action-item" data-mode="settings">' +
+        '<a href="#" class="settings-button">Настройки</a></li></ul>'
+
+    $('.modal-header').append(tabButtons);
+
     var fields = [];
     var tinyMceAvailable = (typeof $.fn.tinymce !== 'undefined'); // Studio includes a copy of tinyMCE and its jQuery plugin
     var datepickerAvailable = (typeof $.fn.datepicker !== 'undefined'); // Studio includes datepicker jQuery plugin

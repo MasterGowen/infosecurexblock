@@ -18,3 +18,20 @@ svg {
 #txt_1{
     display: none;
 }
+
+.is-action-item {
+    background-color: #666;
+
+    border: 0;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    line-height: 2rem;
+
+    text-align: center;
+}
+
+.is-action-item .is-set {
+    color: #fff;
+    background: transparent;
+
+}

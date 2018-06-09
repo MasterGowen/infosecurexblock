@@ -1,5 +1,6 @@
 {% load i18n %}
-<div class="editor-with-buttons">
+  <div class="editor-with-buttons">
+
   <div class="wrapper-comp-settings is-active editor-with-buttons" id="settings-tab">
     <ul class="list-input settings-list">
       {% for field in fields %}
@@ -98,12 +99,15 @@
         </li>
       {% endfor %}
     </ul>
-    <div id="advanced-settings">
+  </div>
+
+    <div id="advanced-settings-tab">
       <h2>{{display_name}}</h2>
       <div id="widget_studio">
       </div>
   </div>
-  </div>
+
+
   <div class="xblock-actions">
     <ul>
       <li class="action-item">
