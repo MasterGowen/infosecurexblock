@@ -413,18 +413,19 @@ function InfoSecureXBlock(runtime, element) {
                     res.push(i);
                  
                 }
-                console.log("linkiiiii ", (idNum[0].toString()));
+                console.log("linkiiiii ", (idNum[0]));
                 if (
-                    idNum[1].toString()=="Link1" || //"link_id1" ||
-                    idNum[1].toString()=="link_id4" ||
-                    idNum[1].toString()=="link_id5"||
-                    idNum[1].toString()=="link_id8" ||
-                    idNum[1].toString()=="link_id9" ||
-                    idNum[1].toString()=="link_id11" ||
-                    idNum[1].toString()=="link_id13" || 
-                    idNum[1].toString()=="link_id14" ||
-                    idNum[1].toString()=="link_id15" ||
-                    idNum[1].toString()=="link_id16" ){
+                    idNum[0].toString()=="link_id1" ||
+                    idNum[0].toString()=="link_id4" ||
+                    idNum[0].toString()=="link_id5"||
+                    idNum[0].toString()=="link_id8" ||
+                    idNum[0].toString()=="link_id9" ||
+                    idNum[0].toString()=="link_id11" ||
+                    idNum[0].toString()=="link_id13" || 
+                    idNum[0].toString()=="link_id14" ||
+                    idNum[0].toString()=="link_id15" ||
+                    idNum[0].toString()=="link_id16" ){
+                        console.log("check");
                             student_answer3[idNum[0]] = true;
                 }//
                 else if (idNum[0]=="link_id2" || idNum[0]=="link_id6" || idNum[0]=="link_id10"
