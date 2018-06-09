@@ -344,7 +344,7 @@ function InfoSecureXBlock(runtime, element) {
                 var k = 1;
                 var timeDeactive = 3000;
                 console.log("v time3lab", k, NumLink);
-                    for(k in NumLink){
+                    for(k=1; k< NumLink; k++){
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
                        
                     setTimeout(()=>{
