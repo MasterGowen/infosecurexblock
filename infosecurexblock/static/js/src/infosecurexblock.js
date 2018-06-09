@@ -358,11 +358,11 @@ function InfoSecureXBlock(runtime, element) {
                        var kk = 'link_id'+k2;
                        var KK = "Link" +k2;
                         setTimeout(()=>{
-                            Start.active([kk, KK]);
+                            Start.active([kk, KK]); 
                          }, time);time+=4000;
                         setTimeout(()=>{
                             console.log(kk, KK);
-                             Start.deactive2([kk, KK]);
+                             Start.deactive2([kk]); //KK
                          }, timeDeactive);timeDeactive+=4000;
                     })(k);
                      /*  var k2 = k.toString();
