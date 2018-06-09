@@ -91,6 +91,11 @@
                 <i class="icon fa fa-undo"></i><span class="sr">{% trans "Clear Value" %}</span>
               </button>
             {% endif %}
+            <div id="advanced-settings">
+                <h2>{{display_name}}</h2>
+                <div id="widget_studio">
+                </div>
+          </div>
           </div>
           {% if field.help %}
             <span class="tip setting-help"> {{ field.help|safe }} </span>
