@@ -1,6 +1,30 @@
 function StudioEditableXBlockMixin(runtime, element) {
     "use strict";
 
+
+    //monkeypatching
+
+    var tabList = '<li class="action-tabs is-active-tabs" id="settings-tab">Основные</li><li class="action-tabs" id="advanced-settings-tab">Расширенные</li>';
+    document.getElementsByClassName("editor-modes action-list action-modes")[0].innerHTML = tabList;
+
+    document.querySelector('#settings-tab').onclick = function(){
+	  document.querySelector('#settings-tab').classList.add('is-active-tabs');
+	  document.querySelector('#advanced-settings-tab').classList.remove('is-active-tabs');
+
+	  document.querySelector('#main-settings').removeAttribute('hidden');
+      document.querySelector('#advanced-settings').setAttribute('hidden', 'true');
+	};
+
+	document.querySelector('#advanced-settings-tab').onclick = function(){
+	  document.querySelector('#settings-tab').classList.remove('is-active-tabs');
+	  document.querySelector('#advanced-settings-tab').classList.add('is-active-tabs');
+
+	  document.querySelector('#main-settings').setAttribute('hidden', 'true');
+      document.querySelector('#advanced-settings').removeAttribute('hidden');
+};
+
+
+
     var fields = [];
     var tinyMceAvailable = (typeof $.fn.tinymce !== 'undefined'); // Studio includes a copy of tinyMCE and its jQuery plugin
     var datepickerAvailable = (typeof $.fn.datepicker !== 'undefined'); // Studio includes datepicker jQuery plugin
