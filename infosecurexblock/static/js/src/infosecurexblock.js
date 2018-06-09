@@ -345,6 +345,7 @@ function InfoSecureXBlock(runtime, element) {
                 var timeDeactive = 3000;
                 console.log("v time3lab", k, NumLink);
                     for(k=1; k< NumLink; k++){
+                        k = k.toString();
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
                        
                     setTimeout(()=>{
@@ -353,6 +354,7 @@ function InfoSecureXBlock(runtime, element) {
                     setTimeout(()=>{
                          Start.deactive2(['link'+k,'Link'+k]);
                      }, timeDeactive);timeDeactive+=time;
+                     k = int(k);
                     }
                  }
             evt.id == 'taskId'&& Time3Lab(3000,17);
