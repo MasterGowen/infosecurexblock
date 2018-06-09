@@ -364,7 +364,7 @@ function InfoSecureXBlock(runtime, element) {
           /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
             Time3Lab(t, ["link2","Link2"]);t+=300;
             Time3Lab(t, ["link3","Link2"]);*/
-            
+            console.log("vishlo iz dichi");
             var push3 =[]; var mas = [];
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
