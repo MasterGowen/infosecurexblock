@@ -1,7 +1,7 @@
 {% load i18n %}
   <div class="editor-with-buttons">
 
-  <div class="wrapper-comp-settings is-active editor-with-buttons" id="settings-tab">
+  <div class="wrapper-comp-settings is-active editor-with-buttons" id="settings">
     <ul class="list-input settings-list">
       {% for field in fields %}
         <li
@@ -101,7 +101,7 @@
     </ul>
   </div>
 
-    <div id="advanced-settings-tab">
+    <div id="advanced-settings" hidden="hidden">
       <h2>{{display_name}}</h2>
       <div id="widget_studio">
       </div>
