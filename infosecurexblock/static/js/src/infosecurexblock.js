@@ -490,7 +490,9 @@ function InfoSecureXBlock(runtime, element) {
 
                     var student_answer =
                         {
-                            'e': document.getElementById('e').value
+                            'e': document.getElementById('e').value,
+                            'key': keys
+                            
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
