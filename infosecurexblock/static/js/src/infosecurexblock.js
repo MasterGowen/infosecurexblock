@@ -348,7 +348,7 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             function Time3Lab(time,NumLink){
                 var k = 1;
-                var timeDeactive = 3000;
+                var timeDeactive = 6000;
                 console.log("v time3lab", k, NumLink);
                     for(k=1; k<= NumLink; k++){
                         console.log("v cikle");
@@ -362,7 +362,7 @@ function InfoSecureXBlock(runtime, element) {
                          }, time);time+=4000;
                         setTimeout(()=>{
                             console.log(kk, KK);
-                             Start.deactive2([kk, KK]); //KK
+                             Start.deactive2([kk, KK]); 
                          }, timeDeactive);timeDeactive+=4000;
                     })(k);
                      /*  var k2 = k.toString();
