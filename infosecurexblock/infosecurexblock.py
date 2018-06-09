@@ -224,22 +224,22 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 return sum(correctness_list) / float(len(correctness_list))
 
             elif self.lab_id == 3:
-                correctness_list = [data["link_id1"],
-                                    data["link_id2"],
-                                    data["link_id3"],
-                                    data["link_id4"],
-                                    data["link_id5"],
-                                    data["link_id6"],
-                                    data["link_id7"],
-                                    data["link_id8"],
-                                    data["link_id9"],
-                                    data["link_id10"],
-                                    data["link_id11"],
-                                    data["link_id12"],
-                                    data["link_id13"],
-                                    data["link_id14"],
-                                    data["link_id15"],
-                                    data["link_id16"],
+                correctness_list = [data["link1"],
+                                    data["link2"],
+                                    data["link3"],
+                                    data["link4"],
+                                    data["link5"],
+                                    data["link6"],
+                                    data["link7"],
+                                    data["link8"],
+                                    data["link9"],
+                                    data["link10"],
+                                    data["link11"],
+                                    data["link12"],
+                                    data["link13"],
+                                    data["link14"],
+                                    data["link15"],
+                                    data["link16"],
                                     ]
                 return sum(correctness_list) / float(len(correctness_list) - 6)
 
