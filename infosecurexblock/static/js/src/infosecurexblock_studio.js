@@ -1,6 +1,6 @@
 function InfoSecureXBlock(runtime, element) {
 
-    document.querySelector("#scenario-settings-tab").onclick = function () {
+    /*document.querySelector("#scenario-settings-tab").onclick = function () {
         document.querySelector("#main-settings-tab").classList.remove("is-active-tabs");
         document.querySelector("#scenario-settings-tab").classList.add("is-active-tabs");
         document.querySelector("#advanced-settings-tab").classList.remove("is-active-tabs");
@@ -42,7 +42,7 @@ function InfoSecureXBlock(runtime, element) {
 
         runtime.notify("cancel", {});
 
-    });
+    });*/
         var studio_submit = function(data) {
         var handlerUrl = runtime.handlerUrl(element, 'submit_studio_edits');
         runtime.notify('save', {state: 'start', message: gettext("Saving")});
