@@ -345,6 +345,7 @@ function InfoSecureXBlock(runtime, element) {
                 var timeDeactive = 3000;
                 console.log("v time3lab", k, NumLink);
                     for(k=1; k<= NumLink; k++){
+                        console.log("v cikle");
                         (function (k)
                     {var k2 = k.toString();
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
