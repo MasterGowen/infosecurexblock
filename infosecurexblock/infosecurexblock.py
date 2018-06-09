@@ -25,6 +25,7 @@ from .utils import (
 
 loader = ResourceLoader(__name__)
 
+
 class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     display_name = String(
         display_name='Display Name',
@@ -158,45 +159,16 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 context["fields"].append(field_info)
         fragment.content = loader.render_template('static/html/infosecurexblock_studio.html', context)
         fragment.add_javascript(loader.load_unicode('static/js/src/infosecurexblock_studio.js'))
+
+        css_urls = (
+            "static/css/infosecurexblock_studio.css",
+        )
+        load_resources([], css_urls, fragment)
+
         fragment.initialize_js('StudioEditableXBlockMixin')
 
         return fragment
 
-    # def studio_view(self, context=None):
-
-    #     context = {
-    #         "display_name": self.display_name,
-    #         "task_text": self.task_text,
-    #         "weight": self.weight,
-    #         "max_attempts": self.max_attempts,
-    #         "attempts": self.attempts,
-    #         "lab_id": self.lab_id,
-
-    #     }
-
-    #     fragment = Fragment()
-    #     fragment.add_content(
-    #         render_template(
-    #             "static/html/infosecurexblock_studio.html",
-    #             context
-    #         )
-    #     )
-
-    #     js_urls = (
-    #         "static/js/src/infosecurexblock_studio.js",
-    #         )
-
-    #     css_urls = (
-    #         "static/css/infosecurexblock_studio.css",
-    #         )
-
-    #     load_resources(js_urls, css_urls, fragment)
-
-    #     fragment.initialize_js('InfoSecureXBlock')
-    #     return fragment
-
-    # TO-DO: change this handler to perform your own actions.  You may need more
-    # than one handler, or you may not need any handlers at all.
     @XBlock.handler
     def rect1(self, data, suffix=''):
         dir = os.path.dirname(os.path.realpath(__file__))

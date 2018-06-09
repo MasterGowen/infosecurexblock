@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import os
 import pkg_resources
 
@@ -7,15 +7,17 @@ from django.utils.encoding import smart_text
 from xblockutils.resources import ResourceLoader
 
 loader = ResourceLoader(__name__)
+
+
 def load_resource(resource_path):
-        """
-        Gets the content of a resource
-        """
-        try:
-            resource_content = pkg_resources.resource_string(__name__, resource_path)
-            return smart_text(resource_content)
-        except EnvironmentError:
-            pass
+    """
+    Gets the content of a resource
+    """
+    try:
+        resource_content = pkg_resources.resource_string(__name__, resource_path)
+        return smart_text(resource_content)
+    except EnvironmentError:
+        pass
 
 
 def load_resources(js_urls, css_urls, fragment):
@@ -47,7 +49,6 @@ def load_resources(js_urls, css_urls, fragment):
                 fragment.add_css(load_resource(css_url[0]))
             else:
                 pass
-
 
 
 def render_template(template_path, context=None):
