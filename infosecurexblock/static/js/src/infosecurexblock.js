@@ -112,6 +112,14 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById("widget").addEventListener('mouseout',Start.onLab4styleDeactive);
                 break;
             }
+            case 5:{
+                // Start.connectionLabs(rect1HandlerUrl, 1);
+                // Start.connectionLabs(rect1HandlerUrl, 2);
+                 document.getElementById('widget').addEventListener('click', Start.onLab5);
+                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
+                 document.getElementById('widget').addEventListener('click',Start.taskBlock);
+                 break;
+             }
            // console.log('succesCheckLAB : ',result.lab_id);
         }
     }
@@ -224,8 +232,6 @@ function InfoSecureXBlock(runtime, element) {
         }
         //Lab 1
         static onLab1(event) {
-          
-            //console.log("ON funcction:",this);
             var evt = event.target;
             var student_answer = {};
             evt.id == "comp1" && connect(['comp1','comp2','comp3','activeComp','192.168.0.3']);
@@ -379,23 +385,23 @@ function InfoSecureXBlock(runtime, element) {
             console.log("vishlo iz dichi");
             var push3 =[]; var mas = [];
            // document.getElementById('random').display.style = "block";
-            evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
-            evt.id == "Link2" && linkFixate(["link2","Link2"],student_answer3);
-            evt.id == "Link3" && linkFixate(["link3","Link3"],student_answer3);
-            evt.id == "Link4" && linkFixate(["link4","Link4"],student_answer3);
-            evt.id == "Link5" && linkFixate(["link5","Link5"],student_answer3);
-            evt.id == "Link6" && linkFixate(["link6","Link6"],student_answer3);
-            evt.id == "Link7" && linkFixate(["link7","Link7"],student_answer3);
-            evt.id == "Link8" && linkFixate(["link8","Link8"],student_answer3);
-            evt.id == "Link9" && linkFixate(["link9","Link9"],student_answer3);
-            evt.id == "Link10" && linkFixate(["link10","Link10"],student_answer3);
-            evt.id == "Link11" && linkFixate(["link11","Link11"],student_answer3);
-            evt.id == "Link12" && linkFixate(["link12","Link12"],student_answer3);
-            evt.id == "Link13" && linkFixate(["link13","Link13"],student_answer3);
-            evt.id == "Link14" && linkFixate(["link14","Link14"],student_answer3);
-            evt.id == "Link15" && linkFixate(["link15","Link15"],student_answer3);
-            evt.id == "Link16" && linkFixate(["link16","Link16"],student_answer3);
-            document.getElementById("lab3_links").value = mas;
+            evt.id == "Link1" && linkFixate(["link_id1","Link1"],student_answer3);
+            evt.id == "Link2" && linkFixate(["link_id2","Link2"],student_answer3);
+            evt.id == "Link3" && linkFixate(["link_id3","Link3"],student_answer3);
+            evt.id == "Link4" && linkFixate(["link_id4","Link4"],student_answer3);
+            evt.id == "Link5" && linkFixate(["link_id5","Link5"],student_answer3);
+            evt.id == "Link6" && linkFixate(["link_id6","Link6"],student_answer3);
+            evt.id == "Link7" && linkFixate(["link_id7","Link7"],student_answer3);
+            evt.id == "Link8" && linkFixate(["link_id8","Link8"],student_answer3);
+            evt.id == "Link9" && linkFixate(["link_id9","Link9"],student_answer3);
+            evt.id == "Link10" && linkFixate(["link_id10","Link10"],student_answer3);
+            evt.id == "Link11" && linkFixate(["link_id11","Link11"],student_answer3);
+            evt.id == "Link12" && linkFixate(["link_id12","Link12"],student_answer3);
+            evt.id == "Link13" && linkFixate(["link_id13","Link13"],student_answer3);
+            evt.id == "Link14" && linkFixate(["link_id14","Link14"],student_answer3);
+            evt.id == "Link15" && linkFixate(["link_id15","Link15"],student_answer3);
+            evt.id == "Link16" && linkFixate(["link_id16","Link16"],student_answer3);
+          document.getElementById("lab3_links").value = mas;
             function linkFixate(idNum,student_answer3){
                 document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
@@ -442,6 +448,65 @@ function InfoSecureXBlock(runtime, element) {
             }
             //document.getElementById("lab3_links").value = push3;
             
+        }
+        //Lab 5
+        static onLab1(event) {
+            var evt = event.target;
+            var student_answer = {};
+            evt.id == "comp1" && connect(['comp1','comp2','comp3','activeComp','192.168.0.3']);
+            evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
+            evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
+           ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
+            ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
+            ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
+
+            if ((evt.id == 'checkid') && (document.getElementById(evt.id).value != undefined)) {
+                var k = document.getElementById('ip').value;
+                var d = document.getElementById('d').value;
+                var N = document.getElementById('N').value;
+                var e = document.getElementById('e').value;
+                var empty = false;
+                var che = 0;
+                var b = checkIsIPV4(k);
+                if (k.length == 0 || d.length == 0 || N.length == 0 || e.length == 0) {
+                    alert("Пустые поля ввода.");
+                    che++;
+                    empty = true;
+                }
+                if (b == false && empty != true) {
+                    document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
+                    alert("Некорректный IP адрес.");
+                }
+                console.log("ooooo",global_d, global_N, d, N);
+                if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
+                    alert('Некорректный закрытый ключ (d).');
+                    che++;
+                }
+                if (isNumeric(N) == false && empty != true || N.toString()!=global_N ) {
+                    alert('Некорректный закрытый ключ (N).');
+                    che++;
+                }
+                if (isNumeric(e) == false && empty != true) {
+                    alert('Некорректное сообщение! Введите сообещние в численном виде.');
+                    che++;
+                }
+
+                if (che == 0 && b == true && empty != true) {
+
+                    var student_answer =
+                        {
+                            'ip': document.getElementById('ip').value,
+                            'd': document.getElementById('d').value,
+                            'N': document.getElementById('N').value,
+                            'e': document.getElementById('e').value
+                        }
+                    Start.checkAnswer(checkHandler, student_answer);
+                }
+            }
+            else if (evt.id == 'checkid') {
+                console.log('Error:не все поля заполненны.')
+            }
+
         }
         //Lab 4
         static onLab4(event){
