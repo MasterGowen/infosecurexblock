@@ -345,11 +345,11 @@ function InfoSecureXBlock(runtime, element) {
                 var timeDeactive = 3000;
                 console.log("v time3lab", k, NumLink);
                     for(k=1; k< NumLink; k++){
-                        k = k.toString();
+                       var k2 = k.toString();
 
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
-                       var kk = 'link'+k;
-                       var KK = "Link" +k;
+                       var kk = 'link'+k2;
+                       var KK = "Link" +k2;
                      //  console.log("dich - ", typeof(kk), typeof(KK));
                     setTimeout(()=>{
                         Start.active([kk, KK]);
@@ -357,14 +357,14 @@ function InfoSecureXBlock(runtime, element) {
                     setTimeout(()=>{
                          Start.deactive2([kk, KK]);
                      }, timeDeactive);timeDeactive+=time;
-                     k = parseInt(k);
+                     //k = parseInt(k);
                     }
                  }
             evt.id == 'taskId'&& Time3Lab(3000,17);
           /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
             Time3Lab(t, ["link2","Link2"]);t+=300;
             Time3Lab(t, ["link3","Link2"]);*/
-            
+            console.log("vishlo iz dichi");
             var push3 =[]; var mas = [];
            // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
