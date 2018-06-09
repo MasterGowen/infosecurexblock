@@ -406,7 +406,7 @@ function InfoSecureXBlock(runtime, element) {
                 //document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                mas.push(document.querySelector("."+idNum[0]).innerHTML);
+              //  mas.push(document.getElementById(idNum[1]).value);
                 
                 var res = [];
                 for (var i in student_answer3) {
@@ -414,21 +414,21 @@ function InfoSecureXBlock(runtime, element) {
                  
                 }
                 if (
-                    idNum[0]=="link1" ||
-                    idNum[0]=="link4" ||
-                    idNum[0]=="link5"||
-                    idNum[0]=="link8" ||
-                    idNum[0]=="link9" ||
-                    idNum[0]=="link11" ||
-                    idNum[0]=="link13" || 
-                    idNum[0]=="link14" ||
-                    idNum[0]=="link15" ||
-                    idNum[0]=="link16" ){
+                    idNum[0]=="link_id1" ||
+                    idNum[0]=="link_id4" ||
+                    idNum[0]=="link_id5"||
+                    idNum[0]=="link_id8" ||
+                    idNum[0]=="link_id9" ||
+                    idNum[0]=="link_id11" ||
+                    idNum[0]=="link_id13" || 
+                    idNum[0]=="link_id14" ||
+                    idNum[0]=="link_id15" ||
+                    idNum[0]=="link_id16" ){
                             student_answer3[idNum[0]] = true;
                 }//
-                else if (idNum[0]=="link2" || idNum[0]=="link6" || idNum[0]=="link10"
-                || idNum[0]=="link12" || idNum[0]=="link3" ||
-               idNum[0]=="link7")
+                else if (idNum[0]=="link_id2" || idNum[0]=="link_id6" || idNum[0]=="link_id10"
+                || idNum[0]=="link_id12" || idNum[0]=="link_id3" ||
+               idNum[0]=="link_id7")
                {
                    student_answer3[idNum[0]] = false;
                    student_answer3[idNum[1]] = true;//test
