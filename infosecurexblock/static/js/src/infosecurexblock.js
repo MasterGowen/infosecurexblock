@@ -348,7 +348,7 @@ function InfoSecureXBlock(runtime, element) {
             var mas_count = 0;
             function Time3Lab(time,NumLink){
                 var k = 1;
-                var timeDeactive = 6000;
+                var timeDeactive = 6000; //3000
                 console.log("v time3lab", k, NumLink);
                     for(k=1; k<= NumLink; k++){
                         console.log("v cikle");
@@ -403,34 +403,35 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "Link16" && linkFixate(["link_id16","Link16"],student_answer3);
           document.getElementById("lab3_links").value = mas;
             function linkFixate(idNum,student_answer3){
-                document.querySelector("."+idNum[0]).style.display = "none";
+                //document.querySelector("."+idNum[0]).style.display = "none";
+                document.getElementById(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-                mas.push(document.querySelector("."+idNum[0]).innerHTML);
+              //  mas.push(document.getElementById(idNum[1]).value);
                 
                 var res = [];
                 for (var i in student_answer3) {
                     res.push(i);
                  
                 }
+                console.log("linkiiiii ", (idNum[0].toString());
                 if (
-                    idNum[0]=="link1" ||
-                    idNum[0]=="link4" ||
-                    idNum[0]=="link5"||
-                    idNum[0]=="link8" ||
-                    idNum[0]=="link9" ||
-                    idNum[0]=="link11" ||
-                    idNum[0]=="link13" || 
-                    idNum[0]=="link14" ||
-                    idNum[0]=="link15" ||
-                    idNum[0]=="link16" ){
+                    idNum[0].toString()=="link_id1" ||
+                    idNum[0].toString()=="link_id4" ||
+                    idNum[0].toString()=="link_id5"||
+                    idNum[0].toString()=="link_id8" ||
+                    idNum[0].toString()=="link_id9" ||
+                    idNum[0].toString()=="link_id11" ||
+                    idNum[0].toString()=="link_id13" || 
+                    idNum[0].toString()=="link_id14" ||
+                    idNum[0].toString()=="link_id15" ||
+                    idNum[0].toString()=="link_id16" ){
                             student_answer3[idNum[0]] = true;
                 }//
-                else if (idNum[0]=="link2" || idNum[0]=="link6" || idNum[0]=="link10"
-                || idNum[0]=="link12" || idNum[0]=="link3" ||
-               idNum[0]=="link7")
+                else if (idNum[0]=="link_id2" || idNum[0]=="link_id6" || idNum[0]=="link_id10"
+                || idNum[0]=="link_id12" || idNum[0]=="link_id3" ||
+               idNum[0]=="link_id7")
                {
                    student_answer3[idNum[0]] = false;
-                   student_answer3[idNum[1]] = true;//test
                }
                 Start.checkAnswer(checkHandler, student_answer3);
                 push3.push(document.getElementById(idNum[0].value));
