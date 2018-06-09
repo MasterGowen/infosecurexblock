@@ -226,8 +226,8 @@ function InfoSecureXBlock(runtime, element) {
         }
         static deactive2(idNum) {
             for(var k in idNum){
-                document.querySelector("."+idNum[0]).style.display = "none";
-                document.getElementById(idNum[1]).style.display = "none";
+                document.querySelector("."+idNum[k]).style.display = "none";
+                document.getElementById(idNum[k]).style.display = "none";
             };
         }
         //Lab 1
@@ -361,6 +361,7 @@ function InfoSecureXBlock(runtime, element) {
                             Start.active([kk, KK]);
                          }, time);time+=4000;
                         setTimeout(()=>{
+                            console.log(kk, KK);
                              Start.deactive2([kk, KK]);
                          }, timeDeactive);timeDeactive+=4000;
                     })(k);
@@ -384,7 +385,6 @@ function InfoSecureXBlock(runtime, element) {
             Time3Lab(t, ["link3","Link2"]);*/
             console.log("vishlo iz dichi");
             var push3 =[]; var mas = [];
-           // document.getElementById('random').display.style = "block";
             evt.id == "Link1" && linkFixate(["link_id1","Link1"],student_answer3);
             evt.id == "Link2" && linkFixate(["link_id2","Link2"],student_answer3);
             evt.id == "Link3" && linkFixate(["link_id3","Link3"],student_answer3);
@@ -405,21 +405,13 @@ function InfoSecureXBlock(runtime, element) {
             function linkFixate(idNum,student_answer3){
                 document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-               // document.getElementById("lab3_links").innerHTML = "aa";
-             //   console.log(document.querySelector("."+idNum[0]).innerHTML);
                 mas.push(document.querySelector("."+idNum[0]).innerHTML);
                 
-             //   console.log(mas);
-                // mas.push(document.getElementById(idNum[0]).value);
                 var res = [];
                 for (var i in student_answer3) {
                     res.push(i);
                  
                 }
-                
-              //  console.log(res);
-                //console.log(student_answer3.res[1]);                          
-            //    console.log(student_answer3[idNum[0]]);
                 if (
                     idNum[0]=="link1" ||
                     idNum[0]=="link4" ||
@@ -440,26 +432,42 @@ function InfoSecureXBlock(runtime, element) {
                    student_answer3[idNum[0]] = false;
                    student_answer3[idNum[1]] = true;//test
                }
-                //console.log(student_answer3.link1);
-             //   console.log(student_answer3);
                 Start.checkAnswer(checkHandler, student_answer3);
                 push3.push(document.getElementById(idNum[0].value));
                 push3.push(document.getElementById(idNum[1].value));              
             }
-            //document.getElementById("lab3_links").value = push3;
             
         }
         //Lab 5
-        static onLab1(event) {
+        static onLab5(event) {
             var evt = event.target;
             var student_answer = {};
             evt.id == "comp1" && connect(['comp1','comp2','comp3','activeComp','192.168.0.3']);
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
-           ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
+            evt.id == 'File1' && fileShow();
+            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2',keys,mes]);
+            ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
-            if ((evt.id == 'checkid') && (document.getElementById(evt.id).value != undefined)) {
+
+            function connect(idNum) {
+                if(idNum[4])document.getElementById('ip').value = idNum[4];
+                document.getElementById('line_wifi').classList.add(idNum[3]);
+                document.getElementById(idNum[0]).classList.add(idNum[3]);
+                document.getElementById(idNum[1]).classList.remove(idNum[3]);
+                document.getElementById(idNum[2]).classList.remove(idNum[3]);
+
+                fileShow();
+            }
+
+            function fileShow(){
+                console.log("keys :" ,keys, mes); 
+                Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
+            }
+            if (evt.id == "Link"){
+                document.getElementById('Link').style.display = "block";
+            } if ((evt.id == 'checkid') && (document.getElementById(evt.id).value != undefined)) {
                 
                 var e = document.getElementById('e').value;
                 var empty = false;
