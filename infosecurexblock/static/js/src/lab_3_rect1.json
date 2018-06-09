@@ -233,90 +233,90 @@
             "idnum":"star", 
             "id": "link2", 
             "class": "taskClose link2", 
-            "value":"<text x='80' y='200' id ='link2' class='taskClose' >https://bank.ex.com</text>" 
+            "value":"<text x='80' y='200' id ='link2' class='taskClose link' >https://bank.ex.com</text>" 
             },
             "linka3":{"type":"text", 
                 "idnum":"star", 
                 "id": "link3", 
                 "class": "taskClose link3", 
-                "value":"<text x='310' y='620' id ='link3' class='taskClose' >http://gogle.com</text>" 
+                "value":"<text x='310' y='620' id ='link3' class='taskClose link' >http://gogle.com</text>" 
                 },
                 "linka4":{"type":"text", 
                     "idnum":"star", 
                     "id": "link4", 
                     "class": "taskClose link4", 
-                    "value":"<text x='90' y='320' id ='link4' class='taskClose' >http://media.ls.urfu.ru</text>" 
+                    "value":"<text x='90' y='320' id ='link4' class='taskClose link' >http://media.ls.urfu.ru</text>" 
                     },
                     "linka5":{"type":"text", 
                         "idnum":"star", 
                         "id": "link5", 
                         "class": "taskClose link5", 
-                        "value":"<text x='380' y='120' id ='link5' class='taskClose' >http://ru.wikipedia.org</text>" 
+                        "value":"<text x='380' y='120' id ='link5' class='taskClose link' >http://ru.wikipedia.org</text>" 
                         },
                         "linka6":{"type":"text", 
                             "idnum":"star", 
                             "id": "link6", 
                             "class": "taskClose link6", 
-                            "value":"<text x='10' y='520' id ='link6' class='taskClose' >https://urfu.ru.u</text>" 
+                            "value":"<text x='10' y='520' id ='link6' class='taskClose link' >https://urfu.ru.u</text>" 
                             },
                             "linka7":{"type":"text", 
                                 "idnum":"star", 
                                 "id": "link7", 
                                 "class": "taskClose link7", 
-                                "value":"<text x='290' y='480' id ='link7' class='taskClose' >http://traficonverter.biz</text>" 
+                                "value":"<text x='290' y='480' id ='link7' class='taskClose link' >http://traficonverter.biz</text>" 
                                 },
                                 "linka8":{"type":"text", 
                                     "idnum":"star", 
                                     "id": "link8", 
                                     "class": "taskClose link8", 
-                                    "value":"<text x='510' y='220' id ='link8' class='taskClose' >https://vk.com</text>" 
+                                    "value":"<text x='510' y='220' id ='link8' class='taskClose link' >https://vk.com</text>" 
                                     },
                                     "linka9":{"type":"text", 
                                         "idnum":"star", 
                                         "id": "link9", 
                                         "class": "taskClose link9", 
-                                        "value":"<text x='310' y='620' id ='link9' class='taskClose' >https://alfabank.ru</text>" 
+                                        "value":"<text x='310' y='620' id ='link9' class='taskClose link' >https://alfabank.ru</text>" 
                                         },
                                         "linka10":{"type":"text", 
                                             "idnum":"star", 
                                             "id": "link10", 
                                             "class": "taskClose link10", 
-                                            "value":"<text x='300' y='340' id ='link10' class='taskClose' >http://vk.my.page.bl</text>" 
+                                            "value":"<text x='300' y='340' id ='link10' class='taskClose link' >http://vk.my.page.bl</text>" 
                                             },
                                             "linka11":{"type":"text", 
                                                 "idnum":"star", 
                                                 "id": "link11", 
                                                 "class": "taskClose link11", 
-                                                "value":"<text x='10' y='620' id ='link11' class='taskClose' >https://intuit.ru</text>" 
+                                                "value":"<text x='10' y='620' id ='link11' class='taskClose link' >https://intuit.ru</text>" 
                                                 },
                                                 "linka12":{"type":"text", 
                                                     "idnum":"star", 
                                                     "id": "link12", 
                                                     "class": "taskClose link12", 
-                                                    "value":"<text x='550' y='620' id ='link12' class='taskClose' >https://facebok.com</text>" 
+                                                    "value":"<text x='550' y='620' id ='link12' class='taskClose link' >https://facebok.com</text>" 
                                                     },
                                                     "linka13":{"type":"text", 
                                                         "idnum":"star", 
                                                         "id": "link13", 
                                                         "class": "taskClose link13", 
-                                                        "value":"<text x='410' y='400' id ='link13' class='taskClose' >https://yandex.ru</text>" 
+                                                        "value":"<text x='410' y='400' id ='link13' class='taskClose link' >https://yandex.ru</text>" 
                                                         },
                                                         "linka14":{"type":"text", 
                                                             "idnum":"star", 
                                                             "id": "link14", 
                                                             "class": "taskClose link14", 
-                                                            "value":"<text x='190' y='420' id ='link14' class='taskClose' >https://e1.ru</text>" 
+                                                            "value":"<text x='190' y='420' id ='link14' class='taskClose link' >https://e1.ru</text>" 
                                                             },
                                                             "linka15":{"type":"text", 
                                                                 "idnum":"star", 
                                                                 "id": "link15", 
                                                                 "class": "taskClose link15", 
-                                                                "value":"<text x='660' y='350' id ='link15' class='taskClose' >https://pogoda.ru</text>" 
+                                                                "value":"<text x='660' y='350' id ='link15' class='taskClose link' >https://pogoda.ru</text>" 
                                                                 },
                                                                 "linka16":{"type":"text", 
                                                                     "idnum":"star", 
                                                                     "id": "link16", 
                                                                     "class": "taskClose link16", 
-                                                                    "value":"<text x='610' y='500' id ='link16' class='taskClose' >https://news.com</text>" 
+                                                                    "value":"<text x='610' y='500' id ='link16' class='taskClose link' >https://news.com</text>" 
                                                                     }}
 }
