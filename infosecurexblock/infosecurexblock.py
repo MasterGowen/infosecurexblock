@@ -11,6 +11,7 @@ from xblock.fragment import Fragment
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 
 from webob.response import Response
+from xblockutils.resources import ResourceLoader
 
 import copy
 
@@ -20,13 +21,15 @@ from .utils import (
     load_resources,
 )
 
+loader = ResourceLoader(__name__)
+
 
 class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     display_name = String(
-        display_name='Display Name', 
-        default="infosecurexblock", 
+        display_name='Display Name',
+        default="infosecurexblock",
         scope=Scope.settings
-        )
+    )
 
     task_text = String(
         display_name='Task text',
@@ -42,7 +45,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         default=60,
         scope=Scope.settings
     )
-    
+
     lab_id = Integer(
         display_name='Lab ID',
         default=1,
@@ -54,7 +57,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         default={},
         scope=Scope.user_state
     )
-    
+
     max_attempts = Integer(
         display_name=u"Maximum number of attempts",
         help=u"",
@@ -80,7 +83,13 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.user_state
     )
 
-    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight")
+    lab_settings = JSONField(
+        display_name='Lab settings',
+        default=1,
+        scope=Scope.settings
+    )
+
+    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", "lab_settings")
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -127,6 +136,29 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         css_urls = ("static/css/infosecurexblock.css",)  # css_context
         load_resources(js_urls, css_urls, fragment)
         fragment.initialize_js('InfoSecureXBlock')
+        return fragment
+
+    def studio_view(self, context):
+        """
+        Render a form for editing this XBlock
+        """
+        fragment = Fragment()
+        context = {'fields': []}
+        # Build a list of all the fields that can be edited:
+        for field_name in self.editable_fields:
+            field = self.fields[field_name]
+            assert field.scope in (Scope.content, Scope.settings), (
+                "Only Scope.content or Scope.settings fields can be used with "
+                "StudioEditableXBlockMixin. Other scopes are for user-specific data and are "
+                "not generally created/configured by content authors in Studio."
+            )
+            field_info = self._make_field_info(field_name, field)
+            if field_info is not None:
+                context["fields"].append(field_info)
+        fragment.content = loader.render_template('templates/studio_edit.html', context)
+        fragment.add_javascript(loader.load_unicode('public/studio_edit.js'))
+        fragment.initialize_js('StudioEditableXBlockMixin')
+
         return fragment
 
     # def studio_view(self, context=None):
@@ -186,7 +218,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     @XBlock.json_handler
     def check(self, data, unused_suffix=''):
         self.answer = data
-        
+
         def checkLabs(data):
             if self.lab_id == 1:
                 ip, d, N, answer0 = data["ip"], int(data["d"]), int(data["N"]), int(data["e"])
@@ -225,7 +257,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     data["link15"],
                                     data["link16"],
                                     ]
-                return sum(correctness_list) / float(len(correctness_list)-6)
+                return sum(correctness_list) / float(len(correctness_list) - 6)
             elif self.lab_id == 4:
                 pass
 
