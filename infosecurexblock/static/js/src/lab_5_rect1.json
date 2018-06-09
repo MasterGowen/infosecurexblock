@@ -238,7 +238,7 @@
             "idnum":"star", 
             "id": "mes_id1", 
             "class": "taskClose", 
-            "value":"<text x='230' y='20' id ='mes_id1' class='taskClose' >Сообщение: КПЦРТОВШКРППВБ ГЖЙРСВУПСУФЪ</text>" 
+            "value":"<text x='230' y='120' id ='mes_id1' class='taskClose' >Сообщение: КПЦРТОВШКРППВБ ГЖЙРСВУПСУФЪ</text>" 
             },
         "key2":{"type":"text", 
             "idnum":"star", 
@@ -252,7 +252,7 @@
                 "idnum":"star", 
                 "id": "mes_id2", 
                 "class": "taskClose", 
-                "value":"<text x='230' y='20' id ='mes_id2' class='taskClose' >Сообщение:</text>" 
+                "value":"<text x='230' y='120' id ='mes_id2' class='taskClose' >Сообщение:</text>" 
                 },
                 "key3":{"type":"text", 
                     "idnum":"star", 
@@ -266,7 +266,7 @@
                         "idnum":"star", 
                         "id": "mes_id3", 
                         "class": "taskClose", 
-                        "value":"<text x='230' y='20' id ='mes_id3' class='taskClose' >Сообщение:</text>" 
+                        "value":"<text x='230' y='120' id ='mes_id3' class='taskClose' >Сообщение:</text>" 
                         },
                         "key4":{"type":"text", 
                             "idnum":"star", 
@@ -280,7 +280,7 @@
                                 "idnum":"star", 
                                 "id": "mes_id4", 
                                 "class": "taskClose", 
-                                "value":"<text x='230' y='20' id ='mes_id4' class='taskClose' >Сообщение:</text>" 
+                                "value":"<text x='230' y='120' id ='mes_id4' class='taskClose' >Сообщение:</text>" 
                                 }
 
 ,
