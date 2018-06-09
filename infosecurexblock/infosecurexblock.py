@@ -189,8 +189,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             field_info = self._make_field_info(field_name, field)
             if field_info is not None:
                 context["fields"].append(field_info)
-        fragment.content = loader.render_template('templates/studio_edit.html', context)
-        fragment.add_javascript(loader.load_unicode('public/studio_edit.js'))
+        fragment.content = loader.render_template('static/html/infosecurexblock_studio.html', context)
+        fragment.add_javascript(loader.load_unicode('static/js/src/infosecurexblock_studio.js'))
         fragment.initialize_js('StudioEditableXBlockMixin')
 
         return fragment
