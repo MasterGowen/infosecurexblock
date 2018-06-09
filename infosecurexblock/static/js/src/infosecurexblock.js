@@ -413,6 +413,7 @@ function InfoSecureXBlock(runtime, element) {
                     res.push(i);
                  
                 }
+                console.log("linkiiiii ", idNum[0]);
                 if (
                     idNum[0]=="link_id1" ||
                     idNum[0]=="link_id4" ||
@@ -431,7 +432,6 @@ function InfoSecureXBlock(runtime, element) {
                idNum[0]=="link_id7")
                {
                    student_answer3[idNum[0]] = false;
-                   student_answer3[idNum[1]] = true;//test
                }
                 Start.checkAnswer(checkHandler, student_answer3);
                 push3.push(document.getElementById(idNum[0].value));
