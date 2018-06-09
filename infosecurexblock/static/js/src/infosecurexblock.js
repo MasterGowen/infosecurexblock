@@ -226,7 +226,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         static deactive2(idNum) {
             for(var k in idNum){
-                document.querySelector("."+idNum[k]).style.display = "none";
+               // document.querySelector("."+idNum[k]).style.display = "none";
                 document.getElementById(idNum[k]).style.display = "none";
             };
         }
@@ -358,11 +358,11 @@ function InfoSecureXBlock(runtime, element) {
                        var kk = 'link_id'+k2;
                        var KK = "Link" +k2;
                         setTimeout(()=>{
-                            Start.active([kk, KK]);
+                            Start.active([kk, KK]); 
                          }, time);time+=4000;
                         setTimeout(()=>{
                             console.log(kk, KK);
-                             Start.deactive2([kk, KK]);
+                             Start.deactive2([kk, KK]); //KK
                          }, timeDeactive);timeDeactive+=4000;
                     })(k);
                      /*  var k2 = k.toString();
