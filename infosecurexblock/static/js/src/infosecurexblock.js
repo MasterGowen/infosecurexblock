@@ -341,16 +341,16 @@ function InfoSecureXBlock(runtime, element) {
             var student_answer = {};
             var mas_count = 0;
             function Time3Lab(time,NumLink){
-                this.k = 1;
+                k = 1;
                 var timeDeactive = 3000;
-                    for(this.k in NumLink){
-                        console.log('test: ',time,' ',NumLink,' ',this.k,'  link'+this.k,' Link'+k);
+                    for(k in NumLink){
+                        console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
                         //Start.active(['link'+[k], 'Link'+[k]]);
                     setTimeout(()=>{
-                        Start.active(['link'+this.k,'Link'+this.k]);
+                        Start.active(['link'+k,'Link'+k]);
                      }, time);time+=2000;
                     setTimeout(()=>{
-                         Start.deactive2(['link'+this.k,'Link'+this.k]);
+                         Start.deactive2(['link'+k,'Link'+k]);
                      }, timeDeactive);timeDeactive+=time;
                     }
                  }
