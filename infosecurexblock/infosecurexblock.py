@@ -8,7 +8,7 @@ import math
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String, JSONField
 from xblock.fragment import Fragment
-from xblockutils.studio_editable import StudioEditableXBlockMixin, ThemableXBlockMixin
+from xblockutils.studio_editable import StudioEditableXBlockMixin
 from xblock.exceptions import JsonHandlerError
 from xblock.validation import Validation
 
@@ -58,7 +58,7 @@ class FutureFields(object):
                 return self._fallback_obj.fields[name].default
         return getattr(self._fallback_obj, name)
 
-class InfoSecureXBlock(ThemableXBlockMixin,StudioEditableXBlockMixin, XBlock):
+class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     display_name = String(
         display_name='Display Name',
         default="infosecurexblock",
