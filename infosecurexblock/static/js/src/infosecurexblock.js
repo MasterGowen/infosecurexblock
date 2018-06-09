@@ -354,7 +354,7 @@ function InfoSecureXBlock(runtime, element) {
                     setTimeout(()=>{
                          Start.deactive2(['link'+k,'Link'+k]);
                      }, timeDeactive);timeDeactive+=time;
-                     k = int(k);
+                     k = k.parseInt();
                     }
                  }
             evt.id == 'taskId'&& Time3Lab(3000,17);
