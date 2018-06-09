@@ -224,6 +224,7 @@
     "linka1":{"type":"text", 
         "idnum":"star", 
         "id": "link1", 
+        "fill": "blue",
         "class": "taskClose link1", 
         "value":"<text x='80' y='120' id ='link1' color:blue class='taskClose' >http://google.com</text>" 
         },
