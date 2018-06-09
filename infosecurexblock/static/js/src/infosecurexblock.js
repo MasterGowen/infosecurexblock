@@ -349,14 +349,14 @@ function InfoSecureXBlock(runtime, element) {
                         (function (k)
                     {var k2 = k.toString();
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
-                       var kk = 'link'+k2;
+                       var kk = 'link_id'+k2;
                        var KK = "Link" +k2;
                         setTimeout(()=>{
                             Start.active([kk, KK]);
                          }, time);time+=4000;
                         setTimeout(()=>{
                              Start.deactive2([kk, KK]);
-                         }, timeDeactive);timeDeactive+=time;
+                         }, timeDeactive);timeDeactive+=4000;
                     })(k);
                      /*  var k2 = k.toString();
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
