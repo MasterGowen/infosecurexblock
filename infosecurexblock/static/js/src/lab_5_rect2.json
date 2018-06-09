@@ -9,28 +9,10 @@
         "background-color":"white",
         "id": "action"
         },
-        "one":{
+        "five":{
             "type": "input",
-            "class": "one",
-            "placeholder": "0.0.0.0",
-            "id": "ip"
-        },
-        "two":{
-            "type": "input",
-            "class": "two",
-            "placeholder": "d (число)",
-            "id": "d"
-        },
-        "three":{
-            "type": "input",
-            "class": "two",
-            "placeholder": "N (число)",
-            "id": "N"
-        },
-        "four":{
-            "type": "input",
-            "class": "three",
-            "placeholder": "Численный ответ",
+            "class": "five",
+            "placeholder": "Письменный ответ",
             "id": "e"
         },
         "button":{

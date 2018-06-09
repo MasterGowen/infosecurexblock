@@ -19,6 +19,7 @@ button.submit {
     transition-property: opacity, visibility;
   transition-duration: 1s, 0s;
 }
+
 .link1, .link2, .link3, .link4, .link5, .link6, .link7, .link8, .link9, .link10, .link11, .link12, .link13, .link14, .link15, .link16{
     text-decoration:underline; z-index: 10;
     transition-property: opacity, visibility;
@@ -27,6 +28,16 @@ button.submit {
 .link1:hover, .link2:hover, .link3:hover, .link4:hover, .link5:hover, .link6:hover, .link7:hover, .link8:hover, .link9:hover, .link10:hover, .link11:hover, .link12:hover, .link13:hover, .link14:hover, .link15:hover, .link16:hover {
     color: blueviolet; /* Цвет текста активного пункта */
     background-color: white; /* Цвет фона активного пункта */
+  
+   }
+   #link_id1:hover, #link_id2:hover, #link_id3:hover, #link_id4:hover, #link_id5:hover, #link_id6:hover, #link_id7:hover, #link_id8:hover, #link_id9:hover, #link_id10:hover, #link_id11:hover, #link_id12:hover, #link_id13:hover, #link_id14:hover, #link_id15:hover, #link_id16:hover {
+    color: blueviolet; /* Цвет текста активного пункта */
+    background-color: white; /* Цвет фона активного пункта */
+  
+   }
+   #link_id1, #link_id2, #link_id3, #link_id4, #link_id5, #link_id6, #link_id7, #link_id8, #link_id9, #link_id10, #link_id11, #link_id12, #link_id13, #link_id14, #link_id15, #link_id16 {
+    color: blue; /* Цвет текста активного пункта */
+  
   
    }
    .link1:hover{color:white;}
@@ -139,6 +150,12 @@ object {
     width: 200px;
     margin-left: 10px;
     margin-top: 50px;
+    height: 30px;
+    text-align: center;
+   /* border-radius: 10px;*/ }
+   .five {
+    width: 200px;
+    position: left;
     height: 30px;
     text-align: center;
    /* border-radius: 10px;*/ }
