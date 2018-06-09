@@ -343,9 +343,10 @@ function InfoSecureXBlock(runtime, element) {
             function Time3Lab(time,NumLink){
                 var k = 1;
                 var timeDeactive = 3000;
+                console.log("v time3lab");
                     for(k in NumLink){
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
-                        //Start.active(['link'+[k], 'Link'+[k]]);
+                       
                     setTimeout(()=>{
                         Start.active(['link'+k,'Link'+k]);
                      }, time);time+=2000;
