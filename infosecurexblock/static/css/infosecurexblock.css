@@ -28,6 +28,7 @@ button.submit {
 }
 .link1:hover, .link2:hover, .link3:hover, .link4:hover, .link5:hover, .link6:hover, .link7:hover, .link8:hover, .link9:hover, .link10:hover, .link11:hover, .link12:hover, .link13:hover, .link14:hover, .link15:hover, .link16:hover {
     color: blueviolet; /* Цвет текста активного пункта */
+    fill: blue;
     background-color: white; /* Цвет фона активного пункта */
   
    }
