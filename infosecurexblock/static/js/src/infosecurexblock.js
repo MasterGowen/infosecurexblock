@@ -349,7 +349,7 @@ function InfoSecureXBlock(runtime, element) {
                         (function (k)
                     {var k2 = k.toString();
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
-                       var kk = 'link'+k2;
+                       var kk = 'link_id'+k2;
                        var KK = "Link" +k2;
                         setTimeout(()=>{
                             Start.active([kk, KK]);
