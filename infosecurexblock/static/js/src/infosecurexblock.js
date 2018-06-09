@@ -459,45 +459,27 @@ function InfoSecureXBlock(runtime, element) {
            ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
-
             if ((evt.id == 'checkid') && (document.getElementById(evt.id).value != undefined)) {
-                var k = document.getElementById('ip').value;
-                var d = document.getElementById('d').value;
-                var N = document.getElementById('N').value;
+                
                 var e = document.getElementById('e').value;
                 var empty = false;
                 var che = 0;
-                var b = checkIsIPV4(k);
-                if (k.length == 0 || d.length == 0 || N.length == 0 || e.length == 0) {
+                
+                if ( e.length == 0) {
                     alert("Пустые поля ввода.");
                     che++;
                     empty = true;
                 }
-                if (b == false && empty != true) {
-                    document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
-                    alert("Некорректный IP адрес.");
-                }
-                console.log("ooooo",global_d, global_N, d, N);
-                if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
-                    alert('Некорректный закрытый ключ (d).');
-                    che++;
-                }
-                if (isNumeric(N) == false && empty != true || N.toString()!=global_N ) {
-                    alert('Некорректный закрытый ключ (N).');
-                    che++;
-                }
-                if (isNumeric(e) == false && empty != true) {
-                    alert('Некорректное сообщение! Введите сообещние в численном виде.');
+                
+                if (isNumeric(e) == true && empty != true) {
+                    alert('Некорректное сообщение! Введите сообещние в письменном виде.');
                     che++;
                 }
 
-                if (che == 0 && b == true && empty != true) {
+                if (che == 0 &&  empty != true) {
 
                     var student_answer =
                         {
-                            'ip': document.getElementById('ip').value,
-                            'd': document.getElementById('d').value,
-                            'N': document.getElementById('N').value,
                             'e': document.getElementById('e').value
                         }
                     Start.checkAnswer(checkHandler, student_answer);
