@@ -58,7 +58,7 @@ class FutureFields(object):
                 return self._fallback_obj.fields[name].default
         return getattr(self._fallback_obj, name)
 
-class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
+class InfoSecureXBlock(ThemableXBlockMixin,StudioEditableXBlockMixin, XBlock):
     display_name = String(
         display_name='Display Name',
         default="infosecurexblock",
