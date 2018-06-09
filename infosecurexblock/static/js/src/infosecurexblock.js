@@ -356,7 +356,7 @@ function InfoSecureXBlock(runtime, element) {
                          }, time);time+=4000;
                         setTimeout(()=>{
                              Start.deactive2([kk, KK]);
-                         }, timeDeactive);timeDeactive+=time;
+                         }, timeDeactive);timeDeactive+=4000;
                     })(k);
                      /*  var k2 = k.toString();
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
