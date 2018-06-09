@@ -3,7 +3,7 @@
 
     <div class="wrapper-comp-settings is-active editor-with-buttons" id="main-settings">
         <ul class="list-input settings-list">
-            { {% for key, fieldset in fields.items %} }
+            {% for key, fieldset in fields.items %}
             {% if key == "main" %}
                 {% for field in fieldset %}
                     <li
@@ -101,7 +101,7 @@
                     </li>
                 {% endfor %}
             {% endif %}
-        {% endfor %}
+            {% endfor %}
         </ul>
     </div>
 
