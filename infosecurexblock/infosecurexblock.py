@@ -248,26 +248,31 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
             elif self.lab_id == 5:
                 answer0, key = data["e"], data["key"]
+                right = False
                 if (key=="key_id1"):
                     if (str(answer0)=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ" or str(answer0)=="информационная безопасность" or str(answer0)=="Информационная безопасность"):
-                        return 1
+                        right = True
                     else:
-                        return 0
+                        right = False
                 if (key=="key_id2"):
                     if (str(answer0)=="ИНфОРМАТИКА" or str(answer0)=="Информатика" or str(answer0)=="информатика"):
-                        return 1
+                        right = True
                     else:
-                        return 0
+                        right = False
                 if (key=="key_id3"):
                     if (str(answer0)=="ШИФРОВАНИЕ" or str(answer0)=="Шифрование" or str(answer0)=="шифрование"):
-                        return 1
+                        right = True
                     else:
-                        return 0
+                        right = False
                 if (key=="key_id4"):
                     if (str(answer0)=="УГРОЗЫ ИНФОРМАТИКИ" or str(answer0)=="Угрозы информатики" or str(answer0)=="угрозы информатики"):
-                        return 1
+                        right = True
                     else:
-                        return 0
+                        right = False
+                if (right is True):
+                    return 1
+                elif (right is False):
+                    return 0
 
 
         def IsTheNumberSimple(n):
