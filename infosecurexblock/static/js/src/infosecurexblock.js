@@ -350,12 +350,12 @@ function InfoSecureXBlock(runtime, element) {
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
                        var kk = 'link'+k;
                        var KK = "Link" +k;
-                       console.log("dich - ", typeof(kk), typeof(KK));
+                     //  console.log("dich - ", typeof(kk), typeof(KK));
                     setTimeout(()=>{
-                        Start.active(['link'+k,'Link'+k]);
+                        Start.active([kk, KK]);
                      }, time);time+=2000;
                     setTimeout(()=>{
-                         Start.deactive2(['link'+k,'Link'+k]);
+                         Start.deactive2([kk, KK]);
                      }, timeDeactive);timeDeactive+=time;
                      k = parseInt(k);
                     }
