@@ -226,8 +226,8 @@ function InfoSecureXBlock(runtime, element) {
         }
         static deactive2(idNum) {
             for(var k in idNum){
-                document.querySelector("."+idNum[k]).style.display = "none";
-               // document.getElementById(idNum[k]).style.display = "none";
+               // document.querySelector("."+idNum[k]).style.display = "none";
+                document.getElementById(idNum[k]).style.display = "none";
             };
         }
         //Lab 1
