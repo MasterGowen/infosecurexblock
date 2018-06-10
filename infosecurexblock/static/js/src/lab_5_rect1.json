@@ -80,9 +80,9 @@
     {
     "type": "line",
     "x1": "400",
-    "y1": "400",
+    "y1": "380",
     "x2": "600",
-    "y2": "403",
+    "y2": "380",
     "stroke-width": "3",
     "stroke": "lightgrey",
     "id": "line_comp3"
