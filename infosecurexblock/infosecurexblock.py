@@ -251,28 +251,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 right = False
                 if (key=="key_id1"):
                     if (answer0=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ" or answer0=="информационная безопасность" or answer0=="Информационная безопасность"):
-                        right = True
-                    else:
-                        right = False
-                elif (key=="key_id2"):
-                    if (answer0=="ИНфОРМАТИКА" or answer0=="Информатика" or answer0=="информатика"):
-                        right = True
-                    else:
-                        right = False
-                elif (key=="key_id3"):
-                    if (answer0=="ШИФРОВАНИЕ" or answer0=="Шифрование" or answer0=="шифрование"):
-                        right = True
-                    else:
-                        right = False
-                elif (key=="key_id4"):
-                    if (answer0=="УГРОЗЫ ИНФОРМАТИКИ" or answer0=="Угрозы информатики" or answer0=="угрозы информатики"):
-                        right = True
-                    else:
-                        right = False
-                elif (right is True):
-                    return 1
-                elif (right is False):
-                    return 0
+                        return 1
+                    else
+                        return 0
 
 
         def IsTheNumberSimple(n):
