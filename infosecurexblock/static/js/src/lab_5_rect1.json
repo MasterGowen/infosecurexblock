@@ -25,7 +25,7 @@
     "comp2":
         {
         "type": "image",
-        "x": "340",
+        "x": "350",
         "y": "500",
         "width": "100",
         "height": "100",
@@ -280,7 +280,7 @@
         "fill": "black",
         "id":"ip2",
         "idnum":"star",
-        "value":"<text x='330' y='620' id ='ip2' class='taskClose'>192.168.0.4</text>"
+        "value":"<text x='350' y='620' id ='ip2' class='taskClose'>192.168.0.4</text>"
     },
     "ip3":{
         "type":"text",
