@@ -105,12 +105,10 @@
       <h2>{{display_name}}</h2>
       <div id="widget_studio">
       </div>
-        <input
-        type="text"
-        class="field-data-control"
-        id="xb-field-edit-{{field.name}}"
-        value="{{field.value|default_if_none:""}}"
-      >
+      <textarea class="field-data-control" 
+      data-field-name="lab_settings" 
+      id="xb-field-edit-lab_settings" 
+      rows=5 cols=70>{{field.value}}</textarea>
       {% endfor %}
   </div>
 
