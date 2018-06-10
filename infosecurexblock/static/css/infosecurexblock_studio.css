@@ -19,7 +19,7 @@ svg {
     display: none;
 }
 
-.is-action-item {
+.is-active-tabs {
     background-color: #666;
 
     border: 0;
@@ -30,7 +30,7 @@ svg {
     text-align: center;
 }
 
-.is-action-item .is-set {
+.is-active-tabs .is-set {
     color: #fff;
     background: transparent;
 
