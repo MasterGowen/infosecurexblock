@@ -242,7 +242,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     else:
                         return 0
                 if (key=="key_id2"):
-                    if ((answer0=="ИНфОРМАТИКА") or (answer0=="Информатика") or (answer0=="информатика")):
+                    if ((answer0=="ИНФОРМАТИКА") or (answer0=="Информатика") or (answer0=="информатика")):
                         return 1
                     else:
                         return 0 
