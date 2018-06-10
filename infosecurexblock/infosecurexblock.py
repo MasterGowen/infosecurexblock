@@ -269,7 +269,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                         right = True
                     else:
                         right = False
-                if (righ):
+                if (right):
                     return 1
                 else:
                     return 0
