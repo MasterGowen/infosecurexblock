@@ -4,7 +4,7 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-    var param = getRandomInt(1,5).toString(); 
+    var param = getRandomInt(1,3).toString(); 
     var param2 = getRandomInt(1,11).toString();
     console.log(param);
     var keys = "key_id"+param; 
@@ -493,7 +493,6 @@ function InfoSecureXBlock(runtime, element) {
                         {
                             'e': document.getElementById('e').value,
                             'key': keys
-                            
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
@@ -713,7 +712,6 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
-            if(elem.class == "draggable")console.log(elem.class == "draggable");
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
@@ -742,6 +740,12 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[0].style.stroke = "red";
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
+                student_answer = {
+                    'answerBlockRedac': false,
+                    'answerBlockAdmin': false,
+                    'answerBlockUsers': false,
+                }
+                console.log('RED',student_answer);
             }
             console.log("result_answer :",student_answer);
             Start.checkAnswer(checkHandler, student_answer);
