@@ -35,3 +35,7 @@ svg {
     background: transparent;
 
 }
+
+.xb-field-edit-lab_settings {
+    display: none;
+}
