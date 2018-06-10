@@ -79,10 +79,10 @@
     "LineCom3Com":
     {
     "type": "line",
-    "x1": "445",
-    "y1": "300",
-    "x2": "500",
-    "y2": "303",
+    "x1": "400",
+    "y1": "400",
+    "x2": "600",
+    "y2": "403",
     "stroke-width": "3",
     "stroke": "lightgrey",
     "id": "line_comp3"
