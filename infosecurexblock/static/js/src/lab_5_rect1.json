@@ -21,16 +21,6 @@
             "id": "2",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/transfer.svg"
         },
-        "db":{
-            "type": "image",
-            "x": "100",
-            "y": "300",
-            "width": "100",
-            "height": "100",
-            "color": "#11111",
-            "id": "3",
-            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/server-3.svg"
-        },
     "comp2":
         {
         "type": "image",
