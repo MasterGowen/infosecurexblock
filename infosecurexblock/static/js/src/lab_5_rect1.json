@@ -81,8 +81,8 @@
     "type": "line",
     "x1": "445",
     "y1": "384",
-    "x2": "600",
-    "y2": "503",
+    "x2": "500",
+    "y2": "300",
     "stroke-width": "3",
     "stroke": "lightgrey",
     "id": "line_comp3"
