@@ -57,7 +57,7 @@
               <textarea class="field-data-control" data-field-name="{{field.name}}" id="xb-field-edit-{{field.name}}" rows=10 cols=70>{{field.value}}</textarea>
             {% elif field.type == 'set' and field.has_list_values %}
               {% comment %}
-                TODO: If len(list_values) is high, show an alternate editor
+                TODO: If len(list_values) is high, show an alternate editor 
                 with a select box and a growing list of selected choices
               {% endcomment %}
               <div class="wrapper-list-settings">
@@ -100,6 +100,7 @@
       {% endfor %}
     </ul>
   </div>
+
     <div id="advanced-settings" hidden="hidden">
       <h2>{{display_name}}</h2>
       <div id="widget_studio">
