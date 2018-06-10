@@ -252,7 +252,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 if (key=="key_id1"):
                     if (answer0=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ" or answer0=="информационная безопасность" or answer0=="Информационная безопасность"):
                         return 1
-                    else
+                    else:
                         return 0
 
 
