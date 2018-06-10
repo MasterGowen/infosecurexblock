@@ -712,6 +712,11 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
+            if(elem.classList.contains('draggable')||(elem.classList.contains(undefined))){
+                dragObject.avatar.hidden = false;
+                dragObject.avatar.rollback();
+                console.log("kek");
+            }
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
@@ -740,12 +745,6 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[0].style.stroke = "red";
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
-                student_answer = {
-                    'answerBlockRedac': false,
-                    'answerBlockAdmin': false,
-                    'answerBlockUsers': false,
-                }
-                console.log('RED',student_answer);
             }
             console.log("result_answer :",student_answer);
             Start.checkAnswer(checkHandler, student_answer);
