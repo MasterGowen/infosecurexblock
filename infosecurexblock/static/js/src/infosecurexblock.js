@@ -710,9 +710,9 @@ function InfoSecureXBlock(runtime, element) {
           }
         
           function findDroppable(event) {
-            dragObject.avatar.hidden = false;
+            dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
-            if(elem.classList.contains('draggable')){
+            if(elem.classList.contains('draggable')||(elem.id == "action")||(elem.classList.contains('infosecurexblock_block'))||(elem.classList.contains('container'))){
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
             }
