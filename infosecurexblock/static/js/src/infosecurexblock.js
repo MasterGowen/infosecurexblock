@@ -710,12 +710,11 @@ function InfoSecureXBlock(runtime, element) {
           }
         
           function findDroppable(event) {
-            dragObject.avatar.hidden = true;
+            dragObject.avatar.hidden = false;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
-            if(elem.classList.contains('draggable')||(elem.classList.contains(undefined))){
+            if(elem.classList.contains('draggable')){
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
-                console.log("kek");
             }
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
