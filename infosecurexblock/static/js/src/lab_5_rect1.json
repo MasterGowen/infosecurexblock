@@ -271,7 +271,7 @@
         "fontFamily":"Roboto",
         "fill": "black",
         "id":"ip1",
-        "value":"<text x='160' y='620' id ='ip1' class='taskClose' >192.168.0.3</text>"
+        "value":"<text x='140' y='420' id ='ip1' class='taskClose' >192.168.0.3</text>"
     },
     "ip2":{
         "type":"text",
@@ -290,7 +290,7 @@
         "id":"ip3",
         "idnum":"star",
         "class":"taskClose",
-        "value":"<text x='580' y='620' id ='ip3' class='taskClose'>192.168.0.5</text>"
+        "value":"<text x='580' y='420' id ='ip3' class='taskClose'>192.168.0.5</text>"
     }
 }
 }
