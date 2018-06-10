@@ -250,7 +250,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 answer0, key = data["e"], data["key"]
                 right = False
                 if (key=="key_id1"):
-                    if (answer0=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ" or answer0=="информационная безопасность" or answer0=="Информационная безопасность"):
+                    if (answer0=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ"):
                         return 1
                     else:
                         return 0
