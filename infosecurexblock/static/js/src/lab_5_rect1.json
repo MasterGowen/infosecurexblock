@@ -274,13 +274,13 @@
                             "class": "taskClose", 
                             "N": "14",
                             "d": "5",
-                            "value":"<text x='215' y='120' id ='key_id4' class='taskClose' >Ключ: М</text>" 
+                            "value":"<text x='215' y='120' id ='key_id4' class='taskClose' >Ключ: Б</text>" 
                             },
                             "mes4":{"type":"text", 
                                 "idnum":"star", 
                                 "id": "mes_id4", 
                                 "class": "taskClose", 
-                                "value":"<text x='230' y='60' id ='mes_id4' class='taskClose' >Сообщение: БРЬХМ ГЖЙРСВУПСУФК</text>" 
+                                "value":"<text x='230' y='60' id ='mes_id4' class='taskClose' >Сообщение: ЛЙВЁСВЁИПРБТОТУЫ</text>" 
                                 }
 
 ,
