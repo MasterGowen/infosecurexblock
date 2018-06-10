@@ -247,10 +247,12 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 pass
 
             elif self.lab_id == 5:
-                answer0, key = data["e"], data["key"]
+                answer0, key0 = data["e"], data["key"]
+                answer = str(answer0)
+                key=str(key0)
                 right = False
                 if (key=="key_id1"):
-                    if (answer0=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ"):
+                    if (answer=="ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ"):
                         return 1
                     else:
                         return 0
