@@ -36,7 +36,7 @@
     "comp3":{
         "type": "image",
         "x": "580",
-        "y": "500",
+        "y": "300",
         "width": "100",
         "height": "100",
         "color": "#11111",
@@ -64,17 +64,6 @@
     "stroke-width": "3",
     "stroke": "lightgrey",
     "id": "line_wifi"
-    },
-    "LineCom1Com":
-    {
-    "type": "line",
-    "x1": "355",
-    "y1": "384",
-    "x2": "220",
-    "y2": "503",
-    "stroke-width": "3",
-    "stroke": "lightgrey",
-    "id": "line_comp1"
     },
     "LineCom2Com":
     {
