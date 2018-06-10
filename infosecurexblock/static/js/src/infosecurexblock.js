@@ -487,7 +487,7 @@ function InfoSecureXBlock(runtime, element) {
                 }
 
                 if (che == 0 &&  empty != true) {
-
+                    console.log("key-----",keys, typeof(keys));
                     var student_answer =
                         {
                             'e': document.getElementById('e').value,
