@@ -238,7 +238,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 key = data["key"]
                 if (key=="key_id1" and answer0 ==27):
                     return 1
-                if (key=="key_id2" ana answer0 == 11):
+                if (key=="key_id2" and answer0 == 11):
                     return 1 
                 if (key=="key_id3" and answer0 == 10):
                     return 1
