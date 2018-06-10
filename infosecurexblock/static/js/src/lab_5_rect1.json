@@ -2,8 +2,8 @@
     "Rect1":{
         "comp1":{
             "type": "image",
-            "x": "160",
-            "y": "500",
+            "x": "100",
+            "y": "300",
             "width": "100",
             "height": "100",
             "color": "#11111",
@@ -21,6 +21,7 @@
             "id": "2",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/transfer.svg"
         },
+        
     "comp2":
         {
         "type": "image",
