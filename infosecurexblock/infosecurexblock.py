@@ -236,13 +236,13 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             elif self.lab_id == 5:
                 answer0 = len(data["e"])
                 key = data["key"]
-                if (key=="key_id1" && answer0 ==27):
+                if (key=="key_id1" and answer0 ==27):
                     return 1
-                if (key=="key_id2" && answer0 == 11):
+                if (key=="key_id2" ana answer0 == 11):
                     return 1 
-                if (key=="key_id3" && answer0 == 10):
+                if (key=="key_id3" and answer0 == 10):
                     return 1
-                if (str(key)=="key_id4" && answer0 ==17):
+                if (str(key)=="key_id4" and answer0 ==17):
                     return 1
                 else:
                     return 0
