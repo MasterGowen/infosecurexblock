@@ -466,7 +466,7 @@ function InfoSecureXBlock(runtime, element) {
                     console.log(e, typeof(e));
                     var student_answer =
                         {
-                            'e': document.getElementById('e').value,
+                            'e': e,
                             'key': keys
                         }
                     Start.checkAnswer(checkHandler, student_answer);
