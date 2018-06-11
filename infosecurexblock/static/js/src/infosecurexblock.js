@@ -150,7 +150,7 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
-                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes]);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes,"redact","admin","users"]);
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
@@ -158,7 +158,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes,"redact","admin","users"]);
             }
         }
 
