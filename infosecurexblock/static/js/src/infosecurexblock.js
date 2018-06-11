@@ -106,7 +106,8 @@ function InfoSecureXBlock(runtime, element) {
                // Start.connectionLabs(rect1HandlerUrl, 1);
                // Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
-                document.getElementById('widget').addEventListener('click', Start.onLab4,Start.taskBlock);
+                document.getElementById('widget').addEventListener('click', Start.taskBlock);
+                document.getElementById('widget').addEventListener('click', Start.onLab4);
                 document.getElementById("widget").addEventListener('mouseover',Start.onLab4styleActive);
                 document.getElementById("widget").addEventListener('mouseout',Start.onLab4styleDeactive);
                 break;
@@ -206,8 +207,10 @@ function InfoSecureXBlock(runtime, element) {
         static active(idNum) {
             for(var k in idNum){
                 console.log(idNum[k]);
-                document.getElementById(idNum[k]).classList.remove("taskClose");
-                document.getElementById(idNum[k]).classList.add("taskOpen");
+                if(idNum[k]!=null){
+                    document.getElementById(idNum[k]).classList.remove("taskClose");
+                    document.getElementById(idNum[k]).classList.add("taskOpen");                    
+                }
             };
         }
         static value2(idNum) {
@@ -219,8 +222,10 @@ function InfoSecureXBlock(runtime, element) {
         }
         static deactive(idNum) {
             for(var k in idNum){
-                document.getElementById(idNum[k]).classList.remove("taskOpen");
-                document.getElementById(idNum[k]).classList.add("taskClose");
+                if(idNum[k]!=null){
+                    document.getElementById(idNum[k]).classList.remove("taskOpen");
+                    document.getElementById(idNum[k]).classList.add("taskClose");
+                }
             };
         }
         static deactive2(idNum) {
