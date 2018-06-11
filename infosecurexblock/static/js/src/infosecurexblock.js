@@ -106,8 +106,7 @@ function InfoSecureXBlock(runtime, element) {
                // Start.connectionLabs(rect1HandlerUrl, 1);
                // Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
-                document.getElementById('widget').addEventListener('click',Start.taskBlock);
-                document.getElementById('widget').addEventListener('click', Start.onLab4);
+                document.getElementById('widget').addEventListener('click', Start.onLab4,Start.taskBlock);
                 document.getElementById("widget").addEventListener('mouseover',Start.onLab4styleActive);
                 document.getElementById("widget").addEventListener('mouseout',Start.onLab4styleDeactive);
                 break;
@@ -150,15 +149,15 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
-                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes,"redact","admin","users"]);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes,'redact','admin','users']);
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes,"redact","admin","users"]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes,'redact','admin','users']);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes,"redact","admin","users"]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes,'redact','admin','users']);
             }
         }
 
