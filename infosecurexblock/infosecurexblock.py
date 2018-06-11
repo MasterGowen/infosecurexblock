@@ -240,8 +240,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 answer0 = len(data["e"])
                 answer0 = str(json.dumps(data["e"], ensure_ascii=False).encode("utf-8"))
                 key = data["key"]
-                if (key=="key_id1" and answer0 == "Информационная безопасность"):
-                    return 1
+                if (key=="key_id1"):
+                    if (answer0 == "й"):
+                        return 1
                 if (key=="key_id2" and answer0 == 11):
                     return 1 
                 if (key=="key_id3" and answer0 == 10):
