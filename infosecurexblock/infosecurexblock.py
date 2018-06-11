@@ -240,11 +240,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 key = data["key"]
                 if (key=="key_id1" and answer0 == "0JjQvdGE0L7RgNC80LDRhtC40L7QvdC90LDRjyDQsdC10LfQvtC/0LDRgdC90L7RgdGC0Yw="):
                     return 1
-                if (key=="key_id2" and answer0 == 11):
+                if (key=="key_id2" and answer0 == "0KjQuNGE0YDQvtCy0LDQvdC40LU="):
                     return 1 
-                if (key=="key_id3" and answer0 == 10):
+                if (key=="key_id3" and answer0 == "0JjQvdGE0L7RgNC80LDRgtC40LrQsA=="):
                     return 1
-                if (str(key)=="key_id4" and answer0 ==17):
+                if (str(key)=="key_id4" and answer0 =="0JrQuNCx0LXRgNCx0LXQt9C+0L/QsNGB0L3QvtGB0YLRjA=="):
                     return 1
                 else:
                     return 0
