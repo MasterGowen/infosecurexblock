@@ -153,15 +153,15 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
-                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes,'redact','admin','users']);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, keys2, mes2, mes,'redact','admin','users']);
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes,'redact','admin','users']);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, keys2, mes2, mes,'redact','admin','users']);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes,'redact','admin','users']);
+                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes,keys2, mes2, 'redact','admin','users']);
             }
         }
 
@@ -440,7 +440,7 @@ function InfoSecureXBlock(runtime, element) {
             }
 
             function fileShow(){
-                console.log("keys :" ,keys, mes); 
+                console.log("keys :" ,keys2, mes2); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys2, mes2]);
             }
             if (evt.id == "Link"){
