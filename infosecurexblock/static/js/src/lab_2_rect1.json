@@ -99,94 +99,6 @@
             "class": "droppable",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg"
         },
-        "ip1":{
-            "type":"text",
-            "x": "100",
-            "y": "620",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "class": "droppable",
-            "id":"ip1"
-        },
-        "ip2":{
-            "type":"text",
-            "x": "650",
-            "y": "420",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "class": "droppable",
-            "id":"ip2"
-        },
-        "ip3":{
-            "type":"text",
-            "x": "650",
-            "y": "620",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "class": "droppable",
-            "id":"ip3"
-        },
-        "ip4":{
-            "type":"text",
-            "x": "100",
-            "y": "420",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "class": "droppable",
-            "id":"ip4"
-        },
-        "ip5":{
-            "type":"text",
-            "x": "365",
-            "y": "720",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "class": "droppable",
-            "id":"ip5"
-        },
-        "redact":{
-            "type":"text",
-            "x": "640",
-            "y": "200",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"redact"
-        },
-        "users":{
-            "type":"text",
-            "x": "100",
-            "y": "200",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"users"
-        },
-        "admin":{
-            "type":"text",
-            "x": "340",
-            "y": "750",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"admin"
-        },
-        
-        "article":{
-            "type":"text",
-            "x": "370",
-            "y": "50",
-            "fontSize":"20",
-            "fontFamily":"Roboto",
-            "fill": "black",
-            "id":"article"
-        },
-
         "LineCom13":
         {
         "type": "line",
@@ -345,23 +257,23 @@
         "user1":{
             "type":"text", 
             "idnum":"star", 
-            "id": "user_id1", 
+            "id": "users", 
             "class": "taskClose", 
-            "value":"<text x='100' y='200' id ='user_id1' class='taskClose' >Пользователи</text>" 
+            "value":"<text x='100' y='200' id ='users' class='taskClose' >Пользователи</text>" 
         },
         "user2":{
             "type":"text", 
             "idnum":"star", 
-            "id": "user_id2", 
+            "id": "admin", 
             "class": "taskClose", 
-            "value":"<text x='340' y='750' id ='user_id2' class='taskClose' >Администратор</text>" 
+            "value":"<text x='340' y='750' id ='admin' class='taskClose' >Администратор</text>" 
             },
         "user3":{
             "type":"text", 
             "idnum":"star", 
-            "id": "user_id3", 
+            "id": "admin", 
             "class": "taskClose", 
-            "value":"<text x='640' y='200' id ='user_id3' class='taskClose' >Редакторы</text>" 
+            "value":"<text x='640' y='200' id ='admin' class='taskClose' >Редакторы</text>" 
             }
     }
 }
