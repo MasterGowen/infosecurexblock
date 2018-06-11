@@ -259,7 +259,7 @@
             "idnum":"star", 
             "id": "users", 
             "class": "taskClose", 
-            "value":"<text x='100' y='200' id ='users' class='taskClose' >Пользователи</text>" 
+            "value":"<text x='80' y='200' id ='users' class='taskClose' >Пользователи</text>" 
         },
         "user2":{
             "type":"text", 
@@ -271,9 +271,9 @@
         "user3":{
             "type":"text", 
             "idnum":"star", 
-            "id": "admin", 
+            "id": "redact", 
             "class": "taskClose", 
-            "value":"<text x='640' y='200' id ='admin' class='taskClose' >Редакторы</text>" 
+            "value":"<text x='640' y='200' id ='redact' class='taskClose' >Редакторы</text>" 
             }
     }
 }

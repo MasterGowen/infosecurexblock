@@ -154,7 +154,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes,"redact","admin","users"]);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
@@ -252,21 +252,10 @@ function InfoSecureXBlock(runtime, element) {
 
                 fileShow();
             }
-          /*  function fileShow() {
-                Start.active(['File1Id','File1TextID','File1TextID2']);
-                document.getElementById("File1TextID").innerHTML = "Сообщение:406 9915660 05464616061 - 9915660";
-                document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
-            }*/
            
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-              ///  console.log("vivod",Start.value2([keys]));
-               // var global = document.getElementById(keys);
-               // var st = global_N_1.indexOf("Ключ:");
-              //  console.log("id --- ",global_N);
-              
-            //   return global_d, global_N;
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
