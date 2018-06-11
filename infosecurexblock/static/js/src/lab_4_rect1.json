@@ -248,140 +248,140 @@
                 "class":"lineCheckMark2 taskClose",
                 "id":"lineCheckMark2Id"
             },
-            "infoUser02":{
+            "infoUser2":{
                 "type":"image",
                 "x": "213",
                 "y": "403",
                 "width": "20",
                 "height": "20",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser02"
+                "id": "infoUser2"
             },
-            "infoUser02Rect":{
+            "infoUserRect2":{
                 "type":"rect",
                 "x": "213",
                 "y": "403",
                 "width": "150",
                 "height": "50",
-                "class":"infoUser02Rect taskClose",
-                "id": "infoUser02Rect"
+                "class":"infoUserRect2 taskClose",
+                "id": "infoUserRect2"
             },
-            "textinfoUser02Rect":{
+            "textinfoUserRect2":{
                 "type":"text",
                 "x": "213",
                 "y": "403",
                 "width": "200",
                 "height": "100",
-                "class":"textinfoUser02Rect taskClose",
-                "id":"textinfoUser02Rect"
+                "class":"textinfoUserRect2 taskClose",
+                "id":"textinfoUserRect2"
             },
-            "infoUser03":{
+            "infoUser3":{
                 "type":"image",
                 "x": "210",
                 "y": "703",
                 "width": "20",
                 "height": "20",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser03"
+                "id": "infoUser3"
             },
-            "infoUser04":{
+            "infoUser4":{
                 "type":"image",
                 "x": "763",
                 "y": "403",
                 "width": "20",
                 "height": "20",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser04"
+                "id": "infoUser4"
             },
-            "infoUser05":{
+            "infoUser5":{
                 "type":"image",
                 "x": "758",
                 "y": "703",
                 "width": "20",
                 "height": "20",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser05"
+                "id": "infoUser5"
             },
-            "infoUser06":{
+            "infoUser6":{
                 "type":"image",
                 "x": "473",
                 "y": "703",
                 "width": "20",
                 "height": "20",
                 "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser06"
+                "id": "infoUser6"
             },
-            "infoUser03Rect":{
+            "infoUserRect3":{
                 "type":"rect",
                 "x": "210",
                 "y": "703",
                 "width": "150",
                 "height": "50",
-                "class":"infoUser03Rect taskClose",
-                "id": "infoUser03Rect"
+                "class":"infoUserRect3 taskClose",
+                "id": "infoUserRect3"
             },
-            "textinfoUser03Rect":{
+            "textinfoUserRect3":{
                 "type":"text",
                 "x": "210",
                 "y": "703",
                 "width": "200",
                 "height": "100",
-                "class":"textinfoUser03Rect taskClose",
-                "id":"textinfoUser03Rect"
+                "class":"textinfoUserRect3 taskClose",
+                "id":"textinfoUserRect3"
             },
-            "infoUser04Rect":{
+            "infoUserRect4":{
                 "type":"rect",
                 "x": "650",
                 "y": "425",
                 "width": "150",
                 "height": "50",
-                "class":"infoUser04Rect taskClose",
-                "id": "infoUser04Rect"
+                "class":"infoUserRect4 taskClose",
+                "id": "infoUserRect4"
             },
-            "textinfoUser04Rect":{
+            "textinfoUserRect4":{
                 "type":"text",
                 "x": "650",
                 "y": "425",
                 "width": "200",
                 "height": "100",
-                "class":"textinfoUser04Rect taskClose",
-                "id":"textinfoUser04Rect"
+                "class":"textinfoUserRect4 taskClose",
+                "id":"textinfoUserRect4"
             },
-            "infoUser05Rect":{
+            "infoUserRect5":{
                 "type":"rect",
                 "x": "650",
                 "y": "725",
                 "width": "150",
                 "height": "50",
-                "class":"infoUser05Rect taskClose",
-                "id": "infoUser05Rect"
+                "class":"infoUserRect5 taskClose",
+                "id": "infoUserRect5"
             },
-            "textinfoUser05Rect":{
+            "textinfoUserRect5":{
                 "type":"text",
                 "x": "650",
                 "y": "725",
                 "width": "200",
                 "height": "100",
-                "class":"textinfoUser05Rect taskClose",
-                "id":"textinfoUser05Rect"
+                "class":"textinfoUserRect5 taskClose",
+                "id":"textinfoUserRect5"
             },
-            "infoUser06Rect":{
+            "infoUserRect6":{
                 "type":"rect",
                 "x": "473",
                 "y": "703",
                 "width": "150",
                 "height": "50",
-                "class":"infoUser06Rect taskClose",
-                "id": "infoUser06Rect"
+                "class":"infoUserRect6 taskClose",
+                "id": "infoUserRect6"
             },
-            "textinfoUser06Rect":{
+            "textinfoUserRect7":{
                 "type":"text",
                 "x": "473",
                 "y": "703",
                 "width": "200",
                 "height": "100",
-                "class":"textinfoUser06Rect taskClose",
-                "id":"textinfoUser06Rect"
+                "class":"textinfoUserRect7 taskClose",
+                "id":"textinfoUserRect7"
             },
             "infoCloud":{
                 "type":"image",
@@ -472,33 +472,33 @@
             },
             "textInfo02":{
                 "type":"tspan",
-                "idnum":"textinfoUser02Rect",
+                "idnum":"textinfoUserRect2",
                 "class":"taskClose",
-                "value":"<tspan x='220px' id='textInfo02' dy='1em'>Бухгалтер</tspan>"
+                "value":"<tspan x='220px' id='textInfo2' dy='1em'>Бухгалтер</tspan>"
             },
-            "textInfo03":{
+            "textInfo3":{
                 "type":"tspan",
-                "idnum":"textinfoUser03Rect",
+                "idnum":"textinfoUserRect3",
                 "class":"taskClose",
-                "value":"<tspan x='220px' id='textInfo03' dy='1em'>Секретарь</tspan>"
+                "value":"<tspan x='220px' id='textInfo3' dy='1em'>Секретарь</tspan>"
             },
-            "textInfo04":{
+            "textInfo4":{
                 "type":"tspan",
-                "idnum":"textinfoUser04Rect",
+                "idnum":"textinfoUserRect4",
                 "class":"taskClose",
-                "value":"<tspan x='655px' id='textInfo04' dy='1em'>Бухгалтер</tspan>"
+                "value":"<tspan x='655px' id='textInfo4' dy='1em'>Аналитик</tspan>"
             },
-            "textInfo05":{
+            "textInfo5":{
                 "type":"tspan",
-                "idnum":"textinfoUser05Rect",
+                "idnum":"textinfoUserRect5",
                 "class":"taskClose",
-                "value":"<tspan x='655px' id='textInfo05' dy='1em'>Бухгалтер</tspan>"
+                "value":"<tspan x='655px' id='textInfo5' dy='1em'>Генеральный Директор</tspan>"
             },
-            "textInfo06":{
+            "textInfo6":{
                 "type":"tspan",
-                "idnum":"textinfoUser06Rect",
+                "idnum":"textinfoUserRect6",
                 "class":"taskClose",
-                "value":"<tspan x='480px' id='textInfo06' dy='1em'>Бухгалтер</tspan>"
+                "value":"<tspan x='480px' id='textInfo6' dy='1em'>Инженер</tspan>"
             },
             "textinfoCloud":{
                 "type":"tspan",
