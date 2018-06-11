@@ -462,7 +462,7 @@ function InfoSecureXBlock(runtime, element) {
 
                 if (che == 0 &&  empty != true) {
                     console.log("key-----",keys, typeof(keys));
-                    e = window.btoa(e);
+                    e = window.btoa(unescape(encodeURIComponenet(e)));
                     console.log(e, typeof(e));
                     var student_answer =
                         {
