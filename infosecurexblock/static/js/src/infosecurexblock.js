@@ -307,10 +307,6 @@ function InfoSecureXBlock(runtime, element) {
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
-
-                /*                 if(student_answer!={}){
-                                    getQuest();
-                                } */
             }
             else if (evt.id == 'checkid') {
                 console.log('Error:не все поля заполненны.')
@@ -403,9 +399,8 @@ function InfoSecureXBlock(runtime, element) {
                     idNum[0]=="link14" ||
                     idNum[0]=="link15" ||
                     idNum[0]=="link16" ){
-                        console.log("check");
-                            student_answer3[idNum[0]] = true;
-                }//
+                        student_answer3[idNum[0]] = true;
+                }
                 else if (idNum[0]=="link2" || idNum[0]=="link6" || idNum[0]=="link10"
                 || idNum[0]=="link12" || idNum[0]=="linkd3" ||
                idNum[0]=="link7")
