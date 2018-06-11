@@ -238,8 +238,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
             elif self.lab_id == 5:
                 answer0 = len(data["e"])
-                answer0 = json.dumps(data["e"], ensure_ascii=False)
-                answer0 = answer0.encode("urf-8")
+                answer0 = json.dumps(data["e"].encode("utf-8"), ensure_ascii=False)
                 key = data["key"]
                 if (key=="key_id1" and answer0 == "Информационная безопасность"):
                     return 1
