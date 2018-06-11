@@ -462,6 +462,7 @@ function InfoSecureXBlock(runtime, element) {
 
                 if (che == 0 &&  empty != true) {
                     console.log("key-----",keys, typeof(keys));
+                    e = parseInt(e);
                     console.log(e, typeof(e));
                     var student_answer =
                         {

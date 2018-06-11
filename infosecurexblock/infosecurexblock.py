@@ -4,7 +4,6 @@ import pkg_resources
 import json
 import os
 import math
-import yaml
 
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String, JSONField
@@ -238,9 +237,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
             elif self.lab_id == 5:
                 answer0 = len(data["e"])
-                answer0 = str(json.dumps(data["e"], ensure_ascii=False).encode("utf-8"))
                 key = data["key"]
-                if (key=="key_id1" and answer0 == "q"):
+                if (key=="key_id1" and answer0 ==27):
                     return 1
                 if (key=="key_id2" and answer0 == 11):
                     return 1 
