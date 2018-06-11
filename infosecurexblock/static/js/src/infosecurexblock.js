@@ -6,9 +6,12 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = getRandomInt(1,3).toString(); 
     var param2 = getRandomInt(1,11).toString();
+    var param5 = getRandomInt(1,5).toString();
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
+    var keys2 = "key_id"+param5; 
+    var mes2 = "mes_id"+param5;
     var links = "link_id"+param2;
     if (keys =="key_id1" )
     {   global_d= "2";
@@ -421,7 +424,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
             evt.id == 'File1' && fileShow();
-            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2',keys,mes]);
+            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2',keys2,mes2]);
             ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
@@ -438,7 +441,7 @@ function InfoSecureXBlock(runtime, element) {
 
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
-                Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
+                Start.active(['File1Id','File1TextID','File1TextID2',keys2, mes2]);
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -460,12 +463,12 @@ function InfoSecureXBlock(runtime, element) {
                 }
 
                 if (che == 0 &&  empty != true) {
-                    console.log("key-----",keys, typeof(keys));
+                    console.log("key-----",keys2, typeof(keys2));
                     console.log(e, typeof(e));
                     var student_answer =
                         {
                             'e': document.getElementById('e').value,
-                            'key': keys
+                            'key': keys2
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
