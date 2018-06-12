@@ -1,564 +1,990 @@
 {
-        "Rect1":{
-            "comp1":{
-                "type": "image",
-                "x": "100",
-                "y": "600",
-                "width": "100",
-                "height": "100",
-                "color": "#11111",
-                "id": "comp1",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
-                "class":"droppable"
-            },
-            "transfer":{
-                "type": "image",
-                "x": "360",
-                "y": "60",
-                "width": "100",
-                "height": "100",
-                "color": "#11111",
-                "id": "2",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/transfer.svg"
-            },
-            "Comp4":{
-                "type": "image",
-                "x": "100",
-                "y": "300",
-                "width": "100",
-                "height": "100",
-                "color": "#11111",
-                "id": "comp4",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
-                "class":"droppable"
-            },
-        "comp2":
-            {
+    "Rect1":{
+        "comp1":{
             "type": "image",
-            "x": "650",
+            "x": "100",
+            "y": "600",
+            "width": "100",
+            "height": "100",
+            "color": "#11111",
+            "id": "comp1",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
+            "class":"droppable"
+        },
+        "transfer":{
+            "type": "image",
+            "x": "360",
+            "y": "60",
+            "width": "100",
+            "height": "100",
+            "color": "#11111",
+            "id": "2",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/transfer.svg"
+        },
+        "Comp4":{
+            "type": "image",
+            "x": "100",
             "y": "300",
             "width": "100",
             "height": "100",
             "color": "#11111",
-            "id": "comp2",
+            "id": "comp4",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
             "class":"droppable"
         },
-        "comp3":{
-            "type": "image",
+    "comp2":
+        {
+        "type": "image",
+        "x": "650",
+        "y": "300",
+        "width": "100",
+        "height": "100",
+        "color": "#11111",
+        "id": "comp2",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
+        "class":"droppable"
+    },
+    "comp3":{
+        "type": "image",
+        "x": "650",
+        "y": "600",
+        "width": "100",
+        "height": "100",
+        "color": "#11111",
+        "id": "comp3",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
+        "class":"droppable"
+    },
+    "compadm":{
+        "type": "image",
+        "x": "365",
+        "y": "600",
+        "width": "100",
+        "height": "100",
+        "color": "#11111",
+        "id": "compadm",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
+        "class":"droppable"
+    },
+    "LineCom13":
+    {
+    "type": "line",
+    "x1": "150",
+    "y1": "600",
+    "x2": "365",
+    "y2": "536",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "line_comp1"
+    },
+    "LineCom4":
+    {
+    "type": "line",
+    "x1": "210",
+    "y1": "356",
+    "x2": "365",
+    "y2": "538",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "8"
+    },
+    "LineCom3":
+    {
+    "type": "line",
+    "x1": "465",
+    "y1": "538",
+    "x2": "640",
+    "y2": "350",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "line_comp2"
+    },
+    "LineCom6":
+    {
+    "type": "line",
+    "x1": "465",
+    "y1": "538",
+    "x2": "700",
+    "y2": "600",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "line_comp3"
+    },
+    "LineCloud":
+    {
+    "type": "line",
+    "x1": "413",
+    "y1": "150",
+    "x2": "413",
+    "y2": "450",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "line_wifi"
+    },
+    "wifi":{
+        "type": "image",
+        "x": "365",
+        "y": "450",
+        "width": "100",
+        "height": "100",
+        "color": "#11111",
+        "id": "5",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/wifi.svg"
+    },
+    "LineAdmin":
+    {
+    "type": "line",
+    "x1": "415",
+    "y1": "540",
+    "x2": "415",
+    "y2": "600",
+    "stroke-width": "3",
+    "stroke": "lightgrey",
+    "id": "10"
+    },
+    "Circle1":
+        {
+        "type": "circle",
+        "cx": "465",
+        "cy": "538",
+        "r": "2",
+        "stroke-width": "4",
+        "stroke": "#0075b4",
+        "id": "13"
+        },
+        "Circle2":
+        {
+        "type": "circle",
+        "cx": "363",
+        "cy": "538",
+        "r": "2",
+        "stroke-width": "4",
+        "stroke": "#0075b4",
+        "id": "14"
+        },
+        "but":{
+        "type": "image",
+        "x": "750",
+        "y": "30",
+        "width": "40",
+        "height": "40",
+        "color": "#11111",
+        "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
+        "id": "task"
+        },
+        "rectEvent1":{
+            "type":"rect",
+            "x": "150",
+            "y": "200",
+            "width": "350",
+            "height": "150",
+            "class":"rectEvent taskClose",
+            "id":"rectEventId1"
+        },
+        "rectEvent2":{
+            "type":"rect",
+            "x": "375",
+            "y": "200",
+            "width": "350",
+            "height": "150",
+            "class":"rectEvent taskClose",
+            "id":"rectEventId2"
+        },
+        "rectEvent3":{
+            "type":"rect",
+            "x": "150",
+            "y": "500",
+            "width": "350",
+            "height": "150",
+            "class":"rectEvent taskClose",
+            "id":"rectEventId3"
+        },
+        "rectEvent4":{
+            "type":"rect",
+            "x": "250",
+            "y": "550",
+            "width": "350",
+            "height": "150",
+            "class":"rectEvent taskClose",
+            "id":"rectEventId4"
+        },
+        "rectEvent5":{
+            "type":"rect",
+            "x": "375",
+            "y": "500",
+            "width": "350",
+            "height": "150",
+            "class":"rectEvent taskClose",
+            "id":"rectEventId5"
+        },
+        "rectEvent6":{
+            "type":"rect",
+            "x": "250",
+            "y": "0",
+            "width": "350",
+            "height": "150",
+            "class":"rectEvent taskClose",
+            "id":"rectEventId6"
+        },
+        "textRectEvent1":{
+            "type":"text",
+            "x": "160",
+            "y": "220",
+            "width": "200",
+            "height": "100",
+            "class":"textRectEvent taskClose",
+            "id":"textRectEventId1"
+        },
+        "textRectEvent2":{
+            "type":"text",
+            "x": "385",
+            "y": "220",
+            "width": "200",
+            "height": "100",
+            "class":"textRectEvent taskClose",
+            "id":"textRectEventId2"
+        },
+        "textRectEvent3":{
+            "type":"text",
+            "x": "160",
+            "y": "520",
+            "width": "200",
+            "height": "100",
+            "class":"textRectEvent taskClose",
+            "id":"textRectEventId3"
+        },
+        
+        "textRectEvent4":{
+            "type":"text",
+            "x": "260",
+            "y": "570",
+            "width": "200",
+            "height": "100",
+            "class":"textRectEvent taskClose",
+            "id":"textRectEventId4"
+        },
+        
+        "textRectEvent5":{
+            "type":"text",
+            "x": "380",
+            "y": "520",
+            "width": "200",
+            "height": "100",
+            "class":"textRectEvent taskClose",
+            "id":"textRectEventId5"
+        },
+        
+        "textRectEvent6":{
+            "type":"text",
+            "x": "260",
+            "y": "20",
+            "width": "200",
+            "height": "100",
+            "class":"textRectEvent taskClose",
+            "id":"textRectEventId6"
+        },
+        "rectEvent1tap1":{
+            "type":"rect",
+            "x": "150",
+            "y": "300",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap1 taskClose",
+            "id":"rectEventtapId1"
+        },
+        "rectEvent1tap2":{
+            "type":"rect",
+            "x": "250",
+            "y": "300",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap2 taskClose",
+            "id":"rectEventtapId2"
+        },
+        "rectEvent2tap1":{
+            "type":"rect",
+            "x": "375",
+            "y": "300",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap3 taskClose",
+            "id":"rectEventtapId3"
+        },
+        "rectEvent2tap2":{
+            "type":"rect",
+            "x": "475",
+            "y": "300",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap4 taskClose",
+            "id":"rectEventtapId4"
+        },
+        "rectEvent3tap1":{
+            "type":"rect",
+            "x": "150",
+            "y": "600",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap5 taskClose",
+            "id":"rectEventtapId5"
+        },
+        "rectEvent3tap2":{
+            "type":"rect",
+            "x": "250",
+            "y": "600",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap6 taskClose",
+            "id":"rectEventtapId6"
+        },
+        
+        "rectEvent4tap1":{
+            "type":"rect",
+            "x": "250",
+            "y": "650",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap7 taskClose",
+            "id":"rectEventtapId7"
+        },
+        "rectEvent4tap2":{
+            "type":"rect",
+            "x": "350",
+            "y": "650",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap8 taskClose",
+            "id":"rectEventtapId8"
+        },
+        
+        "rectEvent5tap1":{
+            "type":"rect",
+            "x": "375",
+            "y": "600",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap9 taskClose",
+            "id":"rectEventtapId9"
+        },
+        "rectEvent5tap2":{
+            "type":"rect",
+            "x": "475",
+            "y": "600",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap10 taskClose",
+            "id":"rectEventtapId10"
+        },
+        
+        "rectEvent6tap1":{
+            "type":"rect",
+            "x": "250",
+            "y": "100",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap11 taskClose",
+            "id":"rectEventtapId11"
+        },
+        "rectEvent6tap2":{
+            "type":"rect",
+            "x": "350",
+            "y": "100",
+            "width": "100",
+            "height": "50",
+            "class":"rectEventtap12 taskClose",
+            "id":"rectEventtapId12"
+        },
+        "lineClose1":{
+            "type":"line",
+            "x1": "180",
+            "y1": "310",
+            "x2": "210",
+            "y2": "340",
+            "stroke-width": "2",
+            "class":"lineClose1 taskClose",
+            "id":"lineCloseId1"
+        },
+        "lineClose2":{
+            "type":"line",
+            "x1": "180",
+            "y1": "340",
+            "x2": "210",
+            "y2": "310",
+            "stroke-width": "2",
+            "class":"lineClose2 taskClose",
+            "id":"lineCloseId2"
+        },
+        "lineClose3":{
+            "type":"line",
+            "x1": "405",
+            "y1": "310",
+            "x2": "435",
+            "y2": "340",
+            "stroke-width": "2",
+            "class":"lineClose3 taskClose",
+            "id":"lineCloseId3"
+        },
+        "lineClose4":{
+            "type":"line",
+            "x1": "405",
+            "y1": "340",
+            "x2": "435",
+            "y2": "310",
+            "stroke-width": "2",
+            "class":"lineClose4 taskClose",
+            "id":"lineCloseId4"
+        },
+        "lineClose5":{
+            "type":"line",
+            "x1": "180",
+            "y1": "610",
+            "x2": "210",
+            "y2": "640",
+            "stroke-width": "2",
+            "class":"lineClose5 taskClose",
+            "id":"lineCloseId5"
+        },
+        "lineClose6":{
+            "type":"line",
+            "x1": "180",
+            "y1": "640",
+            "x2": "210",
+            "y2": "610",
+            "stroke-width": "2",
+            "class":"lineClose6 taskClose",
+            "id":"lineCloseId6"
+        },
+        "lineClose7":{
+            "type":"line",
+            "x1": "280",
+            "y1": "660",
+            "x2": "310",
+            "y2": "690",
+            "stroke-width": "2",
+            "class":"lineClose7 taskClose",
+            "id":"lineCloseId7"
+        },
+        "lineClose8":{
+            "type":"line",
+            "x1": "280",
+            "y1": "690",
+            "x2": "310",
+            "y2": "660",
+            "stroke-width": "2",
+            "class":"lineClose8 taskClose",
+            "id":"lineCloseId8"
+        },
+        "lineClose9":{
+            "type":"line",
+            "x1": "405",
+            "y1": "610",
+            "x2": "435",
+            "y2": "640",
+            "stroke-width": "2",
+            "class":"lineClose9 taskClose",
+            "id":"lineCloseId9"
+        },
+        "lineClose10":{
+            "type":"line",
+            "x1": "405",
+            "y1": "640",
+            "x2": "435",
+            "y2": "610",
+            "stroke-width": "2",
+            "class":"lineClose10 taskClose",
+            "id":"lineCloseId10"
+        },
+        "lineClose11":{
+            "type":"line",
+            "x1": "280",
+            "y1": "110",
+            "x2": "310",
+            "y2": "140",
+            "stroke-width": "2",
+            "class":"lineClose11 taskClose",
+            "id":"lineCloseId11"
+        },
+        "lineClose12":{
+            "type":"line",
+            "x1": "280",
+            "y1": "140",
+            "x2": "310",
+            "y2": "110",
+            "stroke-width": "2",
+            "class":"lineClose12 taskClose",
+            "id":"lineCloseId12"
+        },
+        "lineCheckMark1":{
+            "type":"line",
+            "x1": "300",
+            "y1": "340",
+            "x2": "290",
+            "y2": "320",
+            "stroke-width": "2",
+            "class":"lineCheckMark1 taskClose",
+            "id":"lineCheckMarkId1"
+        },
+        "lineCheckMark2":{
+            "type":"line",
+            "x1": "300",
+            "y1": "340",
+            "x2": "320",
+            "y2": "305",
+            "stroke-width": "2",
+            "class":"lineCheckMark2 taskClose",
+            "id":"lineCheckMarkId2"
+        },
+        "lineCheckMark3":{
+            "type":"line",
+            "x1": "525",
+            "y1": "340",
+            "x2": "515",
+            "y2": "320",
+            "stroke-width": "2",
+            "class":"lineCheckMark3 taskClose",
+            "id":"lineCheckMarkId3"
+        },
+        "lineCheckMark4":{
+            "type":"line",
+            "x1": "525",
+            "y1": "340",
+            "x2": "545",
+            "y2": "305",
+            "stroke-width": "2",
+            "class":"lineCheckMark4 taskClose",
+            "id":"lineCheckMarkId4"
+        },
+        "lineCheckMark5":{
+            "type":"line",
+            "x1": "300",
+            "y1": "640",
+            "x2": "290",
+            "y2": "620",
+            "stroke-width": "2",
+            "class":"lineCheckMark5 taskClose",
+            "id":"lineCheckMarkId5"
+        },
+        "lineCheckMark6":{
+            "type":"line",
+            "x1": "300",
+            "y1": "640",
+            "x2": "320",
+            "y2": "605",
+            "stroke-width": "2",
+            "class":"lineCheckMark6 taskClose",
+            "id":"lineCheckMarkId6"
+        },
+        "lineCheckMark7":{
+            "type":"line",
+            "x1": "400",
+            "y1": "690",
+            "x2": "390",
+            "y2": "670",
+            "stroke-width": "2",
+            "class":"lineCheckMark7 taskClose",
+            "id":"lineCheckMarkId7"
+        },
+        "lineCheckMark8":{
+            "type":"line",
+            "x1": "400",
+            "y1": "690",
+            "x2": "420",
+            "y2": "655",
+            "stroke-width": "2",
+            "class":"lineCheckMark8 taskClose",
+            "id":"lineCheckMarkId8"
+        },
+        "lineCheckMark9":{
+            "type":"line",
+            "x1": "525",
+            "y1": "640",
+            "x2": "515",
+            "y2": "620",
+            "stroke-width": "2",
+            "class":"lineCheckMark9 taskClose",
+            "id":"lineCheckMarkId9"
+        },
+        "lineCheckMark10":{
+            "type":"line",
+            "x1": "525",
+            "y1": "640",
+            "x2": "545",
+            "y2": "605",
+            "stroke-width": "2",
+            "class":"lineCheckMark10 taskClose",
+            "id":"lineCheckMarkId10"
+        },
+        "lineCheckMark11":{
+            "type":"line",
+            "x1": "400",
+            "y1": "140",
+            "x2": "390",
+            "y2": "120",
+            "stroke-width": "2",
+            "class":"lineCheckMark11 taskClose",
+            "id":"lineCheckMarkId11"
+        },
+        "lineCheckMark12":{
+            "type":"line",
+            "x1": "400",
+            "y1": "140",
+            "x2": "420",
+            "y2": "105",
+            "stroke-width": "2",
+            "class":"lineCheckMark12 taskClose",
+            "id":"lineCheckMarkId12"
+        },
+        "infoUser2":{
+            "type":"image",
+            "x": "213",
+            "y": "403",
+            "width": "20",
+            "height": "20",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
+            "id": "infoUser2"
+        },
+        "infoUserRect2":{
+            "type":"rect",
+            "x": "213",
+            "y": "403",
+            "width": "150",
+            "height": "50",
+            "class":"infoUserRect2 taskClose",
+            "id": "infoUserRect2"
+        },
+        "textinfoUserRect":{
+            "type":"text",
+            "x": "213",
+            "y": "403",
+            "width": "200",
+            "height": "100",
+            "class":"textinfoUserRect2 taskClose",
+            "id":"textinfoUserRect2"
+        },
+        "infoUser3":{
+            "type":"image",
+            "x": "210",
+            "y": "703",
+            "width": "20",
+            "height": "20",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
+            "id": "infoUser3"
+        },
+        "infoUser4":{
+            "type":"image",
+            "x": "763",
+            "y": "403",
+            "width": "20",
+            "height": "20",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
+            "id": "infoUser4"
+        },
+        "infoUser5":{
+            "type":"image",
+            "x": "758",
+            "y": "703",
+            "width": "20",
+            "height": "20",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
+            "id": "infoUser5"
+        },
+        "infoUser6":{
+            "type":"image",
+            "x": "473",
+            "y": "703",
+            "width": "20",
+            "height": "20",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
+            "id": "infoUser6"
+        },
+        "infoUserRect3":{
+            "type":"rect",
+            "x": "210",
+            "y": "703",
+            "width": "150",
+            "height": "50",
+            "class":"infoUserRect3 taskClose",
+            "id": "infoUserRect3"
+        },
+        "textinfoUserRect3":{
+            "type":"text",
+            "x": "210",
+            "y": "703",
+            "width": "200",
+            "height": "100",
+            "class":"textinfoUserRect3 taskClose",
+            "id":"textinfoUserRect3"
+        },
+        "infoUserRect4":{
+            "type":"rect",
             "x": "650",
-            "y": "600",
-            "width": "100",
+            "y": "425",
+            "width": "150",
+            "height": "50",
+            "class":"infoUserRect4 taskClose",
+            "id": "infoUserRect4"
+        },
+        "textinfoUserRect4":{
+            "type":"text",
+            "x": "650",
+            "y": "425",
+            "width": "200",
             "height": "100",
-            "color": "#11111",
-            "id": "comp3",
-            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
-            "class":"droppable"
+            "class":"textinfoUserRect4 taskClose",
+            "id":"textinfoUserRect4"
         },
-        "compadm":{
-            "type": "image",
-            "x": "365",
-            "y": "600",
-            "width": "100",
+        "infoUserRect5":{
+            "type":"rect",
+            "x": "650",
+            "y": "725",
+            "width": "150",
+            "height": "50",
+            "class":"infoUserRect5 taskClose",
+            "id": "infoUserRect5"
+        },
+        "textinfoUserRect5":{
+            "type":"text",
+            "x": "650",
+            "y": "725",
+            "width": "200",
             "height": "100",
-            "color": "#11111",
-            "id": "compadm",
-            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/monitor.svg",
-            "class":"droppable"
+            "class":"textinfoUserRect5 taskClose",
+            "id":"textinfoUserRect5"
         },
-        "LineCom13":
-        {
-        "type": "line",
-        "x1": "150",
-        "y1": "600",
-        "x2": "365",
-        "y2": "536",
-        "stroke-width": "3",
-        "stroke": "lightgrey",
-        "id": "line_comp1"
+        "infoUserRect6":{
+            "type":"rect",
+            "x": "473",
+            "y": "703",
+            "width": "150",
+            "height": "50",
+            "class":"infoUserRect6 taskClose",
+            "id": "infoUserRect6"
         },
-        "LineCom4":
-        {
-        "type": "line",
-        "x1": "210",
-        "y1": "356",
-        "x2": "365",
-        "y2": "538",
-        "stroke-width": "3",
-        "stroke": "lightgrey",
-        "id": "8"
-        },
-        "LineCom3":
-        {
-        "type": "line",
-        "x1": "465",
-        "y1": "538",
-        "x2": "640",
-        "y2": "350",
-        "stroke-width": "3",
-        "stroke": "lightgrey",
-        "id": "line_comp2"
-        },
-        "LineCom6":
-        {
-        "type": "line",
-        "x1": "465",
-        "y1": "538",
-        "x2": "700",
-        "y2": "600",
-        "stroke-width": "3",
-        "stroke": "lightgrey",
-        "id": "line_comp3"
-        },
-        "LineCloud":
-        {
-        "type": "line",
-        "x1": "413",
-        "y1": "150",
-        "x2": "413",
-        "y2": "450",
-        "stroke-width": "3",
-        "stroke": "lightgrey",
-        "id": "line_wifi"
-        },
-        "wifi":{
-            "type": "image",
-            "x": "365",
-            "y": "450",
-            "width": "100",
+        "textinfoUserRect6":{
+            "type":"text",
+            "x": "473",
+            "y": "703",
+            "width": "200",
             "height": "100",
-            "color": "#11111",
-            "id": "5",
-            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/wifi.svg"
+            "class":"textinfoUserRect6 taskClose",
+            "id":"textinfoUserRect6"
         },
-        "LineAdmin":
-        {
-        "type": "line",
-        "x1": "415",
-        "y1": "540",
-        "x2": "415",
-        "y2": "600",
-        "stroke-width": "3",
-        "stroke": "lightgrey",
-        "id": "10"
+        "infoCloud":{
+            "type":"image",
+            "x": "430",
+            "y": "150",
+            "width": "20",
+            "height": "20",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
+            "class":"infoCloud",
+            "id": "infoCloud"
+        },        
+        "infoCloudRect":{
+            "type":"rect",
+            "x": "430",
+            "y": "150",
+            "width": "150",
+            "height": "50",
+            "class":"infoCloudRect taskClose",
+            "id": "infoCloudRect"
         },
-        "Circle1":
-            {
-            "type": "circle",
-            "cx": "465",
-            "cy": "538",
-            "r": "2",
-            "stroke-width": "4",
-            "stroke": "#0075b4",
-            "id": "13"
-            },
-            "Circle2":
-            {
-            "type": "circle",
-            "cx": "363",
-            "cy": "538",
-            "r": "2",
-            "stroke-width": "4",
-            "stroke": "#0075b4",
-            "id": "14"
-            },
-            "but":{
+        "textinfoCloudRect":{
+            "type":"text",
+            "x": "430",
+            "y": "150",
+            "width": "200",
+            "height": "100",
+            "class":"textinfoCloudRect taskClose",
+            "id":"textinfoCloudRect"
+        }, 
+        "butStart":{
+            "type": "rect",
+            "x": "225",
+            "y": "400",
+            "rx":"5",
+            "width": "400",
+            "height": "150",
+            "id":"butStart",
+            "class":"butStart taskOpen mouseNone"
+        },
+        "butStartText":{
+            "type": "text",
+            "x": "360",
+            "y": "490",
+            "width": "400",
+            "height": "150",
+            "id":"butStartText",
+            "class":"butStartText taskOpen mouseNoneText"
+        },
+        "taskDiv":{
+            "type": "rect",
+            "x": "150", 
+            "y": "30", 
+            "width": "750", 
+            "height": "750", 
+            "fill": "#f3faffef",
+            "stroke":"#0075b4",
+            "class":"taskClose",
+            "id": "taskId"
+        },
+        "taskText":{
+            "type":"text",
+            "x": "170",
+            "y": "50",
+            "fontSize":"20",
+            "fontFamily":"SegoeUI",
+            "fill": "black",
+            "class":"taskClose",
+            "id":"taskTextID"
+        },
+        "arrow":{
             "type": "image",
-            "x": "750",
-            "y": "30",
-            "width": "40",
-            "height": "40",
-            "color": "#11111",
-            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/question.svg",
-            "id": "task"
-            },
-            "rectEvent1":{
-                "type":"rect",
-                "x": "150",
-                "y": "200",
-                "width": "350",
-                "height": "150",
-                "class":"rectEvent1 taskClose",
-                "id":"rectEvent1Id"
-            },
-            "textRectEvent":{
-                "type":"text",
-                "x": "160",
-                "y": "220",
-                "width": "200",
-                "height": "100",
-                "class":"textRectEvent taskClose",
-                "id":"textRectEventId"
-            },
-            "rectEvent1tap1":{
-                "type":"rect",
-                "x": "150",
-                "y": "300",
-                "width": "100",
-                "height": "50",
-                "class":"rectEvent1tap1 taskClose",
-                "id":"rectEvent1tap1Id"
-            },
-            "rectEvent1tap2":{
-                "type":"rect",
-                "x": "250",
-                "y": "300",
-                "width": "100",
-                "height": "50",
-                "class":"rectEvent1tap2 taskClose",
-                "id":"rectEvent1tap2Id"
-            },
-            "lineClose1":{
-                "type":"line",
-                "x1": "180",
-                "y1": "310",
-                "x2": "210",
-                "y2": "340",
-                "stroke-width": "2",
-                "class":"lineClose1 taskClose",
-                "id":"lineClose1Id"
-            },
-            "lineClose2":{
-                "type":"line",
-                "x1": "180",
-                "y1": "340",
-                "x2": "210",
-                "y2": "310",
-                "stroke-width": "2",
-                "class":"lineClose2 taskClose",
-                "id":"lineClose2Id"
-            },
-            "lineCheckMark1":{
-                "type":"line",
-                "x1": "300",
-                "y1": "340",
-                "x2": "290",
-                "y2": "320",
-                "stroke-width": "2",
-                "class":"lineCheckMark1 taskClose",
-                "id":"lineCheckMark1Id"
-            },
-            "lineCheckMark2":{
-                "type":"line",
-                "x1": "300",
-                "y1": "340",
-                "x2": "320",
-                "y2": "305",
-                "stroke-width": "2",
-                "class":"lineCheckMark2 taskClose",
-                "id":"lineCheckMark2Id"
-            },
-            "infoUser2":{
-                "type":"image",
-                "x": "213",
-                "y": "403",
-                "width": "20",
-                "height": "20",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser2"
-            },
-            "infoUserRect2":{
-                "type":"rect",
-                "x": "213",
-                "y": "403",
-                "width": "150",
-                "height": "50",
-                "class":"infoUserRect2 taskClose",
-                "id": "infoUserRect2"
-            },
-            "textinfoUserRect2":{
-                "type":"text",
-                "x": "213",
-                "y": "403",
-                "width": "200",
-                "height": "100",
-                "class":"textinfoUserRect2 taskClose",
-                "id":"textinfoUserRect2"
-            },
-            "infoUser3":{
-                "type":"image",
-                "x": "210",
-                "y": "703",
-                "width": "20",
-                "height": "20",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser3"
-            },
-            "infoUser4":{
-                "type":"image",
-                "x": "763",
-                "y": "403",
-                "width": "20",
-                "height": "20",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser4"
-            },
-            "infoUser5":{
-                "type":"image",
-                "x": "758",
-                "y": "703",
-                "width": "20",
-                "height": "20",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser5"
-            },
-            "infoUser6":{
-                "type":"image",
-                "x": "473",
-                "y": "703",
-                "width": "20",
-                "height": "20",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "id": "infoUser6"
-            },
-            "infoUserRect3":{
-                "type":"rect",
-                "x": "210",
-                "y": "703",
-                "width": "150",
-                "height": "50",
-                "class":"infoUserRect3 taskClose",
-                "id": "infoUserRect3"
-            },
-            "textinfoUserRect3":{
-                "type":"text",
-                "x": "210",
-                "y": "703",
-                "width": "200",
-                "height": "100",
-                "class":"textinfoUserRect3 taskClose",
-                "id":"textinfoUserRect3"
-            },
-            "infoUserRect4":{
-                "type":"rect",
-                "x": "650",
-                "y": "425",
-                "width": "150",
-                "height": "50",
-                "class":"infoUserRect4 taskClose",
-                "id": "infoUserRect4"
-            },
-            "textinfoUserRect4":{
-                "type":"text",
-                "x": "650",
-                "y": "425",
-                "width": "200",
-                "height": "100",
-                "class":"textinfoUserRect4 taskClose",
-                "id":"textinfoUserRect4"
-            },
-            "infoUserRect5":{
-                "type":"rect",
-                "x": "650",
-                "y": "725",
-                "width": "150",
-                "height": "50",
-                "class":"infoUserRect5 taskClose",
-                "id": "infoUserRect5"
-            },
-            "textinfoUserRect5":{
-                "type":"text",
-                "x": "650",
-                "y": "725",
-                "width": "200",
-                "height": "100",
-                "class":"textinfoUserRect5 taskClose",
-                "id":"textinfoUserRect5"
-            },
-            "infoUserRect6":{
-                "type":"rect",
-                "x": "473",
-                "y": "703",
-                "width": "150",
-                "height": "50",
-                "class":"infoUserRect6 taskClose",
-                "id": "infoUserRect6"
-            },
-            "textinfoUserRect7":{
-                "type":"text",
-                "x": "473",
-                "y": "703",
-                "width": "200",
-                "height": "100",
-                "class":"textinfoUserRect7 taskClose",
-                "id":"textinfoUserRect7"
-            },
-            "infoCloud":{
-                "type":"image",
-                "x": "430",
-                "y": "150",
-                "width": "20",
-                "height": "20",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/info.svg",
-                "class":"infoCloud",
-                "id": "infoCloud"
-            },        
-            "infoCloudRect":{
-                "type":"rect",
-                "x": "430",
-                "y": "150",
-                "width": "150",
-                "height": "50",
-                "class":"infoCloudRect taskClose",
-                "id": "infoCloudRect"
-            },
-            "textinfoCloudRect":{
-                "type":"text",
-                "x": "430",
-                "y": "150",
-                "width": "200",
-                "height": "100",
-                "class":"textinfoCloudRect taskClose",
-                "id":"textinfoCloudRect"
-            }, 
-            "butStart":{
-                "type": "rect",
-                "x": "225",
-                "y": "400",
-                "rx":"5",
-                "width": "400",
-                "height": "150",
-                "id":"butStart",
-                "class":"butStart taskOpen mouseNone"
-            },
-            "butStartText":{
-                "type": "text",
-                "x": "360",
-                "y": "490",
-                "width": "400",
-                "height": "150",
-                "id":"butStartText",
-                "class":"butStartText taskOpen mouseNoneText"
-            },
-            "taskDiv":{
-                "type": "rect",
-                "x": "150", 
-                "y": "30", 
-                "width": "750", 
-                "height": "750", 
-                "fill": "#f3faffef",
-                "stroke":"#0075b4",
-                "id": "taskId"
-            },
-            "taskText":{
-                "type":"text",
-                "x": "170",
-                "y": "50",
-                "fontSize":"20",
-                "fontFamily":"SegoeUI",
-                "fill": "black",
-                "id":"taskTextID"
-            },
-            "arrow":{
-                "type": "image",
-                "x": "165",
-                "y": "40",
-                "width": "20",
-                "height": "20",
-                "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
-                "id": "arrowid"
-                }
-        },
-        "Rect3":{
-            "textEvent":{
-                "type":"tspan",
-                "idnum":"textRectEventId",
-                "value":"<tspan>Cобирается скопировать</tspan><tspan x='160px' dy='1.2em'>все данные о расходах</tspan><tspan x='160px' dy='1.2em'>предприятия из сетевого</tspan><tspan x='160px' dy='1.2em'>хранилища и отправить по почте</tspan>"
-            },
-            "butText":{
-                "type":"tspan",
-                "idnum":"butStartText",
-                "value":"<tspan id='butText'>Старт</tspan>"
-            },
-            "textInfo02":{
-                "type":"tspan",
-                "idnum":"textinfoUserRect2",
-                "class":"taskClose",
-                "value":"<tspan x='220px' id='textInfo2' dy='1em'>Бухгалтер</tspan>"
-            },
-            "textInfo3":{
-                "type":"tspan",
-                "idnum":"textinfoUserRect3",
-                "class":"taskClose",
-                "value":"<tspan x='220px' id='textInfo3' dy='1em'>Секретарь</tspan>"
-            },
-            "textInfo4":{
-                "type":"tspan",
-                "idnum":"textinfoUserRect4",
-                "class":"taskClose",
-                "value":"<tspan x='655px' id='textInfo4' dy='1em'>Аналитик</tspan>"
-            },
-            "textInfo5":{
-                "type":"tspan",
-                "idnum":"textinfoUserRect5",
-                "class":"taskClose",
-                "value":"<tspan x='655px' id='textInfo5' dy='1em'>Генеральный Директор</tspan>"
-            },
-            "textInfo6":{
-                "type":"tspan",
-                "idnum":"textinfoUserRect6",
-                "class":"taskClose",
-                "value":"<tspan x='480px' id='textInfo6' dy='1em'>Инженер</tspan>"
-            },
-            "textinfoCloud":{
-                "type":"tspan",
-                "idnum":"textinfoCloudRect",
-                "class":"taskClose",
-                "value":"<tspan x='435px' id='textinfoCloud' dy='1em'>Интернет</tspan>"
-            },
-            "ip1":{
-                "type":"text",
-                "idnum":"star",
-                "fontSize":"20",
-                "fontFamily":"Roboto",
-                "fill": "black",
-                "id":"ip1",
-                "value":"<text x='95' y='720' id ='ip1' class='taskClose' >192.168.0.3</text>"
-            },
-            "ip4":{
-                "type":"text",
-                "x": "650",
-                "y": "420",
-                "fontSize":"20",
-                "fontFamily":"Roboto",
-                "fill": "black",
-                "id":"ip4",
-                "idnum":"star",
-                "value":"<text x='650' y='420' id ='ip2' class='taskClose'>192.168.0.4</text>"
-            },
-            "ip3":{
-                "type":"text",
-                "x": "645",
-                "y": "720",
-                "fontSize":"20",
-                "fontFamily":"Roboto",
-                "fill": "black",
-                "id":"ip3",
-                "idnum":"star",
-                "class":"taskClose",
-                "value":"<text x='645' y='720' id ='ip3' class='taskClose'>192.168.0.5</text>"
-            },
-            "ip2":{
-                "type":"text",
-                "x": "100",
-                "y": "420",
-                "fontSize":"20",
-                "fontFamily":"Roboto",
-                "fill": "black",
-                "id":"ip2",
-                "idnum":"star",
-                "value":"<text x='100' y='420' id ='ip4' class='taskClose'>192.168.0.2</text>"
-            },
-            "ip5":{
-                "type":"text",
-                "x": "360",
-                "y": "720",
-                "fontSize":"20",
-                "fontFamily":"Roboto",
-                "fill": "black",
-                "id":"ip5",
-                "idnum":"star",
-                "value":"<text x='360' y='720' id ='ip5' class='taskClose'>192.168.0.6</text>"
+            "x": "165",
+            "y": "40",
+            "width": "20",
+            "height": "20",
+            "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
+            "class":"taskClose",
+            "id": "arrowid"
             }
+    },
+    "Rect3":{
+        "textEvent1":{
+            "type":"tspan",
+            "idnum":"textRectEventId1",
+            "x":"160",
+            "value":"<tspan  id='moveTspan'>Cобирается скопировать</tspan><tspan id='moveTspan' x='160' dy='1.2em'>все данные о расходах</tspan><tspan id='moveTspan' x='160' dy='1.2em'>предприятия из сетевого</tspan><tspan id='moveTspan' x='160' dy='1.2em'>хранилища и отправить по почте</tspan>"
+        },
+        "textEvent2":{
+            "type":"tspan",
+            "idnum":"textRectEventId2",
+            "x":"390",
+            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='390' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='390' dy='1.2em'>общения со своими подругами</tspan>"
+        },
+        "butText":{
+            "type":"tspan",
+            "idnum":"butStartText",
+            "value":"<tspan id='butText'>Старт</tspan>"
+        },
+        "textInfo2":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect2",
+            "class":"taskClose",
+            "value":"<tspan x='220px' id='textInfo2' dy='1em'>Бухгалтер</tspan>"
+        },
+        "textInfo3":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect3",
+            "class":"taskClose",
+            "value":"<tspan x='220px' id='textInfo3' dy='1em'>Секретарь</tspan>"
+        },
+        "textInfo4":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect4",
+            "class":"taskClose",
+            "value":"<tspan x='655px' id='textInfo4' dy='1em'>Аналитик</tspan>"
+        },
+        "textInfo5":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect5",
+            "class":"taskClose",
+            "value":"<tspan x='655px' id='textInfo5' dy='1em'>Генеральный</tspan><tspan x='655px' id='textInfo5' dy='1em'>Директор</tspan>"
+        },
+        "textInfo6":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect6",
+            "class":"taskClose",
+            "value":"<tspan x='480px' id='textInfo6' dy='1em'>Инженер</tspan>"
+        },
+        "textInfo7":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect2",
+            "class":"taskClose",
+            "value":"<tspan x='220px' id='textInfo7' dy='1em'>Программист</tspan>"
+        },
+        "textInfo8":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect3",
+            "class":"taskClose",
+            "value":"<tspan x='220px' id='textInfo8' dy='1em'>Сотрудник</tspan><tspan x='220' id='textInfo8' dy='1em'>отдела охраны</tspan>"
+        },
+        "textInfo9":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect4",
+            "class":"taskClose",
+            "value":"<tspan x='655px' id='textInfo9' dy='1em'>Специалист</tspan><tspan x='220' id='textInfo9' dy='1em'>технической поддержки</tspan>"
+        },
+        "textInfo10":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect5",
+            "class":"taskClose",
+            "value":"<tspan x='655px' id='textInfo10' dy='1em'>Генеральный</tspan><tspan x='655px' id='textInfo10' dy='1em'>Директор</tspan>"
+        },
+        "textInfo11":{
+            "type":"tspan",
+            "idnum":"textinfoUserRect6",
+            "class":"taskClose",
+            "value":"<tspan x='480px' id='textInfo11' dy='1em'>Переводчик</tspan>"
+        },
+        "textinfoCloud":{
+            "type":"tspan",
+            "idnum":"textinfoCloudRect",
+            "class":"taskClose",
+            "value":"<tspan x='435px' id='textinfoCloud' dy='1em'>Внешняя сеть</tspan>"
+        },
+        "ip1":{
+            "type":"text",
+            "idnum":"star",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip1",
+            "value":"<text x='95' y='720' id ='ip1' class='taskOpen' >192.168.0.3</text>"
+        },
+        "ip4":{
+            "type":"text",
+            "x": "650",
+            "y": "420",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip4",
+            "idnum":"star",
+            "value":"<text x='650' y='420' id ='ip2' class='taskOpen'>192.168.0.4</text>"
+        },
+        "ip3":{
+            "type":"text",
+            "x": "645",
+            "y": "720",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip3",
+            "idnum":"star",
+            "class":"taskClose",
+            "value":"<text x='645' y='720' id ='ip3' class='taskOpen'>192.168.0.5</text>"
+        },
+        "ip2":{
+            "type":"text",
+            "x": "100",
+            "y": "420",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip2",
+            "idnum":"star",
+            "value":"<text x='100' y='420' id ='ip4' class='taskOpen'>192.168.0.2</text>"
+        },
+        "ip5":{
+            "type":"text",
+            "x": "360",
+            "y": "720",
+            "fontSize":"20",
+            "fontFamily":"Roboto",
+            "fill": "black",
+            "id":"ip5",
+            "idnum":"star",
+            "value":"<text x='360' y='720' id ='ip5' class='taskOpen'>192.168.0.6</text>"
         }
     }
+}
