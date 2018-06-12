@@ -358,7 +358,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == 'taskId'&& Time3Lab(3000,16);
             console.log("vishlo iz dichi");
             var push3 =[]; var mas = [];
-            evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
+            evt.id == "link1" && linkFixate(["link1","Link1"],student_answer3);
             evt.id == "Link2" && linkFixate(["link2","Link2"],student_answer3);
             evt.id == "Link3" && linkFixate(["link3","Link3"],student_answer3);
             evt.id == "Link4" && linkFixate(["link4","Link4"],student_answer3);
