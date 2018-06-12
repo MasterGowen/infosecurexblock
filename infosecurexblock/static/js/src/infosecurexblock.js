@@ -11,6 +11,8 @@ function InfoSecureXBlock(runtime, element) {
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
     var links = "link_id"+param2;
+    var keys5 = "key_id"+param5; 
+    var mes5 = "mes_id"+param5;
     if (keys =="key_id1" )
     {   global_d= "2";
        global_N= "10";
@@ -33,7 +35,6 @@ function InfoSecureXBlock(runtime, element) {
       console.log(global_N);
   }
     function successCheck(result) {
-        //console.log("result:", result);
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
@@ -151,15 +152,15 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
-                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes,'redact','admin','users']);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, keys5, mes, mes5,'redact','admin','users']);
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes,'redact','admin','users']);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, keys5, mes5, mes,'redact','admin','users']);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes,'redact','admin','users']);
+                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, keys5, mes5, mes,'redact','admin','users']);
             }
         }
 
@@ -420,7 +421,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
             evt.id == 'File1' && fileShow();
-            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2', keys, mes]);
+            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2', keys5, mes5]);
             ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
@@ -436,8 +437,8 @@ function InfoSecureXBlock(runtime, element) {
             }
 
             function fileShow(){
-                console.log("keys :" ,keys, mes); 
-                Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
+                console.log("keys :" ,keys5, mes5); 
+                Start.active(['File1Id','File1TextID','File1TextID2',keys5, mes5]);
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -460,13 +461,13 @@ function InfoSecureXBlock(runtime, element) {
                 }
 
                 if (che == 0 &&  empty != true) {
-                    console.log("key-----",keys, typeof(keys));
+                    console.log("key-----",keys5, typeof(keys5));
                     e = window.btoa(unescape(encodeURIComponent(e)));
                     console.log(e, typeof(e));
                     var student_answer =
                         {
                             'e': e,
-                            'key': keys
+                            'key': keys5
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
