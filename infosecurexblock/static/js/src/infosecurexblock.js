@@ -280,10 +280,8 @@ function InfoSecureXBlock(runtime, element) {
                     empty = true;
                 }
                 if (b == false && empty != true) {
-                    document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                console.log("ooooo",global_d, global_N, d, N);
                 if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
@@ -360,29 +358,29 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == 'taskId'&& Time3Lab(3000,16);
             console.log("vishlo iz dichi");
             var push3 =[]; var mas = [];
-            evt.id == "Link1" && linkFixate(["link1","Link1"],student_answer3);
-            evt.id == "Link2" && linkFixate(["link2","Link2"],student_answer3);
-            evt.id == "Link3" && linkFixate(["link3","Link3"],student_answer3);
-            evt.id == "Link4" && linkFixate(["link4","Link4"],student_answer3);
-            evt.id == "Link5" && linkFixate(["link5","Link5"],student_answer3);
-            evt.id == "Link6" && linkFixate(["link6","Link6"],student_answer3);
-            evt.id == "Link7" && linkFixate(["link7","Link7"],student_answer3);
-            evt.id == "Link8" && linkFixate(["link8","Link8"],student_answer3);
-            evt.id == "Link9" && linkFixate(["link9","Link9"],student_answer3);
-            evt.id == "Link10" && linkFixate(["link10","Link10"],student_answer3);
-            evt.id == "Link11" && linkFixate(["link11","Link11"],student_answer3);
-            evt.id == "Link12" && linkFixate(["link12","Link12"],student_answer3);
-            evt.id == "Link13" && linkFixate(["link13","Link13"],student_answer3);
-            evt.id == "Link14" && linkFixate(["link14","Link14"],student_answer3);
-            evt.id == "Link15" && linkFixate(["link15","Link15"],student_answer3);
-            evt.id == "Link16" && linkFixate(["link16","Link16"],student_answer3);
-          document.getElementById("lab3_links").value = mas;
+            (evt.id == "Link1" || evt.id == "link1") && linkFixate(["link1","Link1"],student_answer3);
+            (evt.id == "Link2" || evt.id == "link2") && linkFixate(["link2","Link2"],student_answer3);
+            (evt.id == "Link3" || evt.id == "link3") && linkFixate(["link3","Link3"],student_answer3);
+            (evt.id == "Link4" || evt.id == "link4") && linkFixate(["link4","Link4"],student_answer3);
+            (evt.id == "Link5" || evt.id == "link5") && linkFixate(["link5","Link5"],student_answer3);
+            (evt.id == "Link6" || evt.id == "link6") && linkFixate(["link6","Link6"],student_answer3);
+            (evt.id == "Link7" || evt.id == "link7") && linkFixate(["link7","Link7"],student_answer3);
+            (evt.id == "Link8" || evt.id == "link8") && linkFixate(["link8","Link8"],student_answer3);
+            (evt.id == "Link9" || evt.id == "link9") && linkFixate(["link9","Link9"],student_answer3);
+            (evt.id == "Link10" || evt.id == "link10") && linkFixate(["link10","Link10"],student_answer3);
+            (evt.id == "Link11" || evt.id == "link11") && linkFixate(["link11","Link11"],student_answer3);
+            (evt.id == "Link12" || evt.id == "link12") && linkFixate(["link12","Link12"],student_answer3);
+            (evt.id == "Link13" || evt.id == "link13") && linkFixate(["link13","Link13"],student_answer3);
+            (evt.id == "Link14" || evt.id == "link14") && linkFixate(["link14","Link14"],student_answer3);
+            (evt.id == "Link15" || evt.id == "link15") && linkFixate(["link15","Link15"],student_answer3);
+            (evt.id == "Link16" || evt.id == "link16") && linkFixate(["link16","Link16"],student_answer3);
+          //document.getElementById("lab3_links").value = mas;
             function linkFixate(idNum,student_answer3){
                 //document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-              //  mas.push(document.getElementById(idNum[1]).value);
-                
+             ///  mas.push(document.getElementById(idNum[0]).value);
+             //   console.log("push mas ---",idNum[0], document.getElementById(idNum[0]).value);
                 var res = [];
                 for (var i in student_answer3) {
                     res.push(i);
