@@ -380,7 +380,7 @@ function InfoSecureXBlock(runtime, element) {
                 document.getElementById(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
                mas.push(document.getElementById(idNum[0]).value);
-                console.log("push mas ---",document.getElementById(idNum[0]).value);
+                console.log("push mas ---",idNum[0], document.getElementById(idNum[0]).value);
                 var res = [];
                 for (var i in student_answer3) {
                     res.push(i);
