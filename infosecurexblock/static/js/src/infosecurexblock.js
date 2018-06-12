@@ -280,10 +280,8 @@ function InfoSecureXBlock(runtime, element) {
                     empty = true;
                 }
                 if (b == false && empty != true) {
-                    document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                console.log("ooooo",global_d, global_N, d, N);
                 if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
@@ -443,7 +441,8 @@ function InfoSecureXBlock(runtime, element) {
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
-            } if ((evt.id == 'checkid') && (document.getElementById(evt.id).value != undefined)) {
+            } 
+            if ((evt.id == 'checkid') && (document.getElementById(evt.id).value != undefined)) {
                 
                 var e = document.getElementById('e').value;
                 var empty = false;
