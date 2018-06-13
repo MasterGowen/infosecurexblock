@@ -294,7 +294,7 @@ function InfoSecureXBlock(runtime, element) {
                     alert('Некорректное сообщение! Введите сообещние в численном виде.');
                     che++;
                 }
-
+                console.log("key ---", key)
                 if (che == 0 && b == true && empty != true) {
 
                     var student_answer =
