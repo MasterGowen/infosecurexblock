@@ -100,6 +100,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
     )
 
     has_score = True
+    graded = True
     icon_class = 'problem'
 
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "raw_possible", 'lab_settings')
