@@ -49,13 +49,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         scope=Scope.settings
     )
 
-    max_score = Float(
-        display_name=u"Maximum number of points",
-        help=u"",
-        default=1,
-        scope=Scope.settings
-    )
-
     lab_id = Integer(
         display_name='Lab ID',
         default=1,
@@ -113,16 +106,16 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "max_score",  "raw_possible", 'lab_settings')
 
     # editable_fields_advanced = ('lab_settings',)
-    #
-    # def max_score(self):  # pylint: disable=no-self-use
-    #     """
-    #     Return the problem's max score, which for DnDv2 always equals 1.
-    #     Required by the grading system in the LMS.
-    #     """
-    #     return self.raw_possible
+
+    def max_score(self):  # pylint: disable=no-self-use
+        """
+        Return the problem's max score, which for DnDv2 always equals 1.
+        Required by the grading system in the LMS.
+        """
+        return self.raw_possible
 
     def get_score(self):
-        return Score(self.raw_earned, self.max_score)
+        return Score(self.raw_earned, self.max_score())
 
     def set_score(self, score):
         """
@@ -131,7 +124,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         score and possible max (for this block, we expect that this will
         always be 1).
         """
-        assert score.raw_possible == self.max_score
+        assert score.raw_possible == self.max_score()
 
         self.raw_earned = score.raw_earned
 
@@ -141,7 +134,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         based on the learner's current state.
         """
 
-        return Score(self.raw_earned, self.max_score)
+        return Score(self.raw_earned, self.max_score())
 
     def has_submitted_answer(self):
         """
@@ -335,7 +328,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             self.grade = grade  # DEPRECATED
             self.raw_earned = grade
 
-            score = Score(self.raw_earned, self.max_score)
+            score = Score(self.raw_earned, self.max_score())
             self.set_score(score)
             self._publish_grade(score)
             self.runtime.publish(self, "progress", {})
