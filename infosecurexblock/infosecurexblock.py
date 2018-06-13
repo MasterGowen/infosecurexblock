@@ -91,8 +91,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.settings
     )
 
-    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight")
-    editable_fields_advanced = ("lab_settings",)
+    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", "lab_settings")
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -239,15 +238,24 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     data["link16"],
                                     ]
                 return sum(correctness_list) / float(len(correctness_list) - 6)
+
             elif self.lab_id == 4:
                 pass
+
             elif self.lab_id == 5:
-                answer0 = int(data["e"])
-                right = [14, 10, 18, 16, 14]
-                if (str(right) == str(answer0)):
+                answer0 = data["e"]
+                key = data["key"]
+                if (key=="key_id1" and answer0 == "0JjQvdGE0L7RgNC80LDRhtC40L7QvdC90LDRjyDQsdC10LfQvtC/0LDRgdC90L7RgdGC0Yw="):
+                    return 1
+                if (key=="key_id2" and answer0 == "0JjQvdGE0L7RgNC80LDRgtC40LrQsA=="):
+                    return 1
+                if (key=="key_id3" and answer0 == "0KjQuNGE0YDQvtCy0LDQvdC40LU="):
+                    return 1
+                if (str(key)=="key_id4" and answer0 =="0JrQuNCx0LXRgNCx0LXQt9C+0L/QsNGB0L3QvtGB0YLRjA=="):
                     return 1
                 else:
                     return 0
+
 
         def IsTheNumberSimple(n):
             if n < 2:

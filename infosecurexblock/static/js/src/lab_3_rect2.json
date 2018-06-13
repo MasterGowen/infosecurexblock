@@ -8,12 +8,6 @@
         "height": "250", 
         "background-color":"white",
         "id": "action"
-        },
-        "four":{
-            "type": "input",
-            "class": "three",
-            "placeholder": "Сохранённые ссылки",
-            "id": "lab3_links"
         }
         
     }

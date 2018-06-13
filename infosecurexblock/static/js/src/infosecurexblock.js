@@ -4,8 +4,9 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-    var param = getRandomInt(1,5).toString(); 
+    var param = getRandomInt(1,3).toString(); 
     var param2 = getRandomInt(1,11).toString();
+    var param5 = getRandomInt(1,5).toString();
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
@@ -106,7 +107,7 @@ function InfoSecureXBlock(runtime, element) {
                // Start.connectionLabs(rect1HandlerUrl, 1);
                // Start.connectionLabs(rect1HandlerUrl, 2);
                 document.getElementById('taskTextID').innerHTML = $('.task_text', element).text();
-                document.getElementById('widget').addEventListener('click',Start.taskBlock);
+                document.getElementById('widget').addEventListener('click', Start.taskBlock);
                 document.getElementById('widget').addEventListener('click', Start.onLab4);
                 document.getElementById("widget").addEventListener('mouseover',Start.onLab4styleActive);
                 document.getElementById("widget").addEventListener('mouseout',Start.onLab4styleDeactive);
@@ -150,15 +151,15 @@ function InfoSecureXBlock(runtime, element) {
             var evt = event.target;
             if(evt.id == 'task'){
                 Start.active(["taskId","taskTextID","arrowid"]);
-                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes]);
+                Start.deactive(['ip1','ip2','ip3','ip4','ip5', keys, mes,'redact','admin','users']);
             }
             if(evt.id == 'taskId'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5',keys, mes,'redact','admin','users']);
             }
             if(evt.id == 'arrowid'){
                 Start.deactive(["taskId","taskTextID","arrowid"]);
-                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes]);
+                Start.active(['ip1','ip2','ip3','ip4','ip5', keys, mes,'redact','admin','users']);
             }
         }
 
@@ -207,8 +208,10 @@ function InfoSecureXBlock(runtime, element) {
         static active(idNum) {
             for(var k in idNum){
                 console.log(idNum[k]);
-                document.getElementById(idNum[k]).classList.remove("taskClose");
-                document.getElementById(idNum[k]).classList.add("taskOpen");
+                if(document.getElementById(idNum[k])!=null){
+                    document.getElementById(idNum[k]).classList.remove("taskClose");
+                    document.getElementById(idNum[k]).classList.add("taskOpen");                    
+                }
             };
         }
         static value2(idNum) {
@@ -220,8 +223,10 @@ function InfoSecureXBlock(runtime, element) {
         }
         static deactive(idNum) {
             for(var k in idNum){
-                document.getElementById(idNum[k]).classList.remove("taskOpen");
-                document.getElementById(idNum[k]).classList.add("taskClose");
+                if(document.getElementById(idNum[k])!=null){
+                    document.getElementById(idNum[k]).classList.remove("taskOpen");
+                    document.getElementById(idNum[k]).classList.add("taskClose");
+                }
             };
         }
         static deactive2(idNum) {
@@ -252,21 +257,10 @@ function InfoSecureXBlock(runtime, element) {
 
                 fileShow();
             }
-          /*  function fileShow() {
-                Start.active(['File1Id','File1TextID','File1TextID2']);
-                document.getElementById("File1TextID").innerHTML = "Сообщение:406 9915660 05464616061 - 9915660";
-                document.getElementById("File1TextID2").innerHTML = "Ключ: 2,10";
-            }*/
            
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-              ///  console.log("vivod",Start.value2([keys]));
-               // var global = document.getElementById(keys);
-               // var st = global_N_1.indexOf("Ключ:");
-              //  console.log("id --- ",global_N);
-              
-            //   return global_d, global_N;
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -286,10 +280,8 @@ function InfoSecureXBlock(runtime, element) {
                     empty = true;
                 }
                 if (b == false && empty != true) {
-                    document.getElementById("ip").innerHTML = "Некорректный IP адрес.";
                     alert("Некорректный IP адрес.");
                 }
-                console.log("ooooo",global_d, global_N, d, N);
                 if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
@@ -314,10 +306,6 @@ function InfoSecureXBlock(runtime, element) {
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
-
-                /*                 if(student_answer!={}){
-                                    getQuest();
-                                } */
             }
             else if (evt.id == 'checkid') {
                 console.log('Error:не все поля заполненны.')
@@ -355,7 +343,7 @@ function InfoSecureXBlock(runtime, element) {
                         (function (k)
                     {var k2 = k.toString();
                         console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
-                       var kk = 'link_id'+k2;
+                       var kk = 'link'+k2;
                        var KK = "Link" +k2;
                         setTimeout(()=>{
                             Start.active([kk, KK]); 
@@ -365,71 +353,56 @@ function InfoSecureXBlock(runtime, element) {
                              Start.deactive2([kk, KK]); 
                          }, timeDeactive);timeDeactive+=4000;
                     })(k);
-                     /*  var k2 = k.toString();
-                        console.log('test: ',time,' ',NumLink,' ',k,'  link'+k,' Link'+k);
-                       var kk = 'link'+k2;
-                       var KK = "Link" +k2;
-                     //  console.log("dich - ", typeof(kk), typeof(KK));
-                    setTimeout(()=>{
-                        Start.active([kk, KK]);
-                     }, time);time+=2000;
-                    setTimeout(()=>{
-                         Start.deactive2([kk, KK]);
-                     }, timeDeactive);timeDeactive+=time;
-                     //k = parseInt(k);*/
                     }
                  }
             evt.id == 'taskId'&& Time3Lab(3000,16);
-          /*  Time3Lab(t, ["link1","Link1"]);t+=3000;
-            Time3Lab(t, ["link2","Link2"]);t+=300;
-            Time3Lab(t, ["link3","Link2"]);*/
             console.log("vishlo iz dichi");
             var push3 =[]; var mas = [];
-            evt.id == "Link1" && linkFixate(["link_id1","Link1"],student_answer3);
-            evt.id == "Link2" && linkFixate(["link_id2","Link2"],student_answer3);
-            evt.id == "Link3" && linkFixate(["link_id3","Link3"],student_answer3);
-            evt.id == "Link4" && linkFixate(["link_id4","Link4"],student_answer3);
-            evt.id == "Link5" && linkFixate(["link_id5","Link5"],student_answer3);
-            evt.id == "Link6" && linkFixate(["link_id6","Link6"],student_answer3);
-            evt.id == "Link7" && linkFixate(["link_id7","Link7"],student_answer3);
-            evt.id == "Link8" && linkFixate(["link_id8","Link8"],student_answer3);
-            evt.id == "Link9" && linkFixate(["link_id9","Link9"],student_answer3);
-            evt.id == "Link10" && linkFixate(["link_id10","Link10"],student_answer3);
-            evt.id == "Link11" && linkFixate(["link_id11","Link11"],student_answer3);
-            evt.id == "Link12" && linkFixate(["link_id12","Link12"],student_answer3);
-            evt.id == "Link13" && linkFixate(["link_id13","Link13"],student_answer3);
-            evt.id == "Link14" && linkFixate(["link_id14","Link14"],student_answer3);
-            evt.id == "Link15" && linkFixate(["link_id15","Link15"],student_answer3);
-            evt.id == "Link16" && linkFixate(["link_id16","Link16"],student_answer3);
-          document.getElementById("lab3_links").value = mas;
+            (evt.id == "Link1" || evt.id == "link1") && linkFixate(["link1","Link1"],student_answer3);
+            (evt.id == "Link2" || evt.id == "link2") && linkFixate(["link2","Link2"],student_answer3);
+            (evt.id == "Link3" || evt.id == "link3") && linkFixate(["link3","Link3"],student_answer3);
+            (evt.id == "Link4" || evt.id == "link4") && linkFixate(["link4","Link4"],student_answer3);
+            (evt.id == "Link5" || evt.id == "link5") && linkFixate(["link5","Link5"],student_answer3);
+            (evt.id == "Link6" || evt.id == "link6") && linkFixate(["link6","Link6"],student_answer3);
+            (evt.id == "Link7" || evt.id == "link7") && linkFixate(["link7","Link7"],student_answer3);
+            (evt.id == "Link8" || evt.id == "link8") && linkFixate(["link8","Link8"],student_answer3);
+            (evt.id == "Link9" || evt.id == "link9") && linkFixate(["link9","Link9"],student_answer3);
+            (evt.id == "Link10" || evt.id == "link10") && linkFixate(["link10","Link10"],student_answer3);
+            (evt.id == "Link11" || evt.id == "link11") && linkFixate(["link11","Link11"],student_answer3);
+            (evt.id == "Link12" || evt.id == "link12") && linkFixate(["link12","Link12"],student_answer3);
+            (evt.id == "Link13" || evt.id == "link13") && linkFixate(["link13","Link13"],student_answer3);
+            (evt.id == "Link14" || evt.id == "link14") && linkFixate(["link14","Link14"],student_answer3);
+            (evt.id == "Link15" || evt.id == "link15") && linkFixate(["link15","Link15"],student_answer3);
+            (evt.id == "Link16" || evt.id == "link16") && linkFixate(["link16","Link16"],student_answer3);
+          //document.getElementById("lab3_links").value = mas;
             function linkFixate(idNum,student_answer3){
                 //document.querySelector("."+idNum[0]).style.display = "none";
                 document.getElementById(idNum[0]).style.display = "none";
                 document.getElementById(idNum[1]).style.display = "none";
-              //  mas.push(document.getElementById(idNum[1]).value);
-                
+             ///  mas.push(document.getElementById(idNum[0]).value);
+             //   console.log("push mas ---",idNum[0], document.getElementById(idNum[0]).value);
                 var res = [];
                 for (var i in student_answer3) {
                     res.push(i);
                  
                 }
-                console.log("linkiiiii ", (idNum[0].toString());
+                //console.log("linkiiiii ", (idNum[0]));
                 if (
-                    idNum[0].toString()=="link_id1" ||
-                    idNum[0].toString()=="link_id4" ||
-                    idNum[0].toString()=="link_id5"||
-                    idNum[0].toString()=="link_id8" ||
-                    idNum[0].toString()=="link_id9" ||
-                    idNum[0].toString()=="link_id11" ||
-                    idNum[0].toString()=="link_id13" || 
-                    idNum[0].toString()=="link_id14" ||
-                    idNum[0].toString()=="link_id15" ||
-                    idNum[0].toString()=="link_id16" ){
-                            student_answer3[idNum[0]] = true;
-                }//
-                else if (idNum[0]=="link_id2" || idNum[0]=="link_id6" || idNum[0]=="link_id10"
-                || idNum[0]=="link_id12" || idNum[0]=="link_id3" ||
-               idNum[0]=="link_id7")
+                    idNum[0]=="link1" ||
+                    idNum[0]=="link4" ||
+                    idNum[0]=="link5"||
+                    idNum[0]=="link8" ||
+                    idNum[0]=="link9" ||
+                    idNum[0]=="link11" ||
+                    idNum[0]=="link13" || 
+                    idNum[0]=="link14" ||
+                    idNum[0]=="link15" ||
+                    idNum[0]=="link16" ){
+                        student_answer3[idNum[0]] = true;
+                }
+                else if (idNum[0]=="link2" || idNum[0]=="link6" || idNum[0]=="link10"
+                || idNum[0]=="link12" || idNum[0]=="linkd3" ||
+               idNum[0]=="link7")
                {
                    student_answer3[idNum[0]] = false;
                }
@@ -447,7 +420,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
             evt.id == 'File1' && fileShow();
-            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2',keys,mes]);
+            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2', keys, mes]);
             ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
@@ -486,10 +459,13 @@ function InfoSecureXBlock(runtime, element) {
                 }
 
                 if (che == 0 &&  empty != true) {
-
+                    console.log("key-----",keys, typeof(keys));
+                    e = window.btoa(unescape(encodeURIComponent(e)));
+                    console.log(e, typeof(e));
                     var student_answer =
                         {
-                            'e': document.getElementById('e').value
+                            'e': e,
+                            'key': keys
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
@@ -500,48 +476,154 @@ function InfoSecureXBlock(runtime, element) {
 
         }
         //Lab 4
-        static onLab4(event){
-            var evt = event.target;
-            if(evt.id=='butStart' || evt.id=='butStartText' || evt.id=='butText'){
-                Start.deactive(['butStart','butStartText']);
-                setTimeout(()=> {
-                    Start.active(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
-                }, 2500);
+        
+        static ipInfo(k,NumLink,statusBlock,evt){
+            if(statusBlock=='active'){
+                for(; k <= NumLink; k++){
+                    //console.log('test: ',' ',NumLink,' ',k,'  link'+k,' Link'+k);
+                    var infoUser = 'infoUser'+k.toString();
+                    var infoUserRect = "infoUserRect" +k.toString();
+                    var textinfoUserRect = 'textinfoUserRect'+k.toString();
+                    var textInfo = "textInfo" +k.toString();
+                    ((evt.id == infoUser) || (evt.id == infoUserRect) || (evt.id == textinfoUserRect)||(evt.id == textInfo)) &&Start.active(
+                        [infoUserRect,textinfoUserRect,textInfo]
+                    );
+                }
             }
-            if(evt.id == 'lineClose1Id'|| evt.id == 'lineClose2Id' || evt.id == 'rectEvent1tap1Id'){
-                Start.deactive(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
-                alert('TEST: Succes!');
-            }
-            if(evt.id == 'lineCheckMark1Id'|| evt.id == 'lineCheckMark2Id' || evt.id == 'rectEvent1tap2Id'){
-                Start.deactive(['rectEvent1Id','rectEvent1tap1Id','rectEvent1tap2Id','lineClose1Id','lineClose2Id','textRectEventId','lineCheckMark1Id','lineCheckMark2Id']);
-                alert('TEST: Wrong!');
+            else if(statusBlock=='deactive'){
+                for(; k <= NumLink; k++){
+                    //console.log('test: ',' ',NumLink,' ',k,'  link'+k,' Link'+k);
+                    var infoUser = 'infoUser'+k.toString();
+                    var infoUserRect = "infoUserRect" +k.toString();
+                    var textinfoUserRect = 'textinfoUserRect'+k.toString();
+                    var textInfo = "textInfo" +k.toString();
+                    ((evt.id != infoUser) || (evt.id != infoUserRect) || (evt.id != textinfoUserRect)||(evt.id != textInfo)) &&Start.deactive(
+                        [infoUserRect,textinfoUserRect,textInfo]
+                    );
+                }
             }
         }
+        static onLab4(event){
+            var evt = event.target;
+            var eventNum = getRandomInt(1,2);
+            Start.deactive(['butStart','butStartText']);
+    
+            //Start.RectInfo(1,12,"active",evt);
+            //Start.RectInfo(,7,"deactive",evt);
+            if(evt.id=='butStart' || evt.id=='butStartText' || evt.id=='butText'){
+                Start.deactive(['butStart','butStartText']);
+                showNextEvent(eventNum);
+            }
+            //Start.RectInfo(4,12,"deactive",evt);
+            checkMarkEvent(eventNum);
+            closeEvent(eventNum);
+            function closeEvent(choise){
+                if(evt.id == 'rectEventtapId1'|| evt.id == 'lineCloseId1' || evt.id == 'lineCloseId2'){
+                    if(choise==1){
+                        Start.deactive(['rectEventId1','rectEventtapId1','rectEventtapId2','lineCloseId1','lineCloseId2','textRectEventId1','lineCheckMarkId1','lineCheckMarkId2']);
+                        showNextEvent(2);
+                        eventNum = 2;
+                    }
+                }
+            }
+            function checkMarkEvent(choise){
+                if(evt.id == 'rectEventtapId4'|| evt.id == 'lineCheckMarkId3' || evt.id == 'lineCheckMarkId4'){
+                    if(choise==2){
+                        Start.deactive(['rectEventId2','rectEventtapId3','rectEventtapId4','lineCloseId3','lineCloseId4','textRectEventId2','lineCheckMarkId3','lineCheckMarkId4']);
+                        showNextEvent(1);
+                        eventNum = 1;
+                    }
+                }
+                
+            }
+            function getRandomInt(min, max) {///между максимумом(невключительно) и минимумом(включ)
+                return Math.floor(Math.random() * (max - min)) + min;
+              }
+            function showNextEvent(choise){
+                switch(choise){
+                    case 1:{
+                        Start.active(['rectEventId1','rectEventtapId1','rectEventtapId2','lineCloseId1','lineCloseId2','textRectEventId1','lineCheckMarkId1','lineCheckMarkId2']);
+                        setTimeout(()=> {
+                            Start.deactive(['rectEventId1','rectEventtapId1','rectEventtapId2','lineCloseId1','lineCloseId2','textRectEventId1','lineCheckMarkId1','lineCheckMarkId2']);
+                        }, 5000);
+                        break;
+                    }
+                    case 2:{
+                        Start.active(['rectEventId2','rectEventtapId3','rectEventtapId4','lineCloseId3','lineCloseId4','textRectEventId2','lineCheckMarkId3','lineCheckMarkId4']);
+                        setTimeout(()=> {
+                            Start.deactive(['rectEventId2','rectEventtapId3','rectEventtapId4','lineCloseId3','lineCloseId4','textRectEventId2','lineCheckMarkId3','lineCheckMarkId4']);
+                        }, 5000);
+                        break;
+                    }
+                    case 3:{
+    
+                        break;
+                    }
+                    case 4:{
+    
+                        break;
+                    }
+                    case 5:{
+    
+                        break;
+                    }
+                    case 6:{
+    
+                        break;
+                    }
+                    case 7:{
+    
+                        break;
+                    }
+                    case 8:{
+    
+                        break;
+                    }
+                    case 9:{
+    
+                        break;
+                    }
+                    case 10:{
+    
+                        break;
+                    }
+                }
+    
+            }
+        }
+    
         static onLab4styleActive(event) {
             var evt = event.target;
             (evt.id == "butStart" || evt.id == 'butStartText' || evt.id == 'butText') && Start.mouseActive(['butStart','butStartText','butText']);
-            ((evt.id == "rectEvent1tap1Id") || (evt.id == 'lineClose1Id') || (evt.id == 'lineClose2Id'))&&Start.mouseActive(
-                ['rectEvent1tap1Id','lineClose1Id','lineClose2Id']
-            );
-            ((evt.id == "rectEvent1tap2Id") || (evt.id == 'lineCheckMark1Id') || (evt.id == 'lineCheckMark2Id'))&&Start.mouseActive(
-                ['rectEvent1tap2Id','lineCheckMark1Id','lineCheckMark2Id']
-            );
+    
             //information ip
-            ((evt.id == "infoUser02") || (evt.id == "infoUser02Rect") || (evt.id == "textinfoUser02Rect")||(evt.id == "textInfo02")) && Start.active(
-                ['infoUser02Rect','textinfoUser02Rect','textInfo02']
-            );
-            ((evt.id == "infoUser03") || (evt.id == "infoUser03Rect") || (evt.id == "textinfoUser03Rect")||(evt.id == "textInfo03")) && Start.active(
-                ['infoUser03Rect','textinfoUser03Rect','textInfo03']
-            );
-            ((evt.id == "infoUser04") || (evt.id == "infoUser04Rect") || (evt.id == "textinfoUser04Rect") || (evt.id == "textInfo04"))  && Start.active(
-                ['infoUser04Rect','textinfoUser04Rect','textInfo04']
-            );
-            ((evt.id == "infoUser05") || (evt.id == "infoUser05Rect") || (evt.id == "textinfoUser05Rect") || (evt.id == "textInfo05"))  && Start.active(
-                ['infoUser05Rect','textinfoUser05Rect','textInfo05']
-            );
-            ((evt.id == "infoUser06") || (evt.id == "infoUser06Rect") || (evt.id == "textinfoUser06Rect") || (evt.id == "textInfo06"))  && Start.active(
-                ['infoUser06Rect','textinfoUser06Rect','textInfo06']
-            );
+            Start.ipInfo(2,6,"active",evt);
+                for(var k=1; k <= 12; k++){
+                    if(k % 2 ==0){
+                        var lineCloseId2 = 'lineCloseId'+k.toString();   
+                    }
+                    else if(k % 2 == 1){
+                        var rectEventtapId1 = 'rectEventtapId'+k.toString(); 
+                        var lineCloseId1 = 'lineCloseId'+k.toString();
+                    }
+                    if((evt.id == rectEventtapId1)||(evt.id == lineCloseId1)||(evt.id == lineCloseId2)){
+                    Start.mouseActive([rectEventtapId1,lineCloseId1,lineCloseId2]);
+                    }        
+                }
+                for(var k=1; k <= 12; k++){
+                    if(k % 2 == 0){
+                        var rectEventtapId2 = 'rectEventtapId'+k.toString();     
+                        var lineCheckMarkId2 = 'lineCheckMarkId'+k.toString();
+                    }
+                    else if(k % 2 == 1){
+                        var lineCheckMarkId1 = 'lineCheckMarkId'+k.toString();
+                    }
+                    if((evt.id == rectEventtapId2)||(evt.id == lineCheckMarkId1)||(evt.id == lineCheckMarkId2)){
+                        Start.mouseActive([rectEventtapId2,lineCheckMarkId1,lineCheckMarkId2]);
+                    }
+                    
+                }
+    
             ((evt.id == "infoCloud") || (evt.id == "infoCloudRect") || (evt.id == "textinfoCloudRect") || (evt.id == "textinfoCloud"))  && Start.active(
                 ['infoCloudRect','textinfoCloudRect','textinfoCloud']
             );
@@ -549,28 +631,21 @@ function InfoSecureXBlock(runtime, element) {
         static onLab4styleDeactive(event){
             var evt = event.target;
             (evt.id != "butStart" || evt.id != 'butStartText' && evt.id != 'butText') && Start.mouseDeactive(['butStart','butStartText','butText']);
-            ((evt.id != "rectEvent1tap1Id") || (evt.id != 'lineClose1Id') || (evt.id != 'lineClose2Id')) && Start.mouseDeactive(
-                ['rectEvent1tap1Id','lineClose1Id','lineClose2Id']
-            );
-            ((evt.id != "rectEvent1tap2Id") || (evt.id != 'lineCheckMark1Id') || (evt.id != 'lineCheckMark2Id')) && Start.mouseDeactive(
-                ['rectEvent1tap2Id','lineCheckMark1Id','lineCheckMark2Id']
-            );
-            //information ip 
-            ((evt.id != "infoUser02") && (evt.id != "infoUser02Rect") && (evt.id != "textinfoUser02Rect") && (evt.id != "textInfo02"))  && Start.deactive(
-                ['infoUser02Rect','textinfoUser02Rect','textInfo02']
-            );
-            ((evt.id != "infoUser03") && (evt.id != "infoUser03Rect") && (evt.id != "textinfoUser03Rect") && (evt.id != "textInfo03"))  && Start.deactive(
-                ['infoUser03Rect','textinfoUser03Rect','textInfo03']
-            );
-            ((evt.id != "infoUser04") && (evt.id != "infoUser04Rect") && (evt.id != "textinfoUser04Rect") && (evt.id != "textInfo04"))  && Start.deactive(
-                ['infoUser04Rect','textinfoUser04Rect','textInfo04']
-            );
-            ((evt.id != "infoUser05") && (evt.id != "infoUser05Rect") && (evt.id != "textinfoUser05Rect") && (evt.id != "textInfo05"))  && Start.deactive(
-                ['infoUser05Rect','textinfoUser05Rect','textInfo05']
-            );
-            ((evt.id != "infoUser06") && (evt.id != "infoUser06Rect") && (evt.id != "textinfoUser06Rect") && (evt.id != "textInfo06"))  && Start.deactive(
-                ['infoUser06Rect','textinfoUser06Rect','textInfo06']
-            );
+    
+            //information ip
+            Start.ipInfo(2,6,"deactive",evt); 
+                for(var j=1; j <= 12; j++){
+                    var rectEventtapId1 = 'rectEventtapId'+j.toString();
+                    var rectEventtapId2 = 'rectEventtapId'+(j-1).toString();
+                    var lineCloseId1 = 'lineCloseId'+j.toString();
+                    var lineCheckMarkId1 = 'lineCheckMarkId'+j.toString();
+                    var lineCloseId2 = 'lineCloseId'+(j-1).toString();
+                    var lineCheckMarkId2 = 'lineCheckMarkId'+(j-1).toString();
+                    if((evt.id != rectEventtapId1)||(evt.id != rectEventtapId2)||(evt.id != lineCloseId1)||(evt.id != lineCloseId2)||(evt.id != lineCheckMarkId1)||(evt.id != lineCheckMarkId2)){
+                    Start.mouseDeactive([rectEventtapId1,lineCloseId1,lineCheckMarkId1]);
+                }   
+            }
+    
             ((evt.id != "infoCloud") && (evt.id != "infoCloudRect") && (evt.id != "textinfoCloudRect") && (evt.id != "textinfoCloud"))  && Start.deactive(
                 ['infoCloudRect','textinfoCloudRect','textinfoCloud']
             );
@@ -582,7 +657,7 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById(idNum[k]).classList.remove("mouseNoneText");
                     document.getElementById(idNum[k]).classList.add("mouseOverText");
                 }
-                else {
+                else if(document.getElementById(idNum[k])!=null){
                     document.getElementById(idNum[k]).classList.remove("mouseNone");
                     document.getElementById(idNum[k]).classList.add("mouseOver");
                 }
@@ -595,7 +670,7 @@ function InfoSecureXBlock(runtime, element) {
                     document.getElementById(idNum[k]).classList.remove("mouseOverText");
                     document.getElementById(idNum[k]).classList.add("mouseNoneText");
                 }
-                else {
+                else if(document.getElementById(idNum[k])!=null){
                     document.getElementById(idNum[k]).classList.remove("mouseOver");
                     document.getElementById(idNum[k]).classList.add("mouseNone");   
                 }
@@ -709,6 +784,10 @@ function InfoSecureXBlock(runtime, element) {
           function findDroppable(event) {
             dragObject.avatar.hidden = true;
             var elem = document.elementFromPoint(event.clientX, event.clientY);
+            if(elem.classList.contains('draggable')||(elem.id == "action")||(elem.classList.contains('infosecurexblock_block'))||(elem.classList.contains('container'))){
+                dragObject.avatar.hidden = false;
+                dragObject.avatar.rollback();
+            }
             if((elem.id == "userRect" || elem.id == "comp1"|| elem.id == "comp4") && dragObject.avatar.id == "readid"){
                 elem.farthestViewportElement.children[2].style.stroke = "green";
                 elem.farthestViewportElement.children[2].style.fill = "#f2fff4";
@@ -737,12 +816,6 @@ function InfoSecureXBlock(runtime, element) {
                 elem.farthestViewportElement.children[0].style.stroke = "red";
                 dragObject.avatar.hidden = false;
                 dragObject.avatar.rollback();
-                student_answer = {
-                    'answerBlockRedac': false,
-                    'answerBlockAdmin': false,
-                    'answerBlockUsers': false,
-                }
-                console.log('RED',student_answer);
             }
             console.log("result_answer :",student_answer);
             Start.checkAnswer(checkHandler, student_answer);
@@ -782,67 +855,6 @@ function InfoSecureXBlock(runtime, element) {
                 //document.querySelector('svg').appendChild(document.createElement('g'));
             }
             for (var k in attributes) {
-                if((name=="text")&&(attributes[k]=="redact")){
-                    this.element.innerHTML = 'Редакторы'
-                }
-                if((name=="text")&&(attributes[k]=="users")){
-                    this.element.innerHTML = 'Пользователи'
-                }
-                if((name=="text")&&(attributes[k]=="admin")){
-                    this.element.innerHTML = 'Администратор'
-                }
-                if((name=="text")&&(attributes[k]=="article")){
-                    this.element.innerHTML = 'Статья'
-                }
-                if ((name=="text")&&(attributes[k]=="link1")){
-                    this.element.innerHTML = "http://google.com"
-                }
-                if ((name=="text")&&(attributes[k]=="link2")){
-                    this.element.innerHTML = "https://bank.ex.com"
-                }
-                if ((name=="text")&&(attributes[k]=="link3")){
-                    this.element.innerHTML = "http://gogle.com"
-                }
-                if ((name=="text")&&(attributes[k]=="link4")){
-                    this.element.innerHTML = "http://media.ls.urfu.ru"
-                }
-                if ((name=="text")&&(attributes[k]=="link5")){
-                    this.element.innerHTML = "http://ru.wikipedia.org"
-                }
-                if ((name=="text")&&(attributes[k]=="link6")){
-                    this.element.innerHTML = "https://urfu.ru.u"
-                }
-                if ((name=="text")&&(attributes[k]=="link7")){
-                    this.element.innerHTML = "http://traficonverter.biz"
-                }
-                if ((name=="text")&&(attributes[k]=="link8")){
-                    this.element.innerHTML = "https://vk.com"
-                }
-                if ((name=="text")&&(attributes[k]=="link9")){
-                    this.element.innerHTML = "https://alfabank.ru"
-                }
-                if ((name=="text")&&(attributes[k]=="link10")){
-                    this.element.innerHTML = "http://vk.my.page.bl"
-                }
-                if ((name=="text")&&(attributes[k]=="link11")){
-                    this.element.innerHTML = "https://intuit.ru"
-                }
-                if ((name=="text")&&(attributes[k]=="link12")){
-                    this.element.innerHTML = "https://facebok.com"
-                }
-                if ((name=="text")&&(attributes[k]=="link13")){
-                    this.element.innerHTML = "https://yandex.ru"
-                }
-                if ((name=="text")&&(attributes[k]=="link14")){
-                    this.element.innerHTML = "https://e1.ru"
-                }
-                if ((name=="text")&&(attributes[k]=="link15")){
-                    this.element.innerHTML = "https://pogoda.ru"
-                }
-                if ((name=="text")&&(attributes[k]=="link16")){
-                    this.element.innerHTML = "https://news.com"
-                }
-
                 if (attributes[k] == "image") {
                     this.element.setAttributeNS(this.NS1, [k], attributes[k]);
                 }
