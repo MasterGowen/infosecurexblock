@@ -27,7 +27,7 @@ from .utils import (
 loader = ResourceLoader(__name__)
 
 
-class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
+class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
     display_name = String(
         display_name='Display Name',
         default="infosecurexblock",
@@ -95,8 +95,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     has_score = True
 
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", 'lab_settings')
+
     # editable_fields_advanced = ('lab_settings',)
 
+    def get_score(self):
+        return Score(self.points, self.weight)
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -250,17 +253,16 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             elif self.lab_id == 5:
                 answer0 = data["e"]
                 key = data["key"]
-                if (key=="key_id1" and answer0 == "0JjQvdGE0L7RgNC80LDRhtC40L7QvdC90LDRjyDQsdC10LfQvtC/0LDRgdC90L7RgdGC0Yw="):
+                if (key == "key_id1" and answer0 == "0JjQvdGE0L7RgNC80LDRhtC40L7QvdC90LDRjyDQsdC10LfQvtC/0LDRgdC90L7RgdGC0Yw="):
                     return 1
-                if (key=="key_id2" and answer0 == "0JjQvdGE0L7RgNC80LDRgtC40LrQsA=="):
+                if (key == "key_id2" and answer0 == "0JjQvdGE0L7RgNC80LDRgtC40LrQsA=="):
                     return 1
-                if (key=="key_id3" and answer0 == "0KjQuNGE0YDQvtCy0LDQvdC40LU="):
+                if (key == "key_id3" and answer0 == "0KjQuNGE0YDQvtCy0LDQvdC40LU="):
                     return 1
-                if (str(key)=="key_id4" and answer0 =="0JrQuNCx0LXRgNCx0LXQt9C+0L/QsNGB0L3QvtGB0YLRjA=="):
+                if (str(key) == "key_id4" and answer0 == "0JrQuNCx0LXRgNCx0LXQt9C+0L/QsNGB0L3QvtGB0YLRjA=="):
                     return 1
                 else:
                     return 0
-
 
         def IsTheNumberSimple(n):
             if n < 2:
