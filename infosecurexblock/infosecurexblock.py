@@ -93,10 +93,19 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
     )
 
     has_score = True
+    icon_class = 'problem'
+
 
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", 'lab_settings')
 
     # editable_fields_advanced = ('lab_settings',)
+
+    def max_score(self):  # pylint: disable=no-self-use
+        """
+        Return the problem's max score, which for DnDv2 always equals 1.
+        Required by the grading system in the LMS.
+        """
+        return self.weight
 
     def get_score(self):
         return Score(self.points, self.weight)
