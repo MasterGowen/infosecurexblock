@@ -304,7 +304,7 @@ function InfoSecureXBlock(runtime, element) {
                             'd': document.getElementById('d').value,
                             'N': document.getElementById('N').value,
                             'e': document.getElementById('e').value,
-                            'key': document.getElementById(keys).value
+                            'key': key
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
