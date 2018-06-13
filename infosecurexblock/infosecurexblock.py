@@ -42,7 +42,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         scope=Scope.settings
     )
 
-    weight = Float(
+    raw_possible = Float(
         display_name=u"Maximum number of points",
         help=u"",
         default=1,
@@ -102,7 +102,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
     has_score = True
     icon_class = 'problem'
 
-    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", 'lab_settings')
+    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "raw_possible", 'lab_settings')
 
     # editable_fields_advanced = ('lab_settings',)
 
@@ -111,7 +111,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         Return the problem's max score, which for DnDv2 always equals 1.
         Required by the grading system in the LMS.
         """
-        return self.weight
+        return self.raw_possible
 
     def get_score(self):
         return Score(self.raw_earned, self.max_score())
@@ -146,7 +146,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         Returns the block's current saved grade multiplied by the block's
         weight- the number of points earned by the learner.
         """
-        return self.raw_earned * self.weight
+        return self.raw_earned * self.raw_possible
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -161,7 +161,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         context = {
             "display_name": self.display_name,
             "task_text": self.task_text,
-            "weight": self.weight,
+            "weight": self.raw_possible,
             "max_attempts": self.max_attempts,
             "attempts": self.attempts,
             "points": self.raw_earned,
@@ -334,7 +334,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             self.attempts += 1
             response = {'result': 'success',
                         'correct': grade,
-                        'weight': self.weight,
+                        'weight': self.raw_possible,
                         "max_attempts": self.max_attempts,
                         "attempts": self.attempts,
                         "points": self.points,
