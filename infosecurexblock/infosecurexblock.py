@@ -92,12 +92,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         scope=Scope.settings
     )
 
-    raw_earned = Float(
-        help="Keeps maximum score achieved by student as a raw value between 0 and 1.",
-        scope=Scope.user_state,
-        default=0,
-        enforce_type=True,
-    )
+    has_score = True
 
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", 'lab_settings')
     # editable_fields_advanced = ('lab_settings',)
@@ -283,7 +278,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             self.grade = grade
             self.points = grade * self.weight
 
-            self._publish_grade(Score(self.grade, self.weight))
+            self._publish_grade(Score(self.points, self.weight))
 
             # self.runtime.publish(self, 'grade', {
             #     'value': self.grade,
