@@ -49,6 +49,13 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         scope=Scope.settings
     )
 
+    max_score = Float(
+        display_name=u"Maximum number of points",
+        help=u"",
+        default=1,
+        scope=Scope.settings
+    )
+
     lab_id = Integer(
         display_name='Lab ID',
         default=1,
@@ -103,7 +110,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
     graded = True
     icon_class = 'problem'
 
-    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "raw_possible", 'lab_settings')
+    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "max_score",  "raw_possible", 'lab_settings')
 
     # editable_fields_advanced = ('lab_settings',)
 
