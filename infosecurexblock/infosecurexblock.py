@@ -6,8 +6,9 @@ import os
 import math
 
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer, String, JSONField
+from xblock.fields import Scope, Integer, String, JSONField, Float
 from xblock.fragment import Fragment
+from xblock.scorable import ScorableXBlockMixin, Score
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 from xblock.exceptions import JsonHandlerError
 from xblock.validation import Validation
@@ -26,7 +27,7 @@ from .utils import (
 loader = ResourceLoader(__name__)
 
 
-class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
+class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
     display_name = String(
         display_name='Display Name',
         default="infosecurexblock",
@@ -41,10 +42,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.settings
     )
 
-    weight = Integer(
+    raw_possible = Float(
         display_name=u"Maximum number of points",
         help=u"",
-        default=60,
+        default=1,
         scope=Scope.settings
     )
 
@@ -79,10 +80,17 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.user_state
     )
 
-    grade = Integer(
+    grade = Float(
+        help="DEPRECATED. Keeps maximum score achieved by student as a weighted value.",
+        scope=Scope.user_state,
+        default=0
+    )
+
+    raw_earned = Float(
         display_name=u"Количество баллов студента",
         default=0,
-        scope=Scope.user_state
+        scope=Scope.user_state,
+        enforce_type=True,
     )
 
     lab_settings = JSONField(
@@ -91,7 +99,55 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.settings
     )
 
-    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", "lab_settings")
+    has_score = True
+    graded = True
+    icon_class = 'problem'
+
+    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts",  "raw_possible", 'lab_settings')
+
+    # editable_fields_advanced = ('lab_settings',)
+
+    def max_score(self):  # pylint: disable=no-self-use
+        """
+        Return the problem's max score, which for DnDv2 always equals 1.
+        Required by the grading system in the LMS.
+        """
+        return self.raw_possible
+
+    def get_score(self):
+        return Score(self.raw_earned, self.max_score())
+
+    def set_score(self, score):
+        """
+        Sets the score on this block.
+        Takes a Score namedtuple containing a raw
+        score and possible max (for this block, we expect that this will
+        always be 1).
+        """
+        assert score.raw_possible == self.max_score()
+
+        self.raw_earned = score.raw_earned
+
+    def calculate_score(self):
+        """
+        Returns a newly-calculated raw score on the problem for the learner
+        based on the learner's current state.
+        """
+
+        return Score(self.raw_earned, self.max_score())
+
+    def has_submitted_answer(self):
+        """
+        Returns True if the user has made a submission.
+        """
+        return self.fields['raw_earned'].is_set_on(self) or self.fields['grade'].is_set_on(self)
+
+    def weighted_grade(self):
+        """
+        Returns the block's current saved grade multiplied by the block's
+        weight- the number of points earned by the learner.
+        """
+        return self.raw_earned * self.raw_possible
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -106,10 +162,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         context = {
             "display_name": self.display_name,
             "task_text": self.task_text,
-            "weight": self.weight,
+            "weight": self.raw_possible,
             "max_attempts": self.max_attempts,
             "attempts": self.attempts,
-            "points": self.points,
+            "points": self.raw_earned,
 
         }
 
@@ -157,6 +213,13 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             field_info = self._make_field_info(field_name, field)
             if field_info is not None:
                 context["fields"].append(field_info)
+
+        # for field_name in self.editable_fields_advanced:
+        #     field = self.fields[field_name]
+        #     field_info = self._make_field_info(field_name, field)
+        #     if field_info is not None:
+        #         context["fields_advanced"].append(field_info)
+
         fragment.content = loader.render_template('static/html/infosecurexblock_studio.html', context)
         fragment.add_javascript(loader.load_unicode('static/js/src/infosecurexblock_studio.js'))
 
@@ -196,11 +259,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             if self.lab_id == 1:
                 ip, d, N, answer0, key = data["ip"], int(data["d"]), int(data["N"]), int(data["e"]), data["key"]
                 answer2 = [int(r) for r in list(str(answer0))]
-                if (key == "key_id1" || key == "key_id2"):
+                if (key == "key_id1" or key == "key_id2"):
                     right = [14, 10, 18, 16, 14]
-                elif (key == "key_id3" || key == "key_id4")
+                elif (key == "key_id3" or key == "key_id4"):
                     right = [2, 6, 9, 16, 17, 1, 19, 15, 16, 19, 20, 30]
-                elif (key == "key_id5")
+                elif (key == "key_id5"):
                     right = [31, 12, 18, 1, 15]
                 if IsTheNumberSimple(d):
                     for j, k in enumerate(copy.deepcopy(right1)):
@@ -243,17 +306,16 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             elif self.lab_id == 5:
                 answer0 = data["e"]
                 key = data["key"]
-                if (key=="key_id1" and answer0 == "0JjQvdGE0L7RgNC80LDRhtC40L7QvdC90LDRjyDQsdC10LfQvtC/0LDRgdC90L7RgdGC0Yw="):
+                if (key == "key_id1" and answer0 == "0JjQvdGE0L7RgNC80LDRhtC40L7QvdC90LDRjyDQsdC10LfQvtC/0LDRgdC90L7RgdGC0Yw="):
                     return 1
-                if (key=="key_id2" and answer0 == "0JjQvdGE0L7RgNC80LDRgtC40LrQsA=="):
-                    return 1 
-                if (key=="key_id3" and answer0 == "0KjQuNGE0YDQvtCy0LDQvdC40LU="):
+                if (key == "key_id2" and answer0 == "0JjQvdGE0L7RgNC80LDRgtC40LrQsA=="):
                     return 1
-                if (str(key)=="key_id4" and answer0 =="0JrQuNCx0LXRgNCx0LXQt9C+0L/QsNGB0L3QvtGB0YLRjA=="):
+                if (key == "key_id3" and answer0 == "0KjQuNGE0YDQvtCy0LDQvdC40LU="):
+                    return 1
+                if (str(key) == "key_id4" and answer0 == "0JrQuNCx0LXRgNCx0LXQt9C+0L/QsNGB0L3QvtGB0YLRjA=="):
                     return 1
                 else:
                     return 0
-
 
         def IsTheNumberSimple(n):
             if n < 2:
@@ -268,17 +330,18 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
         if answer_opportunity(self):
             grade = checkLabs(data)
-            self.grade = grade
-            self.points = grade * self.weight
+            self.grade = grade  # DEPRECATED
+            self.raw_earned = grade
 
-            self.runtime.publish(self, 'grade', {
-                'value': self.grade,
-                'max_value': self.weight,
-            })
+            score = Score(self.raw_earned, self.max_score())
+            self.set_score(score)
+            self._publish_grade(score)
+            self.runtime.publish(self, "progress", {})
+
             self.attempts += 1
             response = {'result': 'success',
                         'correct': grade,
-                        'weight': self.weight,
+                        'weight': self.raw_possible,
                         "max_attempts": self.max_attempts,
                         "attempts": self.attempts,
                         "points": self.points,
