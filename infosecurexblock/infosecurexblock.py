@@ -331,6 +331,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             score = Score(self.raw_earned, self.max_score())
             self.set_score(score)
             self._publish_grade(score)
+            self.runtime.publish(self, "progress", {})
 
             self.attempts += 1
             response = {'result': 'success',
