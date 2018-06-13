@@ -6,8 +6,9 @@ import os
 import math
 
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer, String, JSONField
+from xblock.fields import Scope, Integer, String, JSONField, Float
 from xblock.fragment import Fragment
+from xblock.scorable import ScorableXBlockMixin, Score
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 from xblock.exceptions import JsonHandlerError
 from xblock.validation import Validation
@@ -26,7 +27,7 @@ from .utils import (
 loader = ResourceLoader(__name__)
 
 
-class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
+class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
     display_name = String(
         display_name='Display Name',
         default="infosecurexblock",
@@ -91,7 +92,15 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.settings
     )
 
+    raw_earned = Float(
+        help="Keeps maximum score achieved by student as a raw value between 0 and 1.",
+        scope=Scope.user_state,
+        default=0,
+        enforce_type=True,
+    )
+
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", "lab_settings")
+
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -273,10 +282,12 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             self.grade = grade
             self.points = grade * self.weight
 
-            self.runtime.publish(self, 'grade', {
-                'value': self.grade,
-                'max_value': self.weight,
-            })
+            self._publish_grade(Score(self.grade, self.weight))
+
+            # self.runtime.publish(self, 'grade', {
+            #     'value': self.grade,
+            #     'max_value': self.weight,
+            # })
             self.attempts += 1
             response = {'result': 'success',
                         'correct': grade,
