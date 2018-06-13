@@ -302,7 +302,8 @@ function InfoSecureXBlock(runtime, element) {
                             'ip': document.getElementById('ip').value,
                             'd': document.getElementById('d').value,
                             'N': document.getElementById('N').value,
-                            'e': document.getElementById('e').value
+                            'e': document.getElementById('e').value,
+                            'key': document.getElementById(keys).value
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
