@@ -99,8 +99,8 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         enforce_type=True,
     )
 
-    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight")
-    editable_fields_advanced = ('lab_settings',)
+    editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", 'lab_settings')
+    # editable_fields_advanced = ('lab_settings',)
 
 
     def resource_string(self, path):
@@ -168,11 +168,11 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             if field_info is not None:
                 context["fields"].append(field_info)
 
-        for field_name in self.editable_fields_advanced:
-            field = self.fields[field_name]
-            field_info = self._make_field_info(field_name, field)
-            if field_info is not None:
-                context["fields_advanced"].append(field_info)
+        # for field_name in self.editable_fields_advanced:
+        #     field = self.fields[field_name]
+        #     field_info = self._make_field_info(field_name, field)
+        #     if field_info is not None:
+        #         context["fields_advanced"].append(field_info)
 
         fragment.content = loader.render_template('static/html/infosecurexblock_studio.html', context)
         fragment.add_javascript(loader.load_unicode('static/js/src/infosecurexblock_studio.js'))
