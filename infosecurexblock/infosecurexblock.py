@@ -195,9 +195,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             if self.lab_id == 1:
                 ip, d, N, answer0, key = data["ip"], int(data["d"]), int(data["N"]), int(data["e"]), data["key"]
                 answer2 = [int(r) for r in list(str(answer0))]
-                if (key == "key_id1" || key == "key_id2"):
+                if (key == "key_id1" or key == "key_id2"):
                     right = [14, 10, 18, 16, 14]
-                elif (key == "key_id3" || key == "key_id4"):
+                elif (key == "key_id3" or key == "key_id4"):
                     right = [2, 6, 9, 16, 17, 1, 19, 15, 16, 19, 20, 30]
                 elif (key == "key_id5"):
                     right = [31, 12, 18, 1, 15]
