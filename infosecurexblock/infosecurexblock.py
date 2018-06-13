@@ -281,6 +281,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             self.runtime.publish(self, 'grade', {
                 'value': self.points,
                 'max_value': self.weight,
+                'only_if_higher': False,
             })
             self.attempts += 1
             response = {'result': 'success',
