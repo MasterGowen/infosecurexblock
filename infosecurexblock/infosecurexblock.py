@@ -278,12 +278,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             self.grade = grade
             self.points = grade * self.weight
 
-            self._publish_grade(Score(self.points, self.weight))
-
-            # self.runtime.publish(self, 'grade', {
-            #     'value': self.grade,
-            #     'max_value': self.weight,
-            # })
+            self.runtime.publish(self, 'grade', {
+                'value': self.points,
+                'max_value': self.weight,
+            })
             self.attempts += 1
             response = {'result': 'success',
                         'correct': grade,
