@@ -27,7 +27,7 @@ from .utils import (
 loader = ResourceLoader(__name__)
 
 
-class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
+class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
     display_name = String(
         display_name='Display Name',
         default="infosecurexblock",
