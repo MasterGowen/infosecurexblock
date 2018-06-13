@@ -294,6 +294,7 @@ function InfoSecureXBlock(runtime, element) {
                     alert('Некорректное сообщение! Введите сообещние в численном виде.');
                     che++;
                 }
+                key = "key_id" + param;
                 console.log("key ---", key)
                 if (che == 0 && b == true && empty != true) {
 
