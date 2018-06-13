@@ -327,7 +327,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             self.grade = grade  # DEPRECATED
             self.raw_earned = grade
 
-            self._publish_grade(Score(self.raw_earned, self.max_score()))
+            score = Score(self.raw_earned, self.max_score())
+            self.set_score(score)
+            self._publish_grade(score)
+
             self.attempts += 1
             response = {'result': 'success',
                         'correct': grade,
