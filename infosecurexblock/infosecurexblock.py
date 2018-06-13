@@ -42,10 +42,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         scope=Scope.settings
     )
 
-    weight = Integer(
+    weight = Float(
         display_name=u"Maximum number of points",
         help=u"",
-        default=60,
+        default=1,
         scope=Scope.settings
     )
 
@@ -80,10 +80,17 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         scope=Scope.user_state
     )
 
-    grade = Integer(
+    grade = Float(
+        help="DEPRECATED. Keeps maximum score achieved by student as a weighted value.",
+        scope=Scope.user_state,
+        default=0
+    )
+
+    raw_earned = Float(
         display_name=u"Количество баллов студента",
         default=0,
-        scope=Scope.user_state
+        scope=Scope.user_state,
+        enforce_type=True,
     )
 
     lab_settings = JSONField(
@@ -94,7 +101,6 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
 
     has_score = True
     icon_class = 'problem'
-
 
     editable_fields = ('display_name', 'task_text', "lab_id", "max_attempts", "weight", 'lab_settings')
 
@@ -108,7 +114,39 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
         return self.weight
 
     def get_score(self):
-        return Score(self.points, self.weight)
+        return Score(self.raw_earned, self.max_score())
+
+    def set_score(self, score):
+        """
+        Sets the score on this block.
+        Takes a Score namedtuple containing a raw
+        score and possible max (for this block, we expect that this will
+        always be 1).
+        """
+        assert score.raw_possible == self.max_score()
+
+        self.raw_earned = score.raw_earned
+
+    def calculate_score(self):
+        """
+        Returns a newly-calculated raw score on the problem for the learner
+        based on the learner's current state.
+        """
+
+        return Score(self.raw_earned, self.max_score())
+
+    def has_submitted_answer(self):
+        """
+        Returns True if the user has made a submission.
+        """
+        return self.fields['raw_earned'].is_set_on(self) or self.fields['grade'].is_set_on(self)
+
+    def weighted_grade(self):
+        """
+        Returns the block's current saved grade multiplied by the block's
+        weight- the number of points earned by the learner.
+        """
+        return self.raw_earned * self.weight
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -126,7 +164,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
             "weight": self.weight,
             "max_attempts": self.max_attempts,
             "attempts": self.attempts,
-            "points": self.points,
+            "points": self.raw_earned,
 
         }
 
@@ -286,14 +324,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock, ScorableXBlockMixin):
 
         if answer_opportunity(self):
             grade = checkLabs(data)
-            self.grade = grade
-            self.points = grade * self.weight
+            self.grade = grade  # DEPRECATED
+            self.raw_earned = grade
 
-            self.runtime.publish(self, 'grade', {
-                'value': self.points,
-                'max_value': self.weight,
-                'only_if_higher': None,
-            })
+            self._publish_grade(Score(self.raw_earned, self.max_score()))
             self.attempts += 1
             response = {'result': 'success',
                         'correct': grade,
