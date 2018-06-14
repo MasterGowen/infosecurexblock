@@ -938,11 +938,6 @@ function InfoSecureXBlock(runtime, element) {
             n);
 
     }
-    
-    function Random(){
-        
-        Math.random(id_num);
-    }
     class Labs extends Start {
         constructor() {
             super()
