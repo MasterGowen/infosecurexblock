@@ -4,13 +4,11 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-    var param = getRandomInt(1,3).toString(); 
-    var param2 = getRandomInt(1,11).toString();
-    var param5 = getRandomInt(1,5).toString();
+    var param = getRandomInt(1,6).toString(); 
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
-    var links = "link_id"+param2;
+   
     if (keys =="key_id1" )
     {   global_d= "2";
        global_N= "10";
