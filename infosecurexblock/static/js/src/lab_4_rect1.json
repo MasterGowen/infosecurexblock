@@ -246,7 +246,7 @@
         },
         "textRectEvent3":{
             "type":"text",
-            "x": "160",
+            "x": "110",
             "y": "520",
             "width": "200",
             "height": "100",
@@ -266,7 +266,7 @@
         
         "textRectEvent5":{
             "type":"text",
-            "x": "380",
+            "x": "500",
             "y": "520",
             "width": "200",
             "height": "100",
@@ -858,9 +858,34 @@
         "textEvent2":{
             "type":"tspan",
             "idnum":"textRectEventId2",
-            "x":"390",
-            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='390' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='390' dy='1.2em'>общения со своими подругами</tspan>"
+            "x":"385",
+            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='385' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='385' dy='1.2em'>общения со своими подругами</tspan>"
         },
+        "textEvent3":{
+            "type":"tspan",
+            "idnum":"textRectEventId3",
+            "x":"110",
+            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='110' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='110' dy='1.2em'>общения со своими подругами</tspan>"
+        },
+        "textEvent4":{
+            "type":"tspan",
+            "idnum":"textRectEventId4",
+            "x":"260",
+            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='260' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='260' dy='1.2em'>общения со своими подругами</tspan>"
+        },
+        "textEvent5":{
+            "type":"tspan",
+            "idnum":"textRectEventId5",
+            "x":"500",
+            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='500' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='500' dy='1.2em'>общения со своими подругами</tspan>"
+        },
+        "textEvent6":{
+            "type":"tspan",
+            "idnum":"textRectEventId6",
+            "x":"260",
+            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='260' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='260' dy='1.2em'>общения со своими подругами</tspan>"
+        },
+
         "butText":{
             "type":"tspan",
             "idnum":"butStartText",
