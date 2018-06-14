@@ -8,7 +8,9 @@ function InfoSecureXBlock(runtime, element) {
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
-   
+   var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
+    "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
+    console.log(alphabet[10]);
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
        global_N= "10";
