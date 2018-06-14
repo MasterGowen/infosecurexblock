@@ -234,7 +234,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                                     data["link15"],
                                     data["link16"],
                                     ]
-                return sum(correctness_list) / float(len(correctness_list) - 6)
+                return sum(correctness_list) / 16)
 
             elif self.lab_id == 4:
                 pass
