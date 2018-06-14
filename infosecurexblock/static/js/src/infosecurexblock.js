@@ -4,11 +4,27 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-    var param = getRandomInt(1,6).toString(); 
+    var param = getRandomInt(1,6).toString();
+    var alfa = getRandomInt(2,34);
     console.log(param);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
-   
+   var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
+    "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
+    var len = 5; //document.getElementById(mes).len;
+    var old_alphabet = ["э", "к", "р", "а", "н"]
+    var new_alphabet = []; var new_i = [];
+    for (var j=0; j<alphabet.length; j++){
+    for (var i =0; i < len; i++){
+      
+        if (alphabet[j]==old_alphabet[i])
+            new_i[i] = j + alfa;
+        }
+      //  new_alphabet[i] = old_alphabet[i+alfa-1];
+    } 
+
+    console.log()
+    console.log(new_i);
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
        global_N= "10";
