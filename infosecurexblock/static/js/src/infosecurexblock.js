@@ -509,68 +509,161 @@ function InfoSecureXBlock(runtime, element) {
                 }
             }
         }
-        static onLab4(event){
-            var evt = event.target;
-            var eventNum = getRandomInt(1,2);
-            Start.deactive(['butStart','butStartText']);
+        static getRandomInt(min, max, num) {//между максимумом(невключительно) и минимумом(включ)
+            var i, arr = [], res = [];
+            for (i = min; i <= max; i++ ) arr.push(i);
+            for (i = 0; i < num; i++) res.push(arr.splice(Math.floor(Math.random() * (arr.length)), 1)[0])
+            return res;
+          }
+        static moveEventRect(idNum, x1offset, y1offset, x2offset, y2offset){
+            for(var k = 0; k < idNum.length; k++){
+                var elem = document.getElementById(idNum[k]);
     
-            //Start.RectInfo(1,12,"active",evt);
-            //Start.RectInfo(,7,"deactive",evt);
+                if(document.getElementsByTagName('rect')){
+                    var x = elem.getAttribute('x');
+                    var y = elem.getAttribute('y');  
+                    elem.setAttribute('x',parseInt(x)+x1offset);
+                    elem.setAttribute('y',parseInt(y)+y1offset);
+                }
+                if(document.getElementsByTagName('line')){
+                    var x1 = elem.getAttribute('x1');
+                    var y1 = elem.getAttribute('y1');
+                    var x2 = elem.getAttribute('x2');
+                    var y2 = elem.getAttribute('y2');
+                    elem.setAttribute('x1',parseInt(x1)+x1offset);
+                    elem.setAttribute('y1',parseInt(y1)+y1offset);
+                    elem.setAttribute('x2',parseInt(x2)+x2offset);
+                    elem.setAttribute('y2',parseInt(y2)+y2offset);
+                }
+    
+            }
+    
+        }
+        static onLab4(event){
+            function test(eventNum){
+                for(var i = 0;i<6;i++){
+                    //setInterval(console.log("Show"),100);
+                    //console.log(eventNum[i]);
+                    return eventNum[i];
+                }
+            }
+            var evt = event.target;
+            Start.deactive(['butStart','butStartText']);
             if(evt.id=='butStart' || evt.id=='butStartText' || evt.id=='butText'){
                 Start.deactive(['butStart','butStartText']);
-                showNextEvent(eventNum);
+                var timerId = setInterval(function() {
+                    showNextEvent();
+                }, 6000);
+            }
+            if(evt.id == 'rectEventtapId1'|| evt.id == 'lineCloseId1' || evt.id == 'lineCloseId2'){
+                var student_answer = {
+                    "event": 0,
+                    "eventId": checkText()
+                }
+                console.log("student_answer",student_answer);
+            }
+            if(evt.id == 'rectEventtapId2'|| evt.id == 'lineCheckMarkId1' || evt.id == 'lineCheckMarkId2'){
+                var student_answer = {
+                    "event": 1,
+                    "eventId": checkText()
+                }
+                console.log("student_answer",student_answer);
             }
             //Start.RectInfo(4,12,"deactive",evt);
-            checkMarkEvent(eventNum);
-            closeEvent(eventNum);
-            function closeEvent(choise){
-                if(evt.id == 'rectEventtapId1'|| evt.id == 'lineCloseId1' || evt.id == 'lineCloseId2'){
-                    if(choise==1){
-                        Start.deactive(['rectEventId1','rectEventtapId1','rectEventtapId2','lineCloseId1','lineCloseId2','textRectEventId1','lineCheckMarkId1','lineCheckMarkId2']);
-                        showNextEvent(2);
-                        eventNum = 2;
-                    }
+            function checkText() {//вроде робит
+                var arr = [];
+                for(var k = 1; k < 6; k++){
+                    var textRectEventId = "textRectEventId"+k.toString();
+                    arr.push(textRectEventId);
                 }
+                for(var k = 0; k < arr.length ;k++ ){
+                        if(document.getElementById(arr[k]).classList.contains('taskOpen')){
+                            console.log(arr[k]);
+                            return arr[k]
+                        }
+                    console.log(document.getElementById(arr[k]).classList.contains('taskOpen'));
+                }   
             }
-            function checkMarkEvent(choise){
-                if(evt.id == 'rectEventtapId4'|| evt.id == 'lineCheckMarkId3' || evt.id == 'lineCheckMarkId4'){
-                    if(choise==2){
-                        Start.deactive(['rectEventId2','rectEventtapId3','rectEventtapId4','lineCloseId3','lineCloseId4','textRectEventId2','lineCheckMarkId3','lineCheckMarkId4']);
-                        showNextEvent(1);
-                        eventNum = 1;
+            function showNextEvent(){
+                function noRepeatRandom(){
+                    while (true){
+                        currentNumber = Random.Range(1,4);
+                        if (currentNumber != previousNumber || currentNumber != previousPreviousNumber){
+                            finalNumber = currentNumber;
+                            previousPreviousNumber = previousNumber;
+                            previousNumber = currentNumber;
+                            break;
+                        }
                     }
+                    console.log("finalNumber " + finalNumber);
                 }
-                
-            }
-            function getRandomInt(min, max) {///между максимумом(невключительно) и минимумом(включ)
-                return Math.floor(Math.random() * (max - min)) + min;
-              }
-            function showNextEvent(choise){
+                var idTabs = ['rectEventId1','rectEventtapId1','rectEventtapId2','lineCloseId1','lineCloseId2','lineCheckMarkId1','lineCheckMarkId2'];
+                var randArr = Start.getRandomInt(1,6,6);//сделать нормальный рандом
+                for(var i = 0;i < randArr.length; i++){
+                    var choise = randArr[i];
+                }
+                console.log(choise);
                 switch(choise){
                     case 1:{
-                        Start.active(['rectEventId1','rectEventtapId1','rectEventtapId2','lineCloseId1','lineCloseId2','textRectEventId1','lineCheckMarkId1','lineCheckMarkId2']);
+                        Start.moveEventRect(idTabs,0,0,0,0);
+                        idTabs.push('textRectEventId1');
+                        Start.active(idTabs);
                         setTimeout(()=> {
-                            Start.deactive(['rectEventId1','rectEventtapId1','rectEventtapId2','lineCloseId1','lineCloseId2','textRectEventId1','lineCheckMarkId1','lineCheckMarkId2']);
-                        }, 5000);
+                            Start.deactive(idTabs);
+                            idTabs.pop();
+                        }, 2000);
                         break;
                     }
                     case 2:{
-                        Start.active(['rectEventId2','rectEventtapId3','rectEventtapId4','lineCloseId3','lineCloseId4','textRectEventId2','lineCheckMarkId3','lineCheckMarkId4']);
+                        Start.moveEventRect(idTabs,225,0,225,0);
+                        idTabs.push('textRectEventId2');
+                        Start.active(idTabs);  
                         setTimeout(()=> {
-                            Start.deactive(['rectEventId2','rectEventtapId3','rectEventtapId4','lineCloseId3','lineCloseId4','textRectEventId2','lineCheckMarkId3','lineCheckMarkId4']);
-                        }, 5000);
+                            Start.deactive(idTabs);
+                            idTabs.pop();
+                        }, 2000);
+                        setTimeout(()=>{
+                            Start.moveEventRect(idTabs,-225,0,-225,0);
+                        },2700)
                         break;
                     }
                     case 3:{
-    
+                        Start.moveEventRect(idTabs,-50,300,-50,300);
+                        idTabs.push('textRectEventId3');
+                        Start.active(idTabs); 
+                        setTimeout(()=> {
+                            Start.deactive(idTabs);
+                            idTabs.pop();
+                        }, 2000);
+                        setTimeout(()=>{
+                            Start.moveEventRect(idTabs,50,-300,50,-300);
+                        },2700)
                         break;
                     }
                     case 4:{
-    
+                        Start.moveEventRect(idTabs,100,350,100,350);
+                        idTabs.push('textRectEventId4');
+                        Start.active(idTabs);
+                        setTimeout(()=> {
+                            Start.deactive(idTabs);
+                            idTabs.pop();
+                        }, 2000);
+                        setTimeout(()=>{
+                            Start.moveEventRect(idTabs,-100,-350,-100,-350);
+                        },2700)
                         break;
                     }
                     case 5:{
-    
+                        Start.moveEventRect(idTabs,340,300,340,300);
+                        idTabs.push('textRectEventId5');
+                        Start.active(idTabs);
+                        setTimeout(()=> {
+                            Start.deactive(idTabs);
+                            idTabs.pop();
+                        }, 2000);
+                        setTimeout(()=>{
+                            Start.moveEventRect(idTabs,-340,-300,-340,-300);
+                        },2700)
                         break;
                     }
                     case 6:{
@@ -594,10 +687,8 @@ function InfoSecureXBlock(runtime, element) {
                         break;
                     }
                 }
-    
             }
         }
-    
         static onLab4styleActive(event) {
             var evt = event.target;
             (evt.id == "butStart" || evt.id == 'butStartText' || evt.id == 'butText') && Start.mouseActive(['butStart','butStartText','butText']);
