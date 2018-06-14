@@ -8,16 +8,17 @@ function InfoSecureXBlock(runtime, element) {
     var alfa = getRandomInt(1,34);
     console.log(param);
     var keys = "key_id"+param; 
-    var mes = "mes_id"+param;
+    var mes = "mes_id"+param;var ii=0;
    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
     var len = 5; //document.getElementById(mes).len;
     var old_alphabet = ["э", "к", "р", "а", "н"]
     var new_alphabet = []; var new_i = [];
+    for (var i =0; i < len; i++){
     for (var j=0; j<alphabet.length; j++){
-      for (var i =0; i < len; i++){
+     
         if (alphabet[j]==old_alphabet[i])
-            new_i[i] = i+alfa;
+            new_i[ii] = i+alfa;
         }
       //  new_alphabet[i] = old_alphabet[i+alfa-1];
     } 
