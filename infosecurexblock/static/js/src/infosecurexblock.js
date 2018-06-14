@@ -270,7 +270,7 @@ function InfoSecureXBlock(runtime, element) {
                 if (b == false && empty != true) {
                     alert("Некорректный IP адрес.");
                 }
-                if (isNumeric(d) == false && empty != true|| d.toString()==global_d) {
+                if (isNumeric(d) == false && empty != true|| d.toString()!=global_d) {
                     alert('Некорректный закрытый ключ (d).');
                     che++;
                 }

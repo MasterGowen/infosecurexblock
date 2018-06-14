@@ -234,13 +234,13 @@
             "class": "taskClose", 
             "N": "10",
             "d": "2", 
-            "value":"<text x='205' y='120' id ='key_id1' class='taskClose' >Ключ: 2,10</text>" 
+            "value":"<text x='205' y='120' id ='key_id1' class='taskClose' >Ключ: 2, 10</text>" 
             },
             "mes1":{"type":"text", 
                 "idnum":"star", 
                 "id": "mes_id1", 
                 "class": "taskClose", 
-                "value":"<text x='30' y='20' id ='mes_id1' class='taskClose' >Сообщение:406 9915660 05464616061-9915660</text>" 
+                "value":"<text x='30' y='20' id ='mes_id1' class='taskClose' >Сообщение:Кто владеет информацией - владеет</text>" 
                 },
             "key2":{"type":"text", 
                 "idnum":"star", 
@@ -254,7 +254,7 @@
                     "idnum":"star", 
                     "id": "mes_id2", 
                     "class": "taskClose", 
-                    "value":"<text x='30' y='20' id ='mes_id2' class='taskClose' >Сообщение:806 7715660 05862414061-7715660</text>" 
+                    "value":"<text x='30' y='20' id ='mes_id2' class='taskClose' >Сообщение:Кто владеет информацией - владеет</text>" 
                     } ,
             "key3":{"type":"text", 
                 "idnum":"star", 
@@ -268,7 +268,7 @@
                     "idnum":"star", 
                     "id": "mes_id3", 
                     "class": "taskClose", 
-                    "value":"<text x='30' y='20' id ='mes_id3' class='taskClose' >Сообщение:965190 - 05464916065519</text>" 
+                    "value":"<text x='30' y='20' id ='mes_id3' class='taskClose' >Сообщение:Модуль - информационная</text>" 
                     },
                     "key4":{"type":"text", 
                         "idnum":"star", 
@@ -282,7 +282,7 @@
                             "idnum":"star", 
                             "id": "mes_id4", 
                             "class": "taskClose", 
-                            "value":"<text x='30' y='20' id ='mes_id4' class='taskClose' >Сообщение:405170 - 05862414065517</text>" 
+                            "value":"<text x='30' y='20' id ='mes_id4' class='taskClose' >Сообщение:Модуль - информационная</text>" 
                             },
                             "key5":{"type":"text", 
                                 "idnum":"star", 
@@ -296,7 +296,7 @@
                                     "idnum":"star", 
                                     "id": "mes_id5", 
                                     "class": "taskClose", 
-                                    "value":"<text x='30' y='20' id ='mes_id5' class='taskClose' >Сообщение:46504690 9414041 - 1606961</text>" 
+                                    "value":"<text x='30' y='20' id ='mes_id5' class='taskClose' >Сообщение:Конроль трафика - сетевой</text>" 
                                     }
 
     ,
