@@ -9,27 +9,17 @@ function InfoSecureXBlock(runtime, element) {
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
    
-    if (keys =="key_id1" )
+    if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
        global_N= "10";
       console.log(global_N);
   }
-  if (keys =="key_id2" )
+  if (keys =="key_id2" || keys == "key_id4")
     {   global_d= "3";
        global_N= "10";
       console.log(global_N);
   }
-  if (keys =="key_id3" )
-    {   global_d= "3";
-       global_N= "15";
-      console.log(global_N);
-  }
-  if (keys =="key_id4" )
-    { 
-       global_d= "5";
-      global_N= "14";
-      console.log(global_N);
-  }
+  
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
