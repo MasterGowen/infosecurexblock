@@ -240,7 +240,7 @@
                 "idnum":"star", 
                 "id": "mes_id1", 
                 "class": "taskClose", 
-                "value":"<text x='70' y='70' id ='mes_id1' class='taskClose' >Сообщение:Кто владеет информацией - владеет</text>" 
+                "value":"<text x='100' y='50' id ='mes_id1' class='taskClose' >Сообщение:Кто владеет информацией - владеет</text>" 
                 },
             "key2":{"type":"text", 
                 "idnum":"star", 
@@ -254,7 +254,7 @@
                     "idnum":"star", 
                     "id": "mes_id2", 
                     "class": "taskClose", 
-                    "value":"<text x='70' y='70' id ='mes_id2' class='taskClose' >Сообщение:Кто владеет информацией - владеет</text>" 
+                    "value":"<text x='100' y='50' id ='mes_id2' class='taskClose' >Сообщение:Кто владеет информацией - владеет</text>" 
                     } ,
             "key3":{"type":"text", 
                 "idnum":"star", 
@@ -268,7 +268,7 @@
                     "idnum":"star", 
                     "id": "mes_id3", 
                     "class": "taskClose", 
-                    "value":"<text x='70' y='70' id ='mes_id3' class='taskClose' >Сообщение:Модуль - информационная</text>" 
+                    "value":"<text x='100' y='50' id ='mes_id3' class='taskClose' >Сообщение:Модуль - информационная</text>" 
                     },
                     "key4":{"type":"text", 
                         "idnum":"star", 
@@ -282,7 +282,7 @@
                             "idnum":"star", 
                             "id": "mes_id4", 
                             "class": "taskClose", 
-                            "value":"<text x='70' y='70' id ='mes_id4' class='taskClose' >Сообщение:Модуль - информационная</text>" 
+                            "value":"<text x='100' y='50' id ='mes_id4' class='taskClose' >Сообщение:Модуль - информационная</text>" 
                             },
                             "key5":{"type":"text", 
                                 "idnum":"star", 
@@ -296,7 +296,7 @@
                                     "idnum":"star", 
                                     "id": "mes_id5", 
                                     "class": "taskClose", 
-                                    "value":"<text x='70' y='70' id ='mes_id5' class='taskClose' >Сообщение:Конроль трафика - сетевой</text>" 
+                                    "value":"<text x='100' y='50' id ='mes_id5' class='taskClose' >Сообщение:Конроль трафика - сетевой</text>" 
                                     }
 
     ,
