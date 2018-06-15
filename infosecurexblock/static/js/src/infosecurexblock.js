@@ -555,7 +555,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         static onLab4(event){
             var evt = event.target;
-            if(evt.id=="taskId" || evt.id=="arrowid" || evt.id=='task'){
+            if(evt.id=="arrowid" || evt.id=='task'){
                 var randArr = Start.getRandomIntMas(1,5,5);
                 var i=0;
                 function myLoop(){
