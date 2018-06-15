@@ -68,7 +68,7 @@ button.submit {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
    }
-   .rectEvent, .infoUserRect, .infoCloudRect{
+   .rectEvent, .infoUserRect{
       fill:white;
       stroke: #0075b4;
    }
