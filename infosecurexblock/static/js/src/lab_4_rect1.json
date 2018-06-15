@@ -519,7 +519,7 @@
             "height": "750", 
             "fill": "#f3faffef",
             "stroke":"#0075b4",
-            "class":"taskClose",
+            "class":"taskOpen",
             "id": "taskId"
         },
         "taskText":{
@@ -529,7 +529,7 @@
             "fontSize":"20",
             "fontFamily":"SegoeUI",
             "fill": "black",
-            "class":"taskClose",
+            "class":"taskOpen",
             "id":"taskTextID"
         },
         "arrow":{
@@ -539,7 +539,7 @@
             "width": "20",
             "height": "20",
             "href": "/static/xblock/resources/infosecurexblock.infosecurexblock/public/images/arrow.svg",
-            "class":"taskClose",
+            "class":"taskOpen",
             "id": "arrowid"
             }
     },

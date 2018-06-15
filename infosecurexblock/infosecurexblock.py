@@ -239,10 +239,10 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             elif self.lab_id == 4:
                 event = int(data["event"])
                 event_id = str(data["eventId"])
-                event_id = event_id[:-1]
-                if (event == 0 and (event_id=="1" or event_id=="4" or event_id=="5")):
+               # event_id = event_id[:-1]
+                if (event == 0 and (event_id=="textRectEventId1" or event_id=="textRectEventId4" or event_id=="textRectEventId5")):
                     return 1
-                elif(event == 1 and (event_id=="2" or event_id=="3" or event_id=="6")):
+                elif(event == 1 and (event_id=="textRectEventId2" or event_id=="textRectEventId3" or event_id=="textRectEventId6")):
                     return 1
                 else:
                     return 0

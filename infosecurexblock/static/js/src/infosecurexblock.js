@@ -226,7 +226,6 @@ function InfoSecureXBlock(runtime, element) {
     }
         static active(idNum) {
             for(var k in idNum){
-                console.log(idNum[k]);
                 if(document.getElementById(idNum[k])!=null){
                     document.getElementById(idNum[k]).classList.remove("taskClose");
                     document.getElementById(idNum[k]).classList.add("taskOpen");                    
