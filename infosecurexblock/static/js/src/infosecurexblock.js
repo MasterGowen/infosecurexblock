@@ -18,7 +18,7 @@ function InfoSecureXBlock(runtime, element) {
     for (var i =0; i < len; i++){
       
         if (alphabet[j]==old_alphabet[i])
-            new_i[i] = alphabet[j+alfa];
+            new_i[i] = j+alfa;
         }
       //  new_alphabet[i] = old_alphabet[i+alfa-1];
     } 
