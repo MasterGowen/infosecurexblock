@@ -38,7 +38,7 @@ function InfoSecureXBlock(runtime, element) {
     console.log()
     console.log(new_i);
    console.log(new_alphabet.toString());
-   console.log("key:  ", alfa+1,alphabet[alfa+1]);
+   console.log("key:  ", alfa+2,alphabet[alfa+2]);
     console.log("itog ---", new_alphabet.toString());
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
