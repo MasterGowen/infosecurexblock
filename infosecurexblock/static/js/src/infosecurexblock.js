@@ -15,20 +15,20 @@ function InfoSecureXBlock(runtime, element) {
     var len = 5; //document.getElementById(mes).len;
     var old_alphabet = ["э", "к", "р", "а", "н"]
     var ai = 0;
-    var new_alphabet = []; var new_i = [];
+    var new_alphabet = []; var new_i = 0;
     for (var j=0; j<alphabet.length; j++){
     for (var i =0; i < len; i++){
       
         if (alphabet[j]==old_alphabet[i])
            
-        new_i[i] = j+alfa+1; //console.log("i before", new_i[i]);
-        if (new_i[i]>33){
-            new_i[i] = new_i[i]-33; new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
+        new_i = j+alfa+1; //console.log("i before", new_i[i]);
+        if (new_i>33){
+            new_i = new_i-33; new_alphabet[ai]= alphabet[new_i+1];ai++;
            //console.log("itog i", new_i[i]);
             
         }
-        if (new_i[i]<=33){
-            new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
+        if (new_i<=33){
+            new_alphabet[ai]= alphabet[new_i+1];ai++;
         }console.log("bukva", new_alphabet[ai] );
 
         }
