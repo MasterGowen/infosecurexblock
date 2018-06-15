@@ -237,7 +237,13 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                 return sum(correctness_list) / float(len(correctness_list) - 6)
 
             elif self.lab_id == 4:
-                pass
+                event = data['event']
+                event_id = data['eventId']
+                event_id = event_id[:-1]
+                if (event == 0 and (event_id=="1" or event_id=="4" or event_id=="5")):
+                    return 1
+                else:
+                    return 0
 
             elif self.lab_id == 5:
                 answer0 = data["e"]
