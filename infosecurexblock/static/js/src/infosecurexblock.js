@@ -27,6 +27,9 @@ function InfoSecureXBlock(runtime, element) {
            // console.log("itog i", new_i[i]);
             
         }
+        if (new_i[i]<=33){
+            new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
+        }
 
         }
       //  new_alphabet[i] = old_alphabet[i+alfa-1];
@@ -36,7 +39,7 @@ function InfoSecureXBlock(runtime, element) {
     console.log(new_i);
    console.log(new_alphabet.toString());
    console.log("key:  ", alphabet[alfa]);
-    console.log("itog ---", new_alphabet.toString());
+    console.log("itog ---", new_alphabet.toString().split(","));
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
        global_N= "10";
