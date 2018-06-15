@@ -34,7 +34,7 @@ function InfoSecureXBlock(runtime, element) {
     console.log()
     console.log(new_i);
     for (j = 0; j < new_i.length; j++){
-        for (var l = 0; l < alphabet.length() ; l++){
+        for (var l = 0; l < alphabet.length ; l++){
             if (l == j){
                 new_alphabet[j] = alphabet[l];
             }
