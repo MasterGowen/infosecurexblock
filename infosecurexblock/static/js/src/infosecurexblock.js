@@ -555,9 +555,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         static onLab4(event){
             var evt = event.target;
-            Start.deactive(['butStart','butStartText']);
-            if(evt.id=='butStart' || evt.id=='butStartText' || evt.id=='butText'){
-                Start.deactive(['butStart','butStartText']);
+            if(evt.id=="taskId" || evt.id=="arrowid" || evt.id=='task'){
                 var randArr = Start.getRandomIntMas(1,5,5);
                 var i=0;
                 function myLoop(){
