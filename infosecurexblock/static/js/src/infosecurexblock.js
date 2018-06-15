@@ -6,7 +6,8 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = getRandomInt(1,6).toString();
     var alfa = getRandomInt(2,34);
-    console.log(param);
+    console.lg(param);
+    console.log("---",alfa);
     var keys = "key_id"+param; 
     var mes = "mes_id"+param;
    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
