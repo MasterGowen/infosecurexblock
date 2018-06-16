@@ -399,7 +399,7 @@ function InfoSecureXBlock(runtime, element) {
         //Lab 5
         static onLab5(event) {
             var evt = event.target;
-            var student_answer = {};
+            var student_answer = {};console.log("element = ",param);
             var old_alphabet = document.getElementById(param).value.split("");//["э", "к", "р", "а", "н"]
         console.log(old_alphabet);
         var len = old_alphabet.length; //document.getElementById(mes).len;
