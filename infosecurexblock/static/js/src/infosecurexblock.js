@@ -21,10 +21,10 @@ function InfoSecureXBlock(runtime, element) {
       
         if (alphabet[j]==old_alphabet[i])
            
-        new_i[i] = j+alfa+1; //console.log("i before", new_i[i]);
+        new_i[i] = j+alfa+1; console.log("i before", new_i[i]);
         if (new_i[i]>33){
-            new_i[i] = new_i-33; new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
-           //console.log("itog i", new_i[i]);
+            new_i[i] = new_i[i]-33; new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
+           console.log("itog i", new_i[i]);
             
         }
         if (new_i[i]<=33){
