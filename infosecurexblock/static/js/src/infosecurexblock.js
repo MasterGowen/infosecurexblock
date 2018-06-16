@@ -406,7 +406,7 @@ function InfoSecureXBlock(runtime, element) {
         static onLab5(event) {
             var evt = event.target;
             var student_answer = {};console.log("element = ",param2);
-            var old_alphabet = param2;//split("");//["э", "к", "р", "а", "н"]
+            var old_alphabet = JSON.parse(param2);//split("");//["э", "к", "р", "а", "н"]
         console.log(old_alphabet);
         var len = old_alphabet.length; //document.getElementById(mes).len;
         var bukva = alphabet[alfa-1];console.log(bukva);
