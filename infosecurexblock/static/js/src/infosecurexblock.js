@@ -712,7 +712,7 @@ function InfoSecureXBlock(runtime, element) {
                         }, 6500);
                         setTimeout(()=>{
                             Start.moveEventRect(idTabs,-340,-300,-340,-300);
-                        },6700)
+                        },7600)
                         break;
                     }
                     case 6:{
