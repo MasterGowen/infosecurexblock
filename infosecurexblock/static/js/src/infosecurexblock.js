@@ -4,39 +4,15 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-    var param = "key_id"+getRandomInt(1,6).toString();
+    var param = "mes_id"+getRandomInt(1,6).toString();
     var alfa = getRandomInt(2,34);
     console.log(param);
     console.log("---",alfa);
-    
    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
-    var len = 5; //document.getElementById(mes).len;
-    var bukva = alphabet[alfa-1];
-    var keys = bukva;//"key_id"+param; 
+    console.log(bukva);
+    console.log(param);
     
-    console.log(bukva);console.log(param);
-    var old_alphabet = document.getElementById(param).split(",");//["э", "к", "р", "а", "н"]
-    console.log(old_alphabet);
-    var new_alphabet = []; var new_i = [];
-    for (var j=0; j<alphabet.length; j++){
-    for (var i =0; i < len; i++){
-      
-        if (alphabet[j]==old_alphabet[i])
-           
-        new_i[i] = j+alfa+1;
-        if (new_i[i]>33){
-            new_i[i] = new_i[i]-33;
-            console.log("itog i", new_i[i]);
-        }
-        new_alphabet[i] = alphabet[new_i[i]-1];
-        }
-      
-    } 
-    var mes = new_alphabet.join("");//"mes_id"+param;
-    console.log()
-    console.log(new_i);
-    console.log("alphabet ---", new_alphabet.join(""));
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
        global_N= "10";
@@ -434,6 +410,30 @@ function InfoSecureXBlock(runtime, element) {
         static onLab5(event) {
             var evt = event.target;
             var student_answer = {};
+            var old_alphabet = document.getElementById(param).split(",");//["э", "к", "р", "а", "н"]
+        console.log(old_alphabet);
+        var len = old_alphabet.length; //document.getElementById(mes).len;
+        var bukva = alphabet[alfa-1];
+        var keys = bukva;//"key_id"+param; 
+        var new_alphabet = []; var new_i = [];
+        for (var j=0; j<alphabet.length; j++){
+        for (var i =0; i < len; i++){
+        
+            if (alphabet[j]==old_alphabet[i])
+            
+            new_i[i] = j+alfa+1;
+            if (new_i[i]>33){
+                new_i[i] = new_i[i]-33;
+                console.log("itog i", new_i[i]);
+            }
+            new_alphabet[i] = alphabet[new_i[i]-1];
+            }
+      
+            } 
+            var mes = new_alphabet.join("");//"mes_id"+param;
+            console.log()
+            console.log(new_i);
+            console.log("alphabet ---", new_alphabet.join(""));
             evt.id == "comp1" && connect(['comp1','comp2','comp3','activeComp','192.168.0.3']);
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
