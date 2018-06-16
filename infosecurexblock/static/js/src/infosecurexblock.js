@@ -1021,8 +1021,8 @@ function InfoSecureXBlock(runtime, element) {
                     if ((name == "div") && (attributes[k] == "rwx")) {
                         this.element.innerHTML = 'полные права'
                     }
-                    if ((name == "ellipse") && (attributes[k] == "File1Id")) {
-                        this.element.innerHTML = keys
+                    if ((name == "image") && (attributes[k] == "File1")) {
+                        documen.getElementById("File1Id").innerHTML = keys
                     }
                     this.element.setAttribute([k], attributes[k]);
                 }
