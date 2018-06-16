@@ -4,9 +4,10 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-    var mes =""; 
-    var keys = "";
-    var param = "mes_id"+getRandomInt(1,6).toString();
+  
+    var param = getRandomInt(1,6).toString();
+    var mes ="mes_id" + param; 
+    var keys = "key_id" +param;
     var param2 = "mas"+getRandomInt(1,6);
     var alfa = getRandomInt(3,34);
     var mas1 = ["б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
@@ -14,14 +15,9 @@ function InfoSecureXBlock(runtime, element) {
     var mas3 = ["ш", "и", "ф", "р", "о", "в", "а", "н", "и", "е"];
     var mas4 = ["к", "и", "б", "е", "р", "б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
     var mas5 = ["и", "н", "ф", "о", "р", "м", "а", "ц", "и", "я"];
-    console.log(param);
-    console.log("---",alfa);
-   var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
+    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
-    
     console.log(param);
-  
-  
     function successCheck(result) {
         //console.log("result:", result);
         if (result.result != "fail") {
@@ -407,7 +403,7 @@ function InfoSecureXBlock(runtime, element) {
         //Lab 5
         static onLab5(event) {
             var evt = event.target;
-            var student_answer = {};console.log("element = ",param2);
+            var student_answer = {};;
             if (param2 =="mas1")
             var old_alphabet = mas1;//split("");//["э", "к", "р", "а", "н"]
             if (param2 =="mas2")
@@ -418,9 +414,9 @@ function InfoSecureXBlock(runtime, element) {
             var old_alphabet = mas4;
             if (param2 =="mas5")
             var old_alphabet = mas5;
-        console.log(old_alphabet);
+       
         var len = old_alphabet.length; //document.getElementById(mes).len;
-        var bukva = alphabet[alfa-1];console.log(bukva);
+        var bukva = alphabet[alfa-1];
         var keys = bukva;//"key_id"+param; 
         var new_alphabet = []; var new_i = [];
         for (var j=0; j<alphabet.length; j++){
@@ -470,9 +466,8 @@ function InfoSecureXBlock(runtime, element) {
                 keys= "Ключ: " +keys;
                 mes="Сообщение: "+mes;
                 document.getElementById("File1TextID2").innerHTML = keys;
-                console.log("keys",keys);
-                document.getElementById("File1TextID").innerHTML = mes;console.log("mes", mes);
-        
+              
+                document.getElementById("File1TextID").innerHTML = mes;
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";

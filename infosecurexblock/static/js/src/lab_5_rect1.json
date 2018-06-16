@@ -191,7 +191,7 @@
                 "type":"text",
                 "x": "205",
                 "y": "120",
-                "fontSize":"10",
+                "fontSize":"12",
                 "fontFamily":"SegoeUI",
                 "fill": "black",
                 "class":"taskClose",
