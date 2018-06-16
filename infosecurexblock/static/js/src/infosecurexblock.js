@@ -10,7 +10,7 @@ function InfoSecureXBlock(runtime, element) {
     console.log("---",alfa);
    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
-    console.log(bukva);
+    
     console.log(param);
     
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
@@ -413,7 +413,7 @@ function InfoSecureXBlock(runtime, element) {
             var old_alphabet = document.getElementById(param).split(",");//["э", "к", "р", "а", "н"]
         console.log(old_alphabet);
         var len = old_alphabet.length; //document.getElementById(mes).len;
-        var bukva = alphabet[alfa-1];
+        var bukva = alphabet[alfa-1];console.log(bukva);
         var keys = bukva;//"key_id"+param; 
         var new_alphabet = []; var new_i = [];
         for (var j=0; j<alphabet.length; j++){
