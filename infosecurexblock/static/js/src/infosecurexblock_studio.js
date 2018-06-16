@@ -209,9 +209,9 @@ function StudioEditableXBlockMixin(runtime, element) {
                 class: 'rect2'
             }
             this.star = () => {
-                new Labs();
                 this.createElementSVG('svg');
                 this.appendNodeSVG(this.constract('rect'));
+                new Labs();
             }
         }
 
@@ -263,7 +263,7 @@ function StudioEditableXBlockMixin(runtime, element) {
             return this.element;
         }
         appendNodeSVG(element) {
-            var svg = document.getElementById('star_studio');
+            var svg = document.querySelector('svg');
             return svg.appendChild(element);
         }
         addElementTextSVG(amount, jsonObj) {
@@ -325,7 +325,7 @@ function StudioEditableXBlockMixin(runtime, element) {
         }
 
         appendNode(element) {
-            return document.getElementById('star_studio').appendChild(element);
+            return document.getElementById('widget_studio').appendChild(element);
         }
     }
     class Labs extends Start {
@@ -333,7 +333,6 @@ function StudioEditableXBlockMixin(runtime, element) {
             super()
             this.connectionLabs(rect1HandlerUrl,1);
             this.connectionLabs(rect1HandlerUrl,2);
-            this.checkAnswerLab(checkHandlerLab,test);
         }
     }
 
