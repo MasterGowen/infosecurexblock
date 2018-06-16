@@ -211,8 +211,9 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     right = [22, 10, 26, 10, 15, 4]
                 elif (key == "mes_id10"):
                     right = [5, 16, 19, 20, 21, 17, 1]
-                for j, k in enumerate(copy.deepcopy(right)):
-                    right[j] = right[j] ** d % N
+                if IsTheNumberSimple(d):
+                    for j, k in enumerate(copy.deepcopy(right)):
+                        right[j] = right[j] ** d % N
                 if (str(right) == str(answer2)) & (ip == "192.168.0.4"):
                     return 1
                 else:
