@@ -469,9 +469,9 @@ function InfoSecureXBlock(runtime, element) {
             if (evt.id =="File1"){
                 //keys = "Ключ: " +keys;
                 //mes = "Сообщение: "+ mes;
-                document.getElementById("File1TextID").innerHTML = keys;
+                document.getElementById("File1TextID2").innerHTML = keys;
                 console.log("keys",keys);
-                document.getElementById("File1TextID2").innerHTML = mes;console.log("mes", mes);
+                document.getElementById("File1TextID").innerHTML = mes;console.log("mes", mes);
         
             }
             if (evt.id == "Link"){
