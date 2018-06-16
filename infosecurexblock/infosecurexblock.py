@@ -175,6 +175,7 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
             self.lab_id,
             data.params["lab_id"]
         )))).read()
+        self.lab_settings = file
         return Response(body=file, charset='UTF-8',
                         content_type='text/plain')
 
