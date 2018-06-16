@@ -5,7 +5,7 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = getRandomInt(1,11).toString();
-    var global_N = getRandomInt(2,11);
+    var global_N = getRandomInt(2,1000);
     var global_d = getRandomInt(2,7);
     while (global_d >= global_N || !prime(global_d)){
         var global_d = getRandomInt(1,7);
@@ -30,8 +30,9 @@ function InfoSecureXBlock(runtime, element) {
     } 
     var mes ="mes_id" + param; 
     var keys = "";//"key_id" +param;
-    var param2 = "mas"+getRandomInt(1,6);
+    var param2 = "mes_id"+ getRandomInt(1,6);//"mas"+getRandomInt(1,6);
     var alfa = getRandomInt(3,34);
+    console.log(param2);
     var mas1 = ["б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
     var mas2 = ["и", "н", "ф", "о", "р", "м", "а", "т", "и", "к", "а"];
     var mas3 = ["ш", "и", "ф", "р", "о", "в", "а", "н", "и", "е"];
@@ -429,17 +430,22 @@ function InfoSecureXBlock(runtime, element) {
         static onLab5(event) {
             var evt = event.target;
             var student_answer = {};;
-            if (param2 =="mas1")
-            var old_alphabet = mas1;//split("");//["э", "к", "р", "а", "н"]
-            if (param2 =="mas2")
-            var old_alphabet = mas2;
-            if (param2 =="mas3")
-            var old_alphabet = mas3;
-            if (param2 =="mas4")
-            var old_alphabet = mas4;
-            if (param2 =="mas5")
-            var old_alphabet = mas5;
-       
+            if (param2 == "mes_id1")
+            //(param2 =="mas1")
+            var old_alphabet = document.getElementById(param2).value; //mas1;
+           // if (param2 =="mas2")
+           if (param2 == "mes_id2")
+            var old_alphabet = document.getElementById(param2).value;//mas2;
+           // if (param2 =="mas3")
+           if (param2 == "mes_id3")
+            var old_alphabet = document.getElementById(param2).value;//mas3;
+           // if (param2 =="mas4")
+           if (param2 == "mes_id4")
+            var old_alphabet =document.getElementById(param2).value;// mas4;
+            if (param2 == "mes_id5")
+           // if (param2 =="mas5")
+            var old_alphabet = document.getElementById(param2).value;//mas5;
+           console.log(old_alphabet);
         var len = old_alphabet.length; //document.getElementById(mes).len;
         var bukva = alphabet[alfa-1];
         var keys = bukva;//"key_id"+param; 
