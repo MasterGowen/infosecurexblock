@@ -9,8 +9,7 @@ function InfoSecureXBlock(runtime, element) {
     var global_d = getRandomInt(2,7);
     while (global_d >= global_N || !prime(global_d)){
         var global_d = getRandomInt(1,7);
-        console.log(prime(global_d));
-    }console.log("d:", global_d, "N:", global_N);
+    }
     global_d.toString();global_N.toString();
     function prime(global_d){
         if (global_d < 2){
@@ -491,9 +490,8 @@ function InfoSecureXBlock(runtime, element) {
             }
             if (evt.id =="File1"){
                 keys= "Ключ: " +keys;
-                mes="Сообщение: "+mes;//console.log(mes);
+                mes="Сообщение: "+mes;
                 document.getElementById("File1TextID2").innerHTML = keys;
-              
                 document.getElementById("File1TextID").innerHTML = mes;
             }
             if (evt.id == "Link"){
