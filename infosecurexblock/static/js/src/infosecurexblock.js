@@ -288,7 +288,7 @@ function InfoSecureXBlock(runtime, element) {
                     che++;
                 }
                // var key = "mes_id" + param;
-                console.log("key ---", mes)
+                console.log("key ---", mes.toString());
                 if (che == 0 && b == true && empty != true) {
 
                     var student_answer =
