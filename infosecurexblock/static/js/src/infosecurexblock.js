@@ -6,8 +6,8 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
   
     var param = getRandomInt(1,6).toString();
-    var global_N = getRandomInt(1,101).toString();
-    var global_d = getRandomInt(1,7).toString();
+    var global_N = getRandomInt(2,101).toString();
+    var global_d = getRandomInt(2,7).toString();
     while (global_d == 4 || global_d == 6){
         var global_d = getRandomInt(1,7).toString();
     }console.log("d:", global_d, "N:", global_N);
@@ -251,7 +251,7 @@ function InfoSecureXBlock(runtime, element) {
            
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
-                var keys2 = "Ключ: "+ gobal_d + "," + global_N;
+                var keys2 = "Ключ: "+ global_d + "," + global_N;
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
                 document.getElementById("File1TextID2").innerHTML = keys2;
             }
