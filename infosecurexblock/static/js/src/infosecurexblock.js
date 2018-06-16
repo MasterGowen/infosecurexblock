@@ -30,14 +30,18 @@ function InfoSecureXBlock(runtime, element) {
     } 
     var mes ="mes_id" + param; 
     var keys = "";//"key_id" +param;
-    var param2 = "mes_id"+ getRandomInt(1,6);//"mas"+getRandomInt(1,6);
+    var param2 = "mas"+getRandomInt(1,11);
     var alfa = getRandomInt(3,34);
-    console.log(param2);
     var mas1 = ["б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
     var mas2 = ["и", "н", "ф", "о", "р", "м", "а", "т", "и", "к", "а"];
     var mas3 = ["ш", "и", "ф", "р", "о", "в", "а", "н", "и", "е"];
     var mas4 = ["к", "и", "б", "е", "р", "б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
     var mas5 = ["и", "н", "ф", "о", "р", "м", "а", "ц", "и", "я"];
+    var mas6 = ["м", "у", "л", "ь", "т", "и", "м", "е", "д", "и", "а"];
+    var mas7 = ["п", "р", "о", "г", "р", "а", "м", "м", "а"];
+    var mas8 = ["и", "н", "т", "е", "р", "н", "е", "т"];
+    var mas9 = ["м", "е", "д", "и", "а", "к", "о", "м", "м", "у", "н", "и", "к", "а", "ц", "и", "я"];
+    var mas10 = ["а", "л", "г", "о", "р", "и", "т", "м"];
     var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
     console.log(param);
@@ -430,22 +434,27 @@ function InfoSecureXBlock(runtime, element) {
         static onLab5(event) {
             var evt = event.target;
             var student_answer = {};;
-            if (param2 == "mes_id1")
-            //(param2 =="mas1")
-            var old_alphabet = document.getElementById(param2).value; //mas1;
-           // if (param2 =="mas2")
-           if (param2 == "mes_id2")
-            var old_alphabet = document.getElementById(param2).value;//mas2;
-           // if (param2 =="mas3")
-           if (param2 == "mes_id3")
-            var old_alphabet = document.getElementById(param2).value;//mas3;
-           // if (param2 =="mas4")
-           if (param2 == "mes_id4")
-            var old_alphabet =document.getElementById(param2).value;// mas4;
-            if (param2 == "mes_id5")
-           // if (param2 =="mas5")
-            var old_alphabet = document.getElementById(param2).value;//mas5;
-           console.log(old_alphabet);
+            if (param2 =="mas1")
+            var old_alphabet = mas1;//split("");//["э", "к", "р", "а", "н"]
+            if (param2 =="mas2")
+            var old_alphabet = mas2;
+            if (param2 =="mas3")
+            var old_alphabet = mas3;
+            if (param2 =="mas4")
+            var old_alphabet = mas4;
+            if (param2 =="mas5")
+            var old_alphabet = mas5;
+            if (param2 =="mas6")
+            var old_alphabet = mas6;
+            if (param2 =="mas7")
+            var old_alphabet = mas7;
+            if (param2 =="mas8")
+            var old_alphabet = mas8;
+            if (param2 =="mas9")
+            var old_alphabet = mas9;
+            if (param2 =="mas10")
+            var old_alphabet = mas10;
+       
         var len = old_alphabet.length; //document.getElementById(mes).len;
         var bukva = alphabet[alfa-1];
         var keys = bukva;//"key_id"+param; 
