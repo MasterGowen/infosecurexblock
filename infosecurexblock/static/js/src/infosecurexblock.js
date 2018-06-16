@@ -15,7 +15,7 @@ function InfoSecureXBlock(runtime, element) {
     var bukva = alphabet[alfa-1];
     var keys = bukva;//"key_id"+param; 
     
-    console.log(bukva);
+    console.log(bukva);console.log(param);
     var old_alphabet = document.getElementById(param).split(",");//["э", "к", "р", "а", "н"]
     console.log(old_alphabet);
     var new_alphabet = []; var new_i = [];
