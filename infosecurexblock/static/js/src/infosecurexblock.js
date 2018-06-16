@@ -467,9 +467,9 @@ function InfoSecureXBlock(runtime, element) {
             //  document.getElementById("File1Id").innerHTML = keys;
             }
             if (evt.id =="File1"){
-                document.getElementById("File1TextID").innerHTML = keys;
+                document.getElementById("File1TextI2").innerHTML = "Сообщение: "+keys;
                 console.log("keys",keys);
-                document.getElementById("File1TextID2").innerHTML = mes;console.log("mes", mes);
+                document.getElementById("File1TextID1").innerHTML = "Ключ: " + mes;console.log("mes", mes);
         
             }
             if (evt.id == "Link"){
@@ -492,13 +492,13 @@ function InfoSecureXBlock(runtime, element) {
                 }
 
                 if (che == 0 &&  empty != true) {
-                    console.log("key-----",keys, typeof(keys));
+                   
                     e = window.btoa(unescape(encodeURIComponent(e)));
-                    console.log(e, typeof(e));
+                    console.log(e);
                     var student_answer =
                         {
                             'e': e,
-                            'key': keys
+                            'key': param2
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
