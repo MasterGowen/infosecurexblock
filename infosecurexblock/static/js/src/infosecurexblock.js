@@ -455,6 +455,7 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
+                document.getElementById("File1Id").innerHTML = keys;
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
