@@ -259,19 +259,29 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
 
             elif self.lab_id == 5:
                 answer0 = data["e"]
-                key = data["key"]
+                key = str(data["key"])
                 if (key=="mas1" and answer0 == "0LHQtdC30L7Qv9Cw0YHQvdC+0YHRgtGM"):
                     return 1
                 if (key=="mas2" and answer0 == "0LjQvdGE0L7RgNC80LDRgtC40LrQsA=="):
                     return 1 
                 if (key=="mas3" and answer0 == "0YjQuNGE0YDQvtCy0LDQvdC40LU="):
                     return 1
-                if (str(key)=="mas4" and answer0 =="0LrQuNCx0LXRgNCx0LXQt9C+0L/QsNGB0L3QvtGB0YLRjA=="):
+                if (key=="mas4" and answer0 =="0LrQuNCx0LXRgNCx0LXQt9C+0L/QsNGB0L3QvtGB0YLRjA=="):
                     return 1
-                if (str(key)=="mas5" and answer0 =="0LjQvdGE0L7RgNC80LDRhtC40Y8="):
+                if (key=="mas5" and answer0 =="0LjQvdGE0L7RgNC80LDRhtC40Y8="):
+                    return 1
+                if (key=="mas6" and answer0 =="0LzRg9C70YzRgtC40LzQtdC00LjQsA=="):
+                    return 1
+                if (key=="mas7" and answer0 =="0L/RgNC+0LPRgNCw0LzQvNCw"):
+                    return 1
+                if (key=="mas8" and answer0 =="0LjQvdGC0LXRgNC90LXRgg=="):
+                    return 1
+                if (key=="mas9" and answer0 =="0LzQtdC00LjQsNC60L7QvNC80YPQvdC40LrQsNGG0LjRjw=="):
+                    return 1
+                if (key=="mas10" and answer0 =="0LDQu9Cz0L7RgNC40YLQvA=="):
                     return 1
                 else:
-                    return 0
+                    return 0 
 
 
         def IsTheNumberSimple(n):
