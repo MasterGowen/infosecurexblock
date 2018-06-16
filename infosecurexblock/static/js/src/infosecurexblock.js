@@ -12,17 +12,7 @@ function InfoSecureXBlock(runtime, element) {
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
     
     console.log(param);
-    
-    if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
-    {   global_d= "2";
-       global_N= "10";
-      console.log(global_N);
-  }
-  if (keys =="key_id2" || keys == "key_id4")
-    {   global_d= "3";
-       global_N= "10";
-      console.log(global_N);
-  }
+  
   
     function successCheck(result) {
         //console.log("result:", result);
