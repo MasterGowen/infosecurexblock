@@ -814,10 +814,6 @@ function InfoSecureXBlock(runtime, element) {
                     }
                     
                 }
-    /* 
-            ((evt.id == "infoCloud") || (evt.id == "infoCloudRect") || (evt.id == "textinfoCloudRect") || (evt.id == "textinfoCloud"))  && Start.active(
-                ['infoCloudRect','textinfoCloudRect','textinfoCloud']
-            ); */
         }
         static onLab4styleDeactive(event){
             var evt = event.target;
@@ -836,10 +832,6 @@ function InfoSecureXBlock(runtime, element) {
                     Start.mouseDeactive([rectEventtapId1,lineCloseId1,lineCheckMarkId1]);
                 }   
             }
-    /* 
-            ((evt.id != "infoCloud") && (evt.id != "infoCloudRect") && (evt.id != "textinfoCloudRect") && (evt.id != "textinfoCloud"))  && Start.deactive(
-                ['infoCloudRect','textinfoCloudRect','textinfoCloud']
-            ); */
         }
     
         static mouseActive(idNum){
