@@ -28,7 +28,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         return true;
     } 
-    var mes ="";//"mes_id" + param; //tets
+    var mes ="mes_id" + param; //tets
     var keys = "";//"key_id" +param;
     var param2 = "mas"+getRandomInt(1,11);
     var alfa = getRandomInt(3,34);
@@ -503,7 +503,7 @@ function InfoSecureXBlock(runtime, element) {
             }
             if (evt.id =="File1"){
                 keys= "Ключ: " +keys;
-                mes="Сообщение: "+mes;
+                mes="Сообщение: "+mes;//console.log(mes);
                 document.getElementById("File1TextID2").innerHTML = keys;
               
                 document.getElementById("File1TextID").innerHTML = mes;
