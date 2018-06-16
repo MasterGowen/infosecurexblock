@@ -251,7 +251,9 @@ function InfoSecureXBlock(runtime, element) {
            
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
+                var keys2 = "Ключ: "+ gobal_d + "," + global_N;
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
+                document.getElementById("File1TextID2").innerHTML = keys2;
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
