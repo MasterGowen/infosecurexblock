@@ -28,7 +28,7 @@ function InfoSecureXBlock(runtime, element) {
         }
         return true;
     } 
-    var mes ="mes_id" + param; 
+   // var mes ="mes_id" + param; 
     var keys = "";//"key_id" +param;
     var param2 = "mas"+getRandomInt(1,11);
     var alfa = getRandomInt(3,34);
