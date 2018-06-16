@@ -5,7 +5,13 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = "mes_id"+getRandomInt(1,6).toString();
+    var param2 = "mas"+getRandomInt(1,6).toString();
     var alfa = getRandomInt(2,34);
+    var mas1 = ["б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
+    var mas2 = ["и", "н", "ф", "о", "р", "м", "а", "т", "и", "к", "а"];
+    var mas3 = ["ш", "и", "ф", "р", "о", "в", "а", "н", "и", "е"];
+    var mas4 = ["к", "и", "б", "е", "р", "б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
+    var mas5 = ["и", "н", "ф", "о", "р", "м", "а", "ц", "и", "я"];
     console.log(param);
     console.log("---",alfa);
    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
@@ -400,7 +406,7 @@ function InfoSecureXBlock(runtime, element) {
         static onLab5(event) {
             var evt = event.target;
             var student_answer = {};console.log("element = ",param);
-            var old_alphabet = document.getElementById(param).value;//split("");//["э", "к", "р", "а", "н"]
+            var old_alphabet = param2;//split("");//["э", "к", "р", "а", "н"]
         console.log(old_alphabet);
         var len = old_alphabet.length; //document.getElementById(mes).len;
         var bukva = alphabet[alfa-1];console.log(bukva);
