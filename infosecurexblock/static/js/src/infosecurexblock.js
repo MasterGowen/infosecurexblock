@@ -5,7 +5,7 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = getRandomInt(1,11).toString();
-    var global_N = getRandomInt(2,10000);
+    var global_N = getRandomInt(2,11);
     var global_d = getRandomInt(2,7);
     while (global_d >= global_N || !prime(global_d)){
         var global_d = getRandomInt(1,7);
