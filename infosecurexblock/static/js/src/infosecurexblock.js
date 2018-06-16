@@ -8,12 +8,13 @@ function InfoSecureXBlock(runtime, element) {
     var alfa = getRandomInt(2,34);
     console.log(param);
     console.log("---",alfa);
-    var keys = "key_id"+param; 
-    var mes = "mes_id"+param;
+    
    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
     var len = 5; //document.getElementById(mes).len;
     var bukva = alphabet[alfa-1];
+    var keys = bukva;//"key_id"+param; 
+    
     console.log(bukva);
     var old_alphabet = ["э", "к", "р", "а", "н"]
     var new_alphabet = []; var new_i = [];
@@ -22,16 +23,16 @@ function InfoSecureXBlock(runtime, element) {
       
         if (alphabet[j]==old_alphabet[i])
            
-        new_i[i] = j+alfa+1;// console.log("i before", new_i[i]);
+        new_i[i] = j+alfa+1;
         if (new_i[i]>33){
             new_i[i] = new_i[i]-33;
             console.log("itog i", new_i[i]);
         }
         new_alphabet[i] = alphabet[new_i[i]-1];
         }
-      //  new_alphabet[i] = old_alphabet[i+alfa-1];
+      
     } 
-
+    var mes = new_alphabet.join("");//"mes_id"+param;
     console.log()
     console.log(new_i);
     console.log("alphabet ---", new_alphabet.join(""));
