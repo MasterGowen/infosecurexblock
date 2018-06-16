@@ -220,7 +220,8 @@ function StudioEditableXBlockMixin(runtime, element) {
         }
         connectionLabs(handler, labId) {
             var self = this;
-
+            console.log("hendler",handler);
+            console.log("labId",labId);
             function success(handler) {
                 if (handler.Rect1) {
                     handler.amount = Object.keys(handler.Rect1).length;
