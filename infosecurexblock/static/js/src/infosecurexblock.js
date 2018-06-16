@@ -6,8 +6,13 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
   
     var param = getRandomInt(1,6).toString();
+    var global_N = getRandomInt(1,101).toString();
+    var global_d = getRandomInt(1,7).toString();
+    while (global_d == 4 || global_d == 6){
+        var global_d = getRandomInt(1,7).toString();
+    }console.log("d:", global_d, "N:", global_N);
     var mes ="mes_id" + param; 
-    var keys = "key_id" +param;
+   // var keys = "key_id" +param;
     var param2 = "mas"+getRandomInt(1,6);
     var alfa = getRandomInt(3,34);
     var mas1 = ["б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
