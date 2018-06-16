@@ -19,8 +19,8 @@ function InfoSecureXBlock(runtime, element) {
         else if (global_d == 2){
             return true; 
         }
-        i = 2
-        limit = int(math.sqrt(global_d))
+        var i = 2;
+        limit = Math.sqrt(global_d);
         while (i <= limit){
             if (global_d % i == 0)
                 return false
