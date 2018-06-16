@@ -455,7 +455,7 @@ function InfoSecureXBlock(runtime, element) {
             function fileShow(){
                 console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
-                document.getElementById("File1Id").innerHTML = keys;
+               // document.getElementById("File1Id").innerHTML = keys;
             }
             if (evt.id == "Link"){
                 document.getElementById('Link').style.display = "block";
@@ -1020,6 +1020,9 @@ function InfoSecureXBlock(runtime, element) {
                     }
                     if ((name == "div") && (attributes[k] == "rwx")) {
                         this.element.innerHTML = 'полные права'
+                    }
+                    if ((name == "ellipse") && (attributes[k] == "File1Id")) {
+                        this.element.innerHTML = keys
                     }
                     this.element.setAttribute([k], attributes[k]);
                 }
