@@ -287,8 +287,8 @@ function InfoSecureXBlock(runtime, element) {
                     alert('Некорректное сообщение! Введите сообещние в численном виде.');
                     che++;
                 }
-                var key = "key_id" + param;
-                console.log("key ---", key)
+               // var key = "mes_id" + param;
+                console.log("key ---", mes)
                 if (che == 0 && b == true && empty != true) {
 
                     var student_answer =
@@ -297,7 +297,7 @@ function InfoSecureXBlock(runtime, element) {
                             'd': document.getElementById('d').value,
                             'N': document.getElementById('N').value,
                             'e': document.getElementById('e').value,
-                            'key': key
+                            'key': mes
                         }
                     Start.checkAnswer(checkHandler, student_answer);
                 }
