@@ -4,7 +4,7 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-    var param = getRandomInt(1,6).toString();
+    var param = "key_id"+getRandomInt(1,6).toString();
     var alfa = getRandomInt(2,34);
     console.log(param);
     console.log("---",alfa);
@@ -16,7 +16,8 @@ function InfoSecureXBlock(runtime, element) {
     var keys = bukva;//"key_id"+param; 
     
     console.log(bukva);
-    var old_alphabet = ["э", "к", "р", "а", "н"]
+    var old_alphabet = document.getElementById(param).split(",");//["э", "к", "р", "а", "н"]
+    console.log(old_alphabet);
     var new_alphabet = []; var new_i = [];
     for (var j=0; j<alphabet.length; j++){
     for (var i =0; i < len; i++){
@@ -459,8 +460,8 @@ function InfoSecureXBlock(runtime, element) {
             //    document.getElementById("File1Id").innerHTML = keys;
             }
             if (evt.id =="File1"){
-                document.getElementById("File1TextID").innerHTML = keys;console.log("!!!");
-                document.getElementById("File1TextID2").innerHTML = mes;console.log("!!!");
+                document.getElementById("File1TextID2").innerHTML = keys;console.log("!!!");
+                document.getElementById("File1TextID").innerHTML = mes;console.log("!!!");
         
             }
             if (evt.id == "Link"){
