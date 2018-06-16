@@ -13,7 +13,7 @@ function InfoSecureXBlock(runtime, element) {
    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
     var len = 5; //document.getElementById(mes).len;
-    var bukva = alphabet[alfa+1];
+    var bukva = alphabet[alfa-1];
     console.log(bukva);
     var old_alphabet = ["э", "к", "р", "а", "н"]
     var new_alphabet = []; var new_i = [];
@@ -27,7 +27,7 @@ function InfoSecureXBlock(runtime, element) {
             new_i[i] = new_i[i]-33;
             console.log("itog i", new_i[i]);
         }
-        new_alphabet[i] = alphabet[new_i[i]+1];
+        new_alphabet[i] = alphabet[new_i[i]-1];
         }
       //  new_alphabet[i] = old_alphabet[i+alfa-1];
     } 
