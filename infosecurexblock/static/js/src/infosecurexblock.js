@@ -13,6 +13,8 @@ function InfoSecureXBlock(runtime, element) {
    var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
     var len = 5; //document.getElementById(mes).len;
+    var bukva = alphabet(alfa+1);
+    console.log(bukva);
     var old_alphabet = ["э", "к", "р", "а", "н"]
     var new_alphabet = []; var new_i = [];
     for (var j=0; j<alphabet.length; j++){
