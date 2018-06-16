@@ -12,7 +12,7 @@ function InfoSecureXBlock(runtime, element) {
         var global_d = getRandomInt(1,7).toString();
     }console.log("d:", global_d, "N:", global_N);
     var mes ="mes_id" + param; 
-   // var keys = "key_id" +param;
+    var keys = "";//"key_id" +param;
     var param2 = "mas"+getRandomInt(1,6);
     var alfa = getRandomInt(3,34);
     var mas1 = ["б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
