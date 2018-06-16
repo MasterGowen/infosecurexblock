@@ -554,25 +554,25 @@
             "type":"tspan",
             "idnum":"textRectEventId2",
             "x":"385",
-            "value":"<tspan id='moveTspan'>Хочет зайти в</tspan><tspan id='moveTspan' x='385' dy='1.2em'>социальную сеть в</tspan><tspan id='moveTspan' x='385' dy='1.2em'>режиме инкогнито</tspan>"
+            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='110' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='110' dy='1.2em'>общения со своими подругами</tspan>"
         },
         "textEvent3":{
             "type":"tspan",
             "idnum":"textRectEventId3",
             "x":"110",
-            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='110' dy='1.2em'>почту для постоянного</tspan><tspan id='moveTspan' x='110' dy='1.2em'>общения со своими подругами</tspan>"
+            "value":"<tspan id='moveTspan'>Хочет зайти в</tspan><tspan id='moveTspan' x='385' dy='1.2em'>социальную сеть в</tspan><tspan id='moveTspan' x='385' dy='1.2em'>режиме инкогнито</tspan>"
         },
         "textEvent4":{
             "type":"tspan",
             "idnum":"textRectEventId4",
             "x":"260",
-            "value":"<tspan id='moveTspan'>Использует корпоративную</tspan><tspan id='moveTspan' x='260' dy='1.2em'>почту для общения</tspan><tspan id='moveTspan' x='260' dy='1.2em'>с друзьями</tspan>"
+            "value":"<tspan id='moveTspan'>Хочет установить</tspan><tspan id='moveTspan' x='260' dy='1.2em'>на свой компьютер игру</tspan>"
         },
         "textEvent5":{
             "type":"tspan",
             "idnum":"textRectEventId5",
             "x":"500",
-            "value":"<tspan id='moveTspan'>Хочет установить</tspan><tspan id='moveTspan' x='500' dy='1.2em'>на свой компьютер игру</tspan>"
+            "value":"<tspan id='moveTspan'>Хочет сделать</tspan><tspan id='moveTspan' x='500' dy='1.2em'>рассылку писем о</tspan><tspan id='moveTspan' x='260' dy='1.2em'>предстоящем совещании</tspan>"
         },
         "textEvent6":{
             "type":"tspan",
