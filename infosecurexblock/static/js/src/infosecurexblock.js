@@ -32,7 +32,7 @@ function InfoSecureXBlock(runtime, element) {
 
     console.log()
     console.log(new_i);
-    console.log("alphabet ---", new_alphabet.join());
+    console.log("alphabet ---", new_alphabet.join().split(","));
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
        global_N= "10";
