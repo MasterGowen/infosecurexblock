@@ -317,9 +317,8 @@ function InfoSecureXBlock(runtime, element) {
             }
 
         }
+
         static checkAnswer(checkHandler, student_answer) {
-            //console.log("student_answer :", student_answer);
-            //console.log("checkHandler :", checkHandler);
             (function () {
                 $.ajax({
                     type: "POST",
@@ -329,6 +328,7 @@ function InfoSecureXBlock(runtime, element) {
                 });
             })()
         }
+
         static getRandomInt(min, max){
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
