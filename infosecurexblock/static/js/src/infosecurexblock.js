@@ -4,13 +4,29 @@ function InfoSecureXBlock(runtime, element) {
     var rect1HandlerUrl = runtime.handlerUrl(element, 'rect1');
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
-  
     var param = getRandomInt(1,6).toString();
-    var global_N = getRandomInt(2,101).toString();
-    var global_d = getRandomInt(2,7).toString();
-    while (global_d == 4 || global_d == 6){
-        var global_d = getRandomInt(1,7).toString();
+    var global_N = getRandomInt(2,10000);
+    var global_d = getRandomInt(2,7);
+    while (global_d == 4 || global_d == 6 || global_d >= global_N || !prime(global_d)){
+        var global_d = getRandomInt(1,7);
     }console.log("d:", global_d, "N:", global_N);
+    global_d.toString();global_N.toString();
+    function prime(global_d){
+        if (global_d < 2){
+            return false;
+        }
+        else (global_d == 2){
+            return true; 
+        }
+        i = 2
+        limit = int(math.sqrt(global_d))
+        while (i <= limit){
+            if (global_d % i == 0)
+                return false
+            i += 1
+        }
+        return true;
+    } 
     var mes ="mes_id" + param; 
     var keys = "";//"key_id" +param;
     var param2 = "mas"+getRandomInt(1,6);
@@ -288,6 +304,7 @@ function InfoSecureXBlock(runtime, element) {
                     che++;
                 }
                // var key = "mes_id" + param;
+
                 console.log("key ---", mes.toString());
                 if (che == 0 && b == true && empty != true) {
 
