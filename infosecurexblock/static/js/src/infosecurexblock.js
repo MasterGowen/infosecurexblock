@@ -44,8 +44,8 @@ function InfoSecureXBlock(runtime, element) {
     var alphabet = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н",
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
     console.log(param);
+    
     function successCheck(result) {
-        //console.log("result:", result);
         if (result.result != "fail") {
             $('.attempts', element).text(result.attempts);
             if (result.max_attempts && result.max_attempts <= result.attempts) {
@@ -60,6 +60,7 @@ function InfoSecureXBlock(runtime, element) {
             document.getElementById('checkid').style.cursor="not-allowed"; 
             }
     }
+
     var test = {
         'test':'lab1'
     };
