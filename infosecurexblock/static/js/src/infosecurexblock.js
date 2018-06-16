@@ -438,7 +438,7 @@ function InfoSecureXBlock(runtime, element) {
             var mes = new_alphabet.join("");//"mes_id"+param;
             console.log()
             console.log(new_i);
-            console.log("alphabet ---", new_alphabet.join(""));
+            console.log("alphabet ---", mes);
             evt.id == "comp1" && connect(['comp1','comp2','comp3','activeComp','192.168.0.3']);
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
@@ -465,8 +465,8 @@ function InfoSecureXBlock(runtime, element) {
             //    document.getElementById("File1Id").innerHTML = keys;
             }
             if (evt.id =="File1"){
-                document.getElementById("File1TextID2").innerHTML = keys;console.log("keys",keys);
-                document.getElementById("File1TextID").innerHTML = mes;console.log("mes", mes);
+                document.getElementById("File1TextID2").innerHTML = this.keys;console.log("keys",keys);
+                document.getElementById("File1TextID").innerHTML = this.mes;console.log("mes", mes);
         
             }
             if (evt.id == "Link"){
