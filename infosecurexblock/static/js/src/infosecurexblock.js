@@ -22,7 +22,7 @@ function InfoSecureXBlock(runtime, element) {
            
         new_i[i] = j+alfa+1;// console.log("i before", new_i[i]);
         if (new_i[i]>33){
-            new_i[i] = 33-new_i[i];
+            new_i[i] = new_i[i]-33;
             console.log("itog i", new_i[i]);
         }
 
