@@ -5,7 +5,7 @@ function InfoSecureXBlock(runtime, element) {
     var checkHandler = runtime.handlerUrl(element, 'check');
     var checkHandlerLab = runtime.handlerUrl(element, 'checkLab');
     var param = "mes_id"+getRandomInt(1,6).toString();
-    var param2 = "mas"+getRandomInt(1,6).toString();
+    var param2 = "mas"+getRandomInt(1,6);
     var alfa = getRandomInt(2,34);
     var mas1 = ["б", "е", "з", "о", "п", "а", "с", "н", "о", "с", "т", "ь"];
     var mas2 = ["и", "н", "ф", "о", "р", "м", "а", "т", "и", "к", "а"];
@@ -405,7 +405,7 @@ function InfoSecureXBlock(runtime, element) {
         //Lab 5
         static onLab5(event) {
             var evt = event.target;
-            var student_answer = {};console.log("element = ",param);
+            var student_answer = {};console.log("element = ",param2);
             var old_alphabet = param2;//split("");//["э", "к", "р", "а", "н"]
         console.log(old_alphabet);
         var len = old_alphabet.length; //document.getElementById(mes).len;
