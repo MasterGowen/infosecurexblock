@@ -406,7 +406,16 @@ function InfoSecureXBlock(runtime, element) {
         static onLab5(event) {
             var evt = event.target;
             var student_answer = {};console.log("element = ",param2);
-            var old_alphabet = JSON.parse(param2);//split("");//["э", "к", "р", "а", "н"]
+            if (param2 =="mas1")
+            var old_alphabet = mas1;//split("");//["э", "к", "р", "а", "н"]
+            if (param2 =="mas2")
+            var old_alphabet = mas2;
+            if (param2 =="mas3")
+            var old_alphabet = mas3;
+            if (param2 =="mas4")
+            var old_alphabet = mas4;
+            if (param2 =="mas5")
+            var old_alphabet = mas5;
         console.log(old_alphabet);
         var len = old_alphabet.length; //document.getElementById(mes).len;
         var bukva = alphabet[alfa-1];console.log(bukva);
