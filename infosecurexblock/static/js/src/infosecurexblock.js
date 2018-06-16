@@ -443,7 +443,7 @@ function InfoSecureXBlock(runtime, element) {
             evt.id == "comp2" && connect(['comp2','comp1','comp3','activeComp','192.168.0.4']);
             evt.id == "comp3" && connect(['comp3','comp2','comp1','activeComp','192.168.0.5']);
             //evt.id == 'File1' && fileShow();
-            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2', keys, mes]);
+            evt.id != 'File1' && Start.deactive(['File1Id','File1TextID','File1TextID2']);
             ((evt.id == 'comp1') || (evt.id == 'ip1')) && connect(['line_comp1','line_comp2','line_comp3','connnectOpen']);
             ((evt.id == 'comp2') || (evt.id == 'ip2')) && connect(['line_comp2','line_comp1','line_comp3','connnectOpen']);
             ((evt.id == 'comp3') || (evt.id == 'ip3')) && connect(['line_comp3','line_comp1','line_comp2','connnectOpen']);
@@ -459,14 +459,14 @@ function InfoSecureXBlock(runtime, element) {
             }
 
             function fileShow(){
-                console.log("keys :" ,keys, mes); 
+                //console.log("keys :" ,keys, mes); 
                 Start.active(['File1Id','File1TextID','File1TextID2',keys, mes]);
 
             //    document.getElementById("File1Id").innerHTML = keys;
             }
             if (evt.id =="File1"){
-                document.getElementById("File1TextID2").innerHTML = this.keys;console.log("keys",keys);
-                document.getElementById("File1TextID").innerHTML = this.mes;console.log("mes", mes);
+                document.getElementById("File1TextID2").innerHTML = keys.toString();console.log("keys",keys);
+                document.getElementById("File1TextID").innerHTML = mes.toString();console.log("mes", mes);
         
             }
             if (evt.id == "Link"){
