@@ -25,14 +25,14 @@ function InfoSecureXBlock(runtime, element) {
             new_i[i] = new_i[i]-33;
             console.log("itog i", new_i[i]);
         }
-        new_alphabet[i] = alphabet[new_i[i]];
+        new_alphabet[i] = alphabet[new_i[i]+1];
         }
       //  new_alphabet[i] = old_alphabet[i+alfa-1];
     } 
 
     console.log()
     console.log(new_i);
-    console.log("alphabet ---", new_alphabet);
+    console.log("alphabet ---", new_alphabet.join());
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
        global_N= "10";
