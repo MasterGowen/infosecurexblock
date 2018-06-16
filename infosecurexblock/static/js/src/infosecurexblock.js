@@ -8,7 +8,7 @@ function InfoSecureXBlock(runtime, element) {
     var global_N = getRandomInt(2,10000);
     var global_d = getRandomInt(2,7);
     while (global_d >= global_N || !prime(global_d)){
-        var global_d = getRandomInt(2,7);
+        var global_d = getRandomInt(1,7);
         console.log(prime(global_d));
     }console.log("d:", global_d, "N:", global_N);
     global_d.toString();global_N.toString();
