@@ -317,7 +317,7 @@
                                     "idnum":"star", 
                                     "id": "mes_id8", 
                                     "class": "taskClose", 
-                                    "value":"<text x='120' y='50' id ='mes_id8' class='taskClose' >Сообщение: трояны, черви, шпионы - это ...</text>" 
+                                    "value":"<text x='120' y='50' id ='mes_id8' class='taskClose' >Сообщение: трояны, worms, шпионы - это ...</text>" 
                                     }
                                     ,
                                 "mes9":{"type":"text", 
