@@ -626,6 +626,7 @@ function InfoSecureXBlock(runtime, element) {
                     "event": 0,
                     "eventId": checkText()
                 }
+                Start.checkAnswer(checkHandler,student_answer);
                 console.log("student_answer",student_answer);
             }
             if(evt.id == 'rectEventtapId2'|| evt.id == 'lineCheckMarkId1' || evt.id == 'lineCheckMarkId2'){
@@ -633,6 +634,7 @@ function InfoSecureXBlock(runtime, element) {
                     "event": 1,
                     "eventId": checkText()
                 }
+                Start.checkAnswer(checkHandler,student_answer);
                 console.log("student_answer",student_answer);
             }
             //Start.RectInfo(4,12,"deactive",evt);
