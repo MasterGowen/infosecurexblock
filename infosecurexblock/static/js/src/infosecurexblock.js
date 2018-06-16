@@ -16,7 +16,7 @@ function InfoSecureXBlock(runtime, element) {
         if (global_d < 2){
             return false;
         }
-        else (global_d == 2){
+        else if (global_d == 2){
             return true; 
         }
         i = 2
