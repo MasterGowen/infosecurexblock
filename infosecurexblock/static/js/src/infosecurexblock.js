@@ -14,8 +14,7 @@ function InfoSecureXBlock(runtime, element) {
     "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
     var len = 5; //document.getElementById(mes).len;
     var old_alphabet = ["э", "к", "р", "а", "н"]
-    var ai = 0;
-    var new_alphabet = []; var new_i = 0;
+    var new_alphabet = []; var new_i = [];
     for (var j=0; j<alphabet.length; j++){
     for (var i =0; i < len; i++){
       
@@ -23,23 +22,16 @@ function InfoSecureXBlock(runtime, element) {
            
         new_i[i] = j+alfa+1; console.log("i before", new_i[i]);
         if (new_i[i]>33){
-            new_i[i] = new_i[i]-33; new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
-           console.log("itog i", new_i[i]);
-            
+            new_i[i] = 33-new_i[i];
+            console.log("itog i", new_i[i]);
         }
-        if (new_i[i]<=33){
-            new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
-        }//console.log("bukva", new_alphabet[ai] );
 
         }
       //  new_alphabet[i] = old_alphabet[i+alfa-1];
     } 
 
-   // console.log()
-   console.log("index",new_i);
-  // console.log("itrog----",new_alphabet);
-   console.log("key:  ", alfa,alphabet[alfa-1]);
-   // console.log("itog ---", new_alphabet.toString());
+    console.log()
+    console.log(new_i);
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
     {   global_d= "2";
        global_N= "10";
@@ -226,6 +218,7 @@ function InfoSecureXBlock(runtime, element) {
     }
         static active(idNum) {
             for(var k in idNum){
+                console.log(idNum[k]);
                 if(document.getElementById(idNum[k])!=null){
                     document.getElementById(idNum[k]).classList.remove("taskClose");
                     document.getElementById(idNum[k]).classList.add("taskOpen");                    
@@ -501,7 +494,7 @@ function InfoSecureXBlock(runtime, element) {
             if(statusBlock=='active'){
                 for(; k <= NumLink; k++){
                     //console.log('test: ',' ',NumLink,' ',k,'  link'+k,' Link'+k);
-                    var infoUser = 'infoUser' +k.toString();
+                    var infoUser = 'infoUser'+k.toString();
                     var infoUserRect = "infoUserRect" +k.toString();
                     var textinfoUserRect = 'textinfoUserRect'+k.toString();
                     var textInfo = "textInfo" +k.toString();
@@ -517,18 +510,18 @@ function InfoSecureXBlock(runtime, element) {
                     var infoUserRect = "infoUserRect" +k.toString();
                     var textinfoUserRect = 'textinfoUserRect'+k.toString();
                     var textInfo = "textInfo" +k.toString();
-                    ((evt.id != infoUser) && (evt.id != infoUserRect) && (evt.id != textinfoUserRect) && (evt.id != textInfo)) &&Start.deactive(
+                    ((evt.id != infoUser) || (evt.id != infoUserRect) || (evt.id != textinfoUserRect)||(evt.id != textInfo)) &&Start.deactive(
                         [infoUserRect,textinfoUserRect,textInfo]
                     );
                 }
             }
         }
-        static getRandomIntMas(min, max, num) {
+        static getRandomInt(min, max, num) {//между максимумом(невключительно) и минимумом(включ)
             var i, arr = [], res = [];
             for (i = min; i <= max; i++ ) arr.push(i);
             for (i = 0; i < num; i++) res.push(arr.splice(Math.floor(Math.random() * (arr.length)), 1)[0])
             return res;
-        }
+          }
         static moveEventRect(idNum, x1offset, y1offset, x2offset, y2offset){
             for(var k = 0; k < idNum.length; k++){
                 var elem = document.getElementById(idNum[k]);
@@ -554,21 +547,20 @@ function InfoSecureXBlock(runtime, element) {
     
         }
         static onLab4(event){
-            var evt = event.target;
-            if(evt.id=="arrowid" || evt.id=='task'){
-                var randArr = Start.getRandomIntMas(1,5,5);
-                var i=0;
-                function myLoop(){
-                    setTimeout(function () {
-                        var choise = randArr[i];
-                        showNextEvent(choise);
-                        i++; 
-                        if (i < randArr.length) {
-                           myLoop(); 
-                        }
-                     }, 10000)
+            function test(eventNum){
+                for(var i = 0;i<6;i++){
+                    //setInterval(console.log("Show"),100);
+                    //console.log(eventNum[i]);
+                    return eventNum[i];
                 }
-                myLoop();
+            }
+            var evt = event.target;
+            Start.deactive(['butStart','butStartText']);
+            if(evt.id=='butStart' || evt.id=='butStartText' || evt.id=='butText'){
+                Start.deactive(['butStart','butStartText']);
+                var timerId = setInterval(function() {
+                    showNextEvent();
+                }, 6000);
             }
             if(evt.id == 'rectEventtapId1'|| evt.id == 'lineCloseId1' || evt.id == 'lineCloseId2'){
                 var student_answer = {
@@ -576,7 +568,6 @@ function InfoSecureXBlock(runtime, element) {
                     "eventId": checkText()
                 }
                 console.log("student_answer",student_answer);
-                Start.checkAnswer(checkHandler, student_answer);
             }
             if(evt.id == 'rectEventtapId2'|| evt.id == 'lineCheckMarkId1' || evt.id == 'lineCheckMarkId2'){
                 var student_answer = {
@@ -584,12 +575,11 @@ function InfoSecureXBlock(runtime, element) {
                     "eventId": checkText()
                 }
                 console.log("student_answer",student_answer);
-                Start.checkAnswer(checkHandler, student_answer);
             }
             //Start.RectInfo(4,12,"deactive",evt);
             function checkText() {//вроде робит
                 var arr = [];
-                for(var k = 1; k < 7; k++){
+                for(var k = 1; k < 6; k++){
                     var textRectEventId = "textRectEventId"+k.toString();
                     arr.push(textRectEventId);
                 }
@@ -601,8 +591,25 @@ function InfoSecureXBlock(runtime, element) {
                     console.log(document.getElementById(arr[k]).classList.contains('taskOpen'));
                 }   
             }
-            function showNextEvent(choise){
+            function showNextEvent(){
+                function noRepeatRandom(){
+                    while (true){
+                        currentNumber = Random.Range(1,4);
+                        if (currentNumber != previousNumber || currentNumber != previousPreviousNumber){
+                            finalNumber = currentNumber;
+                            previousPreviousNumber = previousNumber;
+                            previousNumber = currentNumber;
+                            break;
+                        }
+                    }
+                    console.log("finalNumber " + finalNumber);
+                }
                 var idTabs = ['rectEventId1','rectEventtapId1','rectEventtapId2','lineCloseId1','lineCloseId2','lineCheckMarkId1','lineCheckMarkId2'];
+                var randArr = Start.getRandomInt(1,6,6);//сделать нормальный рандом
+                for(var i = 0;i < randArr.length; i++){
+                    var choise = randArr[i];
+                }
+                console.log(choise);
                 switch(choise){
                     case 1:{
                         Start.moveEventRect(idTabs,0,0,0,0);
@@ -611,7 +618,7 @@ function InfoSecureXBlock(runtime, element) {
                         setTimeout(()=> {
                             Start.deactive(idTabs);
                             idTabs.pop();
-                        }, 6500);
+                        }, 2000);
                         break;
                     }
                     case 2:{
@@ -621,10 +628,10 @@ function InfoSecureXBlock(runtime, element) {
                         setTimeout(()=> {
                             Start.deactive(idTabs);
                             idTabs.pop();
-                        }, 6500);
+                        }, 2000);
                         setTimeout(()=>{
                             Start.moveEventRect(idTabs,-225,0,-225,0);
-                        },7700)
+                        },2700)
                         break;
                     }
                     case 3:{
@@ -634,10 +641,10 @@ function InfoSecureXBlock(runtime, element) {
                         setTimeout(()=> {
                             Start.deactive(idTabs);
                             idTabs.pop();
-                        }, 6500);
+                        }, 2000);
                         setTimeout(()=>{
                             Start.moveEventRect(idTabs,50,-300,50,-300);
-                        },7700)
+                        },2700)
                         break;
                     }
                     case 4:{
@@ -647,10 +654,10 @@ function InfoSecureXBlock(runtime, element) {
                         setTimeout(()=> {
                             Start.deactive(idTabs);
                             idTabs.pop();
-                        }, 6500);
+                        }, 2000);
                         setTimeout(()=>{
                             Start.moveEventRect(idTabs,-100,-350,-100,-350);
-                        },7700)
+                        },2700)
                         break;
                     }
                     case 5:{
@@ -660,75 +667,30 @@ function InfoSecureXBlock(runtime, element) {
                         setTimeout(()=> {
                             Start.deactive(idTabs);
                             idTabs.pop();
-                        }, 6500);
+                        }, 2000);
                         setTimeout(()=>{
                             Start.moveEventRect(idTabs,-340,-300,-340,-300);
-                        },7700)
+                        },2700)
                         break;
                     }
                     case 6:{
-                        Start.moveEventRect(idTabs,100,-200,100,-200);
-                        idTabs.push('textRectEventId6');
-                        Start.active(idTabs);
-                        setTimeout(()=> {
-                            Start.deactive(idTabs);
-                            idTabs.pop();
-                        }, 6500);
-                        setTimeout(()=>{
-                            Start.moveEventRect(idTabs,-100,200,-100,200);
-                        },7700)
+    
                         break;
                     }
                     case 7:{
-                        Start.moveEventRect(idTabs,225,0,225,0);
-                        idTabs.push('textRectEventId7');
-                        Start.active(idTabs);  
-                        setTimeout(()=> {
-                            Start.deactive(idTabs);
-                            idTabs.pop();
-                        }, 6500);
-                        setTimeout(()=>{
-                            Start.moveEventRect(idTabs,-225,0,-225,0);
-                        },7700)
+    
                         break;
                     }
                     case 8:{
-                        Start.moveEventRect(idTabs,-50,300,-50,300);
-                        idTabs.push('textRectEventId8');
-                        Start.active(idTabs); 
-                        setTimeout(()=> {
-                            Start.deactive(idTabs);
-                            idTabs.pop();
-                        }, 6500);
-                        setTimeout(()=>{
-                            Start.moveEventRect(idTabs,50,-300,50,-300);
-                        },7700)
+    
                         break;
                     }
                     case 9:{
-                        Start.moveEventRect(idTabs,100,350,100,350);
-                        idTabs.push('textRectEventId9');
-                        Start.active(idTabs);
-                        setTimeout(()=> {
-                            Start.deactive(idTabs);
-                            idTabs.pop();
-                        }, 6500);
-                        setTimeout(()=>{
-                            Start.moveEventRect(idTabs,-100,-350,-100,-350);
-                        },7700)
+    
                         break;
                     }
                     case 10:{
-                        Start.moveEventRect(idTabs,340,300,340,300);
-                        idTabs.push('textRectEventId10');
-                        Start.active(idTabs);
-                        setTimeout(()=> {
-                            Start.deactive(idTabs);
-                            idTabs.pop();
-                        }, 6500);
-                        setTimeout(()=>{
-                            Start.moveEventRect(idTabs,-340,-300,-340,-300);
-                        },7700)
+    
                         break;
                     }
                 }
@@ -739,7 +701,7 @@ function InfoSecureXBlock(runtime, element) {
             (evt.id == "butStart" || evt.id == 'butStartText' || evt.id == 'butText') && Start.mouseActive(['butStart','butStartText','butText']);
     
             //information ip
-            Start.ipInfo(1,7,"active",evt);
+            Start.ipInfo(2,6,"active",evt);
                 for(var k=1; k <= 12; k++){
                     if(k % 2 ==0){
                         var lineCloseId2 = 'lineCloseId'+k.toString();   
@@ -765,13 +727,17 @@ function InfoSecureXBlock(runtime, element) {
                     }
                     
                 }
+    
+            ((evt.id == "infoCloud") || (evt.id == "infoCloudRect") || (evt.id == "textinfoCloudRect") || (evt.id == "textinfoCloud"))  && Start.active(
+                ['infoCloudRect','textinfoCloudRect','textinfoCloud']
+            );
         }
         static onLab4styleDeactive(event){
             var evt = event.target;
             (evt.id != "butStart" || evt.id != 'butStartText' && evt.id != 'butText') && Start.mouseDeactive(['butStart','butStartText','butText']);
     
             //information ip
-            Start.ipInfo(1,7,"deactive",evt); 
+            Start.ipInfo(2,6,"deactive",evt); 
                 for(var j=1; j <= 12; j++){
                     var rectEventtapId1 = 'rectEventtapId'+j.toString();
                     var rectEventtapId2 = 'rectEventtapId'+(j-1).toString();
@@ -783,6 +749,10 @@ function InfoSecureXBlock(runtime, element) {
                     Start.mouseDeactive([rectEventtapId1,lineCloseId1,lineCheckMarkId1]);
                 }   
             }
+    
+            ((evt.id != "infoCloud") && (evt.id != "infoCloudRect") && (evt.id != "textinfoCloudRect") && (evt.id != "textinfoCloud"))  && Start.deactive(
+                ['infoCloudRect','textinfoCloudRect','textinfoCloud']
+            );
         }
     
         static mouseActive(idNum){
@@ -973,6 +943,8 @@ function InfoSecureXBlock(runtime, element) {
         addElementTextSVG(amount, jsonObj) {
             //console.log(amount,jsonObj);
             for (amount in jsonObj) {
+                //console.log("zashlo v addelementtextsvg", document.getElementById(jsonObj[amount].idnum));
+               // console.log(jsonObj[amount].value);
                 document.getElementById(jsonObj[amount].idnum).innerHTML += jsonObj[amount].value;
                 
             }
@@ -984,6 +956,7 @@ function InfoSecureXBlock(runtime, element) {
             if (name == "svg") {
                 this.element.setAttributeNS(null, 'id', 'star')
                 document.getElementById("widget").appendChild(this.element);
+                //document.querySelector('svg').appendChild(document.createElement('g'));
             }
             for (var k in attributes) {
                 if (attributes[k] == "image") {
@@ -1084,6 +1057,8 @@ function InfoSecureXBlock(runtime, element) {
             super()
             this.connectionLabs(rect1HandlerUrl,1);
             this.connectionLabs(rect1HandlerUrl,2);
+            //console.log("lab1");
+            //document.getElementById("widget").addEventListener('click',Start.on);
             this.checkAnswerLab(checkHandlerLab,test);
         }
     }
