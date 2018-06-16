@@ -298,6 +298,41 @@
                                     "class": "taskClose", 
                                     "value":"<text x='120' y='50' id ='mes_id5' class='taskClose' >Сообщение: конроль трафика - сетевой</text>" 
                                     }
+                                    ,
+                                "mes6":{"type":"text", 
+                                    "idnum":"star", 
+                                    "id": "mes_id6", 
+                                    "class": "taskClose", 
+                                    "value":"<text x='120' y='50' id ='mes_id6' class='taskClose' >Сообщение: знание - </text>" 
+                                    }
+                                    ,
+                                "mes7":{"type":"text", 
+                                    "idnum":"star", 
+                                    "id": "mes_id7", 
+                                    "class": "taskClose", 
+                                    "value":"<text x='120' y='50' id ='mes_id7' class='taskClose' >Сообщение: вредоносная рассылка - </text>" 
+                                    }
+                                    ,
+                                "mes8":{"type":"text", 
+                                    "idnum":"star", 
+                                    "id": "mes_id8", 
+                                    "class": "taskClose", 
+                                    "value":"<text x='120' y='50' id ='mes_id8' class='taskClose' >Сообщение: трояны, черви, шпионы - это ...</text>" 
+                                    }
+                                    ,
+                                "mes9":{"type":"text", 
+                                    "idnum":"star", 
+                                    "id": "mes_id9", 
+                                    "class": "taskClose", 
+                                    "value":"<text x='120' y='50' id ='mes_id9' class='taskClose' >Сообщение: популярное интернет мошенничество/text>" 
+                                    }
+                                    ,
+                                "mes10":{"type":"text", 
+                                    "idnum":"star", 
+                                    "id": "mes_id10", 
+                                    "class": "taskClose", 
+                                    "value":"<text x='120' y='50' id ='mes_id10' class='taskClose' >Сообщение: права ....... пользователей </text>" 
+                                    }
 
     ,
         "ip1":{

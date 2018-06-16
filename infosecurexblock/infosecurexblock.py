@@ -201,6 +201,16 @@ class InfoSecureXBlock(StudioEditableXBlockMixin, XBlock):
                     right = [2, 6, 9, 16, 17, 1, 19, 15, 16, 19, 20, 30]
                 elif (key == "mes_id5"):
                     right = [31, 12, 18, 1, 15]
+                elif (key == "mes_id6"):
+                    right = ["19", "10", "13", "1"]
+                elif (key == "mes_id7"):
+                    right = ["19", "17", "1", "14"]
+                elif (key == "mes_id8"):
+                    right = ["3", "10", "18", "21", "19", "29"]
+                elif (key == "mes_id9"):
+                    right = ["22", "10", "26", "10", "15", "4"]
+                elif (key == "mes_id10"):
+                    right = ["5", "16", "19", "20", "21", "17", "1"]
                 if IsTheNumberSimple(d):
                     for j, k in enumerate(copy.deepcopy(right)):
                         right[j] = right[j] ** d % N
