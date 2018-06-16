@@ -21,14 +21,14 @@ function InfoSecureXBlock(runtime, element) {
       
         if (alphabet[j]==old_alphabet[i])
            
-        new_i = j+alfa+1; //console.log("i before", new_i[i]);
-        if (new_i>33){
-            new_i = new_i-33; new_alphabet[ai]= alphabet[new_i+1];ai++;
+        new_i[i] = j+alfa+1; //console.log("i before", new_i[i]);
+        if (new_i[i]>33){
+            new_i[i] = new_i-33; new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
            //console.log("itog i", new_i[i]);
             
         }
-        if (new_i<=33){
-            new_alphabet[ai]= alphabet[new_i+1];ai++;
+        if (new_i[i]<=33){
+            new_alphabet[ai]= alphabet[new_i[i]+1];ai++;
         }//console.log("bukva", new_alphabet[ai] );
 
         }
@@ -36,8 +36,8 @@ function InfoSecureXBlock(runtime, element) {
     } 
 
    // console.log()
-   // console.log(new_i);
-   console.log("itrog----",new_alphabet);
+   console.log("index",new_i);
+  // console.log("itrog----",new_alphabet);
    console.log("key:  ", alfa,alphabet[alfa-1]);
    // console.log("itog ---", new_alphabet.toString());
     if (keys =="key_id1" || keys == "key_id3" || keys == "key_id5")
